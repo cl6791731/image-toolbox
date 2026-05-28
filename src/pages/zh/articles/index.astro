@@ -1,34 +1,10 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { articles } from '../../../data/articles-zh.js';
 
 const title = '图片处理技巧与指南';
 const description = '了解图片格式、压缩技巧、水印最佳实践和社交媒体图片尺寸指南。';
-
-// Article data - in production this would come from a CMS or content collection
-const articles = [
-  {
-    title: 'WebP 和 JPG 哪个更适合网页？',
-    summary: 'WebP 在同等质量下比 JPG 小 25-35%。了解何时用哪种格式，以及如何实现 WebP 带回退方案。',
-    tags: ['格式', 'webp', '优化'],
-    date: '2026-05-15',
-    slug: 'webp-vs-jpg'
-  },
-  {
-    title: '如何将图片压缩到 200KB 以下',
-    summary: '实用指南：在无明显质量损失的前提下，将图片压缩到 200KB 以下，适用于网页上传、邮件附件和表单提交。',
-    tags: ['压缩', '教程'],
-    date: '2026-05-12',
-    slug: 'compress-under-200kb'
-  },
-  {
-    title: 'PNG 和 JPG 完全指南：何时用哪个？',
-    summary: '理解 PNG 和 JPG 的根本区别。照片、截图、图形分别该用无损还是有损压缩？',
-    tags: ['格式', '入门'],
-    date: '2026-05-07',
-    slug: 'png-vs-jpg-guide'
-  }
-];
 ---
 
 <Layout title={title} description={description} seoType="website" lang="zh">

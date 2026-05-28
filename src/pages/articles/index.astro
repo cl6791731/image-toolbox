@@ -1,34 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import { articles } from '../../data/articles-en.js';
 
 const title = 'Image Processing Tips & Guides';
 const description = 'Learn about image formats, compression techniques, watermarking best practices, and social media image sizing guides.';
-
-// Article data - in production this would come from a CMS or content collection
-const articles = [
-  {
-    title: 'WebP vs JPG: Which is Better for Websites?',
-    summary: 'WebP offers 25-35% smaller file sizes than JPG at the same quality. Learn when to use each format and how to implement WebP with fallbacks.',
-    tags: ['format', 'webp', 'optimization'],
-    date: '2026-05-15',
-    slug: 'webp-vs-jpg'
-  },
-  {
-    title: 'How to Compress Images Under 200KB',
-    summary: 'A practical guide to reducing image file size for website uploads, email attachments, and form submissions without visible quality loss.',
-    tags: ['compression', 'tutorial'],
-    date: '2026-05-12',
-    slug: 'compress-under-200kb'
-  },
-  {
-    title: 'PNG vs JPG: The Complete Guide',
-    summary: 'Understand the fundamental differences between PNG and JPG. When to use lossless vs lossy compression for photos, screenshots, and graphics.',
-    tags: ['format', 'beginner'],
-    date: '2026-05-07',
-    slug: 'png-vs-jpg-guide'
-  }
-];
 ---
 
 <Layout title={title} description={description} seoType="website" lang="en">
