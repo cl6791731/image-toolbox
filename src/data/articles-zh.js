@@ -520,4 +520,1284 @@ export const articles = [
   </div>
 </div>`
     }
+      {
+      slug: 'lossy-vs-lossless-compression',
+      title: '有损压缩 vs 无损压缩：什么时候用哪种？',
+      date: '2026-05-09',
+      tags: ['压缩', '格式', '优化'],
+      content: `<h2>什么是有损压缩？</h2>
+<p>有损压缩是你每天都在使用的一些最常见图片格式背后的技术：JPG、WebP 和 AVIF。核心思想很简单——丢弃人眼不太敏感的数据，以换取大幅减小的文件体积。这个过程是不可逆的：一旦像素被丢弃，就无法恢复。</p>
+<p>当你以80%质量保存照片为JPG时，编码器会分析图像并去除颜色过渡中的细节、高频纹理和微妙的渐变。结果是一个可能比原始文件小5到10倍的文件，而视觉上的退化微乎其微。对于照片来说，这种权衡通常是值得的。然而，有损压缩在处理带有锐利边缘、文字或大面积纯色的图形时表现很差——伪影会变得很明显。</p>
+
+<h2>什么是无损压缩？</h2>
+<p>无损压缩被PNG、BMP和TIFF使用，采取了根本不同的方法。它不是丢弃数据，而是更高效地重新组织数据。每一个像素都被精确保留。你可以将PNG压缩和解压缩一千次，图像将保持像素级完美。</p>
+<p>这使得无损格式非常适合截图、图表、Logo以及任何文字可读性或精确颜色匹配很重要的图像。缺点是文件大小。一张无损PNG的照片通常是相同尺寸JPG的3到5倍。对于网页传输来说，这种差异直接影响加载速度和带宽成本。</p>
+
+<h3>视觉测试：你能看出区别吗？</h3>
+<p><img src="/placeholder.svg" alt="60%质量JPG与无损PNG的并排对比，展示压缩伪影"></p>
+<p>在盲测中，大多数人在正常观看尺寸下无法区分高质量JPG（质量80+）和PNG。然而，放大到200%或应用高压缩率（质量40-60），区别就会变得明显：JPG出现块状伪影和色带，而PNG保持平滑。对于包含文字的截图，区别立即显现——JPG模糊文字边缘，而PNG保持锐利。</p>
+
+<h2>决策矩阵：选择正确的格式</h2>
+<table>
+<tr><th>场景</th><th>推荐格式</th><th>原因</th></tr>
+<tr><td>网页照片</td><td>WebP 或 JPG</td><td>文件最小，可接受的质量损失</td></tr>
+<tr><td>带文字的截图</td><td>PNG</td><td>保留锐利边缘和可读性</td></tr>
+<tr><td>Logo和图标</td><td>PNG 或 SVG</td><td>需要透明度和清晰线条</td></tr>
+<tr><td>存档存储</td><td>TIFF 或 PNG</td><td>像素级完美保存很重要</td></tr>
+<tr><td>印刷制作</td><td>TIFF</td><td>支持CMYK色彩空间</td></tr>
+</table>
+
+<h2>免费在线压缩工具</h2>
+<p>不确定选择哪种格式？使用 <a href="/zh/compress">Image Toolbox</a> 实时试验有损和无损压缩。上传图像，并排比较质量设置，下载最优版本——全部无需离开浏览器或上传到任何服务器。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">有损压缩和无损压缩哪个更好？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">没有绝对的更好。有损压缩在照片和网页传输等文件大小重要的场景下更优。无损压缩对于图形、截图和存档使用等每个像素都必须保留的场景至关重要。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以将有损图像转为无损来提高质量吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不行。将无损图像（如JPG）转换为无损格式（如PNG）不会恢复丢失的数据。它只是将已经压缩的图像包装在一个更大的文件中。如果以后可能需要编辑，请始终以无损格式保留原始文件。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">哪些格式使用有损压缩？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">JPG、WebP（有损模式）和AVIF都使用有损压缩。PNG、BMP、TIFF和GIF（有限调色板）使用无损压缩。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'compress-images-faster-website',
+      title: '如何压缩图片以加快网站加载速度',
+      date: '2026-05-10',
+      tags: ['压缩', '网页性能', 'seo'],
+      content: `<h2>为什么图片大小会拖慢网页速度</h2>
+<p>图片是大多数网页中最重的组成部分。根据HTTP Archive的数据，图片占普通网站总页面重量的<strong>50-80%</strong>。一个带有2MB未优化图片的首页，加载速度明显慢于只有400KB优化图片的页面——尤其是在移动网络中，带宽有限且延迟较高。</p>
+<p>谷歌已将页面速度作为直接排名因素。加载缓慢的页面在搜索结果中表现更差，跳出率更高，访客转化率更低。好消息是？图片优化是你能做的影响最大、投入最少改进之一。</p>
+
+<h2>三步网页图片优化工作流</h2>
+<p>专业网页开发者对每张发布的图片都遵循简单的三步流程：</p>
+<ol>
+<li><strong>调整到显示尺寸。</strong>如果图片将以800×600显示，不要上传4000×3000的图像。使用 <a href="/zh/resize">Image Toolbox</a> 将图像缩放到实际渲染尺寸。</li>
+<li><strong>转换为现代格式。</strong>WebP和AVIF在比JPG小25-50%的文件体积下提供相同的视觉质量。为了兼容性，使用<code>&lt;picture&gt;</code>元素提供JPG回退。</li>
+<li><strong>压缩到60-80%质量。</strong>100%和70%质量之间的视觉差异对大多数观看者来说几乎不可见，但文件大小差异可能达到60%或更多。</li>
+</ol>
+
+<h3>使用srcset实现响应式图片</h3>
+<p><img src="/placeholder.svg" alt="响应式图片srcset实现的代码示例"></p>
+<p>现代浏览器支持<code>srcset</code>属性，允许你为不同的屏幕宽度提供不同的图片尺寸。这确保移动用户下载小图片，而桌面用户获得高分辨率版本：</p>
+<pre><code>&lt;img src="photo-800.jpg"
+     srcset="photo-400.jpg 400w,
+             photo-800.jpg 800w,
+             photo-1200.jpg 1200w"
+     sizes="(max-width: 600px) 400px, 800px"
+     alt="描述性alt文本"&gt;</code></pre>
+<p>仅此一项技术就可以将移动数据使用量减少50%以上，而不会有任何可见的质量损失。</p>
+
+<h2>免费批量优化你的图片</h2>
+<p>你不需要昂贵的软件或云订阅来优化图片。<a href="/zh/compress">Image Toolbox</a> 在一个地方处理调整大小、格式转换和压缩——完全在你的浏览器中进行。你的图片不会离开你的设备，也不需要注册。结合 <a href="/zh/">我们的格式转换器</a>，你可以在几分钟内将整个图片库现代化。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">网站最佳图片格式是什么？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">WebP是2026年大多数网站的最佳全能选择。它比JPG提供小25-35%的文件，支持透明度，且97%的浏览器都支持。为了最大兼容性，提供JPG回退。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">图片压缩对页面速度有多大提升？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">正确优化的图片可以减少总页面重量的50-80%。在一个2MB的页面上，这可能意味着节省1-1.5秒的加载时间——对用户体验和SEO来说是巨大的改进。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我应该在上传到WordPress之前压缩图片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">是的。虽然WordPress会创建调整大小的缩略图，但它不会重新压缩原始上传文件。事先压缩图片可以确保你的源文件已经优化，减少存储和带宽使用。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'make-photo-smaller-phone',
+      title: '如何在iPhone和Android上缩小照片',
+      date: '2026-05-11',
+      tags: ['手机', '压缩', '教程'],
+      content: `<h2>iPhone：更改相机拍摄格式</h2>
+<p>默认情况下，现代iPhone以HEIC格式拍摄照片，比JPG产生更小的文件，但并非普遍兼容。如果你经常与Windows用户分享照片或上传到较旧的网站，你可能希望切换到"最兼容"模式：</p>
+<ol>
+<li>打开<strong>设置</strong> → <strong>相机</strong> → <strong>格式</strong></li>
+<li>选择<strong>最兼容</strong>而不是<strong>高效</strong></li>
+</ol>
+<p>这会强制相机将照片保存为JPG，比HEIC大但在任何地方都能使用。更好的方法是将HEIC用于存储，仅在需要时转换为JPG——这样既节省存储空间又确保兼容性。</p>
+
+<h2>Android：分享前压缩</h2>
+<p>Android手机因制造商而异，但大多数都提供内置压缩选项：</p>
+<ul>
+<li><strong>三星：</strong>相册 → 编辑 → 保存副本 → 调整质量</li>
+<li><strong>Google Pixel：</strong>相册应用 → 导出 → 选择大小（小/中/原图）</li>
+<li><strong>小米/OPPO：</strong>相册 → 更多 → 压缩</li>
+</ul>
+<p>许多Android手机在相机应用中还包括"文档"扫描模式，自动裁切和压缩文档照片——对收据、表格和身份证很有用。</p>
+
+<h3>手机"优化存储"的问题</h3>
+<p><img src="/placeholder.svg" alt="iPhone和Android存储优化设置截图"></p>
+<p>iCloud和Google相册都提供"优化存储"功能，只在设备上保留低分辨率缩略图，而将全分辨率版本存储在云端。当你下载照片分享时，你可能在不知不觉中发送了一个带有明显伪影的重度压缩版本。</p>
+<p>为避免这种情况，在分享重要照片前始终下载原图。或者更好的是，使用桌面工具自己压缩原图，这样你可以完全控制质量设置。</p>
+
+<h2>更好的方法：用在线工具在桌面端压缩</h2>
+<p>为了获得最佳效果，将照片传输到电脑并使用 <a href="/zh/compress">Image Toolbox</a> 进行压缩。你可以精确控制质量，实时预览结果，并避免大多数消息应用自动应用的压缩。工作流程很简单：手机 → 电脑 → 在线压缩 → 分享优化后的文件。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">为什么我的iPhone照片这么大？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">现代iPhone拍摄高分辨率图像（1200-4800万像素）并带有丰富的色彩数据。单张照片可能是3-8MB。使用HEIC格式可以将此减少约一半，但与压缩后的JPG相比文件仍然很大。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">WhatsApp会压缩照片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">是的。WhatsApp在作为标准消息发送时会自动将图像压缩到约100-300KB。要发送原始文件，请使用"文档"附件选项而不是照片选择器。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以直接在手机上压缩照片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以，但选项有限。大多数手机相册应用提供基本压缩。对于精确控制质量和文件大小，请使用桌面浏览器工具如Image Toolbox。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'bulk-image-compression',
+      title: '批量图片压缩：一次处理50张照片',
+      date: '2026-05-12',
+      tags: ['批量', '压缩', '工作流'],
+      content: `<h2>为什么批量压缩能节省数小时</h2>
+<p>如果你曾经尝试逐一优化图片，你就知道这有多繁琐。现在想象一下为整个产品目录、一本 vacation 相册或一个月的博客文章图片做这件事。逐个处理50张图像可能需要一个多小时。使用批量压缩，同样的任务只需不到五分钟。</p>
+<p>批量压缩对以下场景至关重要：</p>
+<ul>
+<li><strong>电商卖家</strong>需要在数百个产品列表中保持一致的图片尺寸</li>
+<li><strong>旅行博主</strong>整理数百张高分辨率照片</li>
+<li><strong>文档扫描</strong>以统一的质量标准数字化存档</li>
+<li><strong>网页开发者</strong>在部署前优化整个资源库</li>
+</ul>
+
+<h2>桌面软件 vs 在线工具</h2>
+<p>有几种批量压缩的方法，各有优劣：</p>
+<table>
+<tr><th>工具</th><th>优点</th><th>缺点</th></tr>
+<tr><td>Photoshop动作</td><td>完全控制，与编辑工作流集成</td><td>昂贵，学习曲线陡峭</td></tr>
+<tr><td>XnConvert</td><td>免费，支持500+格式，强大的过滤器</td><td>仅限桌面，需要安装</td></tr>
+<tr><td>Squoosh CLI</td><td>Google支持，优秀的WebP/AVIF支持</td><td>仅命令行</td></tr>
+<tr><td>在线工具</td><td>无需安装，任何设备可用，即时结果</td><td>可能有文件大小限制</td></tr>
+</table>
+
+<h3>在线批量处理工作流</h3>
+<p><img src="/placeholder.svg" alt="批量上传和压缩界面截图"></p>
+<p>现代在线工具支持拖放多文件上传。使用 <a href="/zh/compress">Image Toolbox</a>，你可以选择一个文件夹中的所有图片，设置目标质量级别（我们推荐网页使用65-75%），并下载整个优化后的集合为ZIP文件。所有处理都在浏览器本地进行——不上传到外部服务器，没有隐私担忧。</p>
+
+<h2>压缩后保持文件夹组织</h2>
+<p>批量压缩时，通过以下方式保持文件夹结构：</p>
+<ul>
+<li>为输出文件创建单独的"compressed"子文件夹</li>
+<li>使用一致的命名：<code>original-name_optimized.jpg</code></li>
+<li>在README中记录你的压缩设置以供将来批量处理参考</li>
+</ul>
+
+<h2>免费在线图片压缩器（无需注册）</h2>
+<p>准备批量处理你的图片了吗？<a href="/zh/compress">Image Toolbox</a> 支持多文件上传、实时质量预览和ZIP下载——无需账户，无水印，你的文件不会离开你的设备。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以免费一次压缩多张图片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以。许多在线工具支持免费批量压缩，无需注册。Image Toolbox允许多文件上传和ZIP下载，完全免费。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">批量压缩会降低图片质量吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">只有当你选择有损压缩（JPG、WebP）时才会。你可以控制质量滑块——70-80%是文件大小显著下降但视觉质量仍然优秀的最佳点。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">最佳批量图片压缩器是什么？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">对大多数用户来说，像Image Toolbox这样的浏览器工具是便利性和质量的最佳平衡。对于处理数千文件的超级用户，XnConvert或ImageMagick提供更多自动化选项。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'social-media-image-sizes-2026',
+      title: '2026年社交媒体图片尺寸大全',
+      date: '2026-05-13',
+      tags: ['社交媒体', '调整尺寸', '尺寸'],
+      content: `<h2>Instagram图片尺寸</h2>
+<p>Instagram根据内容类型使用多种宽高比。使用错误的尺寸意味着你的图像会被不可预测地裁切：</p>
+<ul>
+<li><strong>动态帖子（竖向）：</strong>1080 × 1350像素（4:5比例）——最大垂直空间</li>
+<li><strong>动态帖子（方形）：</strong>1080 × 1080像素（1:1比例）——经典格式</li>
+<li><strong>快拍和Reels：</strong>1080 × 1920像素（9:16比例）——全屏竖向</li>
+<li><strong>个人资料图片：</strong>最小320 × 320像素，显示为110 × 110</li>
+</ul>
+<p>为获得最佳效果，请以推荐的像素尺寸上传。Instagram会压缩所有上传内容，因此从更高分辨率开始可以让你获得更清晰的最终图像。</p>
+
+<h2>Facebook图片尺寸</h2>
+<p>Facebook的图片要求因展示位置而异：</p>
+<ul>
+<li><strong>封面照片：</strong>851 × 315像素——桌面端显示为820 × 312</li>
+<li><strong>分享图片：</strong>1200 × 630像素（1.91:1比例）——链接预览的最佳选择</li>
+<li><strong>活动封面：</strong>1200 × 628像素</li>
+<li><strong>群组封面：</strong>1640 × 856像素</li>
+</ul>
+
+<h3>X/Twitter图片尺寸</h3>
+<p><img src="/placeholder.svg" alt="2026年社交媒体图片尺寸对比图表"></p>
+<ul>
+<li><strong>单图推文：</strong>1200 × 675像素（16:9比例）</li>
+<li><strong>多图推文：</strong>1200 × 900像素（4:3比例）</li>
+<li><strong>头部图片：</strong>1500 × 500像素</li>
+<li><strong>个人资料照片：</strong>400 × 400像素</li>
+</ul>
+<p>重要提示：X在时间线中会裁切高图像的顶部和底部。将你的主体居中，避免在边缘放置文字。</p>
+
+<h2>LinkedIn、TikTok、YouTube、Pinterest</h2>
+<table>
+<tr><th>平台</th><th>图片类型</th><th>尺寸</th></tr>
+<tr><td>LinkedIn</td><td>分享图片</td><td>1200 × 627像素</td></tr>
+<tr><td>LinkedIn</td><td>封面图片</td><td>1584 × 396像素</td></tr>
+<tr><td>TikTok</td><td>个人资料照片</td><td>200 × 200像素</td></tr>
+<tr><td>YouTube</td><td>缩略图</td><td>1280 × 720像素</td></tr>
+<tr><td>Pinterest</td><td>标准图钉</td><td>1000 × 1500像素（2:3）</td></tr>
+</table>
+
+<h2>一键调整所有社交图片尺寸</h2>
+<p>与其记住几十个尺寸，不如使用 <a href="/zh/resize">Image Toolbox</a> 为任何平台调整图片大小。只需输入目标尺寸或选择预设，工具会处理其余部分——保持宽高比、智能裁切、以你喜欢的格式导出。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">2026年Instagram最佳图片尺寸是多少？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">为了最大可见度，动态帖子使用1080 × 1350像素（4:5竖向比例）。这在滚动中占据最多的屏幕空间，获得最多的互动。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Instagram会压缩上传的图片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">是的。Instagram会压缩所有上传内容以减少带宽。以推荐尺寸上传（不要更大）可以在质量和文件大小之间获得最佳平衡。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">如果我的图片尺寸不对会发生什么？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">大多数平台会自动裁切或加黑边你的图片。这经常会裁掉重要元素如人脸或文字。在上传前自己调整大小和裁切总是更好的选择。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'crop-photo-passport-size',
+      title: '如何将照片裁切成证件照尺寸（1寸、2寸、35×45mm）',
+      date: '2026-05-14',
+      tags: ['裁切', '证件照', '调整尺寸'],
+      content: `<h2>各国证件照官方尺寸</h2>
+<p>各国护照照片要求差异很大。使用错误的尺寸是申请被拒绝最常见的原因之一：</p>
+<ul>
+<li><strong>中国：</strong>33 × 48 mm（300 DPI下260 × 372像素）</li>
+<li><strong>美国：</strong>2 × 2 英寸（51 × 51 mm，600 × 600像素）</li>
+<li><strong>申根区（欧盟）：</strong>35 × 45 mm（413 × 531像素）</li>
+<li><strong>英国：</strong>35 × 45 mm</li>
+<li><strong>印度：</strong>35 × 45 mm</li>
+<li><strong>日本：</strong>35 × 45 mm</li>
+</ul>
+<p>在拍摄或提交照片前，务必在你国家官方护照网站上查看最新要求。规定可能会变化，一些国家对数字提交和打印照片有不同的要求。</p>
+
+<h2>背景色要求</h2>
+<p>大多数国家要求纯色浅色背景，无阴影或图案：</p>
+<ul>
+<li><strong>白色：</strong>RGB(255, 255, 255) — 最常见，美国、中国、英国使用</li>
+<li><strong>浅蓝色：</strong>RGB(67, 142, 219) — 一些欧盟国家使用</li>
+<li><strong>浅灰色：</strong>RGB(220, 220, 220) — 许多司法管辖区接受</li>
+</ul>
+<p>背景必须是均匀的。避免纹理墙壁、门或窗户。专业摄影师使用纯色背景或平整悬挂的白色床单。</p>
+
+<h3>分步教程：用在线工具裁切和缩放</h3>
+<p><img src="/placeholder.svg" alt="证件照裁切界面显示尺寸指南和背景检查"></p>
+<p>你不需要昂贵的摄影棚软件来创建合规的证件照。使用 <a href="/zh/crop">Image Toolbox</a> 和 <a href="/zh/resize">我们的调整尺寸工具</a>，整个过程不到两分钟：</p>
+<ol>
+<li><strong>拍照</strong>，背靠平整墙壁，光线均匀。正对相机，不微笑，眼睛睁开。</li>
+<li><strong>上传到 Image Toolbox</strong> 并选择裁切工具。选择符合你国家要求的宽高比。</li>
+<li><strong>调整裁切框</strong>，使你的脸部占高度的70-80%，两侧空间相等。</li>
+<li><strong>使用调整尺寸工具精确调整到像素尺寸</strong>。输入你国家在300 DPI下的宽度和高度。</li>
+<li><strong>下载并在专业冲印店打印</strong>，使用哑光相纸。</li>
+</ol>
+
+<h2>打印技巧（300 DPI）</h2>
+<p>证件照的黄金法则：<strong>最低300 DPI</strong>。将毫米转换为像素的公式：</p>
+<pre><code>像素 = 毫米 × 300 ÷ 25.4</code></pre>
+<p>例如，35 × 45 mm的申根照片需要至少413 × 531像素。以较低的DPI打印会产生模糊的照片，移民官员可能会拒绝。</p>
+
+<h2>常见被拒原因</h2>
+<p>即使尺寸正确，照片也会因为以下原因被拒：</p>
+<ul>
+<li><strong>戴眼镜</strong> — 大多数国家现在禁止护照照片戴眼镜</li>
+<li><strong>微笑或露齿</strong> — 需要中性表情</li>
+<li><strong>脸部或背景有阴影</strong> — 使用均匀的前置照明</li>
+<li><strong>头部太小或太大</strong> — 脸部应占画面高度的70-80%</li>
+<li><strong>衣服颜色不对</strong> — 避免白色背景穿白色衬衫</li>
+</ul>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以用自拍作为证件照吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">一些国家接受自拍，只要满足所有要求：正确尺寸、纯色背景、中性表情、正确的头部大小。然而，让别人帮你拍照通常能产生更好的构图效果。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">证件照应使用多少DPI打印？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">300 DPI是证件照的标准最低要求。较低的DPI会产生模糊的图像，可能会被拒绝。大多数专业冲印店默认照片打印为300 DPI。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以将现有照片裁切成证件照尺寸吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以，只要原始照片有足够的分辨率。使用Image Toolbox等在线裁切工具选择正确的宽高比，然后调整到你国家要求的确切像素尺寸。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'crop-images-instagram',
+      title: '如何为Instagram裁切图片且不损失画质',
+      date: '2026-05-15',
+      tags: ['裁切', 'instagram', '社交媒体'],
+      content: `<h2>Instagram的隐藏裁切规则</h2>
+<p>Instagram不会以其上传分辨率显示图片。相反，它根据宽高比裁切和压缩图片。大多数用户没有意识到的是：<strong>4:5比例的竖向图片在动态中获得的屏幕空间最大</strong>，而横向图片被缩小以适应小得多的区域。这直接影响互动——更大的图片获得更多关注、更多点赞和更多评论。</p>
+<p>当你上传图片时，Instagram的算法还会应用压缩。一个10MB的原始文件可能会以不到200KB的大小提供给观看者。从正确的尺寸和高质量的源文件开始，可以确保压缩版本仍然看起来清晰。</p>
+
+<h2>3个最重要的比例</h2>
+<p>Instagram支持三种主要宽高比，每种针对不同内容类型优化：</p>
+<ul>
+<li><strong>1:1（方形）：</strong>1080 × 1080像素 — 经典Instagram格式。在所有展示位置都安全，但比4:5使用更少的垂直空间。</li>
+<li><strong>4:5（竖向）：</strong>1080 × 1350像素 — 最大动态覆盖率。适合照片、轮播和详细视觉内容。</li>
+<li><strong>9:16（快拍/Reels）：</strong>1080 × 1920像素 — 全屏竖向格式。快拍、Reels和IGTV内容必需。</li>
+</ul>
+
+<h3>安全区域：文字远离边缘</h3>
+<p><img src="/placeholder.svg" alt="Instagram安全区域示意图，显示容易被UI覆盖的区域"></p>
+<p>Instagram会在你的图片上叠加UI元素。动态帖子的底部10%被标题和互动按钮覆盖。在快拍中，顶部和底部边缘可能被个人资料图标和向上滑动提示部分遮挡。设计带有文字或关键视觉元素的图形时，将重要内容保持在<strong>画面中央80%范围内</strong>，确保不会被裁掉。</p>
+
+<h2>人像照片Instagram裁切技巧</h2>
+<p>对于人像摄影，构图和尺寸同样重要：</p>
+<ul>
+<li>在主体头部上方留<strong>10-15%的头顶空间</strong></li>
+<li>将眼睛定位在<strong>上方三分之一水平线</strong>上</li>
+<li>避免在关节处（手腕、膝盖、脚踝）裁切 — 会产生尴尬的视觉断裂</li>
+<li>对偏离中心的构图使用三分法</li>
+</ul>
+
+<h2>免费Instagram裁切工具</h2>
+<p>与其在手机默认相册中猜测比例，不如使用 <a href="/zh/crop">Image Toolbox</a> 精确为Instagram裁切。选择1:1、4:5或9:16预设，视觉调整裁切框，下载完美尺寸的图片——无需安装应用。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Instagram互动最佳裁切比例是什么？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">4:5竖向比例（1080 × 1350像素）是动态帖子的最佳选择，因为它在用户滚动时占据最多的垂直屏幕空间，使你的内容更显眼。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">裁切会降低Instagram上的图片质量吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">如果你从高分辨率图像开始，裁切本身不会降低质量。然而，Instagram会对所有上传内容应用额外压缩。从推荐的像素尺寸和清晰的原始文件开始，可以最小化质量损失。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以在Instagram上发布横向照片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以，但横向图片（16:9或更宽）在动态中显示得小得多。对于风景和团体照，考虑使用轮播功能，或将照片裁切为4:5竖向，在主体上下留出负空间。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'resize-images-ecommerce',
+      title: '如何为电商平台调整图片尺寸（Amazon、eBay、Shopify）',
+      date: '2026-05-16',
+      tags: ['调整尺寸', '电商', 'amazon'],
+      content: `<h2>Amazon商品图片要求</h2>
+<p>Amazon拥有电商中最严格的图片要求之一。不合规的图片可能会抑制商品列表或阻止产品出现在搜索结果中：</p>
+<ul>
+<li><strong>主图：</strong>2000 × 2000像素（1:1比例），纯白背景（RGB 255,255,255）</li>
+<li><strong>最小尺寸：</strong>最短边1000像素</li>
+<li><strong>文件格式：</strong>JPG、TIFF、PNG或GIF（无动画GIF）</li>
+<li><strong>主图上不能有文字、Logo、水印或边框</strong></li>
+<li><strong>产品必须占画面的85%</strong></li>
+</ul>
+<p>Amazon的缩放功能在1000+像素时激活，高分辨率图片（2000px）使顾客能够仔细查看产品细节。这直接关系到转化率——带有缩放功能的图片销售更好。</p>
+
+<h2>eBay照片规范</h2>
+<p>eBay比Amazon更灵活，但仍有影响可见性的推荐标准：</p>
+<ul>
+<li><strong>推荐尺寸：</strong>最长边1600像素</li>
+<li><strong>宽高比：</strong>方形（1:1）表现最佳</li>
+<li><strong>文件大小：</strong>每张图片最大12MB</li>
+<li><strong>最小尺寸：</strong>最长边500像素</li>
+</ul>
+<p>eBay的搜索算法偏爱高质量照片的列表。太小或裁切不当的图片在搜索结果中获得较低的排名。</p>
+
+<h3>Shopify图片优化</h3>
+<p><img src="/placeholder.svg" alt="电商产品照片尺寸指南，显示Amazon、eBay和Shopify的要求"></p>
+<p>Shopify自动处理图片优化，但有一些重要的注意事项：</p>
+<ul>
+<li><strong>最大上传尺寸：</strong>每张图片20MB</li>
+<li><strong>显示限制：</strong>2048 × 2048像素（更大的图片会被缩小）</li>
+<li><strong>自动格式转换：</strong>Shopify向支持的浏览器提供WebP格式</li>
+<li><strong>生成多尺寸：</strong>缩略图、中号、大号和全尺寸版本</li>
+</ul>
+<p>尽管Shopify有自动化功能，从一开始上传正确尺寸的图片可以确保商店加载更快，主题间的视觉一致性更好。</p>
+
+<h2>电商图片工作流</h2>
+<p>专业产品摄影师遵循一致的流程：</p>
+<ol>
+<li><strong>以RAW格式拍摄</strong>，获得最大的编辑灵活性</li>
+<li><strong>在Lightroom或Photoshop中编辑和调色</strong></li>
+<li><strong>裁切成方形（1:1）</strong>，保持平台一致性</li>
+<li><strong>调整到平台要求</strong> — Amazon用2000px，eBay用1600px</li>
+<li><strong>压缩到80-90%质量</strong>，实现快速加载</li>
+<li><strong>添加水印</strong>，如果在多个平台销售（仅限次要图片）</li>
+</ol>
+
+<h2>免费商品照片尺寸调整工具</h2>
+<p>使用 <a href="/zh/resize">Image Toolbox</a> 调整尺寸和 <a href="/zh/watermark">我们的水印工具</a> 进行品牌化，简化你的电商工作流。上传编辑好的照片，批量调整到平台特定尺寸，并添加 subtle 水印——全部无需订阅费或软件安装。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Amazon商品图片应该多大？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Amazon推荐2000 × 2000像素（1:1比例），纯白背景。最低接受尺寸是最短边1000像素。2000px的图片启用缩放功能，可提高转化率。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">图片尺寸会影响电商销售吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">会。研究表明，带有高分辨率、可缩放图片的列表比小或模糊照片的转化率高20-30%。图片质量体现专业性，建立买家信任。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我应该在产品照片上加水印吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Amazon禁止在主图上加水印。对于次要图片和其他平台，subtle的水印（30-50%不透明度，放在角落）可以保护免受未经授权的使用，而不会分散对产品的注意力。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'maintain-aspect-ratio',
+      title: '如何在调整图片大小时保持宽高比',
+      date: '2026-05-17',
+      tags: ['调整尺寸', '宽高比', '教程'],
+      content: `<h2>什么是宽高比，为什么重要？</h2>
+<p>宽高比描述图像宽度与高度之间的比例关系，用两个用冒号分隔的数字表示。常见比例包括：</p>
+<ul>
+<li><strong>4:3</strong> — 旧相机和显示器的标准；截图常用</li>
+<li><strong>16:9</strong> — 宽屏视频和现代显示器；YouTube缩略图理想</li>
+<li><strong>1:1</strong> — 方形格式；Instagram和许多电商平台使用</li>
+<li><strong>3:4</strong> — 竖向；手机屏幕和Pinterest流行</li>
+<li><strong>21:9</strong> — 超宽电影格式；电影剧照和壁纸使用</li>
+</ul>
+<p>当你改变图像尺寸而不保持其宽高比时，结果就是失真。人看起来被拉伸，圆变成椭圆，建筑物看起来倾斜。这是非设计人员在调整图片大小时最常犯的错误。</p>
+
+<h2>自由调整大小的问题</h2>
+<p>大多数基础图像编辑器允许你自由拖动调整大小手柄——独立改变宽度和高度。这对将图像放入特定容器很方便，但会带来严重的视觉代价：</p>
+<p><img src="/placeholder.svg" alt="正确调整大小与拉伸失真图像的并排对比"></p>
+<ul>
+<li><strong>水平拉伸</strong>使主体看起来比实际更宽</li>
+<li><strong>垂直拉伸</strong>产生"哈哈镜"效果</li>
+<li><strong>不均匀缩放</strong>扭曲文字，使其难以阅读</li>
+</ul>
+<p>专业设计师从不解锁宽高比调整图像大小。唯一的例外是故意创建风格化失真——这在商业作品中很少见。</p>
+
+<h3>如何锁定比例调整大小</h3>
+<p>每个有信誉的图像编辑器都包含在调整大小期间保持宽高比的选项：</p>
+<ul>
+<li>在Photoshop中：勾选宽度和高度字段之间的链链接图标</li>
+<li>在GIMP中：点击缩放图像对话框旁边的链图标</li>
+<li>在在线工具中：寻找"锁定宽高比"或"保持比例"复选框</li>
+</ul>
+<p>启用此选项后，改变宽度会自动按相同比例调整高度，反之亦然。图像均匀缩放，零失真。</p>
+
+<h2>手动计算新尺寸</h2>
+<p>如果你需要将图像放入特定容器同时保持宽高比，使用这些公式：</p>
+<pre><code>新宽度 = 原始宽度 × (目标高度 ÷ 原始高度)
+新高度 = 原始高度 × (目标宽度 ÷ 原始宽度)</code></pre>
+<p>例如，将4000 × 3000像素的图像放入1200像素宽的空间：</p>
+<pre><code>新高度 = 3000 × (1200 ÷ 4000) = 900像素
+结果：1200 × 900像素（保持4:3比例）</code></pre>
+
+<h2>带比例锁定的在线工具</h2>
+<p>不想做数学计算？<a href="/zh/resize">Image Toolbox</a> 默认自动保持宽高比。只需输入目标宽度或高度，另一个尺寸会立即计算出来。你还可以从预设比例（1:1、4:3、16:9、9:16）中选择，满足常见用例。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">如果我不保持宽高比调整大小会发生什么？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">图像会变得失真。圆变成椭圆，脸部看起来被拉伸或压扁，文字变得难以阅读。除非你在故意创建风格化效果，否则始终锁定宽高比。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">如何将图像调整到适合特定容器？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">通过将目标尺寸除以原始尺寸来计算缩放因子，然后将该因子应用于宽度和高度。使用带宽高比锁定的在线调整大小工具来自动化此过程。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以不拉伸就改变宽高比吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以，但这需要裁切而不是调整大小。使用裁切工具从原始图像中选择不同的比例。裁切框内的内容将保持其比例，但你会丢失框外部分的图像。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'crop-screenshot-remove-ui',
+      title: '如何裁切截图以去除多余UI元素',
+      date: '2026-05-18',
+      tags: ['裁切', '截图', '教程'],
+      content: `<h2>为什么截图需要裁切</h2>
+<p>截图会捕捉屏幕上的所有内容——而"所有内容"通常包括你不想分享的元素：</p>
+<ul>
+<li><strong>隐私信息：</strong>浏览器标签页中的电子邮件地址、电话号码、账户ID</li>
+<li><strong>分散注意力的UI：</strong>通知横幅、系统托盘图标、浏览器书签</li>
+<li><strong>无关内容：</strong>多个打开的标签页、桌面壁纸、任务栏应用</li>
+<li><strong>竞争数据：</strong>内部仪表板、未发布功能、定价信息</li>
+</ul>
+<p>原始截图说"我快速抓取了这个。"裁切过的截图说"我精心准备了这个。"对于文档、教程和专业沟通，裁切不是可选的——它是必不可少的。</p>
+
+<h2>完美截图尺寸</h2>
+<p>不同场景需要不同的截图尺寸：</p>
+<ul>
+<li><strong>教程图片：</strong>800-1200像素宽 — 在手机上无需缩放即可阅读</li>
+<li><strong>文档嵌入：</strong>匹配你的CMS或wiki的栏宽</li>
+<li><strong>Bug报告：</strong>全屏截图捕捉完整上下文；仅裁切敏感区域</li>
+<li><strong>社交媒体：</strong>Twitter/X用1200 × 675像素（16:9），Instagram用1080 × 1350（4:5）</li>
+</ul>
+<p>不确定时，瞄准1000-1200像素宽。这个宽度在大多数设备上清晰显示，同时保持文件大小可管理。</p>
+
+<h3>为文档和教程裁切</h3>
+<p><img src="/placeholder.svg" alt="截图裁切示例，显示去除浏览器UI前后的对比"></p>
+<p>技术文档需要精确裁切。遵循以下指南：</p>
+<ol>
+<li><strong>去除浏览器边框</strong> — 地址栏、标签页和书签会分散内容注意力</li>
+<li><strong>每张截图聚焦一个动作</strong> — 不要展示多个无关的UI元素</li>
+<li><strong>在焦点元素周围留20-30像素边距</strong>，使其不接触图像边缘</li>
+<li><strong>在单个教程中保持一致的尺寸</strong></li>
+</ol>
+
+<h2>分步教程：裁切和标注</h2>
+<p>使用 <a href="/zh/crop">Image Toolbox</a>，创建专业截图只需几秒钟：</p>
+<ol>
+<li>截取你的截图并上传到裁切工具</li>
+<li>拖动裁切框以隔离相关区域</li>
+<li>使用缩放预览验证没有重要内容被裁掉</li>
+<li>将裁切后的图像下载为PNG，以保留文字清晰度</li>
+</ol>
+
+<h2>裁切后的截图保存为PNG（不是JPG！）</h2>
+<p>截图包含文字、UI元素和锐利边缘。JPG的有损压缩会模糊这些细节，在字符和边框周围产生可见的伪影。PNG完美保留每个像素，确保你的文档保持清晰和专业。</p>
+<p>比较以80%质量保存为JPG与PNG的截图：JPG版本会显示模糊的文字、图标周围的色彩边缘和块状压缩伪影。PNG版本看起来和你的屏幕一模一样。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我应该在标注前还是标注后裁切截图？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">先裁切，再标注。在添加箭头和文字后裁切可能会裁掉你的标注，或使它们尴尬地靠近边缘。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">裁切后的截图应保存为什么格式？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">截图始终使用PNG。PNG保留JPG会模糊的文字清晰度和UI细节。只有在文件大小至关重要且截图不包含文字时才转换为JPG。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">如何从截图中删除敏感信息？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">如果可能，完全裁切掉敏感区域。如果敏感数据与你需要显示的内容混合在一起，使用纯色矩形覆盖（涂黑）而不是模糊——模糊的文字有时可以还原。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'create-youtube-thumbnails',
+      title: '如何制作完美的YouTube缩略图（1280×720）',
+      date: '2026-05-19',
+      tags: ['youtube', '缩略图', '裁切', '调整尺寸'],
+      content: `<h2>为什么1280×720是YouTube标准</h2>
+<p>YouTube缩略图以1280 × 720像素显示——一个与视频播放器匹配的16:9宽屏比例。这不是随意的。16:9比例确保你的缩略图在所有设备上看起来正确：台式机、平板、手机和智能电视。恰好以1280 × 720上传可以保证YouTube在处理期间不会裁切或扭曲你的图像。</p>
+<p>文件大小也很重要。YouTube建议将缩略图保持在2MB以下。80%质量的JPG通常可以在保持视觉清晰度的同时达到这个大小。较大的文件上传更慢，可能会被YouTube的处理管线拒绝。</p>
+
+<h2>获得点击的缩略图设计法则</h2>
+<p>表现最佳的YouTube缩略图具有A/B测试数据支持的共同特征：</p>
+<ul>
+<li><strong>大而可读的文字：</strong>使用至少72pt的粗体字体。观看者以小尺寸看到缩略图——文字必须在手机屏幕上清晰可辨。</li>
+<li><strong>高对比度：</strong>深色背景上的浅色文字（或反之）在搜索结果和推荐视频中格外醒目。</li>
+<li><strong>带表情的人脸：</strong>显示惊讶、兴奋或情绪化面孔的缩略图比中性图片获得30%+的点击率。</li>
+<li><strong>元素最少：</strong>一个焦点，最多2-3个文字。杂乱的缩略图会迷惑观看者。</li>
+<li><strong>一致的品牌：</strong>在所有视频中使用相同的配色方案、字体和布局风格，以获得频道识别度。</li>
+</ul>
+
+<h3>裁切和缩放基础图片</h3>
+<p><img src="/placeholder.svg" alt="YouTube缩略图设计模板显示安全区域和文字放置位置"></p>
+<p>从高分辨率照片或图形（至少1920 × 1080）开始，使用 <a href="/zh/crop">Image Toolbox</a> 裁切为16:9比例。然后 <a href="/zh/resize">精确调整到1280 × 720</a>。这个两步流程确保你的源素材清晰，同时输出精确符合YouTube规范。</p>
+<p>裁切时，将主体的脸部放在画面的左三分之一处。YouTube在右侧叠加视频时长和稍后观看按钮——将焦点保持在左侧可以防止UI元素遮挡重要内容。</p>
+
+<h2>添加文字叠加（水印工具妙用）</h2>
+<p>你不需要Photoshop来添加缩略图文字。<a href="/zh/watermark">Image Toolbox的水印工具</a> 非常适合添加频道名称、集数或关键字文字叠加。将文字放在上三分之一或下三分之一处，保持在4个字以内，使用与背景图片形成强烈对比的颜色。</p>
+
+<h2>YouTube导出设置</h2>
+<p>为获得最佳效果：</p>
+<ul>
+<li><strong>格式：</strong>照片用JPG，带文字的图形用PNG</li>
+<li><strong>质量：</strong>JPG质量80%（大小与清晰度的最佳点）</li>
+<li><strong>文件大小：</strong>2MB以下</li>
+<li><strong>尺寸：</strong>精确1280 × 720像素</li>
+</ul>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">YouTube缩略图最佳尺寸是多少？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">1280 × 720像素（16:9比例）是YouTube标准。这确保你的缩略图在所有设备上正确显示，不会被裁切或失真。保持文件大小在2MB以下。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我需要Photoshop来制作YouTube缩略图吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不需要。像Image Toolbox这样的免费浏览器工具可以裁切、调整大小和添加文字叠加。对于更高级的设计，Canva和Photopea提供专门为YouTube缩略图设计的免费模板。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">为什么我的YouTube缩略图看起来模糊？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">模糊缩略图通常是由于上传低分辨率源图像或过度压缩造成的。从高分辨率图像开始，裁切为16:9，调整到1280 × 720，并以80%质量导出。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'add-watermark-photos',
+      title: '如何为照片添加水印：2026年最佳实践',
+      date: '2026-05-20',
+      tags: ['水印', '版权', '品牌'],
+      content: `<h2>为什么水印仍然重要</h2>
+<p>在AI图像生成和即时截图分享的时代，你可能会想水印是否仍然相关。答案是肯定的——但原因与十年前不同。如今水印主要服务于三个目的：</p>
+<ul>
+<li><strong>防盗威慑：</strong>可见水印增加了盗用和重新利用你的图像所需的时间和精力。随意的截图者会跳过带水印的图像，选择更容易的目标。</li>
+<li><strong>品牌曝光：</strong>你的水印图像的每次分享都成为免费广告。你的名字或Logo随着图像在社交媒体、博客和消息应用中传播。</li>
+<li><strong>版权证据：</strong>在法律纠纷中，水印证明你的所有权声明和创作日期。</li>
+</ul>
+
+<h2>文字水印 vs Logo水印</h2>
+<p>选择文字水印还是Logo水印取决于你的用例：</p>
+<table>
+<tr><th>类型</th><th>最适合</th><th>优点</th><th>缺点</th></tr>
+<tr><td>文字水印</td><td>摄影师、博主、 casual 使用</td><td>快速创建，小尺寸可读，传达联系信息</td><td>视觉辨识度较低，如果样式不佳可能显得业余</td></tr>
+<tr><td>Logo水印</td><td>品牌、代理商、专业人士</td><td>强化品牌识别，视觉上更精致</td><td>需要设计技能，小尺寸可能不易辨认</td></tr>
+</table>
+
+<h3>最佳水印设置</h3>
+<p><img src="/placeholder.svg" alt="水印放置指南显示不透明度、大小和位置的最佳实践"></p>
+<p>在测试了数千张带水印的图像后，这些设置始终在保护和美观之间产生最佳平衡：</p>
+<ul>
+<li><strong>位置：</strong>右下角是标准位置。为了更强的保护，将水印放在主体的非关键区域上。</li>
+<li><strong>不透明度：</strong>30-50%。太不透明会毁掉图像；太透明则容易被去除。</li>
+<li><strong>大小：</strong>图像最短边的3-5%。在3000px宽的照片上，水印应为90-150px宽。</li>
+<li><strong>颜色：</strong>白色或黑色，带有微妙的阴影或描边，以便在任何背景下都可见。</li>
+</ul>
+
+<h2>分步教程：在线添加水印</h2>
+<p>使用 <a href="/zh/watermark">Image Toolbox</a>，添加水印不到一分钟：</p>
+<ol>
+<li>将你的图像上传到水印工具</li>
+<li>输入你的文字或上传你的Logo</li>
+<li>拖动以在图像上定位水印</li>
+<li>使用滑块调整不透明度（从40%开始）</li>
+<li>全尺寸预览，然后下载带水印的图像</li>
+</ol>
+
+<h2>摄影师批量加水印</h2>
+<p>如果你每次拍摄交付100+张图像，逐张加水印是不切实际的。解决方案：在一个会话中处理整个文件夹。上传多张图像，将相同的水印设置应用于所有图像，然后下载完整集合。作品集间水印风格的一致性体现专业性。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我应该在照片的哪里放置水印？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">右下角是标准放置位置。为了更强的防裁切保护，将水印放在主体的非关键区域上（如人像的下半身）。如果盗窃是主要顾虑，避免将水印放在容易被裁掉的角落。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">照片水印应该使用多少不透明度？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">30-50%不透明度是最佳范围。30%时水印可见但不碍眼。50%时提供更强的保护，同时仍允许欣赏图像。超过60%开始显著分散对照片的注意力。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我应该在社交媒体上发布前给图片加水印吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">是的，特别是在Instagram和Pinterest等图片容易被转载而未注明来源的平台上。微妙的水印确保你的品牌随图像传播。保持水印小巧，放置在平台UI元素不会覆盖的位置。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'watermark-stop-image-theft',
+      title: '添加水印真的能阻止盗图吗？',
+      date: '2026-05-21',
+      tags: ['水印', '版权', '保护'],
+      content: `<h2>诚实答案：只能部分保护</h2>
+<p>让我们直接说：水印无法阻止决心偷图的人。在2026年，任何具有基本编辑技能的人都可以使用免费工具在30秒内去除角落水印。Photoshop、GIMP和在线编辑器中的AI驱动修复功能可以无缝擦除文字叠加并重建底层图像。</p>
+<p>那为什么还要费心上水印呢？因为<strong>水印不是关于阻止专业盗贼——它们是关于阻止随意滥用</strong>。那个为你的博客截图照片的青少年、那个抓取你的图像用于Facebook帖子的小企业、那个批量收集无标记照片的聚合网站——这些才是水印实际阻止的用户。</p>
+
+<h2>水印实际能起到什么作用</h2>
+<p>水印提供三个不需要绝对防盗的现实世界好处：</p>
+<ul>
+<li><strong>增加时间成本：</strong>带水印的图像需要 effort 来清理。随意用户会跳过它，寻找更容易的目标。你不是在建造堡垒——你是在竖起栅栏。</li>
+<li><strong>创造法律证据：</strong>在版权纠纷中，可见水印证明先前所有权和有意品牌化。法院已将水印认定为创作者意图的证据。</li>
+<li><strong>推动品牌知名度：</strong>你的水印图像的每次转发——即使是未经授权的——都会传播你的名字。一些摄影师故意使用微妙的水印，专门为了这种病毒式营销效果。</li>
+</ul>
+
+<h3>水印位置策略</h3>
+<p><img src="/placeholder.svg" alt="水印放置对比：角落 vs 平铺 vs 集成叠加"></p>
+<p>水印放置的位置比内容更重要：</p>
+<ul>
+<li><strong>角落放置：</strong>5秒就能裁掉。仅对社交分享的品牌归属有用。</li>
+<li><strong>全屏平铺：</strong>几乎不可能去除，但使图像无法观看。对大多数用例来说过度。</li>
+<li><strong>主体集成叠加：</strong>最佳平衡。将水印放在主体的非关键部分（下半身、背景天空）。盗贼必须重建实际图像内容才能去除，这需要技能和时间。</li>
+</ul>
+
+<h2>多层保护：水印 + 元数据 + 条款</h2>
+<p>聪明的创作者不单独依赖水印。分层方法提供纵深防御：</p>
+<ol>
+<li><strong>可见水印：</strong>阻止随意滥用并推动品牌识别</li>
+<li><strong>EXIF版权元数据：</strong>在文件的元数据中嵌入你的名字和版权声明</li>
+<li><strong>网站使用条款：</strong>明确声明图片受版权保护，未经授权使用被禁止</li>
+<li><strong>反向图片搜索监控：</strong>定期搜索你的图像以发现未经授权的使用</li>
+</ol>
+
+<h2>免费水印工具（无需Photoshop）</h2>
+<p>你不需要昂贵的软件来保护你的图像。<a href="/zh/watermark">Image Toolbox</a> 提供免费浏览器水印功能，具有可调不透明度、定位和批量处理——无需订阅，无需安装，你的图像永远不会离开你的设备。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">水印可以完全去除吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以。现代AI驱动的编辑工具可以在几秒钟内去除简单的角落水印。复杂的集成水印需要更多 effort，但熟练的编辑仍然可以去除。水印阻止随意盗窃，而非决心坚定的专业人士。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">水印对版权具有法律约束力吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">水印不是版权保护的法律要求——当你创建图像时版权自动存在。然而，水印在纠纷中作为所有权证据，根据一些司法管辖区的版权法，可能使你获得额外赔偿。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">有什么比水印更好的保护方式？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">没有单一方法是万无一失的。最佳保护是分层方法：可见水印、EXIF元数据、明确的使用条款、低分辨率网页预览，以及通过反向图片搜索的主动监控。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'remove-exif-data',
+      title: '如何在分享前删除照片的EXIF数据',
+      date: '2026-05-22',
+      tags: ['隐私', 'exif', '元数据'],
+      content: `<h2>什么是EXIF数据，为什么危险？</h2>
+<p>每当你用智能手机或数码相机拍照时，设备会嵌入称为EXIF（可交换图像文件格式）的隐藏元数据。这些数据包括：</p>
+<ul>
+<li><strong>GPS坐标：</strong>照片拍摄地点的精确经纬度</li>
+<li><strong>时间戳：</strong>拍摄的精确日期和时间，精确到秒</li>
+<li><strong>相机型号和序列号：</strong>识别你的特定设备</li>
+<li><strong>镜头信息：</strong>焦距、光圈、ISO设置</li>
+<li><strong>软件版本：</strong>操作系统和相机应用版本</li>
+</ul>
+<p>从表面上看，这些数据有助于照片组织和编辑。但当公开分享时，EXIF数据成为隐私隐患。一张你家门口的照片可能泄露你的确切地址。一张度假照片可能暴露你的酒店位置和外出日期。</p>
+
+<h2>真实世界的隐私风险</h2>
+<p>EXIF数据在已有记录的案例中被利用：</p>
+<ul>
+<li><strong>入室盗窃：</strong>小偷分析社交媒体照片的GPS坐标来定位有价值的房产，然后交叉参考发布日期来确定居民何时外出。</li>
+<li><strong>跟踪和骚扰：</strong>EXIF位置数据已被用于追踪个人的日常路线和常去地点。</li>
+<li><strong>企业间谍活动：</strong>竞争对手从泄露的产品照片中提取位置和时间戳数据，推断制造设施和发布时间表。</li>
+</ul>
+
+<h3>3种删除EXIF元数据的方法</h3>
+<p><img src="/placeholder.svg" alt="EXIF数据删除选项：Windows属性对话框、在线工具界面和命令行"></p>
+<p>你有三种删除EXIF数据的选择，从手动到自动：</p>
+<ol>
+<li><strong>Windows属性（手动）：</strong>右键点击图像 → 属性 → 详细信息 → "删除属性和个人信息"。适用于单个文件，但批量处理很繁琐。</li>
+<li><strong>在线工具（基于浏览器）：</strong>上传到 <a href="/zh/">Image Toolbox</a> — 工具完全在你的浏览器中处理图像，导出时剥离元数据。不上传到外部服务器意味着零隐私风险。</li>
+<li><strong>命令行（高级）：</strong>安装 <code>exiftool</code> 并运行 <code>exiftool -all= image.jpg</code> 来剥离所有元数据。适合批量处理数百个文件。</li>
+</ol>
+
+<h2>转换格式会删除EXIF吗？</h2>
+<p>格式转换对EXIF数据的影响不可预测：</p>
+<ul>
+<li><strong>JPG → PNG：</strong>转换过程中大部分EXIF数据丢失，但一些字段可能persist，取决于转换工具。</li>
+<li><strong>JPG → WebP：</strong>WebP支持EXIF嵌入，所以数据可能被保留，除非明确剥离。</li>
+<li><strong>PNG → JPG：</strong>PNG不原生存储EXIF，所以从PNG转换为JPG会创建一个没有相机元数据的干净文件。</li>
+</ul>
+<p><strong>不要单独依赖格式转换来保护隐私。</strong>在分享任何敏感照片前，明确剥离元数据。</p>
+
+<h2>隐私优先的图片处理</h2>
+<p>最隐私安全的方法是浏览器端处理。使用 <a href="/zh/">Image Toolbox</a>，你的图像完全在你的设备上处理。它们永远不会上传到服务器，永远不会存储在数据库中，永远不会暴露给第三方。结合明确的EXIF剥离，你就有了一个用于敏感图像处理的零信任工作流。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">每张照片都有EXIF数据吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">大多数用智能手机和数码相机拍摄的照片包含EXIF数据。从社交媒体（Instagram、Facebook、Twitter）下载的图像通常已被平台剥离EXIF。截图和设计软件中创建的图像通常有很少或没有EXIF数据。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">EXIF数据删除后可以恢复吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不可以。一旦EXIF元数据被正确剥离，就无法从该文件中恢复。然而，带有完整元数据的原始文件副本可能仍然存在于你的设备或云备份中。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">使用在线工具删除EXIF数据安全吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">这取决于工具。服务器端处理图像的工具会产生隐私风险——你的文件被上传到别人的计算机。浏览器端本地处理的工具（如Image Toolbox）要安全得多，因为图像永远不会离开你的设备。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'create-transparent-png-logo',
+      title: '如何从JPG创建透明背景的PNG Logo',
+      date: '2026-05-23',
+      tags: ['png', 'logo', '透明度', '格式'],
+      content: `<h2>为什么Logo需要透明背景</h2>
+<p>没有透明背景的Logo就像永久粘在白色画布上的画作。它限制了你的使用地点和方式。透明PNG Logo可以放在任何背景颜色上——深色网站、彩色社交媒体横幅、演示文稿幻灯片、商品和视频叠加——而不会被尴尬的白框包围。</p>
+<p>考虑这些真实场景：</p>
+<ul>
+<li><strong>网站页眉：</strong>你的Logo放在深蓝色导航栏上。没有透明度，它显示为中间有Logo的白色矩形。</li>
+<li><strong>社交媒体横幅：</strong>平台页眉有渐变或图像背景。非透明Logo与设计风格冲突。</li>
+<li><strong>视频片头：</strong>透明Logo平滑叠加在画面上，不会遮挡内容。</li>
+</ul>
+
+<h2>JPG的局限（没有Alpha通道）</h2>
+<p>JPG是照片的绝佳格式，但根本不适合Logo。原因：<strong>JPG不支持Alpha通道</strong>——控制透明度的技术组件。每个JPG像素都是完全不透明的。当你将JPG Logo放在深色背景上时，图像的"背景"区域呈现为纯白色而不是透明。</p>
+<p>这就是将Logo保存为JPG几乎总是错误的原因。即使Logo在你的设计软件中看起来不错，导出为JPG会破坏任何透明度并将纯色背景烘焙进去。</p>
+
+<h3>JPG转PNG只是第一步</h3>
+<p><img src="/placeholder.svg" alt="图表显示深色网站上白底JPG vs 透明背景PNG"></p>
+<p>这里有一个大多数人忽略的关键区别：<strong>将JPG转换为PNG不会自动去除背景</strong>。它只是改变了文件格式。如果你的JPG有白色背景，转换为PNG会产生带有白色背景的PNG。你必须主动去除背景才能实现透明。</p>
+<p>使用 <a href="/zh/">Image Toolbox</a> 将JPG转换为PNG作为起点。然后使用以下方法之一进行背景去除。</p>
+
+<h2>免费去背景替代方案</h2>
+<p>有几种免费工具可以去除Logo背景：</p>
+<ul>
+<li><strong>remove.bg：</strong>AI驱动的背景去除。上传你的图像并下载透明PNG。低分辨率图像免费；高分辨率输出付费。</li>
+<li><strong>Photopea：</strong>免费的浏览器版Photoshop替代品。使用魔棒或快速选择工具选择并删除背景，然后导出为PNG-24。</li>
+<li><strong>PowerPoint删除背景：</strong>对于简单Logo出奇地有效。插入图像 → 图片格式 → 删除背景 → 标记要保留的区域。</li>
+</ul>
+
+<h2>去除后：保存为PNG-24</h2>
+<p>一旦去除背景，将文件导出为<strong>PNG-24</strong>（不是PNG-8）。PNG-24支持完整Alpha透明度——意味着平滑边缘和半透明阴影。PNG-8只支持二进制透明度（完全不透明或完全透明），这会在弯曲的Logo元素周围产生锯齿边缘。</p>
+<p>通过在深色背景上打开PNG来验证导出。如果你在Logo边缘看到白色边缘，背景没有完全去除或导出设置需要调整。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以使JPG透明吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不可以。JPG不支持透明度。你必须先将图像转换为PNG，然后去除背景以创建透明度。结果文件必须保存为PNG（不是JPG）以保留透明区域。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">PNG-8和PNG-24有什么区别？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">PNG-8支持最多256种颜色和二元透明度（完全开或关）。PNG-24支持数百万种颜色和完整Alpha透明度及平滑渐变。对于带有软边缘或投影的Logo，始终使用PNG-24。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">为什么我的透明PNG仍然显示白色背景？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">这通常意味着导出前背景没有完全去除。一些图像查看器默认将透明区域显示为白色。在深色背景的浏览器或图像编辑器中打开文件，以验证真正的透明度。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'image-seo-optimize-google',
+      title: '图片SEO：如何优化图片以获得Google搜索排名',
+      date: '2026-05-24',
+      tags: ['seo', '优化', 'google'],
+      content: `<h2>为什么图片SEO比以往更重要</h2>
+<p>Google的搜索生态系统已大幅转向视觉内容。Google图片搜索现在占所有网页搜索的20%以上，而视觉搜索的兴起——用户上传照片而不是输入查询——使图片优化成为关键的SEO学科。</p>
+<p>除了被发现之外，图片直接影响Core Web Vitals，Google将其用作排名信号。加载缓慢的图片会损害你的最大内容绘制（LCP）分数，可能将你的页面在搜索结果中推低。相反，优化后的图片同时提高排名和用户体验。</p>
+
+<h2>文件名和Alt文本最佳实践</h2>
+<p>搜索引擎无法像人类一样"看到"图片。它们依赖上下文信号来理解图片内容：</p>
+<ul>
+<li><strong>描述性文件名：</strong>将<code>IMG_2847.jpg</code>重命名为<code>hong-si-rong-zhi-bei-dan-gao-shi-pu.jpg</code>。每个词都是潜在的关键词匹配。</li>
+<li><strong>Alt文本（替代文本）：</strong>描述图片的内容和功能。Alt文本通过屏幕阅读器为视障用户服务，帮助搜索引擎准确索引图片。</li>
+<li><strong>说明文字：</strong>相关时，说明文字出现在图片附近，提供额外的上下文。搜索引擎会高度重视说明文字内容。</li>
+</ul>
+<p>糟糕的alt文本："image1"、"照片"、"一张蛋糕的图片"<br>
+好的alt文本："自制的红丝绒杯子蛋糕配奶油奶酪霜，放在白色盘子上"</p>
+
+<h3>选择正确的格式和尺寸</h3>
+<p><img src="/placeholder.svg" alt="网页性能对比展示优化与未优化图片加载"></p>
+<p>技术优化补充描述性元数据：</p>
+<ul>
+<li><strong>格式优先级：</strong>WebP优先，JPG作为备选。同等质量下WebP比JPG小25-35%。</li>
+<li><strong>响应式图片：</strong>使用<code>srcset</code>为不同设备提供不同尺寸。移动用户不应该下载2000px宽的桌面图片。</li>
+<li><strong>懒加载：</strong>将屏幕外的图片推迟加载，直到用户滚动到附近。原生懒加载只需在<code>&lt;img&gt;</code>标签上添加<code>loading="lazy"</code>。</li>
+</ul>
+
+<h2>图片的结构化数据</h2>
+<p>Schema.org标记帮助Google理解图片在你内容中的作用：</p>
+<ul>
+<li><strong>ImageObject Schema：</strong>用结构化数据包装图片，指定创作者、许可和版权信息</li>
+<li><strong>Product Schema：</strong>对于电商，带有价格和库存信息的产品图片可出现在丰富的搜索结果中</li>
+<li><strong>Recipe Schema：</strong>美食博主应该用准备时间、食材和评分标记食谱图片</li>
+</ul>
+
+<h2>免费图片SEO优化工具</h2>
+<p>你不需要企业软件来实现图片SEO。<a href="/zh/compress">Image Toolbox</a> 处理压缩和格式转换，而 <a href="/zh/">我们的格式转换器</a> 将旧版图片库现代化为WebP。将这些工具与正确的命名和alt文本实践结合，你的图片就能成为强大的自然流量来源。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">图片会影响SEO排名吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">会。图片通过多个渠道影响SEO：页面速度（Core Web Vitals）、图片搜索结果可见性、富摘要资格，以及跳出率和页面停留时间等用户参与度指标。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Alt文本应该多长？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">目标100-125个字符。要有描述性但简洁。自然地包含相关关键词——永远不要堆砌关键词或不自然地重复短语。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我应该对所有图片使用WebP吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">对照片和复杂图形使用WebP。对于透明图片，WebP也很优秀。为了最大兼容性，使用picture元素提供JPG或PNG备选。PNG仍然是带文字截图的最佳选择。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'fix-image-upload-failed',
+      title: '如何修复“图片上传失败：文件过大”错误',
+      date: '2026-05-25',
+      tags: ['上传', '错误', '压缩', '调整尺寸'],
+      content: `<h2>常见平台尺寸限制</h2>
+<p>每个接受图片上传的平台都设有大小限制。超过这些限制会触发可怕的"文件太大"错误。以下是需要了解的常见限制：</p>
+<ul>
+<li><strong>WordPress（默认）：</strong>2MB上传限制——可由你的主机提供商配置</li>
+<li><strong>Discord：</strong>免费用户8MB，Nitro订阅者50MB</li>
+<li><strong>Gmail：</strong>每封邮件总计25MB（包括所有附件）</li>
+<li><strong>微信：</strong>原图25MB，压缩后约100-200KB</li>
+<li><strong>Instagram：</strong>照片30MB，视频650MB</li>
+<li><strong>LinkedIn：</strong>图片8MB，视频200MB</li>
+</ul>
+<p>这些限制并非随意设定。它们是为了控制服务器存储成本、防止滥用并确保其他用户的合理加载时间。</p>
+
+<h2>快速修复：降低质量滑块</h2>
+<p>减少文件大小的最快方法是降低图片质量。对于JPG和WebP格式，质量和文件大小之间的关系是非线性的：</p>
+<ul>
+<li><strong>100% → 80%质量：</strong>文件大小降低约40%，几乎无可见差异</li>
+<li><strong>80% → 60%质量：</strong>文件大小再降约35%。放大检查时可看到轻微伪影，但对网页使用通常可接受</li>
+<li><strong>低于50%：</strong>可见质量退化。除非文件大小极其重要，否则应避免</li>
+</ul>
+<p>对大多数网页上传，60-70%质量是最佳选择。使用 <a href="/zh/compress">Image Toolbox</a> 在确认质量级别前预览结果。</p>
+
+<h3>快速修复：调整到屏幕尺寸</h3>
+<p><img src="/placeholder.svg" alt="对比过大的4000px图片与经过优化的1200px屏幕适配版本"></p>
+<p>大多数用户上传的图片远超实际需要。4000 × 3000像素的图片看起来可能很"震撼"，但实际上：</p>
+<ul>
+<li>Instagram以1080px宽度显示</li>
+<li>WordPress主题通常以800-1200px渲染内容图片</li>
+<li>邮件客户端会将图片缩放以适配视口</li>
+</ul>
+<p>上传前先调整到显示尺寸，可以将文件大小降低80-90%，同时正常观看距离下不会损失任何可见质量。</p>
+
+<h2>快速修复：转换为WebP</h2>
+<p>WebP在同等视觉质量下持续比JPG小25-35%。如果平台支持WebP上传，上传前转换是即刻见效的。即使平台会自动转换上传内容（如Facebook和Instagram），从更小的文件开始意味着更快的上传速度和更少的数据使用量。</p>
+
+<h2>一个工具解决所有上传错误</h2>
+<p>与其记住几十个平台限制，不如用 <a href="/zh/compress">Image Toolbox</a> 处理压缩和 <a href="/zh/resize">我们的尺寸调整工具</a> 控制尺寸。典型工作流：调整到目标宽度（大多数平台1200px），压缩到65%质量，如果支持则转换为WebP。这个组合能处理95%的上传大小问题。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">如何将照片缩小到2MB以下？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">将图片调整到显示尺寸（通常1200-1920px宽），然后压缩到60-70%质量。对于照片，这通常产生200KB到1MB之间的文件，且无明显质量损失。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">为什么我的小图片仍然上传失败？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">一些平台除了文件大小限制还会检查像素尺寸。未压缩的PNG可能在文件大小限制内但超过最大尺寸。请同时检查平台的文件大小限制和最大分辨率限制。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">调整大小会降低图片质量吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">缩小尺寸不会降低质量——它只是移除了本来就不会显示的像素。质量损失发生在压缩过程中（降低质量百分比）或在放大时（将图片缩放超过其原始尺寸）。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'tiff-vs-png-archiving',
+      title: 'TIFF vs PNG：哪种更适合存档和印刷？',
+      date: '2026-05-26',
+      tags: ['tiff', 'png', '存档', '印刷'],
+      content: `<h2>什么是TIFF，谁在用？</h2>
+<p>TIFF（标记图像文件格式）自上世纪80年代以来一直是专业成像领域的黄金标准。与为网页传输设计的消费级格式不同，TIFF的构建初衷是最大化保真度和编辑灵活性。其主要用户包括：</p>
+<ul>
+<li><strong>商业印刷商：</strong>TIFF支持CMYK色彩空间，对物理介质上的准确色彩再现至关重要</li>
+<li><strong>医学影像：</strong>DICOM兼容的TIFF存储高位深度的放射科扫描</li>
+<li><strong>档案机构：</strong>图书馆和博物馆使用TIFF长期保存数字化历史文献</li>
+<li><strong>专业摄影师：</strong>TIFF作为RAW文件和最终输出之间的中间格式</li>
+</ul>
+
+<h2>TIFF vs PNG 技术对比</h2>
+<p>TIFF和PNG都使用无损压缩，但服务于不同的技术目的：</p>
+<table>
+<tr><th>特性</th><th>TIFF</th><th>PNG</th></tr>
+<tr><td>压缩</td><td>无、LZW或ZIP</td><td>DEFLATE（始终无损）</td></tr>
+<tr><td>色彩空间</td><td>RGB、CMYK、LAB、灰度</td><td>RGB、灰度</td></tr>
+<tr><td>位深度</td><td>每通道最高32位</td><td>每通道最高16位</td></tr>
+<tr><td>图层</td><td>支持（某些变体）</td><td>不支持</td></tr>
+<tr><td>透明度</td><td>支持Alpha通道</td><td>完整Alpha支持</td></tr>
+<tr><td>文件大小</td><td>非常大</td><td>大但比TIFF小</td></tr>
+</table>
+
+<h3>什么时候PNG是更好的存档格式</h3>
+<p><img src="/placeholder.svg" alt="对比图展示TIFF和PNG在各种图像类型上的文件大小差异"></p>
+<p>对大多数数字存档需求来说，PNG是更优选择：</p>
+<ul>
+<li><strong>网页存档：</strong>PNG被所有浏览器和操作系统普遍支持</li>
+<li><strong>通用兼容性：</strong>PNG可在每个图像查看器中打开；TIFF在某些系统上需要专门软件</li>
+<li><strong>更小的文件体积：</strong>PNG的DEFLATE压缩通常产生比未压缩TIFF小30-50%的文件</li>
+<li><strong>截图保存：</strong>PNG的无损压缩完美保留文字和UI元素</li>
+</ul>
+
+<h2>什么时候TIFF不可替代</h2>
+<p>尽管PNG有优势，TIFF在特定专业工作流中仍然不可或缺：</p>
+<ul>
+<li><strong>专业印刷：</strong>CMYK TIFF确保胶印和数码打印机的色彩准确性</li>
+<li><strong>多层编辑：</strong>某些TIFF变体保留了Photoshop图层以便将来编辑</li>
+<li><strong>法律和医学证据：</strong>TIFF的元数据支持和无压缩伪影满足了证据保管链要求</li>
+<li><strong>高位深度成像：</strong>需要每通道16位以上的科学和天文图像</li>
+</ul>
+
+<h2>TIFF和PNG之间的转换</h2>
+<p>当需要在两种格式之间转换时，<a href="/zh/">Image Toolbox</a> 在浏览器中处理TIFF到PNG和PNG到TIFF的转换。对于存档用途，我们建议保留原始格式的主文件，创建PNG衍生文件用于网页分享和一般使用。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">TIFF比PNG质量更好吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">对于RGB图像，两种格式都是无损的，产生相同的像素数据。TIFF提供更多功能（CMYK、更高位深度、图层），但对标准照片来说并不提供"更好质量"。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">照片应该存档为TIFF还是PNG？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">对大多数用户来说，PNG是更好的存档格式，因为文件更小且通用兼容。只有在需要CMYK色彩空间、图层或每通道16位以上的位深度时使用TIFF。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">将TIFF转换为PNG会损失质量吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不会。两种格式都使用无损压缩，所以像素数据被精确保留。转换过程中可能会丢失CMYK色彩空间信息、图层和一些元数据。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'combine-images-collage',
+      title: '如何将多张图片合并成一张拼图（网格布局）',
+      date: '2026-05-27',
+      tags: ['拼图', '网格', '裁切', '调整尺寸'],
+      content: `<h2>流行的拼图布局</h2>
+<p>拼图有无数种变化，但某些布局占据主导地位，因为它们在视觉趣味和结构简洁之间取得了平衡：</p>
+<ul>
+<li><strong>2×2网格：</strong>四个相等的正方形。经典、对称，适合前后对比和产品集合。</li>
+<li><strong>3×3网格：</strong>九个正方形。适合Instagram风格的心情板和活动亮点。</li>
+<li><strong>水平拼接：</strong>从左到右排列。适合时间线、流程文档和全景叙事。</li>
+<li><strong>垂直堆叠：</strong>从上到下堆叠。常见于移动优先内容和博客文章画廊。</li>
+<li><strong>非对称布局：</strong>一个大图搭配较小的辅助图片。被杂志和编辑网站用于视觉层次。</li>
+</ul>
+
+<h2>准备工作：先统一高度</h2>
+<p>专业拼图的秘密在于一致性。当图片高度不同时，网格看起来凌乱且不平衡。在拼接之前：</p>
+<ol>
+<li>为所有图片选择一个目标高度（例如800像素）</li>
+<li>使用 <a href="/zh/resize">Image Toolbox</a> 将每张图片调整到相同高度，保持宽高比</li>
+<li>宽度将根据每张图片的原始比例自然变化</li>
+</ol>
+<p>这种方法在保持每张图片原始构图的同时，在最终拼图中创造视觉和谐。</p>
+
+<h3>在线拼图工具 vs 手动拼接</h3>
+<p><img src="/placeholder.svg" alt="Canva拼图模板与手动拼接网格的并排对比"></p>
+<p>专门的拼图工具提供便利，但也有权衡：</p>
+<table>
+<tr><th>工具</th><th>优点</th><th>缺点</th></tr>
+<tr><td>Canva</td><td>数百模板，拖放简便</td><td>需要账户，导出分辨率可能较低</td></tr>
+<tr><td>Fotor</td><td>AI驱动布局，批量处理</td><td>免费版加水印，自定义有限</td></tr>
+<tr><td>手动（Photopea/GIMP）</td><td>完全创意控制，无分辨率限制</td><td>学习曲线陡峭，耗时</td></tr>
+</table>
+
+<h2>手动工作流（完全掌控）</h2>
+<p>为获得像素完美结果，手动拼接拼图：</p>
+<ol>
+<li><strong>裁切到统一比例：</strong>使用 <a href="/zh/crop">Image Toolbox</a> 将所有图片设为相同的宽高比（网格用1:1，拼条用16:9）</li>
+<li><strong>调整到统一高度：</strong>为所有图片设置一致的高度</li>
+<li><strong>在编辑器中拼接：</strong>使用Photopea、GIMP甚至PowerPoint按选中网格排列图片</li>
+<li><strong>导出为PNG：</strong>PNG能保持拼图元素之间的锐利边缘</li>
+</ol>
+
+<h2>拼图准备的裁切和缩放工具</h2>
+<p>在打开拼图编辑器之前，用 <a href="/zh/crop">Image Toolbox的裁切工具</a> 和 <a href="/zh/resize">尺寸调整工具</a> 准备图片。裁切到标准比例，调整到一致尺寸，下载优化后的集合。这个预处理步骤将拼图制作从令人沮丧的猜测游戏转变为精确、可重复的工作流。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">制作照片拼图最好的app是什么？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">对于快速社交媒体拼图，Canva提供最好的模板库。对于需要完全控制的专业结果，用Image Toolbox准备图片（裁切和缩放），然后在Photopea或GIMP中拼接。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">如何用不同尺寸的照片制作拼图？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">首先将所有照片裁切到相同的宽高比。然后将它们调整到相同高度（宽度会自然变化）。最后在网格编辑器中排列。这在保持每张照片原始比例的同时创造了视觉一致性。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">照片拼图应该做多大？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">对于Instagram帖子，目标1080 × 1350像素（4:5）。对于网站页眉，匹配你的内容宽度（通常1200-1400像素）。对于打印，根据你期望的物理尺寸以300 DPI计算。</p>
+    </div>
+  </div>
+</div>`
+    },
+    {
+      slug: 'image-processing-checklist-2026',
+      title: '2026年终极图片处理检查清单',
+      date: '2026-05-28',
+      tags: ['检查清单', '工作流', '最佳实践'],
+      content: `<h2>第1步：选择正确的格式</h2>
+<p>你选择的格式决定文件大小、质量和兼容性。使用这个决策树：</p>
+<ul>
+<li><strong>照片（网页）：</strong>WebP配合JPG备选 — 比单独JPG小25-35%</li>
+<li><strong>照片（印刷）：</strong>TIFF或高质量JPG（90%+）</li>
+<li><strong>带文字的截图：</strong>PNG — 保留锐利边缘和可读性</li>
+<li><strong>Logo和图标：</strong>PNG-24用于透明度，SVG用于可缩放性</li>
+<li><strong>动画内容：</strong>WebP动画或GIF以获得最大兼容性</li>
+</ul>
+<p>还不确定？使用 <a href="/zh/">Image Toolbox</a> 并排比较格式后再决定。</p>
+
+<h2>第2步：裁切聚焦</h2>
+<p>裁切不仅仅是适应尺寸——它关乎引导观众的注意力：</p>
+<ul>
+<li>去除无关边缘和分散注意力的背景元素</li>
+<li>应用三分法创造动感构图</li>
+<li>在主体周围留出呼吸空间（不要裁切太紧）</li>
+<li>对于社交媒体，上传前裁切到平台特定比例</li>
+</ul>
+
+<h3>第3步：调整到显示尺寸</h3>
+<p><img src="/placeholder.svg" alt="图片处理工作流程图展示格式选择、裁切、缩放、压缩、水印和SEO命名"></p>
+<p>图片优化中最常见的错误：上传比显示区域大3倍的图片。1200px容器上使用3000px宽的英雄图片会浪费带宽并减慢加载。调整到实际渲染尺寸再加20%用于高DPI（Retina）显示。</p>
+<p>使用 <a href="/zh/resize">Image Toolbox</a> 设置精确的像素尺寸。该工具默认保持宽高比，防止"业余"感十足的拉伸失真效果。</p>
+
+<h2>第4步：智能压缩</h2>
+<p>压缩质量不是"越低越好"的游戏。最佳点：</p>
+<ul>
+<li><strong>60-70%质量：</strong>适合网页照片。文件大小降低60-70%，质量损失几乎不可见</li>
+<li><strong>80-85%质量：</strong>适用于展示站点和客户演示，质量至关重要</li>
+<li><strong>90-95%质量：</strong>适用于印刷准备和存档存储</li>
+</ul>
+<p>最终确定前始终以100%缩放预览压缩结果。缩略图尺寸下看起来可接受的内容，在全尺寸下可能会显示出伪影。</p>
+
+<h2>第5步：添加水印（如需要）</h2>
+<p>对于在线分享作品的摄影师、艺术家和品牌：</p>
+<ul>
+<li>使用30-50%不透明度进行微妙但可见的保护</li>
+<li>放在图片主体的非关键区域上</li>
+<li>水印保持在总图片面积的5%以下</li>
+<li>使用 <a href="/zh/watermark">Image Toolbox</a> 快速完成浏览器端水印添加</li>
+</ul>
+
+<h2>第6步：重命名并添加Alt文本</h2>
+<p>SEO友好的文件名和alt文本将图片转化为自然流量来源：</p>
+<ul>
+<li>将<code>IMG_001.jpg</code>重命名为<code>zi-zhi-suan-mian-bao-shi-pu.jpg</code></li>
+<li>编写描述性alt文本："木制砧板上的金黄色外壳酸面包"</li>
+<li>自然地包含相关关键词 — 永远不要堆砌</li>
+</ul>
+
+<h2>免费一站式图片工具箱</h2>
+<p>这个检查清单涵盖六步，但你不需要六个不同的工具。<a href="/zh/">Image Toolbox</a> 在一个浏览器界面中处理格式转换、<a href="/zh/crop">裁切</a>、<a href="/zh/resize">尺寸调整</a>、<a href="/zh/compress">压缩</a>和<a href="/zh/watermark">水印</a>。无需安装、无需订阅、无需上传到服务器——只是专业优化每张图片所需的工具。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">图片优化中最重要的一步是什么？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">调整到显示尺寸提供了最大的文件大小减少，且零质量损失。一张以800px显示的4000px图片浪费了95%的像素。先调整大小，再压缩。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">每次上传前都应该优化图片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">是的。即使是自动优化的平台也受益于预先优化的上传。较小的原始文件上传更快，使用更少的流量，并为平台的压缩算法提供更好的源素材。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">一个工具真的能做所有这些吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">是的。Image Toolbox覆盖整个优化工作流：格式转换、裁切、尺寸调整、压缩和水印——全在你的浏览器中进行，无需将文件上传到外部服务器。</p>
+    </div>
+  </div>
+</div>`
+    },
   ];
