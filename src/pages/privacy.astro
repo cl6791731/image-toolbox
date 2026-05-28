@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Privacy Policy';
+const description = 'Image Toolbox processes all images locally in your browser. We do not collect, store, or transmit any image data or personal information.';
+---
+
+<Layout title={title} description={description} lang="en">
+  <Breadcrumb items={[{label:'Home', href:'/'}, {label:'Privacy'}]} />
+
+  <article class="page-content">
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last updated: May 28, 2026</p>
+
+    <h2>Local Processing Only</h2>
+    <p>All image processing in Image Toolbox happens entirely within your web browser using JavaScript and modern Web APIs. Your images are <strong>never uploaded to any server</strong>. We cannot see, access, or store your images.</p>
+
+    <h2>No Personal Data Collection</h2>
+    <p>We do not collect, store, or share any personal information. The only data stored locally in your browser is:</p>
+    <ul>
+      <li>Language preference (zh/en)</li>
+      <li>Article management data (if you use the admin feature)</li>
+    </ul>
+    <p>This data never leaves your device and can be cleared at any time via your browser settings.</p>
+
+    <h2>Cookies & Analytics</h2>
+    <p>We do not use tracking cookies. If Google AdSense is enabled, Google may use cookies to serve personalized ads. You can opt out of personalized advertising through <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ad Settings</a>.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>Google AdSense may load scripts from Google servers to display advertisements. These scripts are subject to Google's own privacy policy.</p>
+
+    <h2>Contact</h2>
+    <p>If you have questions about this privacy policy, please contact us through the <a href="/contact">contact page</a>.</p>
+  </article>
+</Layout>
+
+<style>
+  .page-content { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 64px; }
+  .page-content h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .last-updated { font-size: 13px; color: var(--fg-tertiary); margin-bottom: 24px; }
+  .page-content h2 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+  .page-content p { font-size: 16px; line-height: 1.8; color: var(--fg); margin-bottom: 16px; }
+  .page-content ul { margin-bottom: 16px; padding-left: 24px; }
+  .page-content li { font-size: 16px; line-height: 1.8; margin-bottom: 8px; color: var(--fg-secondary); }
+  .page-content a { color: var(--accent); text-decoration: none; }
+  .page-content a:hover { text-decoration: underline; }
+</style>

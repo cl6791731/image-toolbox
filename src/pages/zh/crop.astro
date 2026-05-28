@@ -1,0 +1,273 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AdSense from '../../components/AdSense.astro';
+
+const title = '在线图片裁切 — 免费图片裁剪工具';
+const description = '免费在线图片裁切工具。拖拽选择裁切区域。所有处理在浏览器本地完成。';
+---
+
+<Layout title={title} description={description} seoType="WebApplication" lang="zh">
+  <section class="hero">
+    <h1>在线图片裁切</h1>
+    <p>任意裁切图片尺寸。拖拽选框选择保留区域。</p>
+  </section>
+
+  <div class="tabs-wrap">
+    <div class="tabs" role="tablist">
+      <a href="/zh/" class="tab-btn" role="tab">格式转换</a>
+      <a href="/zh/compress" class="tab-btn" role="tab">压缩图片</a>
+      <a href="/zh/crop" class="tab-btn active" role="tab" aria-selected="true">图片裁切</a>
+      <a href="/zh/watermark" class="tab-btn" role="tab">添加水印</a>
+      <a href="/zh/resize" class="tab-btn" role="tab">尺寸调整</a>
+      <a href="/zh/articles" class="tab-btn" role="tab">技巧文章</a>
+    </div>
+  </div>
+
+  
+  <AdSense slot="2533515795" format="horizontal" />
+
+  <div class="content">
+    <article class="tool-card" aria-labelledby="crop-title">
+      <h2 id="crop-title" class="sr-only">图片裁切工具</h2>
+
+      <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-label="上传图片">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <p>点击上传图片，或拖拽图片到此处</p>
+        <p class="hint">支持 JPG、PNG、WebP、GIF、BMP 等格式</p>
+        <input type="file" id="fileInput" accept="image/*" />
+      </div>
+
+      <div id="fileInfo" class="file-info" style="display:none"></div>
+      <div id="cropContainer" class="crop-container" style="display:none"></div>
+
+      <div id="cropResult" style="display:none">
+        <div class="preview-area">
+          <figure class="preview-box">
+            <figcaption class="label">裁切结果</figcaption>
+            <div id="cropResultPreview"><span class="placeholder">裁切结果将显示在此</span></div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="cropBtn" disabled>裁切</button>
+        <button class="btn btn-secondary" id="cropDownloadBtn" disabled>下载</button>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .hero { padding: 72px 24px 56px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero p { font-size: clamp(15px, 2.5vw, 19px); color: var(--fg-secondary); line-height: 1.5; }
+  .tabs-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px; }
+  .tabs { display: flex; gap: 2px; background: var(--bg-secondary); border-radius: var(--radius); padding: 4px; overflow-x: auto; }
+  .tab-btn { flex-shrink: 0; padding: 8px 20px; border-radius: 6px; background: transparent; color: var(--fg-secondary); font-size: 13px; font-weight: 500; text-decoration: none; transition: var(--transition); white-space: nowrap; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
+  .content { flex:1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
+  .tool-card { background: var(--bg); border:1px solid var(--border-light); border-radius: var(--radius); padding: 28px; }
+  .sr-only { position: absolute; width:1px; height:1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+  .upload-area { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 52px 24px; text-align: center; cursor: pointer; transition: var(--transition); background: var(--bg); }
+  .upload-area:hover, .upload-area:focus { border-color: var(--accent); background: rgba(0,113,227,0.02); outline: none; }
+  .upload-icon { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--fg-tertiary); }
+  .upload-area p { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .hint { font-size: 13px; color: var(--fg-secondary); font-weight: 400 !important; }
+  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; }
+  input[type="file"] { display: none; }
+  .crop-container { margin: 16px 0; text-align: center; user-select: none; }
+  .crop-container img { max-width: 100%; max-height: 420px; border-radius: 4px; }
+  .crop-box { position: absolute; border: 2px dashed var(--accent); background: rgba(0,113,227,0.08); cursor: move; }
+  .crop-box .handle { position: absolute; width: 12px; height: 12px; background: var(--accent); border: 2px solid #fff; border-radius: 2px; }
+  .crop-box .handle.nw { top: -6px; left: -6px; cursor: nw-resize; }
+  .crop-box .handle.ne { top: -6px; right: -6px; cursor: ne-resize; }
+  .crop-box .handle.sw { bottom: -6px; left: -6px; cursor: sw-resize; }
+  .crop-box .handle.se { bottom: -6px; right: -6px; cursor: se-resize; }
+  .preview-area { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0; }
+  .preview-box { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px; text-align: center; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .preview-box .label { font-size: 11px; font-weight: 600; color: var(--fg-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; width: 100%; text-align: left; }
+  .preview-box img { max-width: 100%; max-height: 240px; object-fit: contain; border-radius: 4px; }
+  .placeholder { font-size: 13px; color: var(--fg-tertiary); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 22px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: var(--transition); font-family: var(--font); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-secondary { background: var(--bg-secondary); color: var(--fg); border:1px solid var(--border); }
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .tabs-wrap { padding: 0 16px 16px; }
+    .content { padding: 0 16px 48px; }
+    .tool-card { padding: 20px; }
+  }
+</style>
+
+<script is:inline>
+  const $ = id => document.getElementById(id);
+  let sourceFile = null, sourceImage = null;
+  const crop = { x: 0, y: 0, w: 0, h: 0, scaleX: 1, scaleY: 1, loaded: false };
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + 'B';
+    if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + 'KB';
+    return (bytes/1024/1024).toFixed(2) + 'MB';
+  }
+
+  $('uploadArea').addEventListener('click', () => $('fileInput').click());
+  $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); $('uploadArea').classList.add('dragover'); });
+  $('uploadArea').addEventListener('dragleave', () => $('uploadArea').classList.remove('dragover'));
+  $('uploadArea').addEventListener('drop', e => {
+    e.preventDefault(); $('uploadArea').classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  $('fileInput').addEventListener('change', () => {
+    if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
+  });
+
+  function handleFile(file) {
+    if (!file.type.startsWith('image/')) return;
+    sourceFile = file;
+    crop.loaded = false;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        sourceImage = img;
+        $('fileInfo').textContent = file.name + ' · ' + img.naturalWidth + '×' + img.naturalHeight + ' · ' + formatSize(file.size);
+        $('fileInfo').style.display = 'block';
+        $('cropContainer').style.display = 'block';
+        $('cropResult').style.display = 'none';
+        $('cropBtn').disabled = false;
+        $('cropDownloadBtn').disabled = true;
+        renderCrop();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function renderCrop() {
+    const container = $('cropContainer');
+    container.innerHTML = '';
+    const wrapper = document.createElement('div');
+    wrapper.style.position = 'relative';
+    wrapper.style.display = 'inline-block';
+    const img = document.createElement('img');
+    img.src = sourceImage.src;
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = '420px';
+    img.draggable = false;
+    wrapper.appendChild(img);
+    const maxH = 420;
+    if (!crop.loaded) {
+      const iw = sourceImage.naturalWidth;
+      const ih = sourceImage.naturalHeight;
+      const maxW = container.clientWidth || 700;
+      const scale = Math.min(1, maxW / iw, maxH / ih);
+      const displayW = Math.round(iw * scale);
+      const displayH = Math.round(ih * scale);
+      crop.w = Math.min(280, displayW * 0.75);
+      crop.h = Math.min(200, displayH * 0.75);
+      crop.x = (displayW - crop.w) / 2;
+      crop.y = (displayH - crop.h) / 2;
+      crop.scaleX = iw / displayW;
+      crop.scaleY = ih / displayH;
+      crop.loaded = true;
+    }
+    const box = document.createElement('div');
+    box.className = 'crop-box';
+    box.style.left = crop.x + 'px';
+    box.style.top = crop.y + 'px';
+    box.style.width = crop.w + 'px';
+    box.style.height = crop.h + 'px';
+    box.innerHTML = '<div class="handle nw"></div><div class="handle ne"></div><div class="handle sw"></div><div class="handle se"></div>';
+    wrapper.appendChild(box);
+    if (window._cropListeners) {
+      document.removeEventListener('mousemove', window._cropListeners.onMove);
+      document.removeEventListener('mouseup', window._cropListeners.endDrag);
+      document.removeEventListener('touchmove', window._cropListeners.onMoveTouch);
+      document.removeEventListener('touchend', window._cropListeners.endDrag);
+    }
+    let dragState = null;
+    const getPos = e => {
+      const rect = wrapper.getBoundingClientRect();
+      const clientX = e.clientX !== undefined ? e.clientX : e.touches[0].clientX;
+      const clientY = e.clientY !== undefined ? e.clientY : e.touches[0].clientY;
+      return { x: clientX - rect.left, y: clientY - rect.top };
+    };
+    const startDrag = (e, handle) => {
+      e.preventDefault();
+      const pos = getPos(e);
+      dragState = { handle, startX: pos.x, startY: pos.y, origX: crop.x, origY: crop.y, origW: crop.w, origH: crop.h };
+    };
+    const onMove = e => {
+      if (!dragState) return;
+      e.preventDefault();
+      const pos = getPos(e);
+      const dx = pos.x - dragState.startX;
+      const dy = pos.y - dragState.startY;
+      const h = dragState.handle;
+      if (h === 'move') {
+        const bw = wrapper.querySelector('img').getBoundingClientRect().width;
+        const bh = wrapper.querySelector('img').getBoundingClientRect().height;
+        crop.x = Math.max(0, Math.min(bw - crop.w, dragState.origX + dx));
+        crop.y = Math.max(0, Math.min(bh - crop.h, dragState.origY + dy));
+      } else {
+        if (h === 'nw' || h === 'ne') { crop.y = dragState.origY + dy; crop.h = dragState.origH - dy; }
+        if (h === 'sw' || h === 'se') { crop.h = dragState.origH + dy; }
+        if (h === 'nw' || h === 'sw') { crop.x = dragState.origX + dx; crop.w = dragState.origW - dx; }
+        if (h === 'ne' || h === 'se') { crop.w = dragState.origW + dx; }
+        if (crop.w < 20) crop.w = 20;
+        if (crop.h < 20) crop.h = 20;
+      }
+      box.style.left = crop.x + 'px';
+      box.style.top = crop.y + 'px';
+      box.style.width = crop.w + 'px';
+      box.style.height = crop.h + 'px';
+    };
+    const endDrag = () => { dragState = null; };
+    box.addEventListener('mousedown', e => { if (!e.target.classList.contains('handle')) startDrag(e, 'move'); });
+    box.querySelectorAll('.handle').forEach(h => { h.addEventListener('mousedown', e => { e.stopPropagation(); startDrag(e, h.className.split(' ')[1]); }); });
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', endDrag);
+    box.addEventListener('touchstart', e => { if (!e.target.classList.contains('handle')) startDrag(e, 'move'); }, { passive: false });
+    box.querySelectorAll('.handle').forEach(h => { h.addEventListener('touchstart', e => { e.stopPropagation(); startDrag(e, h.className.split(' ')[1]); }); }, { passive: false });
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', endDrag);
+    window._cropListeners = { onMove, endDrag, onMoveTouch: onMove };
+    container.appendChild(wrapper);
+  }
+
+  $('cropBtn').addEventListener('click', () => {
+    if (!sourceImage || !crop.loaded) return;
+    const sx = crop.scaleX, sy = crop.scaleY;
+    const cw = Math.round(crop.w * sx), ch = Math.round(crop.h * sy);
+    const cx = Math.round(crop.x * sx), cy = Math.round(crop.y * sy);
+    if (cw < 1 || ch < 1) return;
+    const c = document.createElement('canvas');
+    c.width = cw; c.height = ch;
+    c.getContext('2d').drawImage(sourceImage, cx, cy, cw, ch, 0, 0, cw, ch);
+    c.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      $('cropResultPreview').innerHTML = '<img src="' + url + '" alt="裁切结果" loading="lazy">';
+      $('cropResult').style.display = 'block';
+      $('cropDownloadBtn').disabled = false;
+      $('cropDownloadBtn').dataset.url = url;
+    });
+  });
+
+  $('cropDownloadBtn').addEventListener('click', () => {
+    const btn = $('cropDownloadBtn');
+    if (!btn.dataset.url) return;
+    const a = document.createElement('a');
+    a.href = btn.dataset.url;
+    const name = sourceFile ? sourceFile.name.replace(/\.[^.]+$/, '') : 'image';
+    a.download = name + '_cropped.png';
+    a.click();
+  });
+</script>

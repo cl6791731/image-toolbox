@@ -1,0 +1,78 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import AdSense from '../../../components/AdSense.astro';
+
+const title = '图片处理技巧与指南';
+const description = '了解图片格式、压缩技巧、水印最佳实践和社交媒体图片尺寸指南。';
+
+// Article data - in production this would come from a CMS or content collection
+const articles = [
+  {
+    title: 'WebP 和 JPG 哪个更适合网页？',
+    summary: 'WebP 在同等质量下比 JPG 小 25-35%。了解何时用哪种格式，以及如何实现 WebP 带回退方案。',
+    tags: ['格式', 'webp', '优化'],
+    date: '2026-05-15',
+    slug: 'webp-vs-jpg'
+  },
+  {
+    title: '如何将图片压缩到 200KB 以下',
+    summary: '实用指南：在无明显质量损失的前提下，将图片压缩到 200KB 以下，适用于网页上传、邮件附件和表单提交。',
+    tags: ['压缩', '教程'],
+    date: '2026-05-12',
+    slug: 'compress-under-200kb'
+  },
+  {
+    title: 'PNG 和 JPG 完全指南：何时用哪个？',
+    summary: '理解 PNG 和 JPG 的根本区别。照片、截图、图形分别该用无损还是有损压缩？',
+    tags: ['格式', '入门'],
+    date: '2026-05-07',
+    slug: 'png-vs-jpg-guide'
+  }
+];
+---
+
+<Layout title={title} description={description} seoType="website" lang="zh">
+  <Breadcrumb items={[{label:'首页', href:'/zh/'}, {label:'技巧'}]} />
+
+  <section class="hero">
+    <h1>图片处理技巧</h1>
+    <p>关于格式、压缩、尺寸和最佳实践的实用指南。</p>
+  </section>
+
+  <AdSense slot="2533515795" format="horizontal" />
+
+  <div class="content">
+    <div class="article-list">
+      {articles.map((article) => (
+        <article class="article-card">
+          <div class="meta">{article.date}</div>
+          <h2><a href={`/zh/articles/${article.slug}`}>{article.title}</a></h2>
+          <p class="summary">{article.summary}</p>
+          <div class="tags">
+            {article.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .hero { padding: 72px 24px 40px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero p { font-size: clamp(15px, 2.5vw, 19px); color: var(--fg-secondary); line-height: 1.5; }
+  .content { flex: 1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
+  .article-list { display: flex; flex-direction: column; gap: 12px; }
+  .article-card { padding: 20px 0; border-bottom: 1px solid var(--border-light); }
+  .article-card:first-child { border-top: 1px solid var(--border-light); }
+  .article-card .meta { font-size: 12px; color: var(--fg-tertiary); margin-bottom: 4px; font-weight: 500; }
+  .article-card h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; line-height: 1.4; }
+  .article-card h2 a { color: var(--fg); text-decoration: none; }
+  .article-card h2 a:hover { color: var(--accent); }
+  .article-card .summary { font-size: 14px; color: var(--fg-secondary); line-height: 1.7; margin-bottom: 8px; }
+  .article-card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .article-card .tag { font-size: 11px; padding: 2px 10px; border-radius: 12px; background: var(--bg-secondary); color: var(--fg-secondary); font-weight: 500; }
+</style>

@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSense from '../components/AdSense.astro';
+
+const title = 'Free Online Image Converter — PNG, JPG, WebP, AVIF';
+const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO formats locally in your browser. No upload needed. Fast, free, and privacy-focused.';
+---
+
+<Layout title={title} description={description} seoType="WebApplication" lang="en">
+  <section class="hero">
+    <h1>Your Image Processing Assistant</h1>
+    <p>Convert, compress, crop, watermark, resize — all processed locally in your browser. No upload needed.</p>
+    <div class="badge">
+      <span class="dot"></span>
+      <span>Local · Private · Free</span>
+    </div>
+  </section>
+
+  <div class="tabs-wrap">
+    <div class="tabs" role="tablist" aria-label="Image Tools">
+      <a href="/" class="tab-btn active" role="tab" aria-selected="true">Convert</a>
+      <a href="/compress" class="tab-btn" role="tab" aria-selected="false">Compress</a>
+      <a href="/crop" class="tab-btn" role="tab" aria-selected="false">Crop</a>
+      <a href="/watermark" class="tab-btn" role="tab" aria-selected="false">Watermark</a>
+      <a href="/resize" class="tab-btn" role="tab" aria-selected="false">Resize</a>
+      <a href="/articles" class="tab-btn" role="tab" aria-selected="false">Tips</a>
+    </div>
+  </div>
+
+  <AdSense slot="2533515795" format="horizontal" />
+
+  <div class="content">
+    <article class="tool-card" aria-labelledby="convert-title">
+      <h2 id="convert-title" class="sr-only">Image Format Converter</h2>
+
+      <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-label="Upload image">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <p>Click to upload or drag & drop an image</p>
+        <p class="hint">Supports JPG, PNG, WebP, GIF, BMP, SVG, AVIF, ICO, TIFF & more</p>
+        <input type="file" id="fileInput" accept="image/*" aria-label="Select image file" />
+      </div>
+      <div id="fileInfo" class="file-info" style="display:none"></div>
+
+      <div class="control-group">
+        <label for="formatTarget">Target format</label>
+        <select id="formatTarget">
+          <option value="image/png">PNG (Lossless, supports transparency)</option>
+          <option value="image/jpeg">JPG (Lossy, best compatibility)</option>
+          <option value="image/webp">WebP (Google format, high compression)</option>
+          <option value="image/bmp">BMP (Uncompressed, lossless)</option>
+          <option value="image/avif">AVIF (Next-gen efficient format)</option>
+          <option value="image/x-icon">ICO (Windows icon format)</option>
+        </select>
+        <div class="desc" id="formatCompatNote">AVIF & ICO may not be supported in older browsers</div>
+      </div>
+
+      <div class="control-group">
+        <label for="formatQuality">Quality</label>
+        <div class="range-row">
+          <input type="range" id="formatQuality" min="1" max="100" value="92" aria-label="Image quality percentage">
+          <span class="range-value" id="formatQualityVal">92%</span>
+        </div>
+        <div class="desc">Only applies to lossy formats (JPG, WebP, AVIF)</div>
+      </div>
+
+      <div class="preview-area">
+        <figure class="preview-box">
+          <figcaption class="label">Original</figcaption>
+          <div id="formatOrigPreview">
+            <span class="placeholder">Please upload an image</span>
+          </div>
+        </figure>
+        <figure class="preview-box">
+          <figcaption class="label">Result</figcaption>
+          <div id="formatResultPreview">
+            <span class="placeholder">Upload an image first</span>
+          </div>
+        </figure>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="formatBtn" disabled>Convert</button>
+        <button class="btn btn-secondary" id="formatDownloadBtn" disabled>Download</button>
+      </div>
+    </article>
+  </div>
+
+</Layout>
+
+<style>
+  .hero { padding: 72px 24px 56px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero p { font-size: clamp(15px, 2.5vw, 19px); color: var(--fg-secondary); line-height: 1.5; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; padding: 6px 14px; background: var(--bg-secondary); border-radius: 20px; font-size: 13px; color: var(--fg-secondary); font-weight: 500; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: #34c759; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .tabs-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px; }
+  .tabs { display: flex; gap: 2px; background: var(--bg-secondary); border-radius: var(--radius); padding: 4px; overflow-x: auto; }
+  .tab-btn { flex-shrink: 0; padding: 8px 20px; border-radius: 6px; background: transparent; color: var(--fg-secondary); font-size: 13px; font-weight: 500; text-decoration: none; transition: var(--transition); white-space: nowrap; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
+
+  .content { flex: 1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
+  .tool-card { background: var(--bg); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 28px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+
+  .upload-area { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 52px 24px; text-align: center; cursor: pointer; transition: var(--transition); background: var(--bg); }
+  .upload-area:hover, .upload-area:focus { border-color: var(--accent); background: rgba(0,113,227,0.02); outline: none; }
+  .upload-icon { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--fg-tertiary); }
+  .upload-area p { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .hint { font-size: 13px; color: var(--fg-secondary); }
+  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; }
+  input[type="file"] { display: none; }
+
+  .control-group { margin-bottom: 20px; }
+  .control-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .control-group .desc { font-size: 12px; color: var(--fg-secondary); margin-top: 4px; }
+  select, input[type="text"], input[type="number"] {
+    width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+    font-size: 14px; background: var(--bg); color: var(--fg); font-family: var(--font);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px;
+  }
+  select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,113,227,0.12); }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .range-row { display: flex; align-items: center; gap: 12px; }
+  .range-value { font-size: 14px; color: var(--accent); font-weight: 600; min-width: 40px; text-align: right; }
+
+  .preview-area { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .preview-box { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px; text-align: center; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .preview-box .label { font-size: 11px; font-weight: 600; color: var(--fg-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; width: 100%; text-align: left; }
+  .preview-box img { max-width: 100%; max-height: 240px; object-fit: contain; border-radius: 4px; }
+  .placeholder { font-size: 13px; color: var(--fg-tertiary); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 22px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: var(--transition); font-family: var(--font); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-secondary { background: var(--bg-secondary); color: var(--fg); border: 1px solid var(--border); }
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .tabs-wrap { padding: 0 16px 16px; }
+    .content { padding: 0 16px 48px; }
+    .tool-card { padding: 20px; }
+    .preview-area { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script is:inline>
+  // Format conversion tool logic (simplified MVP)
+  const $ = id => document.getElementById(id);
+  let sourceFile = null, sourceImage = null, resultBlob = null;
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + 'B';
+    if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + 'KB';
+    return (bytes/1024/1024).toFixed(2) + 'MB';
+  }
+
+  $('uploadArea').addEventListener('click', () => $('fileInput').click());
+  $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); $('uploadArea').classList.add('dragover'); });
+  $('uploadArea').addEventListener('dragleave', () => $('uploadArea').classList.remove('dragover'));
+  $('uploadArea').addEventListener('drop', e => {
+    e.preventDefault(); $('uploadArea').classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  $('fileInput').addEventListener('change', () => {
+    if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
+  });
+
+  function handleFile(file) {
+    if (!file.type.startsWith('image/')) return;
+    sourceFile = file;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        sourceImage = img;
+        $('fileInfo').textContent = `${file.name} · ${img.naturalWidth}×${img.naturalHeight} · ${formatSize(file.size)}`;
+        $('fileInfo').style.display = 'block';
+        $('formatOrigPreview').innerHTML = `<img src="${img.src}" alt="Original uploaded image preview" width="400" height="300" loading="lazy" decoding="async">`;
+        $('formatBtn').disabled = false;
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function imageToCanvas(img) {
+    const c = document.createElement('canvas');
+    c.width = img.naturalWidth; c.height = img.naturalHeight;
+    c.getContext('2d').drawImage(img, 0, 0);
+    return c;
+  }
+
+  $('formatBtn').addEventListener('click', async () => {
+    if (!sourceImage) return;
+    const type = $('formatTarget').value;
+    const quality = parseInt($('formatQuality').value) / 100;
+    const canvas = imageToCanvas(sourceImage);
+    canvas.toBlob(blob => {
+      if (!blob) return;
+      resultBlob = blob;
+      const url = URL.createObjectURL(blob);
+      $('formatResultPreview').innerHTML = `<img src="${url}" alt="Converted image result" width="400" height="300" loading="lazy">`;
+      $('formatDownloadBtn').disabled = false;
+      $('formatDownloadBtn').dataset.url = url;
+      $('formatDownloadBtn').dataset.type = blob.type;
+    }, type, type === 'image/bmp' ? undefined : quality);
+  });
+
+  $('formatDownloadBtn').addEventListener('click', () => {
+    const btn = $('formatDownloadBtn');
+    if (!btn.dataset.url) return;
+    const a = document.createElement('a');
+    a.href = btn.dataset.url;
+    const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico' }[btn.dataset.type] || 'png';
+    a.download = `converted.${ext}`;
+    a.click();
+  });
+
+  $('formatTarget').addEventListener('change', () => {
+    const lossy = ['image/jpeg','image/webp','image/avif'];
+    document.getElementById('formatQualityDesc').style.display = lossy.includes($('formatTarget').value) ? 'block' : 'none';
+  });
+</script>

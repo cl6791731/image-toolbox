@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = '关于 Image Toolbox';
+const description = 'Image Toolbox 是一个免费、注重隐私的在线图片处理工具。所有操作在浏览器本地完成 — 无需上传，无需服务器，不收集数据。';
+---
+
+<Layout title={title} description={description} lang="zh">
+  <Breadcrumb items={[{label:'首页', href:'/zh/'}, {label:'关于我们'}]} />
+
+  <article class="page-content">
+    <h1>关于 Image Toolbox</h1>
+
+    <p>Image Toolbox 的使命很简单：让用户无需安装软件、无需上传文件到远程服务器，就能快速、免费、私密地处理图片。</p>
+
+    <h2>为什么选择本地处理？</h2>
+    <p>大多数在线图片工具要求你将文件上传到服务器。这意味着：</p>
+    <ul>
+      <li>你的图片被存储在别人的电脑上</li>
+      <li>你必须相信他们的隐私政策</li>
+      <li>上传和下载需要时间</li>
+      <li>大文件可能失败或超时</li>
+    </ul>
+    <p>Image Toolbox 通过在浏览器中完全运行来解决所有这些问题。你的图片永远不会离开你的设备。</p>
+
+    <h2>支持的格式</h2>
+    <p>PNG、JPG、WebP、GIF、BMP、SVG、AVIF、ICO、TIFF 等。我们使用现代浏览器 API 原生处理转换和压缩。</p>
+
+    <h2>开源理念</h2>
+    <p>我们相信尊重隐私的工具应该对所有人开放。无需注册，无需付费墙，没有追踪像素。</p>
+  </article>
+</Layout>
+
+<style>
+  .page-content { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 64px; }
+  .page-content h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 24px; }
+  .page-content h2 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+  .page-content p { font-size: 16px; line-height: 1.8; color: var(--fg); margin-bottom: 16px; }
+  .page-content ul { margin-bottom: 16px; padding-left: 24px; }
+  .page-content li { font-size: 16px; line-height: 1.8; margin-bottom: 8px; color: var(--fg-secondary); }
+</style>

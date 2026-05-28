@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = '联系我们';
+const description = '联系 Image Toolbox 提供反馈、功能建议或商务咨询。';
+---
+
+<Layout title={title} description={description} lang="zh">
+  <Breadcrumb items={[{label:'首页', href:'/zh/'}, {label:'联系方式'}]} />
+
+  <article class="page-content">
+    <h1>联系我们</h1>
+    <p>有反馈、功能建议或发现了 bug？我们很乐意听取您的意见。</p>
+
+    <div class="contact-methods">
+      <div class="contact-card">
+        <h3>电子邮件</h3>
+        <p>hello@imagetoolbox.example</p>
+        <span class="hint">发布前替换为您的真实邮箱</span>
+      </div>
+
+      <div class="contact-card">
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/yourusername/image-toolbox" target="_blank" rel="noopener">github.com/yourusername/image-toolbox</a></p>
+        <span class="hint">欢迎开源贡献</span>
+      </div>
+    </div>
+
+    <h2>常见问题</h2>
+    <div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">Image Toolbox 真的免费吗？</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">是的，所有核心功能完全免费。我们可能会展示非侵入性广告以支付服务器成本。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">我的图片会上传到你们的服务器吗？</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">不会。所有处理都在您的浏览器中使用 JavaScript 本地完成。您的图片永远不会离开您的设备。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">最大文件大小是多少？</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">没有固定限制，但非常大的图片（50MB+）可能会导致浏览器内存问题。大多数现代浏览器可以很好地处理 10-20MB 的图片。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .page-content { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 64px; }
+  .page-content h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .page-content p { font-size: 16px; line-height: 1.8; color: var(--fg); margin-bottom: 16px; }
+  .contact-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 32px; }
+  .contact-card { background: var(--bg-secondary); border-radius: var(--radius); padding: 20px; }
+  .contact-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .contact-card p { font-size: 15px; margin-bottom: 4px; }
+  .contact-card .hint { font-size: 12px; color: var(--fg-tertiary); }
+  .contact-card a { color: var(--accent); text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+  .faq { margin-top: 24px; }
+  .faq-item { margin-bottom: 24px; }
+  .faq-item h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--fg); }
+  .faq-item p { font-size: 15px; color: var(--fg-secondary); }
+  @media (max-width: 600px) {
+    .contact-methods { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,320 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AdSense from '../../components/AdSense.astro';
+
+const title = '在线调整图片尺寸 — 免费图片缩放工具';
+const description = '免费在线图片尺寸调整工具。按百分比或精确像素调整。可选择保持宽高比。所有处理在浏览器本地完成。';
+---
+
+<Layout title={title} description={description} seoType="WebApplication" lang="zh">
+  <section class="hero">
+    <h1>在线调整图片尺寸</h1>
+    <p>按百分比或精确像素调整图片尺寸。可选择锁定或解锁宽高比。</p>
+  </section>
+
+  <div class="tabs-wrap">
+    <div class="tabs" role="tablist">
+      <a href="/zh/" class="tab-btn" role="tab">格式转换</a>
+      <a href="/zh/compress" class="tab-btn" role="tab">压缩图片</a>
+      <a href="/zh/crop" class="tab-btn" role="tab">图片裁切</a>
+      <a href="/zh/watermark" class="tab-btn" role="tab">添加水印</a>
+      <a href="/zh/resize" class="tab-btn active" role="tab" aria-selected="true">尺寸调整</a>
+      <a href="/zh/articles" class="tab-btn" role="tab">技巧文章</a>
+    </div>
+  </div>
+
+  <AdSense slot="2533515795" format="horizontal" />
+
+  <div class="content">
+    <article class="tool-card" aria-labelledby="resize-title">
+      <h2 id="resize-title" class="sr-only">尺寸调整工具</h2>
+
+      <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-label="上传图片">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <p>点击上传或拖放图片</p>
+        <p class="hint">支持 JPG、PNG、WebP、GIF、BMP 等格式</p>
+        <input type="file" id="fileInput" accept="image/*" />
+      </div>
+
+      <div id="fileInfo" class="file-info" style="display:none"></div>
+
+      <div id="resizeControls" style="display:none">
+        <div class="control-group" id="modeGroup">
+          <label>调整模式</label>
+          <div class="mode-switch">
+            <label class="mode-option">
+              <input type="radio" name="resizeMode" value="percent" checked id="modePercent">
+              <span>按百分比</span>
+            </label>
+            <label class="mode-option">
+              <input type="radio" name="resizeMode" value="pixel" id="modePixel">
+              <span>按像素</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-group" id="percentGroup">
+          <label for="resizePercent">缩放百分比</label>
+          <div class="range-row">
+            <input type="range" id="resizePercent" min="10" max="300" value="50" aria-label="缩放百分比">
+            <span class="range-value" id="resizePercentVal">50%</span>
+          </div>
+          <div class="desc">拖动滑块设置百分比（10% – 300%）</div>
+        </div>
+
+        <div class="control-group" id="pixelGroup" style="display:none">
+          <label>像素尺寸</label>
+          <div class="pixel-inputs">
+            <div class="pixel-field">
+              <label for="resizeWidth">宽度</label>
+              <input type="number" id="resizeWidth" min="1" max="10000" value="800" aria-label="宽度（像素）">
+              <span class="unit">px</span>
+            </div>
+            <span class="pixel-sep">×</span>
+            <div class="pixel-field">
+              <label for="resizeHeight">高度</label>
+              <input type="number" id="resizeHeight" min="1" max="10000" value="600" aria-label="高度（像素）">
+              <span class="unit">px</span>
+            </div>
+          </div>
+          <label class="lock-ratio" id="lockRatioLabel">
+            <input type="checkbox" id="lockRatio" checked>
+            <span>锁定宽高比</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="preview-area" id="resizePreviewArea" style="display:none">
+        <figure class="preview-box">
+          <figcaption class="label">原图</figcaption>
+          <div id="resizeOrigPreview"><span class="placeholder">请上传图片</span></div>
+          <div id="resizeOrigDim" class="dim-label"></div>
+        </figure>
+        <figure class="preview-box">
+          <figcaption class="label">调整后</figcaption>
+          <div id="resizeResultPreview"><span class="placeholder">点击调整尺寸</span></div>
+          <div id="resizeResultDim" class="dim-label"></div>
+        </figure>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="resizeBtn" disabled>调整尺寸</button>
+        <button class="btn btn-secondary" id="resizeDownloadBtn" disabled>下载</button>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .hero { padding: 72px 24px 56px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero p { font-size: clamp(15px, 2.5vw, 19px); color: var(--fg-secondary); line-height: 1.5; }
+  .tabs-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px; }
+  .tabs { display: flex; gap: 2px; background: var(--bg-secondary); border-radius: var(--radius); padding: 4px; overflow-x: auto; }
+  .tab-btn { flex-shrink: 0; padding: 8px 20px; border-radius: 6px; background: transparent; color: var(--fg-secondary); font-size: 13px; font-weight: 500; text-decoration: none; transition: var(--transition); white-space: nowrap; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
+  .content { flex:1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
+  .tool-card { background: var(--bg); border:1px solid var(--border-light); border-radius: var(--radius); padding: 28px; }
+  .sr-only { position: absolute; width:1px; height:1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+  .upload-area { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 52px 24px; text-align: center; cursor: pointer; transition: var(--transition); background: var(--bg); }
+  .upload-area:hover, .upload-area:focus { border-color: var(--accent); background: rgba(0,113,227,0.02); outline: none; }
+  .upload-icon { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--fg-tertiary); }
+  .upload-area p { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .hint { font-size: 13px; color: var(--fg-secondary); font-weight: 400 !important; }
+  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; }
+  input[type="file"] { display: none; }
+
+  .control-group { margin-bottom: 20px; }
+  .control-group > label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .control-group .desc { font-size: 12px; color: var(--fg-secondary); margin-top: 4px; }
+
+  .mode-switch { display: flex; gap: 2px; background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 3px; }
+  .mode-option { flex: 1; }
+  .mode-option input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .mode-option span { display: block; text-align: center; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; color: var(--fg-secondary); cursor: pointer; transition: var(--transition); }
+  .mode-option input:checked + span { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
+
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .range-row { display: flex; align-items: center; gap: 12px; }
+  .range-value { font-size: 14px; color: var(--accent); font-weight: 600; min-width: 40px; text-align: right; }
+
+  .pixel-inputs { display: flex; align-items: flex-end; gap: 10px; }
+  .pixel-field { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .pixel-field label { font-size: 12px; font-weight: 500; color: var(--fg-secondary); }
+  .pixel-field input[type="number"] { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; font-family: var(--font); color: var(--fg); background: var(--bg); transition: var(--transition); }
+  .pixel-field input[type="number"]:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(0,113,227,0.1); }
+  .pixel-sep { font-size: 16px; color: var(--fg-secondary); padding-bottom: 8px; font-weight: 500; }
+  .unit { font-size: 12px; color: var(--fg-secondary); }
+
+  .lock-ratio { display: flex; align-items: center; gap: 6px; margin-top: 10px; cursor: pointer; font-size: 13px; color: var(--fg-secondary); }
+  .lock-ratio input[type="checkbox"] { accent-color: var(--accent); width: 15px; height: 15px; cursor: pointer; }
+
+  .preview-area { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .preview-box { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px; text-align: center; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .preview-box .label { font-size: 11px; font-weight: 600; color: var(--fg-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; width: 100%; text-align: left; }
+  .preview-box img { max-width: 100%; max-height: 240px; object-fit: contain; border-radius: 4px; }
+  .placeholder { font-size: 13px; color: var(--fg-tertiary); }
+  .dim-label { font-size: 12px; color: var(--fg-secondary); margin-top: 8px; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 22px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: var(--transition); font-family: var(--font); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-secondary { background: var(--bg-secondary); color: var(--fg); border:1px solid var(--border); }
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .tabs-wrap { padding: 0 16px 16px; }
+    .content { padding: 0 16px 48px; }
+    .tool-card { padding: 20px; }
+    .preview-area { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script is:inline>
+  const $ = id => document.getElementById(id);
+  let sourceFile = null, sourceImage = null, resultUrl = null;
+  let naturalWidth = 0, naturalHeight = 0;
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + 'B';
+    if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + 'KB';
+    return (bytes/1024/1024).toFixed(2) + 'MB';
+  }
+
+  // 调整模式切换
+  function updateModeUI() {
+    const mode = document.querySelector('input[name="resizeMode"]:checked').value;
+    if (mode === 'percent') {
+      $('percentGroup').style.display = '';
+      $('pixelGroup').style.display = 'none';
+    } else {
+      $('percentGroup').style.display = 'none';
+      $('pixelGroup').style.display = '';
+      if (naturalWidth > 0 && naturalHeight > 0) {
+        if (!$('resizeWidth').dataset.filled) {
+          $('resizeWidth').value = naturalWidth;
+          $('resizeHeight').value = naturalHeight;
+          $('resizeWidth').dataset.filled = '1';
+        }
+      }
+    }
+  }
+
+  document.querySelectorAll('input[name="resizeMode"]').forEach(r => {
+    r.addEventListener('change', updateModeUI);
+  });
+
+  // 百分比滑块显示
+  $('resizePercent').addEventListener('input', function() {
+    $('resizePercentVal').textContent = this.value + '%';
+  });
+
+  // 宽高联动（保持宽高比）
+  $('resizeWidth').addEventListener('input', function() {
+    if ($('lockRatio').checked && this.dataset.linked !== '1' && naturalWidth > 0 && naturalHeight > 0) {
+      const ratio = naturalHeight / naturalWidth;
+      $('resizeHeight').dataset.linked = '1';
+      $('resizeHeight').value = Math.round(this.value * ratio);
+      $('resizeHeight').dataset.linked = '';
+    }
+  });
+  $('resizeHeight').addEventListener('input', function() {
+    if ($('lockRatio').checked && this.dataset.linked !== '1' && naturalWidth > 0 && naturalHeight > 0) {
+      const ratio = naturalWidth / naturalHeight;
+      $('resizeWidth').dataset.linked = '1';
+      $('resizeWidth').value = Math.round(this.value * ratio);
+      $('resizeWidth').dataset.linked = '';
+    }
+  });
+
+  // 上传
+  $('uploadArea').addEventListener('click', () => $('fileInput').click());
+  $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); $('uploadArea').classList.add('dragover'); });
+  $('uploadArea').addEventListener('dragleave', () => $('uploadArea').classList.remove('dragover'));
+  $('uploadArea').addEventListener('drop', e => {
+    e.preventDefault(); $('uploadArea').classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  $('fileInput').addEventListener('change', () => {
+    if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
+  });
+
+  function handleFile(file) {
+    if (!file.type.startsWith('image/')) return;
+    sourceFile = file;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        sourceImage = img;
+        naturalWidth = img.naturalWidth;
+        naturalHeight = img.naturalHeight;
+        $('fileInfo').textContent = file.name + ' · ' + naturalWidth + '×' + naturalHeight + ' · ' + formatSize(file.size);
+        $('fileInfo').style.display = 'block';
+        $('resizeControls').style.display = '';
+        $('resizePreviewArea').style.display = 'grid';
+        $('resizeOrigPreview').innerHTML = '<img src="' + img.src + '" alt="原图" loading="lazy">';
+        $('resizeOrigDim').textContent = naturalWidth + ' × ' + naturalHeight;
+        $('resizeResultPreview').innerHTML = '<span class="placeholder">点击调整尺寸</span>';
+        $('resizeResultDim').textContent = '';
+        $('resizeBtn').disabled = false;
+        $('resizeDownloadBtn').disabled = true;
+        $('resizeWidth').dataset.filled = '';
+        $('resizeWidth').value = naturalWidth;
+        $('resizeHeight').value = naturalHeight;
+        updateModeUI();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  // 执行调整
+  $('resizeBtn').addEventListener('click', () => {
+    if (!sourceImage) return;
+    let w, h;
+    const mode = document.querySelector('input[name="resizeMode"]:checked').value;
+    if (mode === 'percent') {
+      const pct = parseInt($('resizePercent').value) / 100;
+      w = Math.round(naturalWidth * pct);
+      h = Math.round(naturalHeight * pct);
+    } else {
+      w = parseInt($('resizeWidth').value) || naturalWidth;
+      h = parseInt($('resizeHeight').value) || naturalHeight;
+      w = Math.max(1, w);
+      h = Math.max(1, h);
+    }
+    const canvas = document.createElement('canvas');
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(sourceImage, 0, 0, w, h);
+    canvas.toBlob(blob => {
+      if (!blob) return;
+      if (resultUrl) URL.revokeObjectURL(resultUrl);
+      resultUrl = URL.createObjectURL(blob);
+      $('resizeResultPreview').innerHTML = '<img src="' + resultUrl + '" alt="调整后" loading="lazy">';
+      $('resizeResultDim').textContent = w + ' × ' + h;
+      $('resizeDownloadBtn').disabled = false;
+      $('resizeDownloadBtn').dataset.url = resultUrl;
+    });
+  });
+
+  // 下载
+  $('resizeDownloadBtn').addEventListener('click', () => {
+    const btn = $('resizeDownloadBtn');
+    if (!btn.dataset.url) return;
+    const a = document.createElement('a');
+    a.href = btn.dataset.url;
+    const name = sourceFile ? sourceFile.name.replace(/\.[^.]+$/, '') : '图片';
+    a.download = name + '_已调整.png';
+    a.click();
+  });
+</script>

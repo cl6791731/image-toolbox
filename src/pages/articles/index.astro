@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AdSense from '../../components/AdSense.astro';
+
+const title = 'Image Processing Tips & Guides';
+const description = 'Learn about image formats, compression techniques, watermarking best practices, and social media image sizing guides.';
+
+// Article data - in production this would come from a CMS or content collection
+const articles = [
+  {
+    title: 'WebP vs JPG: Which is Better for Websites?',
+    summary: 'WebP offers 25-35% smaller file sizes than JPG at the same quality. Learn when to use each format and how to implement WebP with fallbacks.',
+    tags: ['format', 'webp', 'optimization'],
+    date: '2026-05-15',
+    slug: 'webp-vs-jpg'
+  },
+  {
+    title: 'How to Compress Images Under 200KB',
+    summary: 'A practical guide to reducing image file size for website uploads, email attachments, and form submissions without visible quality loss.',
+    tags: ['compression', 'tutorial'],
+    date: '2026-05-12',
+    slug: 'compress-under-200kb'
+  },
+  {
+    title: 'PNG vs JPG: The Complete Guide',
+    summary: 'Understand the fundamental differences between PNG and JPG. When to use lossless vs lossy compression for photos, screenshots, and graphics.',
+    tags: ['format', 'beginner'],
+    date: '2026-05-07',
+    slug: 'png-vs-jpg-guide'
+  }
+];
+---
+
+<Layout title={title} description={description} seoType="website" lang="en">
+  <Breadcrumb items={[{label:'Home', href:'/'}, {label:'Tips'}]} />
+
+  <section class="hero">
+    <h1>Image Processing Tips</h1>
+    <p>Practical guides on formats, compression, sizing, and best practices.</p>
+  </section>
+
+  <AdSense slot="2533515795" format="horizontal" />
+
+  <div class="content">
+    <div class="article-list">
+      {articles.map((article) => (
+        <article class="article-card">
+          <div class="meta">{article.date}</div>
+          <h2><a href={`/articles/${article.slug}`}>{article.title}</a></h2>
+          <p class="summary">{article.summary}</p>
+          <div class="tags">
+            {article.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .hero { padding: 72px 24px 40px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero p { font-size: clamp(15px, 2.5vw, 19px); color: var(--fg-secondary); line-height: 1.5; }
+  .content { flex: 1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
+  .article-list { display: flex; flex-direction: column; gap: 12px; }
+  .article-card { padding: 20px 0; border-bottom: 1px solid var(--border-light); }
+  .article-card:first-child { border-top: 1px solid var(--border-light); }
+  .article-card .meta { font-size: 12px; color: var(--fg-tertiary); margin-bottom: 4px; font-weight: 500; }
+  .article-card h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; line-height: 1.4; }
+  .article-card h2 a { color: var(--fg); text-decoration: none; }
+  .article-card h2 a:hover { color: var(--accent); }
+  .article-card .summary { font-size: 14px; color: var(--fg-secondary); line-height: 1.7; margin-bottom: 8px; }
+  .article-card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .article-card .tag { font-size: 11px; padding: 2px 10px; border-radius: 12px; background: var(--bg-secondary); color: var(--fg-secondary); font-weight: 500; }
+</style>

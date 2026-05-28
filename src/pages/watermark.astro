@@ -1,0 +1,313 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSense from '../components/AdSense.astro';
+
+const title = 'Add Watermark to Images Online — Free Text Watermark Tool';
+const description = 'Free online watermark tool. Add text watermarks to images with customizable position, size, opacity and color. All processing done locally.';
+---
+
+<Layout title={title} description={description} seoType="WebApplication" lang="en">
+  <section class="hero">
+    <h1>Add Watermark to Images Online</h1>
+    <p>Add text watermarks to protect your images. Customizable position, size, opacity.</p>
+  </section>
+
+  <div class="tabs-wrap">
+    <div class="tabs" role="tablist">
+      <a href="/" class="tab-btn" role="tab">Convert</a>
+      <a href="/compress" class="tab-btn" role="tab">Compress</a>
+      <a href="/crop" class="tab-btn" role="tab">Crop</a>
+      <a href="/watermark" class="tab-btn active" role="tab" aria-selected="true">Watermark</a>
+      <a href="/resize" class="tab-btn" role="tab">Resize</a>
+      <a href="/articles" class="tab-btn" role="tab">Tips</a>
+    </div>
+  </div>
+
+  
+  <AdSense slot="2533515795" format="horizontal" />
+
+  <div class="content">
+    <article class="tool-card" aria-labelledby="watermark-title">
+      <h2 id="watermark-title" class="sr-only">Watermark Tool</h2>
+
+      <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-label="Upload image">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <p>Click to upload or drag & drop an image</p>
+        <p class="hint">Supports JPG, PNG, WebP, GIF, BMP & more</p>
+        <input type="file" id="fileInput" accept="image/*" />
+      </div>
+
+      <div id="fileInfo" class="file-info" style="display:none"></div>
+
+      <div class="wm-controls" id="wmControls" style="display:none">
+        <div class="control-group">
+          <label for="wmText">Watermark Text</label>
+          <input type="text" id="wmText" value="Watermark" placeholder="Enter watermark text" />
+        </div>
+        <div class="control-row">
+          <div class="control-group">
+            <label for="wmSize">Font Size</label>
+            <div class="range-row">
+              <input type="range" id="wmSize" min="8" max="120" value="36" aria-label="Font size">
+              <span class="range-value" id="wmSizeVal">36px</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="wmOpacity">Opacity</label>
+            <div class="range-row">
+              <input type="range" id="wmOpacity" min="5" max="100" value="40" aria-label="Opacity">
+              <span class="range-value" id="wmOpacityVal">40%</span>
+            </div>
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="wmColor">Color</label>
+          <div class="color-row">
+            <input type="color" id="wmColor" value="#ffffff" />
+            <span class="color-hex" id="wmColorHex">#ffffff</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wm-workspace" id="wmWorkspace" style="display:none; position:relative; display:none; text-align:center; margin:16px 0; user-select:none;">
+        <img id="wmBaseImg" style="max-width:100%; max-height:420px; border-radius:4px;" draggable="false" alt="Base image" />
+        <div id="wmOverlay" style="position:absolute; cursor:move; font-weight:bold; font-family:-apple-system,'Noto Sans SC',sans-serif; pointer-events:auto; white-space:nowrap; text-shadow:0 1px 3px rgba(0,0,0,0.3);">Watermark</div>
+      </div>
+
+      <div id="wmResultWrap" style="display:none">
+        <div class="preview-area">
+          <figure class="preview-box">
+            <figcaption class="label">Result</figcaption>
+            <div id="wmResultPreview"><span class="placeholder">Watermark result</span></div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="wmBtn" disabled>Apply Watermark</button>
+        <button class="btn btn-secondary" id="wmDownloadBtn" disabled>Download</button>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .hero { padding: 72px 24px 56px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero p { font-size: clamp(15px, 2.5vw, 19px); color: var(--fg-secondary); line-height: 1.5; }
+  .tabs-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px; }
+  .tabs { display: flex; gap: 2px; background: var(--bg-secondary); border-radius: var(--radius); padding: 4px; overflow-x: auto; }
+  .tab-btn { flex-shrink: 0; padding: 8px 20px; border-radius: 6px; background: transparent; color: var(--fg-secondary); font-size: 13px; font-weight: 500; text-decoration: none; transition: var(--transition); white-space: nowrap; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
+  .content { flex:1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
+  .tool-card { background: var(--bg); border:1px solid var(--border-light); border-radius: var(--radius); padding: 28px; }
+  .sr-only { position: absolute; width:1px; height:1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+  .upload-area { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 52px 24px; text-align: center; cursor: pointer; transition: var(--transition); background: var(--bg); }
+  .upload-area:hover, .upload-area:focus { border-color: var(--accent); background: rgba(0,113,227,0.02); outline: none; }
+  .upload-icon { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--fg-tertiary); }
+  .upload-area p { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .hint { font-size: 13px; color: var(--fg-secondary); font-weight: 400 !important; }
+  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; }
+  input[type="file"] { display: none; }
+  .control-group { margin-bottom: 20px; }
+  .control-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .control-group .desc { font-size: 12px; color: var(--fg-secondary); margin-top: 4px; }
+  input[type="text"] { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; background: var(--bg); color: var(--fg); font-family: var(--font); }
+  input[type="text"]:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,113,227,0.12); }
+  .control-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .range-row { display: flex; align-items: center; gap: 12px; }
+  .range-value { font-size: 14px; color: var(--accent); font-weight: 600; min-width: 40px; text-align: right; }
+  .color-row { display: flex; align-items: center; gap: 10px; }
+  input[type="color"] { width: 40px; height: 32px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; padding: 2px; }
+  .color-hex { font-size: 13px; color: var(--fg-secondary); font-family: monospace; }
+  .wm-workspace { margin: 16px 0; user-select: none; }
+  .preview-area { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0; }
+  .preview-box { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px; text-align: center; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .preview-box .label { font-size: 11px; font-weight: 600; color: var(--fg-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; width: 100%; text-align: left; }
+  .preview-box img { max-width: 100%; max-height: 240px; object-fit: contain; border-radius: 4px; }
+  .placeholder { font-size: 13px; color: var(--fg-tertiary); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 22px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: var(--transition); font-family: var(--font); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-secondary { background: var(--bg-secondary); color: var(--fg); border:1px solid var(--border); }
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .tabs-wrap { padding: 0 16px 16px; }
+    .content { padding: 0 16px 48px; }
+    .tool-card { padding: 20px; }
+    .control-row { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script is:inline>
+  const $ = id => document.getElementById(id);
+  let sourceFile = null, sourceImage = null, resultBlob = null;
+  let wmState = { x: 0.5, y: 0.5 };
+  let wmDragActive = false, wmDragStartX = 0, wmDragStartY = 0, wmOrigLeft = 0, wmOrigTop = 0;
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + 'B';
+    if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + 'KB';
+    return (bytes/1024/1024).toFixed(2) + 'MB';
+  }
+
+  function imageToCanvas(img) {
+    const c = document.createElement('canvas');
+    c.width = img.naturalWidth; c.height = img.naturalHeight;
+    c.getContext('2d').drawImage(img, 0, 0);
+    return c;
+  }
+
+  // Slider updates
+  $('wmSize').addEventListener('input', function() { $('wmSizeVal').textContent = this.value + 'px'; refreshOverlay(); });
+  $('wmOpacity').addEventListener('input', function() { $('wmOpacityVal').textContent = this.value + '%'; refreshOverlay(); });
+  $('wmColor').addEventListener('input', function() { $('wmColorHex').textContent = this.value; refreshOverlay(); });
+  $('wmText').addEventListener('input', refreshOverlay);
+
+  // Upload
+  $('uploadArea').addEventListener('click', () => $('fileInput').click());
+  $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); $('uploadArea').classList.add('dragover'); });
+  $('uploadArea').addEventListener('dragleave', () => $('uploadArea').classList.remove('dragover'));
+  $('uploadArea').addEventListener('drop', e => {
+    e.preventDefault(); $('uploadArea').classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  $('fileInput').addEventListener('change', () => {
+    if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
+  });
+
+  function handleFile(file) {
+    if (!file.type.startsWith('image/')) return;
+    sourceFile = file;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        sourceImage = img;
+        $('fileInfo').textContent = file.name + ' · ' + img.naturalWidth + '×' + img.naturalHeight + ' · ' + formatSize(file.size);
+        $('fileInfo').style.display = 'block';
+        $('wmControls').style.display = 'block';
+        $('wmBtn').disabled = false;
+        $('wmDownloadBtn').disabled = true;
+        $('wmResultWrap').style.display = 'none';
+        setupWatermark();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function refreshOverlay() {
+    const overlay = $('wmOverlay');
+    if (!overlay) return;
+    overlay.textContent = $('wmText').value || 'Watermark';
+    overlay.style.fontSize = parseInt($('wmSize').value) + 'px';
+    overlay.style.opacity = parseInt($('wmOpacity').value) / 100;
+    overlay.style.color = $('wmColor').value || '#ffffff';
+  }
+
+  function setupWatermark() {
+    const workspace = $('wmWorkspace');
+    const img = $('wmBaseImg');
+    const overlay = $('wmOverlay');
+    if (!workspace || !img || !overlay || !sourceImage) return;
+    workspace.style.display = 'block';
+    img.src = sourceImage.src;
+    refreshOverlay();
+    const centerOverlay = () => {
+      const r = img.getBoundingClientRect();
+      if (r.width === 0) { setTimeout(centerOverlay, 30); return; }
+      wmState = { x: 0.5, y: 0.5 };
+      const ow = overlay.offsetWidth || 100;
+      const oh = overlay.offsetHeight || 30;
+      overlay.style.left = (r.width * 0.5 - ow / 2) + 'px';
+      overlay.style.top = (r.height * 0.5 - oh / 2) + 'px';
+    };
+    setTimeout(centerOverlay, 50);
+    overlay.onmousedown = e => startWmDrag(e.clientX, e.clientY);
+    overlay.ontouchstart = e => startWmDrag(e.touches[0].clientX, e.touches[0].clientY);
+    document.onmousemove = e => moveWmDrag(e.clientX, e.clientY);
+    document.ontouchmove = e => { if (wmDragActive) { e.preventDefault(); moveWmDrag(e.touches[0].clientX, e.touches[0].clientY); } };
+    document.onmouseup = () => endWmDrag();
+    document.ontouchend = () => endWmDrag();
+  }
+
+  function startWmDrag(cx, cy) {
+    wmDragActive = true;
+    wmDragStartX = cx; wmDragStartY = cy;
+    const overlay = $('wmOverlay');
+    wmOrigLeft = parseInt(overlay.style.left) || 0;
+    wmOrigTop = parseInt(overlay.style.top) || 0;
+  }
+
+  function moveWmDrag(cx, cy) {
+    if (!wmDragActive) return;
+    const overlay = $('wmOverlay');
+    const img = $('wmBaseImg');
+    if (!overlay || !img) return;
+    const rect = img.getBoundingClientRect();
+    const dx = cx - wmDragStartX;
+    const dy = cy - wmDragStartY;
+    const ow = overlay.offsetWidth;
+    const oh = overlay.offsetHeight;
+    let left = Math.max(0, Math.min(rect.width - ow, wmOrigLeft + dx));
+    let top = Math.max(0, Math.min(rect.height - oh, wmOrigTop + dy));
+    overlay.style.left = left + 'px';
+    overlay.style.top = top + 'px';
+    wmState.x = (left + ow / 2) / rect.width;
+    wmState.y = (top + oh / 2) / rect.height;
+  }
+
+  function endWmDrag() { wmDragActive = false; }
+
+  $('wmBtn').addEventListener('click', () => {
+    if (!sourceImage) return;
+    const text = $('wmText').value || 'Watermark';
+    const fontSize = parseInt($('wmSize').value);
+    const opacity = parseInt($('wmOpacity').value) / 100;
+    const color = $('wmColor').value || '#ffffff';
+    const c = imageToCanvas(sourceImage);
+    const ctx = c.getContext('2d');
+    const imgEl = $('wmBaseImg');
+    const displayRect = imgEl.getBoundingClientRect();
+    const scale = displayRect.width ? sourceImage.naturalWidth / displayRect.width : 1;
+    const canvasFontSize = Math.round(fontSize * scale);
+    ctx.globalAlpha = opacity;
+    ctx.font = 'bold ' + canvasFontSize + 'px -apple-system, "Noto Sans SC", sans-serif';
+    ctx.fillStyle = color;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.shadowColor = 'rgba(0,0,0,0.3)';
+    ctx.shadowBlur = canvasFontSize * 0.05;
+    ctx.shadowOffsetY = canvasFontSize * 0.02;
+    ctx.fillText(text, c.width * wmState.x, c.height * wmState.y);
+    c.toBlob(blob => {
+      if (!blob) return;
+      resultBlob = blob;
+      const url = URL.createObjectURL(blob);
+      $('wmResultPreview').innerHTML = '<img src="' + url + '" alt="Watermarked result" loading="lazy">';
+      $('wmResultWrap').style.display = 'block';
+      $('wmDownloadBtn').disabled = false;
+      $('wmDownloadBtn').dataset.url = url;
+      $('wmBtn').textContent = 'Re-apply';
+    }, 'image/png');
+  });
+
+  $('wmDownloadBtn').addEventListener('click', () => {
+    const btn = $('wmDownloadBtn');
+    if (!btn.dataset.url) return;
+    const a = document.createElement('a');
+    a.href = btn.dataset.url;
+    const name = sourceFile ? sourceFile.name.replace(/\.[^.]+$/, '') : 'image';
+    a.download = name + '_watermarked.png';
+    a.click();
+  });
+</script>

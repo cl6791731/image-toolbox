@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'About Image Toolbox';
+const description = 'Image Toolbox is a free, privacy-focused online image processing tool. All operations run locally in your browser — no upload, no server, no data collection.';
+---
+
+<Layout title={title} description={description} lang="en">
+  <Breadcrumb items={[{label:'Home', href:'/'}, {label:'About'}]} />
+
+  <article class="page-content">
+    <h1>About Image Toolbox</h1>
+
+    <p>Image Toolbox was built with a simple mission: give users a fast, free, and private way to process images without installing software or uploading files to remote servers.</p>
+
+    <h2>Why Local Processing?</h2>
+    <p>Most online image tools require you to upload your files to a server. That means:</p>
+    <ul>
+      <li>Your images are stored on someone else's computer</li>
+      <li>You have to trust their privacy policy</li>
+      <li>Upload and download take time</li>
+      <li>Large files may fail or timeout</li>
+    </ul>
+    <p>Image Toolbox solves all of these by running entirely in your browser. Your images never leave your device.</p>
+
+    <h2>Supported Formats</h2>
+    <p>PNG, JPG, WebP, GIF, BMP, SVG, AVIF, ICO, TIFF and more. We use modern browser APIs to handle conversion and compression natively.</p>
+
+    <h2>Open Source Philosophy</h2>
+    <p>We believe privacy-respecting tools should be accessible to everyone. No registration, no paywall, no tracking pixels.</p>
+  </article>
+</Layout>
+
+<style>
+  .page-content { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 64px; }
+  .page-content h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 24px; }
+  .page-content h2 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+  .page-content p { font-size: 16px; line-height: 1.8; color: var(--fg); margin-bottom: 16px; }
+  .page-content ul { margin-bottom: 16px; padding-left: 24px; }
+  .page-content li { font-size: 16px; line-height: 1.8; margin-bottom: 8px; color: var(--fg-secondary); }
+</style>

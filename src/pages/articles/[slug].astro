@@ -1,0 +1,262 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AdSense from '../../components/AdSense.astro';
+
+export function getStaticPaths() {
+  const articles = [
+    {
+      slug: 'webp-vs-jpg',
+      title: 'WebP vs JPG: Which is Better for Websites?',
+      date: '2026-05-15',
+      tags: ['format', 'webp', 'optimization'],
+      content: `
+<h2>What Are WebP and JPG?</h2>
+<p>WebP and JPG (JPEG) are two of the most widely used image formats on the web today. JPG has been the de facto standard for photographs since the early 1990s, while WebP was introduced by Google in 2010 as a modern alternative designed specifically for web performance. Understanding the differences between these formats is crucial for anyone building websites, running online stores, or managing digital content.</p>
+<p>JPG uses lossy compression, discarding some image data to achieve smaller file sizes. WebP supports both lossy and lossless compression, and even transparency — making it a more versatile choice in many scenarios.</p>
+
+<h2>File Size Comparison: WebP vs JPG</h2>
+<p>The most compelling reason to choose WebP over JPG is file size. According to Google's own studies and numerous independent benchmarks, WebP achieves <strong>25–35% smaller file sizes</strong> than JPG at equivalent visual quality. For lossless compression, WebP files are about 26% smaller than PNG equivalents.</p>
+<p>What does this mean in practice? If your website currently serves 1MB of JPG images, switching to WebP could reduce that to roughly 650–750KB — a significant improvement for page load times, especially on mobile networks. Faster loading directly impacts user experience, bounce rates, and search engine rankings.</p>
+
+<h2>Quality: Can You Tell the Difference?</h2>
+<p>At moderate compression levels (quality 70–85), most people cannot distinguish between WebP and JPG in blind tests. Both formats produce visually similar results for photographs. However, at very high compression levels (quality below 50), WebP tends to show fewer blocking artifacts than JPG, producing smoother gradients and better detail preservation.</p>
+<p>For graphics with sharp edges, text overlays, or large areas of solid color, WebP's lossless mode outperforms JPG significantly, since JPG was never designed for such content.</p>
+
+<h2>Browser Support for WebP</h2>
+<p>As of 2026, WebP is supported by over <strong>97% of browsers worldwide</strong>, including Chrome, Firefox, Safari (since version 14), Edge, and Opera. The only notable exception is some older versions of Internet Explorer, which has negligible market share. In practical terms, WebP is safe to use on production websites.</p>
+<p>For the remaining 3% of users, a simple JPG fallback ensures no one sees a broken image. This can be implemented with the <code>&lt;picture&gt;</code> element:</p>
+<pre><code>&lt;picture&gt;
+  &lt;source srcset="image.webp" type="image/webp"&gt;
+  &lt;img src="image.jpg" alt="Description"&gt;
+&lt;/picture&gt;</code></pre>
+
+<h2>When to Use Each Format</h2>
+<h3>Use WebP When:</h3>
+<ul>
+<li>You want the smallest possible file size for web delivery</li>
+<li>You need both lossy and lossless compression in one format</li>
+<li>Your images require transparency (replacing PNG)</li>
+<li>You're optimizing for Core Web Vitals and page speed</li>
+</ul>
+<h3>Use JPG When:</h3>
+<ul>
+<li>You need maximum compatibility with very old systems</li>
+<li>Your workflow tools don't yet support WebP export</li>
+<li>You're working with print media that requires standard formats</li>
+</ul>
+
+<h2>How to Convert JPG to WebP</h2>
+<p>Converting your existing JPG images to WebP is straightforward. You can use online tools like <a href="/">Image Toolbox</a> for quick, browser-based conversion — no software installation needed. Simply upload your JPG, select WebP as the target format, adjust the quality slider, and download the result. All processing happens locally in your browser, so your images never leave your device.</p>
+<p>For batch conversion, tools like <code>cwebp</code> (Google's command-line encoder), Squoosh, or ImageMagick can process hundreds of files at once.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Is WebP better than JPG?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">For web use, WebP is generally better than JPG. It produces 25–35% smaller files at the same visual quality, supports both lossy and lossless compression, and can include transparency. JPG remains useful for maximum compatibility and print workflows.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Does Safari support WebP?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes. Safari has supported WebP since version 14 (released September 2020). All modern versions of Safari on macOS, iOS, and iPadOS can display WebP images natively.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I convert JPG to WebP for free?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Absolutely. Use a free online tool like Image Toolbox to convert JPG to WebP directly in your browser. No upload to servers, no registration, and no quality watermark. Just upload, convert, and download.</p>
+    </div>
+  </div>
+</div>
+`
+    },
+    {
+      slug: 'compress-under-200kb',
+      title: 'How to Compress Images Under 200KB',
+      date: '2026-05-12',
+      tags: ['compression', 'tutorial'],
+      content: `
+<h2>Why the 200KB Limit Matters</h2>
+<p>The 200KB threshold is one of the most common file size limits you'll encounter online. Many websites, job application portals, email clients, and government forms restrict image uploads to 200KB or less. Social media platforms also compress images aggressively, and starting with a smaller file often means less quality loss during their re-processing.</p>
+<p>For web developers, keeping images under 200KB is a good rule of thumb for maintaining fast page loads. A page with five 200KB images loads significantly faster than one with five 2MB images — the difference can be seconds on mobile connections.</p>
+
+<h2>Understanding Quality vs File Size</h2>
+<p>Image file size is determined by three main factors: <strong>dimensions</strong> (width × height in pixels), <strong>format</strong> (JPG, PNG, WebP), and <strong>quality level</strong> (compression intensity). To get under 200KB, you'll typically need to adjust at least one of these — often a combination works best.</p>
+<p>A common misconception is that reducing quality always produces visibly worse images. In reality, most photographs can be compressed to quality level 70–80 with no perceptible difference on screen. The human eye is surprisingly forgiving with natural images; it's only graphics with text or sharp lines that show compression artifacts more readily.</p>
+
+<h2>Method 1: Reduce Compression Quality</h2>
+<p>The fastest way to shrink an image is to lower the compression quality. Using an online tool like <a href="/compress">Image Toolbox Compress</a>, you can adjust a quality slider from 100% down to your target. For most photos, quality 60–75 produces files well under 200KB while remaining visually acceptable.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Upload your image to the compression tool</li>
+<li>Start with quality 75 and check the resulting file size</li>
+<li>If still over 200KB, reduce to 65 and try again</li>
+<li>For very large images, you may need to go as low as 50</li>
+</ol>
+<p>The key is to preview the result at each step — stop as soon as the quality becomes unacceptable for your use case.</p>
+
+<h2>Method 2: Resize Image Dimensions</h2>
+<p>If quality reduction alone isn't enough, reducing the physical dimensions of the image will dramatically cut file size. A 4000×3000 pixel photo compressed to quality 70 might still be 500KB, but the same photo resized to 1200×900 pixels at quality 80 will easily fit under 200KB.</p>
+<p>For most web and email uses, images don't need to be larger than 1200–1600 pixels wide. Use the <a href="/resize">Image Toolbox Resize</a> tool to adjust dimensions while maintaining aspect ratio.</p>
+
+<h2>Method 3: Convert to WebP Format</h2>
+<p>WebP typically produces files 25–35% smaller than JPG at the same quality level. If your target platform supports WebP (nearly all modern platforms do), converting from JPG or PNG to WebP can get you under the 200KB limit without sacrificing quality. Use <a href="/">Image Toolbox Convert</a> to switch formats instantly.</p>
+
+<h2>Batch Compression Tips</h2>
+<p>If you need to compress many images at once, establish a workflow: first resize all images to a consistent dimension, then apply uniform quality compression. This ensures predictable file sizes across your entire set. Keep a folder of originals so you can always go back and re-process if needed.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">How do I reduce image size under 200KB?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Use a three-step approach: (1) Lower compression quality to 65–75, (2) Resize the image to 1200–1600px wide if it's a large photo, (3) Convert to WebP format for additional savings. Most images can reach under 200KB with quality alone.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What quality level should I use?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Start at quality 75 for photos and 85 for graphics with text. Check the file size and reduce incrementally if needed. Most photos look fine at quality 60–70 for web use. Below 50, visible artifacts become noticeable.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Does resizing reduce file size?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes. Reducing pixel dimensions (e.g., from 4000×3000 to 1200×900) reduces file size proportionally, since there's less data to store. Combined with quality compression, resizing is the most effective way to meet strict size limits.</p>
+    </div>
+  </div>
+</div>
+`
+    },
+    {
+      slug: 'png-vs-jpg-guide',
+      title: 'PNG vs JPG: The Complete Guide',
+      date: '2026-05-07',
+      tags: ['format', 'beginner'],
+      content: `
+<h2>The Fundamental Difference: Lossless vs Lossy</h2>
+<p>PNG and JPG take fundamentally different approaches to image compression. <strong>PNG (Portable Network Graphics)</strong> uses lossless compression — every pixel is preserved exactly as it was in the original image. <strong>JPG (Joint Photographic Experts Group)</strong> uses lossy compression — some pixel data is deliberately discarded to achieve smaller file sizes.</p>
+<p>This single difference explains almost everything about when to use each format. If you need pixel-perfect reproduction, PNG is the answer. If you need small file sizes for photos, JPG wins. But there's more nuance to explore.</p>
+
+<h2>When PNG Wins</h2>
+<h3>Screenshots and UI Captures</h3>
+<p>Screenshots of applications, websites, and desktop environments contain sharp text, clean lines, and areas of solid color — exactly the content where JPG's lossy compression struggles. A screenshot saved as JPG often shows fuzzy text and color banding, while the same screenshot as PNG remains crisp and readable. File size differences are also small for this type of content, since PNG compresses solid-color areas extremely efficiently.</p>
+
+<h3>Logos and Graphics with Transparency</h3>
+<p>PNG supports alpha transparency, allowing images to have transparent backgrounds — essential for logos, icons, and overlay graphics. JPG has no transparency support at all; every JPG pixel is fully opaque. If you need a logo that works on any background color, PNG is your only option between these two formats.</p>
+
+<h3>Images with Text</h3>
+<p>Any image that contains readable text — infographics, diagrams, annotated screenshots — should use PNG. JPG compression introduces artifacts around text edges that make letters appear fuzzy and unprofessional.</p>
+
+<h2>When JPG Wins</h2>
+<h3>Photographs</h3>
+<p>For photographs, JPG is almost always the better choice. The natural variation in photos means JPG's lossy compression is nearly invisible to the human eye, while the file size savings are enormous. A typical 12-megapixel photo might be 15–25MB as an uncompressed PNG but only 2–4MB as a high-quality JPG — a 5–10x reduction.</p>
+
+<h3>Web Images Where Speed Matters</h3>
+<p>Page load speed is a critical factor for user experience and SEO. If you're serving dozens of images on a webpage, the size difference between PNG and JPG adds up quickly. For photographic content, JPG delivers acceptable quality at a fraction of the bandwidth.</p>
+
+<h3>Email Attachments and Messaging</h3>
+<p>Most email providers limit attachments to 20–25MB. Sending photos as PNG can quickly exceed these limits, while the same photos as JPG fit comfortably. Messaging apps also benefit from smaller file sizes for faster sharing.</p>
+
+<h2>File Size Comparison</h2>
+<p>Here's a real-world comparison for a typical 4000×3000 pixel photograph:</p>
+<ul>
+<li><strong>PNG:</strong> 15–25MB (lossless, every detail preserved)</li>
+<li><strong>JPG quality 90:</strong> 4–6MB (virtually indistinguishable from original)</li>
+<li><strong>JPG quality 75:</strong> 1.5–3MB (slight quality loss, fine for web)</li>
+<li><strong>JPG quality 50:</strong> 800KB–1.5MB (noticeable artifacts, use with caution)</li>
+</ul>
+<p>For graphics and screenshots, the gap narrows significantly, and PNG may even be smaller than JPG for images with lots of solid color.</p>
+
+<h2>Can You Convert Between Them?</h2>
+<p>Yes, you can convert between PNG and JPG using tools like <a href="/">Image Toolbox</a>. However, be aware of the one-way quality rule: converting from PNG to JPG is lossy (you lose data permanently), while converting from JPG to PNG doesn't improve quality — it just makes the file larger. Always keep your originals in the highest quality format and create compressed copies as needed.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">When should I use PNG?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Use PNG for screenshots, logos, graphics with transparency, images with text, and any content where pixel-perfect accuracy matters. PNG's lossless compression preserves every detail without artifacts.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">When should I use JPG?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Use JPG for photographs, web images where file size matters, email attachments, and any scenario where small file size is more important than pixel-perfect accuracy. Quality 75–85 provides an excellent balance for most uses.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I convert PNG to JPG and back?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">You can convert in either direction, but quality loss is one-way: PNG→JPG discards data permanently, and converting that JPG back to PNG won't restore it. Always keep your original files and work from copies when converting.</p>
+    </div>
+  </div>
+</div>
+`
+    }
+  ];
+  return articles.map(a => ({ params: { slug: a.slug }, props: a }));
+}
+
+const { slug, title, date, tags, content } = Astro.props;
+const description = `Learn about ${title.toLowerCase()}. Practical image processing guide from Image Toolbox.`;
+---
+
+<Layout
+  title={title}
+  description={description}
+  seoType="article"
+  datePublished={date}
+  tags={tags}
+  lang="en"
+>
+  <Breadcrumb items={[
+    {label:'Home', href:'/'},
+    {label:'Tips', href:'/articles'},
+    {label: title}
+  ]} />
+
+  <AdSense slot="2533515795" format="horizontal" />
+
+  <article class="article-page">
+    <header>
+      <div class="meta">{date}</div>
+      <h1>{title}</h1>
+      <div class="tags">
+        {tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    </header>
+
+    <div class="article-body" set:html={content} />
+  </article>
+
+</Layout>
+
+<style>
+  .article-page { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 64px; }
+  .article-page header { margin-bottom: 32px; }
+  .article-page .meta { font-size: 13px; color: var(--fg-tertiary); margin-bottom: 8px; }
+  .article-page h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
+  .article-page .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+  .article-page .tag { font-size: 12px; padding: 4px 12px; border-radius: 12px; background: var(--bg-secondary); color: var(--fg-secondary); font-weight: 500; }
+  .article-body { font-size: 16px; line-height: 1.8; color: var(--fg); }
+  .article-body p { margin-bottom: 16px; }
+  .article-body ul, .article-body ol { margin-bottom: 16px; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .article-body h2 { font-size: 22px; font-weight: 600; margin: 32px 0 16px; letter-spacing: -0.01em; }
+  .article-body h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+  .article-body strong { color: var(--fg); }
+  .article-body a { color: var(--accent); text-decoration: none; }
+  .article-body a:hover { text-decoration: underline; }
+  .article-body pre { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 16px; overflow-x: auto; margin-bottom: 16px; font-size: 14px; line-height: 1.6; }
+  .article-body code { font-size: 14px; background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; }
+  .article-body pre code { background: none; padding: 0; }
+  .faq-item { margin-bottom: 20px; padding: 16px; background: var(--bg-secondary); border-radius: var(--radius-sm); }
+  .faq-item h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; color: var(--fg); }
+  .faq-item p { font-size: 15px; color: var(--fg-secondary); margin: 0; }
+</style>

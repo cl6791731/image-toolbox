@@ -1,0 +1,107 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  type?: 'website' | 'article' | 'WebApplication';
+  datePublished?: string;
+  dateModified?: string;
+  tags?: string[];
+  lang?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = '/og-image.png',
+  canonical,
+  type = 'website',
+  datePublished,
+  dateModified,
+  tags = [],
+  lang = 'en',
+  noindex = false,
+} = Astro.props;
+
+const site = 'https://yourdomain.com';
+const canonicalUrl = canonical ? `${site}${canonical}` : `${site}${Astro.url.pathname}`;
+const ogImage = image.startsWith('http') ? image : `${site}${image}`;
+
+// Schema.org JSON-LD
+let schema: any = {
+  "@context": "https://schema.org",
+  "@type": type === 'WebApplication' ? 'WebApplication' : type === 'article' ? 'TechArticle' : 'WebSite',
+  "url": canonicalUrl,
+  "name": title,
+  "description": description,
+  "inLanguage": lang === 'zh' ? 'zh-CN' : 'en',
+};
+
+if (type === 'WebApplication') {
+  schema.applicationCategory = 'PhotoApplication';
+  schema.operatingSystem = 'Any';
+  schema.offers = { "@type": "Offer", "price": "0", "priceCurrency": "USD" };
+}
+
+if (type === 'article' || type === 'TechArticle') {
+  schema.headline = title;
+  schema.datePublished = datePublished;
+  schema.dateModified = dateModified || datePublished;
+  schema.author = { "@type": "Organization", "name": "Image Toolbox" };
+  schema.publisher = {
+    "@type": "Organization",
+    "name": "Image Toolbox",
+    "logo": { "@type": "ImageObject", "url": `${site}/favicon.ico` }
+  };
+  if (tags.length) schema.keywords = tags.join(', ');
+}
+
+const alternateLangs = [
+  { lang: 'zh-CN', url: `${site}/zh${Astro.url.pathname.replace(/^\/zh/, '').replace(/^\/en/, '')}` },
+  { lang: 'en', url: `${site}/en${Astro.url.pathname.replace(/^\/zh/, '').replace(/^\/en/, '')}` },
+];
+---
+
+<!-- Canonical & Hreflang -->
+<link rel="canonical" href={canonicalUrl} />
+{alternateLangs.map((l) => (
+  <link rel="alternate" hreflang={l.lang} href={l.url} />
+))}
+<link rel="alternate" hreflang="x-default" href={`${site}/en${Astro.url.pathname.replace(/^\/zh/, '').replace(/^\/en/, '')}`} />
+
+<!-- Robots -->
+{noindex ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+)}
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type === 'article' ? 'article' : 'website'} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+<meta property="og:site_name" content="Image Toolbox" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Performance -->
+<link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+
+<!-- Schema.org -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
