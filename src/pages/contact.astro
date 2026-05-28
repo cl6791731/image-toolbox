@@ -8,6 +8,16 @@ const description = 'Get in touch with Image Toolbox for feedback, feature reque
 
 <Layout title={title} description={description} lang="en">
   <Breadcrumb items={[{label:'Home', href:'/'}, {label:'Contact'}]} />
+  <div class="ad-wrapper">
+    <!-- 横向广告位 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4519467063111183"
+         data-ad-slot="2533515795"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+
 
   <article class="page-content">
     <h1>Contact Us</h1>
@@ -53,7 +63,25 @@ const description = 'Get in touch with Image Toolbox for feedback, feature reque
   </article>
 </Layout>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4519467063111183"
+     crossorigin="anonymous"></script>
+<script is:inline>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <style>
+  .ad-wrapper {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px auto;
+    border: 1px dashed var(--border);
+    max-width: var(--max-w);
+    padding: 0 24px;
+  }
   .page-content { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 64px; }
   .page-content h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
   .page-content p { font-size: 16px; line-height: 1.8; color: var(--fg); margin-bottom: 16px; }
