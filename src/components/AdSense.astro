@@ -1,5 +1,5 @@
 ---
-export interface Props {
+interface Props {
   slot: string;
   format?: 'auto' | 'fluid' | 'rectangle' | 'vertical' | 'horizontal';
   style?: string;
@@ -16,19 +16,23 @@ const client = 'ca-pub-4519467063111183';
     data-ad-slot={slot}
     data-ad-format={format}
     data-full-width-responsive="true"
-  />
-  <script is:inline define:vars={{ client }}>
+  ></ins>
+</div>
+
+<script is:inline>
+  (function() {
+    var client = 'ca-pub-4519467063111183';
     if (!window.adsbygoogle) {
       window.adsbygoogle = [];
-      const script = document.createElement('script');
+      var script = document.createElement('script');
       script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + client;
       script.crossOrigin = 'anonymous';
       script.async = true;
       document.head.appendChild(script);
     }
     try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
-  </script>
-</div>
+  })();
+</script>
 
 <style>
   .ad-wrapper {

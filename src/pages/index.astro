@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AdSense from '../components/AdSense.astro';
 
 const title = 'Free Online Image Converter — PNG, JPG, WebP, AVIF';
 const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO formats locally in your browser. No upload needed. Fast, free, and privacy-focused.';
@@ -27,7 +26,9 @@ const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO forma
     </div>
   </div>
 
-  <AdSense slot="2533515795" format="horizontal" />
+  <div class="ad-wrapper">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4519467063111183" data-ad-slot="2533515795" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+  </div>
 
   <div class="content">
     <article class="tool-card" aria-labelledby="convert-title">
@@ -91,6 +92,21 @@ const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO forma
 
 </Layout>
 
+<script is:inline>
+  (function() {
+    var client = 'ca-pub-4519467063111183';
+    if (!window.adsbygoogle) {
+      window.adsbygoogle = [];
+      var script = document.createElement('script');
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + client;
+      script.crossOrigin = 'anonymous';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+    try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+  })();
+</script>
+
 <style>
   .hero { padding: 72px 24px 56px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
   .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
@@ -102,6 +118,21 @@ const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO forma
   .tabs-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px; }
   .tabs { display: flex; gap: 2px; background: var(--bg-secondary); border-radius: var(--radius); padding: 4px; overflow-x: auto; }
   .tab-btn { flex-shrink: 0; padding: 8px 20px; border-radius: 6px; background: transparent; color: var(--fg-secondary); font-size: 13px; font-weight: 500; text-decoration: none; transition: var(--transition); white-space: nowrap; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
+
+  .ad-wrapper {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px auto;
+    border: 1px dashed var(--border);
+    max-width: var(--max-w);
+    padding: 0 24px;
+  }
   .tab-btn:hover { color: var(--fg); }
   .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
 
