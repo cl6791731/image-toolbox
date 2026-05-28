@@ -25,7 +25,7 @@ const {
   noindex = false,
 } = Astro.props;
 
-const site = 'https://img.b1y.ren/';
+const site = 'https://img.b1y.ren';
 const canonicalUrl = canonical ? `${site}${canonical}` : `${site}${Astro.url.pathname}`;
 const ogImage = image.startsWith('http') ? image : `${site}${image}`;
 
