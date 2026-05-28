@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const title = '免费在线图片格式转换 — PNG、JPG、WebP、AVIF';
-const description = '在浏览器本地完成图片格式转换，支持 PNG、JPG、WebP、AVIF、BMP、ICO 等格式。无需上传，保护隐私，完全免费。';
+const title = '免费在线图片格式转换 — PNG、JPEG、WebP、AVIF、BMP、ICO';
+const description = '在浏览器本地完成 6+ 种图片格式互转，支持 PNG、JPEG、WebP、AVIF、BMP、ICO。自动识别输入格式。无需上传，保护隐私，完全免费。';
 ---
 
 <Layout title={title} description={description} seoType="WebApplication" lang="zh">
@@ -54,28 +54,37 @@ const description = '在浏览器本地完成图片格式转换，支持 PNG、J
         <p class="hint">支持 JPG、PNG、WebP、GIF、BMP、SVG、AVIF、ICO、TIFF 等格式</p>
         <input type="file" id="fileInput" accept="image/*" aria-label="选择图片文件" />
       </div>
-      <div id="fileInfo" class="file-info" style="display:none"></div>
+      <div id="fileInfo" class="file-info" style="display:none">
+        <span id="fileInfoText"></span>
+        <span id="inputFormatBadge" class="format-badge"></span>
+      </div>
 
       <div class="control-group">
         <label for="formatTarget">目标格式</label>
         <select id="formatTarget">
-          <option value="image/png">PNG（无损压缩，支持透明）</option>
-          <option value="image/jpeg">JPG（有损压缩，通用性最强）</option>
-          <option value="image/webp">WebP（Google 现代格式，高压缩率）</option>
-          <option value="image/bmp">BMP（无压缩位图，质量无损）</option>
-          <option value="image/avif">AVIF（新一代高效格式，画质最优）</option>
-          <option value="image/x-icon">ICO（Windows 图标格式）</option>
+          <optgroup label="推荐格式">
+            <option value="image/png">PNG — 无损压缩，支持透明背景</option>
+            <option value="image/jpeg">JPEG — 有损压缩，通用性最强</option>
+            <option value="image/webp">WebP — 支持有损/无损，比 JPEG 小 25-35%</option>
+          </optgroup>
+          <optgroup label="新一代格式">
+            <option value="image/avif">AVIF — 最高压缩率，支持 HDR（Chrome/Firefox）</option>
+          </optgroup>
+          <optgroup label="特殊用途">
+            <option value="image/bmp">BMP — 无压缩位图，完全无损</option>
+            <option value="image/x-icon">ICO — Windows 图标格式，支持多尺寸</option>
+          </optgroup>
         </select>
-        <div class="desc" id="formatCompatNote">AVIF、ICO 可能不受部分旧版浏览器支持</div>
+        <div class="desc" id="formatCompatNote"></div>
       </div>
 
-      <div class="control-group">
+      <div class="control-group" id="qualityGroup">
         <label for="formatQuality">图片质量</label>
         <div class="range-row">
           <input type="range" id="formatQuality" min="1" max="100" value="92" aria-label="图片质量百分比">
           <span class="range-value" id="formatQualityVal">92%</span>
         </div>
-        <div class="desc">仅对 JPG、WebP、AVIF 等有损格式生效</div>
+        <div class="desc" id="formatQualityDesc">仅适用于有损格式（JPEG、WebP、AVIF）</div>
       </div>
 
       <div class="preview-area">
@@ -146,7 +155,8 @@ const description = '在浏览器本地完成图片格式转换，支持 PNG、J
   .upload-icon { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--fg-tertiary); }
   .upload-area p { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
   .hint { font-size: 13px; color: var(--fg-secondary); }
-  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; }
+  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .format-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; text-transform: uppercase; }
   input[type="file"] { display: none; }
 
   .control-group { margin-bottom: 20px; }
@@ -215,14 +225,27 @@ const description = '在浏览器本地完成图片格式转换，支持 PNG、J
       const img = new Image();
       img.onload = () => {
         sourceImage = img;
-        $('fileInfo').textContent = `${file.name} · ${img.naturalWidth}×${img.naturalHeight} · ${formatSize(file.size)}`;
-        $('fileInfo').style.display = 'block';
+        const fmtName = formatMimeToName(file.type);
+        $('fileInfoText').textContent = `${file.name} · ${img.naturalWidth}×${img.naturalHeight} · ${formatSize(file.size)}`;
+        $('inputFormatBadge').textContent = fmtName;
+        $('inputFormatBadge').style.display = 'inline-block';
+        $('fileInfo').style.display = 'flex';
         $('formatOrigPreview').innerHTML = `<img src="${img.src}" alt="原图预览" width="400" height="300" loading="lazy" decoding="async">`;
         $('formatBtn').disabled = false;
       };
       img.src = e.target.result;
     };
     reader.readAsDataURL(file);
+  }
+
+  function formatMimeToName(mime) {
+    const map = {
+      'image/png': 'PNG', 'image/jpeg': 'JPEG', 'image/webp': 'WebP',
+      'image/avif': 'AVIF', 'image/bmp': 'BMP', 'image/x-icon': 'ICO',
+      'image/gif': 'GIF', 'image/svg+xml': 'SVG', 'image/tiff': 'TIFF',
+      'image/heic': 'HEIC', 'image/heif': 'HEIF'
+    };
+    return map[mime] || mime.split('/')[1]?.toUpperCase() || 'IMG';
   }
 
   function imageToCanvas(img) {
@@ -237,15 +260,22 @@ const description = '在浏览器本地完成图片格式转换，支持 PNG、J
     const type = $('formatTarget').value;
     const quality = parseInt($('formatQuality').value) / 100;
     const canvas = imageToCanvas(sourceImage);
+
     canvas.toBlob(blob => {
-      if (!blob) return;
+      if (!blob) {
+        $('formatResultPreview').innerHTML = `<span class="placeholder error">⚠️ 当前浏览器不支持此格式</span>`;
+        $('formatCompatNote').textContent = '你的浏览器不支持此格式输出。建议使用 Chrome 或 Firefox 获得最佳兼容性。';
+        return;
+      }
       resultBlob = blob;
       const url = URL.createObjectURL(blob);
       $('formatResultPreview').innerHTML = `<img src="${url}" alt="转换结果预览" width="400" height="300" loading="lazy">`;
       $('formatDownloadBtn').disabled = false;
       $('formatDownloadBtn').dataset.url = url;
       $('formatDownloadBtn').dataset.type = blob.type;
-    }, type, type === 'image/bmp' ? undefined : quality);
+      $('formatCompatNote').textContent = `已转换为 ${formatMimeToName(blob.type)} · ${formatSize(blob.size)}`;
+      $('formatCompatNote').style.color = '#34c759';
+    }, type, ['image/bmp','image/x-icon'].includes(type) ? undefined : quality);
   });
 
   $('formatDownloadBtn').addEventListener('click', () => {
@@ -254,7 +284,26 @@ const description = '在浏览器本地完成图片格式转换，支持 PNG、J
     const a = document.createElement('a');
     a.href = btn.dataset.url;
     const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico' }[btn.dataset.type] || 'png';
-    a.download = `converted.${ext}`;
+    const origName = sourceFile ? sourceFile.name.replace(/\.[^.]+$/, '') : 'image';
+    a.download = `${origName}_converted.${ext}`;
     a.click();
   });
+
+  function updateQualityUI() {
+    const type = $('formatTarget').value;
+    const lossy = ['image/jpeg','image/webp','image/avif'];
+    const isLossy = lossy.includes(type);
+    $('qualityGroup').style.opacity = isLossy ? '1' : '0.4';
+    $('formatQuality').disabled = !isLossy;
+    if (!isLossy) {
+      $('formatQualityDesc').textContent = '质量设置不适用 — 此格式为无损格式';
+    } else {
+      $('formatQualityDesc').textContent = '质量越低文件越小。推荐 80-92% 用于大多数场景。';
+    }
+    $('formatCompatNote').textContent = '';
+    $('formatCompatNote').style.color = '';
+  }
+
+  $('formatTarget').addEventListener('change', updateQualityUI);
+  updateQualityUI();
 </script>

@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const title = 'Free Online Image Converter — PNG, JPG, WebP, AVIF';
-const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO formats locally in your browser. No upload needed. Fast, free, and privacy-focused.';
+const title = 'Free Online Image Converter — PNG, JPEG, WebP, AVIF, BMP, ICO';
+const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, BMP, ICO) locally in your browser. Detect input format. No upload. Fast, free, private.';
 ---
 
 <Layout title={title} description={description} seoType="WebApplication" lang="en">
@@ -54,28 +54,37 @@ const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO forma
         <p class="hint">Supports JPG, PNG, WebP, GIF, BMP, SVG, AVIF, ICO, TIFF & more</p>
         <input type="file" id="fileInput" accept="image/*" aria-label="Select image file" />
       </div>
-      <div id="fileInfo" class="file-info" style="display:none"></div>
+      <div id="fileInfo" class="file-info" style="display:none">
+        <span id="fileInfoText"></span>
+        <span id="inputFormatBadge" class="format-badge"></span>
+      </div>
 
       <div class="control-group">
         <label for="formatTarget">Target format</label>
         <select id="formatTarget">
-          <option value="image/png">PNG (Lossless, supports transparency)</option>
-          <option value="image/jpeg">JPG (Lossy, best compatibility)</option>
-          <option value="image/webp">WebP (Google format, high compression)</option>
-          <option value="image/bmp">BMP (Uncompressed, lossless)</option>
-          <option value="image/avif">AVIF (Next-gen efficient format)</option>
-          <option value="image/x-icon">ICO (Windows icon format)</option>
+          <optgroup label="Recommended">
+            <option value="image/png">PNG — Lossless, supports transparency</option>
+            <option value="image/jpeg">JPEG — Lossy, universal compatibility</option>
+            <option value="image/webp">WebP — Lossy/lossless, 25-35% smaller than JPEG</option>
+          </optgroup>
+          <optgroup label="Next-Gen">
+            <option value="image/avif">AVIF — Best compression, HDR support (Chrome/Firefox)</option>
+          </optgroup>
+          <optgroup label="Special Use">
+            <option value="image/bmp">BMP — Uncompressed bitmap, lossless</option>
+            <option value="image/x-icon">ICO — Windows icon, multi-size support</option>
+          </optgroup>
         </select>
-        <div class="desc" id="formatCompatNote">AVIF & ICO may not be supported in older browsers</div>
+        <div class="desc" id="formatCompatNote"></div>
       </div>
 
-      <div class="control-group">
+      <div class="control-group" id="qualityGroup">
         <label for="formatQuality">Quality</label>
         <div class="range-row">
           <input type="range" id="formatQuality" min="1" max="100" value="92" aria-label="Image quality percentage">
           <span class="range-value" id="formatQualityVal">92%</span>
         </div>
-        <div class="desc">Only applies to lossy formats (JPG, WebP, AVIF)</div>
+        <div class="desc" id="formatQualityDesc">Only applies to lossy formats (JPEG, WebP, AVIF)</div>
       </div>
 
       <div class="preview-area">
@@ -146,7 +155,8 @@ const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO forma
   .upload-icon { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--fg-tertiary); }
   .upload-area p { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
   .hint { font-size: 13px; color: var(--fg-secondary); }
-  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; }
+  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .format-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; text-transform: uppercase; }
   input[type="file"] { display: none; }
 
   .control-group { margin-bottom: 20px; }
@@ -216,14 +226,27 @@ const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO forma
       const img = new Image();
       img.onload = () => {
         sourceImage = img;
-        $('fileInfo').textContent = `${file.name} · ${img.naturalWidth}×${img.naturalHeight} · ${formatSize(file.size)}`;
-        $('fileInfo').style.display = 'block';
+        const fmtName = formatMimeToName(file.type);
+        $('fileInfoText').textContent = `${file.name} · ${img.naturalWidth}×${img.naturalHeight} · ${formatSize(file.size)}`;
+        $('inputFormatBadge').textContent = fmtName;
+        $('inputFormatBadge').style.display = 'inline-block';
+        $('fileInfo').style.display = 'flex';
         $('formatOrigPreview').innerHTML = `<img src="${img.src}" alt="Original uploaded image preview" width="400" height="300" loading="lazy" decoding="async">`;
         $('formatBtn').disabled = false;
       };
       img.src = e.target.result;
     };
     reader.readAsDataURL(file);
+  }
+
+  function formatMimeToName(mime) {
+    const map = {
+      'image/png': 'PNG', 'image/jpeg': 'JPEG', 'image/webp': 'WebP',
+      'image/avif': 'AVIF', 'image/bmp': 'BMP', 'image/x-icon': 'ICO',
+      'image/gif': 'GIF', 'image/svg+xml': 'SVG', 'image/tiff': 'TIFF',
+      'image/heic': 'HEIC', 'image/heif': 'HEIF'
+    };
+    return map[mime] || mime.split('/')[1]?.toUpperCase() || 'IMG';
   }
 
   function imageToCanvas(img) {
@@ -238,15 +261,27 @@ const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO forma
     const type = $('formatTarget').value;
     const quality = parseInt($('formatQuality').value) / 100;
     const canvas = imageToCanvas(sourceImage);
+
+    // Check browser support for target format
+    const testCanvas = document.createElement('canvas');
+    testCanvas.width = 1; testCanvas.height = 1;
+    const supported = testCanvas.toDataURL(type).startsWith('data:' + type.split('/')[0]);
+
     canvas.toBlob(blob => {
-      if (!blob) return;
+      if (!blob) {
+        $('formatResultPreview').innerHTML = `<span class="placeholder error">⚠️ Format not supported in this browser</span>`;
+        $('formatCompatNote').textContent = 'This format is not supported by your browser. Try Chrome or Firefox for best compatibility.';
+        return;
+      }
       resultBlob = blob;
       const url = URL.createObjectURL(blob);
       $('formatResultPreview').innerHTML = `<img src="${url}" alt="Converted image result" width="400" height="300" loading="lazy">`;
       $('formatDownloadBtn').disabled = false;
       $('formatDownloadBtn').dataset.url = url;
       $('formatDownloadBtn').dataset.type = blob.type;
-    }, type, type === 'image/bmp' ? undefined : quality);
+      $('formatCompatNote').textContent = `Converted to ${formatMimeToName(blob.type)} · ${formatSize(blob.size)}`;
+      $('formatCompatNote').style.color = '#34c759';
+    }, type, ['image/bmp','image/x-icon'].includes(type) ? undefined : quality);
   });
 
   $('formatDownloadBtn').addEventListener('click', () => {
@@ -255,12 +290,26 @@ const description = 'Convert images between PNG, JPG, WebP, AVIF, BMP, ICO forma
     const a = document.createElement('a');
     a.href = btn.dataset.url;
     const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico' }[btn.dataset.type] || 'png';
-    a.download = `converted.${ext}`;
+    const origName = sourceFile ? sourceFile.name.replace(/\.[^.]+$/, '') : 'image';
+    a.download = `${origName}_converted.${ext}`;
     a.click();
   });
 
-  $('formatTarget').addEventListener('change', () => {
+  function updateQualityUI() {
+    const type = $('formatTarget').value;
     const lossy = ['image/jpeg','image/webp','image/avif'];
-    document.getElementById('formatQualityDesc').style.display = lossy.includes($('formatTarget').value) ? 'block' : 'none';
-  });
+    const isLossy = lossy.includes(type);
+    $('qualityGroup').style.opacity = isLossy ? '1' : '0.4';
+    $('formatQuality').disabled = !isLossy;
+    if (!isLossy) {
+      $('formatQualityDesc').textContent = 'Quality setting not applicable — this format is lossless';
+    } else {
+      $('formatQualityDesc').textContent = 'Lower quality = smaller file. 80-92% recommended for most uses.';
+    }
+    $('formatCompatNote').textContent = '';
+    $('formatCompatNote').style.color = '';
+  }
+
+  $('formatTarget').addEventListener('change', updateQualityUI);
+  updateQualityUI();
 </script>
