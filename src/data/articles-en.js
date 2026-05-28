@@ -523,8 +523,8 @@ export const articles = [
     </div>
   </div>
 </div>`
-    }
-      {
+    },
+    {
       slug: 'lossy-vs-lossless-compression',
       title: 'Lossy vs Lossless Compression: When to Use Which',
       date: '2026-05-09',

@@ -519,8 +519,8 @@ export const articles = [
     </div>
   </div>
 </div>`
-    }
-      {
+    },
+    {
       slug: 'lossy-vs-lossless-compression',
       title: '有损压缩 vs 无损压缩：什么时候用哪种？',
       date: '2026-05-09',
