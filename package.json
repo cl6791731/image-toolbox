@@ -12,5 +12,8 @@
   "dependencies": {
     "astro": "^5.0.0",
     "@astrojs/sitemap": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
