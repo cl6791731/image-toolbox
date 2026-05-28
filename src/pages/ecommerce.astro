@@ -1,0 +1,362 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ecommercePlatforms } from '../data/platforms.js';
+
+const title = 'E-Commerce Image Processor — Batch Product Photo Resizer';
+const description = 'Batch resize product photos for Taobao, JD, Pinduoduo, Amazon, eBay, Shopify. Auto white background fill, brand watermark, one-click download. All local processing.';
+const platformsJSON = JSON.stringify(ecommercePlatforms);
+---
+<Layout title={title} description={description} seoType="WebApplication" lang="en">
+  <section class="hero">
+    <h1>E-Commerce Image Processor</h1>
+    <p>Batch process product photos. Auto resize, white background fill, and watermark for all major e-commerce platforms.</p>
+  </section>
+
+  <div class="tabs-wrap">
+    <div class="tabs" role="tablist">
+      <a href="/" class="tab-btn" role="tab">Convert</a>
+      <a href="/compress" class="tab-btn" role="tab">Compress</a>
+      <a href="/crop" class="tab-btn" role="tab">Crop</a>
+      <a href="/watermark" class="tab-btn" role="tab">Watermark</a>
+      <a href="/resize" class="tab-btn" role="tab">Resize</a>
+      <a href="/social" class="tab-btn" role="tab">Social</a>
+      <a href="/web-optimizer" class="tab-btn" role="tab">Web</a>
+      <a href="/ecommerce" class="tab-btn active" role="tab" aria-selected="true">Ecom</a>
+      <a href="/articles" class="tab-btn" role="tab">Tips</a>
+    </div>
+  </div>
+
+  <div class="ad-wrapper">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-4519467063111183"
+         data-ad-slot="2533515795"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+
+  <div class="content">
+    <article class="tool-card">
+      <h2 class="sr-only">E-Commerce Image Processor</h2>
+
+      <div class="upload-area" id="uploadArea" role="button" tabindex="0">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <p>Click to upload or drag & drop images</p>
+        <p class="hint">Supports JPG, PNG, WebP — multiple files accepted</p>
+        <input type="file" id="fileInput" accept="image/*" multiple />
+      </div>
+      <div id="fileInfo" class="file-info" style="display:none"></div>
+
+      <div class="control-group">
+        <label>Select Platform</label>
+        <div class="platform-grid" id="platformGrid">
+          {ecommercePlatforms.map(p => (
+            <div class="platform-card" data-id={p.id} tabindex="0" role="button">
+              <span class="platform-icon">{p.icon}</span>
+              <span class="platform-name">{p.nameEn}</span>
+              <span class="platform-size">{p.mainWidth} × {p.mainHeight}</span>
+              <span class="platform-limit">{p.maxSizeLabel}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>Processing Mode</label>
+        <div class="mode-toggle">
+          <button class="mode-btn active" data-mode="main" id="modeMain">Main Image (Square + White BG)</button>
+          <button class="mode-btn" data-mode="detail" id="modeDetail">Detail Images (Width Only)</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="ecomQuality">Quality</label>
+        <div class="range-row">
+          <input type="range" id="ecomQuality" min="10" max="100" value="90">
+          <span class="range-value" id="ecomQualityVal">90%</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="watermarkToggle">
+          Add Brand Watermark
+        </label>
+        <input type="text" id="watermarkText" placeholder="Your brand name" style="display:none; margin-top:8px; width:100%; padding:8px 12px; border:1px solid var(--border); border-radius:8px; font-size:14px;">
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="processBtn" disabled>Process All</button>
+        <button class="btn btn-secondary" id="downloadAllBtn" disabled>Download All</button>
+      </div>
+
+      <div class="result-list" id="resultList" style="display:none">
+        <h3 style="font-size:14px; font-weight:600; margin-bottom:12px;">Processed Images</h3>
+        <div id="resultItems"></div>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4519467063111183" crossorigin="anonymous"></script>
+<script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<style>
+  .ad-wrapper { background: var(--bg-secondary); border-radius: var(--radius); min-height: 90px; display: flex; align-items: center; justify-content: center; margin: 16px auto; border: 1px dashed var(--border); max-width: var(--max-w); padding: 0 24px; }
+  .hero { padding: 72px 24px 56px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero p { font-size: clamp(15px, 2.5vw, 19px); color: var(--fg-secondary); line-height: 1.5; }
+  .tabs-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px; }
+  .tabs { display: flex; gap: 2px; background: var(--bg-secondary); border-radius: var(--radius); padding: 4px; overflow-x: auto; }
+  .tab-btn { flex-shrink: 0; padding: 8px 20px; border-radius: 6px; background: transparent; color: var(--fg-secondary); font-size: 13px; font-weight: 500; text-decoration: none; transition: all .2s; white-space: nowrap; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .content { flex:1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
+  .tool-card { background: var(--bg); border:1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+  .sr-only { position: absolute; width:1px; height:1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+  .upload-area { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 52px 24px; text-align: center; cursor: pointer; transition: all .2s; background: var(--bg); }
+  .upload-area:hover { border-color: var(--accent); background: rgba(0,113,227,.02); }
+  .upload-icon { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--fg-secondary); }
+  .upload-area p { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .hint { font-size: 13px; color: var(--fg-secondary); font-weight: 400 !important; }
+  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; }
+  input[type="file"] { display: none; }
+  input[type="text"] { font-family: -apple-system, sans-serif; }
+  .control-group { margin-bottom: 20px; }
+  .control-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .range-row { display: flex; align-items: center; gap: 12px; }
+  .range-value { font-size: 14px; color: var(--accent); font-weight: 600; min-width: 40px; text-align: right; }
+  .checkbox-label { display: inline-flex !important; align-items: center; gap: 8px; cursor: pointer; font-size: 14px !important; }
+  .checkbox-label input { width: 16px; height: 16px; accent-color: var(--accent); }
+  .platform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .platform-card { border: 1.5px solid var(--border); border-radius: var(--radius); padding: 12px 8px; text-align: center; cursor: pointer; transition: all .2s; background: var(--bg); }
+  .platform-card:hover { border-color: var(--accent); background: rgba(0,113,227,.03); }
+  .platform-card.selected { border-color: var(--accent); background: rgba(0,113,227,.08); box-shadow: 0 0 0 1px var(--accent); }
+  .platform-icon { display: block; font-size: 24px; margin-bottom: 4px; }
+  .platform-name { display: block; font-size: 12px; font-weight: 600; color: var(--fg); }
+  .platform-size { display: block; font-size: 11px; color: var(--fg-secondary); }
+  .platform-limit { display: block; font-size: 10px; color: var(--fg-secondary); }
+  .mode-toggle { display: flex; gap: 4px; background: var(--bg-secondary); border-radius: 8px; padding: 3px; }
+  .mode-btn { flex:1; padding: 8px 12px; border-radius: 6px; border: none; background: transparent; font-size: 13px; font-weight: 500; color: var(--fg-secondary); cursor: pointer; transition: all .2s; font-family: -apple-system, sans-serif; }
+  .mode-btn.active { background: var(--bg); color: var(--fg); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .mode-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .result-list { margin-top: 24px; }
+  .result-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: var(--radius); margin-bottom: 8px; }
+  .result-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border); }
+  .result-item .info { flex:1; min-width: 0; }
+  .result-item .name { font-size: 12px; font-weight: 600; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .result-item .meta { font-size: 11px; color: var(--fg-secondary); }
+  .result-item .dl-btn { flex-shrink: 0; padding: 6px 14px; border-radius: 6px; border: 1px solid var(--accent); background: transparent; color: var(--accent); font-size: 12px; font-weight: 500; cursor: pointer; transition: all .2s; }
+  .result-item .dl-btn:hover { background: var(--accent); color: #fff; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 22px; border-radius: 8px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: all .2s; font-family: -apple-system, sans-serif; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #0066cc; }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-secondary { background: var(--bg-secondary); color: var(--fg); border:1px solid var(--border); }
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  @media (max-width: 768px) {
+    .platform-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .tabs-wrap { padding: 0 16px 16px; }
+    .content { padding: 0 16px 48px; }
+    .tool-card { padding: 20px; }
+    .platform-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+
+<script is:inline>
+  const $ = id => document.getElementById(id);
+  let sourceFiles = [], results = [];
+  let selectedPlatform = null, currentMode = 'main';
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+    return (bytes/1024/1024).toFixed(2) + ' MB';
+  }
+
+  $('ecomQuality').addEventListener('input', function() {
+    $('ecomQualityVal').textContent = this.value + '%';
+  });
+  $('watermarkToggle').addEventListener('change', function() {
+    $('watermarkText').style.display = this.checked ? 'block' : 'none';
+  });
+
+  // Platform selection
+  document.querySelectorAll('.platform-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.platform-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedPlatform = card.dataset.id;
+
+      const p = platforms.find(x => x.id === selectedPlatform);
+      if (p && !p.detailWidth) {
+        $('modeDetail').disabled = true;
+        if (currentMode === 'detail') {
+          currentMode = 'main';
+          $('modeMain').classList.add('active');
+          $('modeDetail').classList.remove('active');
+        }
+      } else {
+        $('modeDetail').disabled = false;
+      }
+
+      if (sourceFiles.length) $('processBtn').disabled = false;
+    });
+  });
+
+  // Mode toggle
+  $('modeMain').addEventListener('click', () => {
+    currentMode = 'main';
+    $('modeMain').classList.add('active');
+    $('modeDetail').classList.remove('active');
+  });
+  $('modeDetail').addEventListener('click', function() {
+    if (this.disabled) return;
+    currentMode = 'detail';
+    $('modeDetail').classList.add('active');
+    $('modeMain').classList.remove('active');
+  });
+
+  // Upload
+  $('uploadArea').addEventListener('click', () => $('fileInput').click());
+  $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); });
+  $('uploadArea').addEventListener('drop', e => {
+    e.preventDefault();
+    handleFiles(e.dataTransfer.files);
+  });
+  $('fileInput').addEventListener('change', () => {
+    handleFiles($('fileInput').files);
+  });
+
+  function handleFiles(files) {
+    sourceFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
+    if (!sourceFiles.length) return;
+    $('fileInfo').textContent = sourceFiles.length + ' image(s) loaded';
+    $('fileInfo').style.display = 'block';
+    if (selectedPlatform) $('processBtn').disabled = false;
+  }
+
+  // Process
+  $('processBtn').addEventListener('click', async () => {
+    if (!sourceFiles.length || !selectedPlatform) return;
+    $('processBtn').disabled = true;
+    $('processBtn').textContent = 'Processing...';
+    results = [];
+
+    const platform = platforms.find(p => p.id === selectedPlatform);
+    const quality = parseInt($('ecomQuality').value) / 100;
+    const watermarkText = $('watermarkToggle').checked ? $('watermarkText').value : '';
+
+    for (const file of sourceFiles) {
+      const result = await processImage(file, platform, quality, watermarkText);
+      results.push(result);
+    }
+
+    renderResults();
+    $('processBtn').disabled = false;
+    $('processBtn').textContent = 'Process All';
+    $('downloadAllBtn').disabled = false;
+  });
+
+  function processImage(file, platform, quality, wmText) {
+    return new Promise(resolve => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let cw, ch;
+
+          if (currentMode === 'main') {
+            cw = platform.mainWidth;
+            ch = platform.mainHeight;
+          } else {
+            cw = platform.detailWidth;
+            ch = Math.round(img.naturalHeight * (cw / img.naturalWidth));
+          }
+
+          canvas.width = cw;
+          canvas.height = ch;
+          const ctx = canvas.getContext('2d');
+
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, cw, ch);
+
+          if (currentMode === 'main') {
+            const scale = Math.min(cw / img.naturalWidth, ch / img.naturalHeight);
+            const sw = img.naturalWidth * scale;
+            const sh = img.naturalHeight * scale;
+            ctx.drawImage(img, (cw - sw) / 2, (ch - sh) / 2, sw, sh);
+          } else {
+            ctx.drawImage(img, 0, 0, cw, ch);
+          }
+
+          if (wmText) {
+            ctx.globalAlpha = 0.35;
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold ' + Math.max(14, Math.floor(cw * 0.04)) + 'px -apple-system, sans-serif';
+            ctx.textAlign = 'right';
+            ctx.fillText(wmText, cw - 16, ch - 16);
+            ctx.globalAlpha = 1;
+          }
+
+          canvas.toBlob(blob => {
+            resolve({
+              name: file.name.replace(/\.[^.]+$/, '') + '_' + platform.id + '.jpg',
+              blob: blob,
+              size: blob.size,
+              blobUrl: URL.createObjectURL(blob)
+            });
+          }, 'image/jpeg', quality);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function renderResults() {
+    $('resultList').style.display = 'block';
+    $('resultItems').innerHTML = results.map((r, i) => `
+      <div class="result-item">
+        <img src="${r.blobUrl}" alt="Result ${i+1}">
+        <div class="info">
+          <div class="name">${r.name}</div>
+          <div class="meta">${formatSize(r.size)} · JPEG</div>
+        </div>
+        <button class="dl-btn" data-idx="${i}">Download</button>
+      </div>
+    `).join('');
+
+    $('resultItems').querySelectorAll('.dl-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.idx);
+        const r = results[idx];
+        const a = document.createElement('a');
+        a.href = r.blobUrl;
+        a.download = r.name;
+        a.click();
+      });
+    });
+  }
+
+  $('downloadAllBtn').addEventListener('click', () => {
+    results.forEach((r, i) => {
+      setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = r.blobUrl;
+        a.download = r.name;
+        a.click();
+      }, i * 300);
+    });
+  });
+
+  const platforms = {platformsJSON};
+</script>

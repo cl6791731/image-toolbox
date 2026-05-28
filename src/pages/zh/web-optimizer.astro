@@ -1,0 +1,271 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = '网页图片优化器 — 自动转 WebP/AVIF，生成 Picture 标签代码';
+const description = '为网页开发优化图片。自动转换为 WebP 和 AVIF 格式，比较文件大小，生成响应式 picture 标签代码。所有处理在浏览器本地完成。';
+---
+<Layout title={title} description={description} seoType="WebApplication" lang="zh">
+  <section class="hero">
+    <h1>网页图片优化器</h1>
+    <p>一键转换 WebP / AVIF，比较压缩体积，获取可直接使用的 <code>&lt;picture&gt;</code> 代码。</p>
+  </section>
+
+  <div class="tabs-wrap">
+    <div class="tabs" role="tablist">
+      <a href="/zh/" class="tab-btn" role="tab">格式转换</a>
+      <a href="/zh/compress" class="tab-btn" role="tab">压缩</a>
+      <a href="/zh/crop" class="tab-btn" role="tab">裁切</a>
+      <a href="/zh/watermark" class="tab-btn" role="tab">水印</a>
+      <a href="/zh/resize" class="tab-btn" role="tab">尺寸</a>
+      <a href="/zh/social" class="tab-btn" role="tab">社媒</a>
+      <a href="/zh/web-optimizer" class="tab-btn active" role="tab" aria-selected="true">开发</a>
+      <a href="/zh/ecommerce" class="tab-btn" role="tab">电商</a>
+      <a href="/zh/articles" class="tab-btn" role="tab">文章</a>
+    </div>
+  </div>
+
+  <div class="ad-wrapper">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-4519467063111183"
+         data-ad-slot="2533515795"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+
+  <div class="content">
+    <article class="tool-card">
+      <h2 class="sr-only">网页图片优化器</h2>
+
+      <div class="upload-area" id="uploadArea" role="button" tabindex="0">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <p>点击上传或拖拽图片到此处</p>
+        <p class="hint">支持 JPG、PNG、WebP、GIF、BMP 等格式</p>
+        <input type="file" id="fileInput" accept="image/*" />
+      </div>
+      <div id="fileInfo" class="file-info" style="display:none"></div>
+
+      <div class="control-group">
+        <label for="optimizeQuality">输出质量</label>
+        <div class="range-row">
+          <input type="range" id="optimizeQuality" min="10" max="100" value="80">
+          <span class="range-value" id="optimizeQualityVal">80%</span>
+        </div>
+        <div class="desc">质量越高文件越大，但视觉效果更好。70-85% 是最佳平衡点。</div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="optimizeBtn" disabled>开始优化对比</button>
+      </div>
+
+      <div class="preview-area" id="optimizePreviewArea" style="display:none">
+        <figure class="preview-box">
+          <figcaption class="label">原图</figcaption>
+          <div id="origPreview"><span class="placeholder">-</span></div>
+          <div id="origSize" class="size-label"></div>
+        </figure>
+        <figure class="preview-box">
+          <figcaption class="label">WebP</figcaption>
+          <div id="webpPreview"><span class="placeholder">-</span></div>
+          <div id="webpSize" class="size-label"></div>
+        </figure>
+        <figure class="preview-box">
+          <figcaption class="label">AVIF</figcaption>
+          <div id="avifPreview"><span class="placeholder">-</span></div>
+          <div id="avifSize" class="size-label"></div>
+        </figure>
+      </div>
+
+      <div id="codeSection" style="display:none; margin-top:20px;">
+        <div class="control-group">
+          <label>Picture 标签代码</label>
+          <div class="code-box">
+            <pre><code id="pictureCode"></code></pre>
+            <button class="btn btn-secondary" id="copyBtn" style="margin-top:8px;">复制代码</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4519467063111183" crossorigin="anonymous"></script>
+<script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<style>
+  .ad-wrapper { background: var(--bg-secondary); border-radius: var(--radius); min-height: 90px; display: flex; align-items: center; justify-content: center; margin: 16px auto; border: 1px dashed var(--border); max-width: var(--max-w); padding: 0 24px; }
+  .hero { padding: 72px 24px 56px; text-align: center; max-width: var(--max-w); margin: 0 auto; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero p { font-size: clamp(15px, 2.5vw, 19px); color: var(--fg-secondary); line-height: 1.5; }
+  .hero code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  .tabs-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px; }
+  .tabs { display: flex; gap: 2px; background: var(--bg-secondary); border-radius: var(--radius); padding: 4px; overflow-x: auto; }
+  .tab-btn { flex-shrink: 0; padding: 8px 20px; border-radius: 6px; background: transparent; color: var(--fg-secondary); font-size: 13px; font-weight: 500; text-decoration: none; transition: all .2s; white-space: nowrap; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .content { flex:1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
+  .tool-card { background: var(--bg); border:1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+  .sr-only { position: absolute; width:1px; height:1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+  .upload-area { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 52px 24px; text-align: center; cursor: pointer; transition: all .2s; background: var(--bg); }
+  .upload-area:hover { border-color: var(--accent); background: rgba(0,113,227,.02); }
+  .upload-icon { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--fg-secondary); }
+  .upload-area p { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .hint { font-size: 13px; color: var(--fg-secondary); font-weight: 400 !important; }
+  .file-info { font-size: 12px; color: var(--fg-secondary); padding: 8px 0; text-align: center; }
+  input[type="file"] { display: none; }
+  .control-group { margin-bottom: 20px; }
+  .control-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .control-group .desc { font-size: 12px; color: var(--fg-secondary); margin-top: 4px; }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .range-row { display: flex; align-items: center; gap: 12px; }
+  .range-value { font-size: 14px; color: var(--accent); font-weight: 600; min-width: 40px; text-align: right; }
+  .preview-area { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .preview-box { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px; text-align: center; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .preview-box .label { font-size: 11px; font-weight: 600; color: var(--fg-secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; width: 100%; text-align: left; }
+  .preview-box img { max-width: 100%; max-height: 200px; object-fit: contain; border-radius: 4px; }
+  .placeholder { font-size: 13px; color: var(--fg-secondary); }
+  .size-label { font-size: 12px; color: var(--fg-secondary); margin-top: 8px; }
+  .size-label .saved { color: #34c759; font-weight: 600; }
+  .code-box { background: #1d1d1f; color: #f5f5f7; border-radius: var(--radius); padding: 16px; overflow-x: auto; text-align: left; }
+  .code-box pre { margin: 0; font-size: 13px; line-height: 1.6; font-family: 'SF Mono', 'Fira Code', monospace; }
+  .code-box code { white-space: pre-wrap; word-break: break-all; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 22px; border-radius: 8px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: all .2s; font-family: -apple-system, sans-serif; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #0066cc; }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-secondary { background: var(--bg-secondary); color: var(--fg); border:1px solid var(--border); }
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  @media (max-width: 768px) {
+    .preview-area { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .tabs-wrap { padding: 0 16px 16px; }
+    .content { padding: 0 16px 48px; }
+    .tool-card { padding: 20px; }
+  }
+</style>
+
+<script is:inline>
+  const $ = id => document.getElementById(id);
+  let sourceFile = null, sourceImage = null;
+  let webpBlob = null, avifBlob = null;
+  let webpDone = false, avifDone = false;
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+    return (bytes/1024/1024).toFixed(2) + ' MB';
+  }
+
+  function imageToCanvas(img) {
+    const c = document.createElement('canvas');
+    c.width = img.naturalWidth; c.height = img.naturalHeight;
+    c.getContext('2d').drawImage(img, 0, 0);
+    return c;
+  }
+
+  $('optimizeQuality').addEventListener('input', function() {
+    $('optimizeQualityVal').textContent = this.value + '%';
+  });
+
+  $('uploadArea').addEventListener('click', () => $('fileInput').click());
+  $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); });
+  $('uploadArea').addEventListener('drop', e => {
+    e.preventDefault();
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  $('fileInput').addEventListener('change', () => {
+    if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
+  });
+
+  function handleFile(file) {
+    if (!file.type.startsWith('image/')) return;
+    sourceFile = file;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        sourceImage = img;
+        webpBlob = null; avifBlob = null; webpDone = false; avifDone = false;
+        $('fileInfo').textContent = file.name + ' · ' + img.naturalWidth + '×' + img.naturalHeight + ' · ' + formatSize(file.size);
+        $('fileInfo').style.display = 'block';
+        $('optimizePreviewArea').style.display = 'grid';
+        $('origPreview').innerHTML = '<img src="' + img.src + '" alt="原图">';
+        $('origSize').textContent = '大小: ' + formatSize(file.size);
+        $('webpPreview').innerHTML = '<span class="placeholder">-</span>';
+        $('webpSize').textContent = '';
+        $('avifPreview').innerHTML = '<span class="placeholder">-</span>';
+        $('avifSize').textContent = '';
+        $('optimizeBtn').disabled = false;
+        $('codeSection').style.display = 'none';
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  $('optimizeBtn').addEventListener('click', async () => {
+    if (!sourceImage) return;
+    $('optimizeBtn').disabled = true;
+    $('optimizeBtn').textContent = '正在优化...';
+    webpBlob = null; avifBlob = null; webpDone = false; avifDone = false;
+
+    const quality = parseInt($('optimizeQuality').value) / 100;
+    const canvas = imageToCanvas(sourceImage);
+
+    canvas.toBlob(blob => {
+      webpBlob = blob;
+      const url = URL.createObjectURL(blob);
+      $('webpPreview').innerHTML = '<img src="' + url + '" alt="WebP">';
+      const ratio = ((1 - blob.size / sourceFile.size) * 100).toFixed(1);
+      $('webpSize').innerHTML = '大小: ' + formatSize(blob.size) + ' <span class="saved">' + (ratio > 0 ? '减小 ' : '增大 ') + ratio + '%</span>';
+      checkDone();
+    }, 'image/webp', quality);
+
+    canvas.toBlob(blob => {
+      avifBlob = blob;
+      const url = URL.createObjectURL(blob);
+      $('avifPreview').innerHTML = '<img src="' + url + '" alt="AVIF">';
+      const ratio = ((1 - blob.size / sourceFile.size) * 100).toFixed(1);
+      $('avifSize').innerHTML = '大小: ' + formatSize(blob.size) + ' <span class="saved">' + (ratio > 0 ? '减小 ' : '增大 ') + ratio + '%</span>';
+      checkDone();
+    }, 'image/avif', quality);
+  });
+
+  function checkDone() {
+    if (webpBlob && !webpDone) { webpDone = true; }
+    if (avifBlob && !avifDone) { avifDone = true; }
+    if (!webpBlob || !avifBlob) return;
+    if (!webpDone || !avifDone) return;
+    if (webpBlob === webpBlob && avifBlob === avifBlob) {
+      webpDone = false; avifDone = false;
+    }
+
+    $('optimizeBtn').disabled = false;
+    $('optimizeBtn').textContent = '重新优化';
+
+    const fname = sourceFile.name.replace(/\.[^.]+$/, '');
+    const origExt = sourceFile.name.split('.').pop();
+    const code = `<picture>
+  <source srcset="${fname}.avif" type="image/avif">
+  <source srcset="${fname}.webp" type="image/webp">
+  <img src="${fname}.${origExt}" alt=""
+       width="${sourceImage.naturalWidth}" height="${sourceImage.naturalHeight}"
+       loading="lazy" decoding="async">
+</picture>`;
+    $('pictureCode').textContent = code;
+    $('codeSection').style.display = 'block';
+  }
+
+  $('copyBtn').addEventListener('click', () => {
+    const code = $('pictureCode').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      $('copyBtn').textContent = '已复制！';
+      setTimeout(() => $('copyBtn').textContent = '复制代码', 1500);
+    });
+  });
+</script>

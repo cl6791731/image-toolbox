@@ -20,6 +20,12 @@
     { "source": "/zh/about", "destination": "/zh/about.html" },
     { "source": "/zh/contact", "destination": "/zh/contact.html" },
     { "source": "/zh/privacy", "destination": "/zh/privacy.html" },
+    { "source": "/social", "destination": "/social.html" },
+    { "source": "/web-optimizer", "destination": "/web-optimizer.html" },
+    { "source": "/ecommerce", "destination": "/ecommerce.html" },
+    { "source": "/zh/social", "destination": "/zh/social.html" },
+    { "source": "/zh/web-optimizer", "destination": "/zh/web-optimizer.html" },
+    { "source": "/zh/ecommerce", "destination": "/zh/ecommerce.html" },
     { "source": "/articles/:slug", "destination": "/articles/:slug.html" },
     { "source": "/zh/articles/:slug", "destination": "/zh/articles/:slug.html" }
   ]
