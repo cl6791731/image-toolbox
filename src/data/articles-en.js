@@ -2,7 +2,7 @@ export const articles = [
     {
       slug: 'webp-vs-jpg',
       title: 'WebP vs JPG: Which is Better for Websites?',
-      date: '2026-05-15',
+      date: '2026-04-29',
       tags: ['format', 'webp', 'optimization'],
       content: `
 <h2>What Are WebP and JPG?</h2>
@@ -70,7 +70,7 @@ export const articles = [
     {
       slug: 'compress-under-200kb',
       title: 'How to Compress Images Under 200KB',
-      date: '2026-05-12',
+      date: '2026-04-30',
       tags: ['compression', 'tutorial'],
       content: `
 <h2>Why the 200KB Limit Matters</h2>
@@ -128,7 +128,7 @@ export const articles = [
     {
       slug: 'png-vs-jpg-guide',
       title: 'PNG vs JPG: The Complete Guide',
-      date: '2026-05-07',
+      date: '2026-05-01',
       tags: ['format', 'beginner'],
       content: `
 <h2>The Fundamental Difference: Lossless vs Lossy</h2>
@@ -194,7 +194,7 @@ export const articles = [
     {
       slug: 'webp-vs-jpg-2026',
       title: 'WebP vs JPG: Which Image Format Should You Use in 2026?',
-      date: '2026-06-01',
+      date: '2026-05-02',
       tags: ['format', 'webp', 'optimization'],
       content: `<h2>File Size Comparison: Same Quality, Smaller Files</h2>
 <p>When it comes to web performance, every kilobyte counts. WebP, developed by Google in 2010, consistently delivers <strong>25–35% smaller file sizes</strong> than JPG at equivalent visual quality. For a typical 1920×1080 photograph, a high-quality JPG might weigh 800KB, while the same image as WebP comes in around 520KB. Multiply that difference across a gallery of 20 images, and you're looking at several megabytes of savings — which translates directly to faster page loads and better Core Web Vitals scores.</p>
@@ -236,7 +236,7 @@ export const articles = [
     {
       slug: 'png-vs-jpg-beginners',
       title: 'PNG vs JPG: The Complete Guide for Beginners',
-      date: '2026-06-02',
+      date: '2026-05-03',
       tags: ['format', 'beginner', 'comparison'],
       content: `<h2>The Fundamental Difference: Lossless vs Lossy</h2>
 <p>At the core of every PNG vs JPG debate is a single technical distinction: <strong>lossless versus lossy compression</strong>. PNG preserves every single pixel exactly as it appeared in the original image. No data is discarded. JPG, by contrast, deliberately throws away information that the human eye is less likely to notice — primarily fine details in high-frequency areas like grass, hair, and textured surfaces.</p>
@@ -280,7 +280,7 @@ export const articles = [
     {
       slug: 'heic-to-jpg',
       title: 'How to Convert HEIC to JPG Online (iPhone & Android)',
-      date: '2026-06-03',
+      date: '2026-05-04',
       tags: ['heic', 'iphone', 'tutorial'],
       content: `<h2>What Is HEIC and Why Is It So Annoying?</h2>
 <p>HEIC (High Efficiency Image Container) is the default photo format on modern iPhones and many Android devices. Apple adopted it in 2017 with iOS 11 because it produces files roughly half the size of JPG at the same visual quality. Sounds great — until you try to open that photo on a Windows PC, upload it to a website, or attach it to an email. Suddenly you're staring at an "unsupported file format" error.</p>
@@ -326,7 +326,7 @@ export const articles = [
     {
       slug: 'avif-format-explained',
       title: "AVIF Format Explained: Is It Ready to Replace WebP?",
-      date: '2026-06-04',
+      date: '2026-05-05',
       tags: ['avif', 'format', 'advanced'],
       content: `<h2>What Makes AVIF Different from Other Formats?</h2>
 <p>AVIF (AV1 Image File Format) is the newest contender in the image format wars. Derived from AV1 video encoding technology developed by the Alliance for Open Media, AVIF brings features that were previously impossible in static image formats: HDR (High Dynamic Range) support, 12-bit color depth, and film grain synthesis. While WebP was a significant leap forward from JPG, AVIF represents another generational improvement — often achieving <strong>20% smaller files than WebP</strong> at the same visual quality.</p>
@@ -379,7 +379,7 @@ export const articles = [
     {
       slug: 'png-to-ico-favicon',
       title: "How to Convert PNG to ICO for Favicons and App Icons",
-      date: '2026-06-05',
+      date: '2026-05-06',
       tags: ['ico', 'favicon', 'developer'],
       content: `<h2>Why Do You Need ICO Files?</h2>
 <p>ICO is the standard Windows icon format, but its most common use on the web is the humble favicon — that tiny image that appears in browser tabs, bookmarks, and search results. Despite its small size (often just 16×16 pixels), the favicon is a critical branding element. It helps users identify your site at a glance among dozens of open tabs and reinforces brand recognition every time someone bookmarks your page.</p>
@@ -432,7 +432,7 @@ export const articles = [
     {
       slug: 'bmp-vs-png-2026',
       title: "BMP vs PNG: Why You Should Stop Using BMP in 2026",
-      date: '2026-06-06',
+      date: '2026-05-07',
       tags: ['bmp', 'png', 'format'],
       content: `<h2>What Is BMP? A Blast from the Past</h2>
 <p>BMP (Bitmap) is one of the oldest image formats still in circulation, introduced by Microsoft in 1987. It stores image data as an uncompressed grid of pixels, with minimal metadata and no compression algorithm to speak of. In an era when 1MB hard drives were considered spacious, BMP was adequate. In 2026, it's an anachronism — a format that wastes storage space and bandwidth without offering any meaningful advantage over modern alternatives.</p>
@@ -482,7 +482,7 @@ export const articles = [
     {
       slug: 'gif-vs-webp-animated',
       title: "GIF vs WebP Animated: Which Is Better for Web?",
-      date: '2026-06-07',
+      date: '2026-05-08',
       tags: ['gif', 'webp', 'animation'],
       content: `<h2>The Problem with GIF in 2026</h2>
 <p>GIF has been the lingua franca of web animation since 1987, but its technical limitations have become increasingly painful as display technology advances. The format supports only 256 colors, uses lossless LZW compression from the 1980s, and handles transparency with a crude 1-bit matte — either fully opaque or fully transparent, with no smooth edges. The result? Animated GIFs of any complexity are massive files with jagged edges, banded colors, and visible dithering artifacts.</p>

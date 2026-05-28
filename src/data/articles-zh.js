@@ -2,7 +2,7 @@ export const articles = [
     {
       slug: 'webp-vs-jpg',
       title: 'WebP 和 JPG 哪个更适合网页？',
-      date: '2026-05-15',
+      date: '2026-04-29',
       tags: ['格式', 'webp', '优化'],
       content: `
 <h2>什么是 WebP 和 JPG？</h2>
@@ -66,7 +66,7 @@ export const articles = [
     {
       slug: 'compress-under-200kb',
       title: '如何将图片压缩到 200KB 以下',
-      date: '2026-05-12',
+      date: '2026-04-30',
       tags: ['压缩', '教程'],
       content: `
 <h2>为什么 200KB 限制这么重要？</h2>
@@ -124,7 +124,7 @@ export const articles = [
     {
       slug: 'png-vs-jpg-guide',
       title: 'PNG 和 JPG 完全指南：何时用哪个？',
-      date: '2026-05-07',
+      date: '2026-05-01',
       tags: ['格式', '入门'],
       content: `
 <h2>核心区别：无损 vs 有损</h2>
@@ -190,7 +190,7 @@ export const articles = [
     {
       slug: 'webp-vs-jpg-2026',
       title: 'WebP 和 JPG 哪个更好？2026年完整对比指南',
-      date: '2026-06-01',
+      date: '2026-05-02',
       tags: ['格式', 'webp', '优化'],
       content: `<h2>文件大小对比：同等画质，WebP 小 30%</h2>
 <p>说到网页性能，每一KB都至关重要。WebP 由 Google 于2010年推出，在同等视觉质量下，文件体积比 JPG <strong>小 25–35%</strong>。以一张典型的 1920×1080 照片为例，高品质 JPG 约 800KB，而同样的 WebP 文件仅约 520KB。如果是一个包含20张图片的图库，这个差距累积起来就是数MB的节省——直接转化为更快的页面加载速度和更好的 Core Web Vitals 评分。</p>
@@ -232,7 +232,7 @@ export const articles = [
     {
       slug: 'png-vs-jpg-beginners',
       title: 'PNG 和 JPG 有什么区别？新手完整指南',
-      date: '2026-06-02',
+      date: '2026-05-03',
       tags: ['格式', '新手', '对比'],
       content: `<h2>核心区别：无损 vs 有损压缩</h2>
 <p>每场 PNG vs JPG 争论的核心，都是一个技术区别：<strong>无损压缩 vs 有损压缩</strong>。PNG 保留原始图像中的每一个像素，不丢弃任何数据。而 JPG 则故意丢弃人眼不太容易注意到的信息——主要是草地、头发和纹理表面等高频区域的细节。</p>
@@ -276,7 +276,7 @@ export const articles = [
     {
       slug: 'heic-to-jpg',
       title: 'HEIC 转 JPG 完整教程（iPhone 和安卓）',
-      date: '2026-06-03',
+      date: '2026-05-04',
       tags: ['heic', 'iphone', '教程'],
       content: `<h2>什么是 HEIC？为什么它这么烦人？</h2>
 <p>HEIC（高效图像容器）是现代 iPhone 和许多安卓设备的默认照片格式。Apple 在2017年 iOS 11 中采用它，因为它在同等视觉质量下产生的文件体积大约是 JPG 的一半。听起来很棒——直到你尝试在 Windows 电脑上打开这张照片、上传到网站或作为邮件附件发送。突然间，你面对的是"不支持的文件格式"错误。</p>
@@ -322,7 +322,7 @@ export const articles = [
     {
       slug: 'avif-format-explained',
       title: 'AVIF 格式详解：它已经准备好取代 WebP 了吗？',
-      date: '2026-06-04',
+      date: '2026-05-05',
       tags: ['avif', '格式', '进阶'],
       content: `<h2>AVIF 与其他格式有什么不同？</h2>
 <p>AVIF（AV1 图像文件格式）是图像格式大战中的最新竞争者。它源自开放媒体联盟开发的 AV1 视频编码技术，带来了此前静态图像格式无法实现的功能：HDR（高动态范围）支持、12位色深和胶片颗粒合成。如果说 WebP 是从 JPG 的一次重大飞跃，那么 AVIF 代表了又一代的改进——在同等视觉质量下，文件往往比 WebP <strong>小 20%</strong>。</p>
@@ -375,7 +375,7 @@ export const articles = [
     {
       slug: 'png-to-ico-favicon',
       title: 'PNG 转 ICO 完整教程：制作网站 Favicon 和应用图标',
-      date: '2026-06-05',
+      date: '2026-05-06',
       tags: ['ico', 'favicon', '开发者'],
       content: `<h2>为什么需要 ICO 文件？</h2>
 <p>ICO 是 Windows 的标准图标格式，但它在网页上最常见的用途是那个不起眼的 favicon——出现在浏览器标签页、书签和搜索结果中的那个小图标。尽管尺寸很小（通常只有 16×16 像素），favicon 却是一个关键的品牌元素。它帮助用户在数十个打开的标签中一眼识别你的网站，并在每次有人收藏你的页面时强化品牌认知。</p>
@@ -428,7 +428,7 @@ export const articles = [
     {
       slug: 'bmp-vs-png-2026',
       title: 'BMP  vs PNG：为什么2026年应该停止使用 BMP',
-      date: '2026-06-06',
+      date: '2026-05-07',
       tags: ['bmp', 'png', '格式'],
       content: `<h2>BMP 是什么？来自过去的遗物</h2>
 <p>BMP（位图）是仍在流通的最古老的图像格式之一，由 Microsoft 在1987年推出。它将图像数据存储为未压缩的像素网格，几乎没有元数据，也没有值得一提的压缩算法。在1MB硬盘被认为 spacious 的时代，BMP 是足够的。在2026年，它是一个时代错误——一种浪费存储空间和带宽的格式，却没有提供任何相对于现代替代方案的有意义优势。</p>
@@ -478,7 +478,7 @@ export const articles = [
     {
       slug: 'gif-vs-webp-animated',
       title: 'GIF vs WebP 动画：网页动画哪种格式更好？',
-      date: '2026-06-07',
+      date: '2026-05-08',
       tags: ['gif', 'webp', '动画'],
       content: `<h2>2026年 GIF 的问题</h2>
 <p>GIF 自1987年以来一直是网页动画的通用语言，但随着显示技术的进步，它的技术限制变得越来越痛苦。这种格式仅支持256色，使用1980年代的 LZW 无损压缩，并用粗糙的1位遮罩处理透明——要么完全不透明，要么完全透明，没有平滑边缘。结果？任何复杂度的动画 GIF 都是巨大的文件，带有锯齿边缘、色带和可见的抖动伪影。</p>
