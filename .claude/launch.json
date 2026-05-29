@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "图片处理百宝箱",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "const h=require('http'),f=require('fs'),p=require('path');const P=3456;h.createServer((r,s)=>{let u=r.url==='/'?'index.html':r.url.slice(1);let fp=p.join(process.cwd(),u);f.readFile(fp,(e,d)=>{if(e){s.writeHead(404,{'Content-Type':'text/html;charset=utf-8'});s.end('<h1>404 Not Found</h1><p>'+u+'</p>')}else{let ext=p.extname(fp);let m={'html':'text/html;charset=utf-8','css':'text/css','js':'application/javascript','png':'image/png','jpg':'image/jpeg','webp':'image/webp','svg':'image/svg+xml'};s.writeHead(200,{'Content-Type':m[ext.slice(1)]||'text/plain'});s.end(d)}})}).listen(P,()=>console.log('Server on :'+P))"],
+      "port": 3456
+    }
+  ]
+}

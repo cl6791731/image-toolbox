@@ -2,31 +2,5 @@
   "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/compress", "destination": "/compress.html" },
-    { "source": "/crop", "destination": "/crop.html" },
-    { "source": "/watermark", "destination": "/watermark.html" },
-    { "source": "/resize", "destination": "/resize.html" },
-    { "source": "/articles", "destination": "/articles.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/zh/compress", "destination": "/zh/compress.html" },
-    { "source": "/zh/crop", "destination": "/zh/crop.html" },
-    { "source": "/zh/watermark", "destination": "/zh/watermark.html" },
-    { "source": "/zh/resize", "destination": "/zh/resize.html" },
-    { "source": "/zh/articles", "destination": "/zh/articles.html" },
-    { "source": "/zh/about", "destination": "/zh/about.html" },
-    { "source": "/zh/contact", "destination": "/zh/contact.html" },
-    { "source": "/zh/privacy", "destination": "/zh/privacy.html" },
-    { "source": "/social", "destination": "/social.html" },
-    { "source": "/web-optimizer", "destination": "/web-optimizer.html" },
-    { "source": "/ecommerce", "destination": "/ecommerce.html" },
-    { "source": "/zh/social", "destination": "/zh/social.html" },
-    { "source": "/zh/web-optimizer", "destination": "/zh/web-optimizer.html" },
-    { "source": "/zh/ecommerce", "destination": "/zh/ecommerce.html" },
-    { "source": "/articles/:slug", "destination": "/articles/:slug.html" },
-    { "source": "/zh/articles/:slug", "destination": "/zh/articles/:slug.html" }
-  ]
+  "cleanUrls": true
 }

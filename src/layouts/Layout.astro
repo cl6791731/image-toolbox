@@ -62,19 +62,17 @@ const fullTitle = title ? `${title} | Image Toolbox` : siteTitle;
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <!-- Auto language detection by visitor location -->
+  <!-- Auto language detection removed to fix Google Search Console redirect issue.
+       Users can manually switch language via the nav toggle.
+       hreflang tags in <Seo /> component inform Google of alternate language versions. -->
+  <!--
   <script is:inline>
     (function() {
-      // Respect user's manual language choice
       if (localStorage.getItem('lang_pref')) return;
-
-      // Avoid redirect loop: check once per session
       if (sessionStorage.getItem('lang_checked')) return;
       sessionStorage.setItem('lang_checked', '1');
-
       var path = location.pathname;
       var isZh = path.startsWith('/zh');
-
       fetch('https://ipapi.co/json/')
         .then(function(r) { return r.json(); })
         .then(function(data) {
@@ -87,8 +85,6 @@ const fullTitle = title ? `${title} | Image Toolbox` : siteTitle;
         })
         .catch(function() {});
     })();
-
-    // Record manual language switch to prevent auto-redirect
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.lang-switch a').forEach(function(a) {
         a.addEventListener('click', function() {
@@ -97,6 +93,7 @@ const fullTitle = title ? `${title} | Image Toolbox` : siteTitle;
       });
     });
   </script>
+  -->
 
   <slot name="head" />
 </head>
