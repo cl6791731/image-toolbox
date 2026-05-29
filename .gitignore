@@ -23,3 +23,11 @@ yarn-error.log*
 # OS
 .DS_Store
 Thumbs.db
+
+# WorkBuddy / AI assistant
+.claude/
+.workbuddy/
+
+# Nested project folders
+pdf百宝箱/
+图片百宝箱/
