@@ -1804,4 +1804,62 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
   </div>
 </div>`
     },
+    {
+      slug: 'instagram-image-size-guide-2026',
+      title: 'Instagram Image Size Guide 2026: Complete Dimensions for All Post Types',
+      date: '2026-05-29',
+      tags: ['instagram', 'social-media', 'sizes'],
+      content: `
+<h2>Why Instagram Image Sizes Matter in 2026</h2>
+<p>Instagram remains one of the most visually demanding social platforms, and getting your image dimensions wrong can ruin your content's first impression. A photo that looked perfect in your camera roll can appear pixelated, awkwardly cropped, or — worst of all — get cut off mid-message when posted at the wrong size. In 2026, with Instagram supporting everything from tiny Stories to sprawling carousel posts, understanding the exact specifications for each format is essential for creators, brands, and marketers alike.</p>
+<p>Instagram compresses every upload automatically, but starting with the right dimensions ensures the platform's compression algorithm has the best possible source material. Properly sized images load faster in the feed, display sharper on retina screens, and maintain their quality through Instagram's multi-step processing pipeline. For businesses, correctly sized visuals can mean the difference between a polished brand presence and one that looks amateurish.</p>
+
+<h2>Instagram Post Sizes: Every Format Explained</h2>
+
+<h3>Square Posts (1:1 Ratio)</h3>
+<p>The classic Instagram format. <strong>Recommended: 1080 × 1080 pixels.</strong> Minimum: 320 × 320 pixels. Square posts remain the most common format because they display consistently across the feed, Explore page, and profile grid without any cropping surprises. For regular photo posts, this is still the safest choice.</p>
+<p>When exporting square images, use JPG at quality 85-90 for the best balance of visual fidelity and file size. Instagram will compress them further, so starting with a clean, properly exported file minimizes double-compression artifacts. Photos with a lot of detail or text should err on the higher end of the quality range.</p>
+
+<h3>Portrait Posts (4:5 Ratio)</h3>
+<p><strong>Recommended: 1080 × 1350 pixels.</strong> This is the sweet spot for maximizing screen real estate in the feed. Since 4:5 images occupy more vertical space than squares or landscapes, they command more attention as users scroll. Instagram allows portrait posts to be taller than square — up to a 4:5 ratio — but anything beyond that gets cropped.</p>
+<p>Portrait posts work especially well for fashion, food photography, infographics, and quotes. The extra vertical space lets you include more visual information without forcing users to tap to expand. Just remember: Stories and Reels are even taller (9:16), so don't confuse the aspect ratios.</p>
+
+<h3>Landscape Posts (1.91:1 Ratio)</h3>
+<p><strong>Recommended: 1080 × 566 pixels.</strong> Landscape images work well for scenic photography, event group shots, and cinematic content. However, they take up less screen space in the feed compared to portrait posts. Instagram crops landscape images to a maximum of 1.91:1 — anything wider will be letterboxed or cropped.</p>
+<p>A common mistake is uploading a 16:9 image and expecting it to display fully. Since 16:9 is wider than Instagram's 1.91:1 limit, the top and bottom will be trimmed. If your original is 16:9, consider adding borders or reframing your composition before uploading.</p>
+
+<h3>Instagram Stories and Reels (9:16 Ratio)</h3>
+<p><strong>Recommended: 1080 × 1920 pixels (full HD portrait).</strong> This is the only format where vertical video and full-screen photos truly shine. Stories occupy the entire screen on mobile devices, and properly sized content at 9:16 fills every pixel. Anything smaller leaves black bars at the top and bottom.</p>
+<p>For Stories with text or interactive elements like polls and stickers, keep important content within a "safe zone" of approximately 1080 × 1420 pixels — the area visible above the bottom tab bar and below the top status bar. Overlay elements placed near the edges risk being covered by Instagram's UI.</p>
+
+<h2>Instagram Profile and Thumbnail Sizes</h2>
+<p><strong>Profile picture: 320 × 320 pixels</strong> (displays as a circle, so keep important elements centered). <strong>Story Highlights cover: 1080 × 1920 pixels.</strong> For feed thumbnails and the profile grid, all images are rendered at approximately 293 × 293 pixels on the grid view, using center-crop by default. This means landscape images in your grid may look awkwardly zoomed — another reason square remains the safest all-around format.</p>
+
+<h2>Image Quality Tips: Preventing Instagram Compression Artifacts</h2>
+<p>Instagram's compression is aggressive and unavoidable, but you can minimize its impact. Export your images at exactly <strong>1080 pixels on the longest side</strong> — this is the maximum resolution Instagram displays, and anything larger gets downscaled. Upload as PNG when your image contains text or sharp graphics, since JPG compression is particularly harsh on text elements. For regular photos, high-quality JPG at 85-90% remains the standard.</p>
+<p>If you regularly post to multiple platforms, manually resizing for each one is time-consuming. You can use <a href="/social">Image Toolbox's Social Media Compliance Checker</a> to batch-generate correctly sized versions for Instagram, Facebook, TikTok, and more — all from a single upload. It validates every image against each platform's latest specs so you never post a mis-sized image again.</p>
+<p>For quick adjustments before posting, <a href="/resize">Image Toolbox's resize tool</a> handles exact pixel dimensions with aspect ratio lock, and the <a href="/compress">compression tool</a> helps you hit file size targets without visible quality loss. All processing happens locally in your browser, so your photos never touch a server.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What is the best image size for Instagram posts in 2026?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The best all-around size is 1080 × 1350 pixels (4:5 portrait ratio). This format takes up the most screen space in the feed without being cropped, maximizing engagement. For Stories and Reels, use 1080 × 1920 pixels (9:16). For profile pictures, 320 × 320 pixels is optimal.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Why do my Instagram photos look blurry after uploading?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Instagram compresses all uploaded images, which can cause blurriness if your source file is already small or low quality. To prevent this: always upload at exactly 1080px wide, use high-quality JPG (85-90%) or PNG for text-heavy images, and avoid uploading images that have already been compressed by another platform. Starting with proper dimensions also prevents Instagram's resizing algorithm from introducing additional softness.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I use the same image size for Instagram, Facebook, and TikTok?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No, each platform has different optimal dimensions. Instagram feed posts are best at 1080 × 1350px (4:5), Facebook feed images at 1200 × 630px (1.91:1), and TikTok covers at 1080 × 1920px (9:16). Using the wrong dimensions leads to unwanted cropping or low-quality display. For a less tedious workflow, use Image Toolbox's Social Media Compliance Checker to batch-generate correctly sized versions for every platform from a single source image.</p>
+    </div>
+  </div>
+</div>`
+    },
   ];

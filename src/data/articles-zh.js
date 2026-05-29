@@ -1800,4 +1800,62 @@ export const articles = [
   </div>
 </div>`
     },
+    {
+      slug: 'instagram-image-size-guide-2026',
+      title: 'Instagram图片尺寸指南2026：所有帖子类型的完整尺寸规范',
+      date: '2026-05-29',
+      tags: ['instagram', '社交媒体', '尺寸'],
+      content: `
+<h2>为什么Instagram图片尺寸在2026年至关重要</h2>
+<p>Instagram仍然是视觉要求最高的社交平台之一，图片尺寸出错可能毁掉你的内容第一印象。一张在相册里看起来很完美的照片，如果以错误的尺寸发布，可能会变得模糊、被尴尬地裁切，甚至——最糟糕的情况——在关键信息处被截断。到2026年，Instagram支持从小巧的Stories到铺满屏幕的轮播帖子等多种格式，了解每种格式的精确规格对创作者、品牌和营销人员来说都至关重要。</p>
+<p>Instagram会对每张上传的图片自动压缩，但以正确的尺寸起始，可以确保平台的压缩算法获得最佳源素材。尺寸合适的图片在信息流中加载更快，在视网膜屏幕上显示更清晰，并通过Instagram的多步处理流程保持质量。对于企业来说，尺寸正确的视觉内容可能是精致品牌形象与业余观感之间的分水岭。</p>
+
+<h2>Instagram帖子尺寸：每种格式详解</h2>
+
+<h3>正方形帖子（1:1比例）</h3>
+<p>经典的Instagram格式。<strong>推荐：1080 × 1080像素。</strong>最低要求：320 × 320像素。正方形帖子仍然是最常见的格式，因为它们在信息流、发现页和个人主页网格中显示一致，不会出现裁切意外。对于常规照片帖子，这仍然是最安全的选择。</p>
+<p>导出正方形图片时，使用质量85-90的JPG格式，可在视觉保真度和文件大小之间取得最佳平衡。Instagram会进一步压缩它们，因此从干净、正确导出的文件开始可以最大限度地减少二次压缩伪影。包含大量细节或文字的图片应偏向质量范围的高端。</p>
+
+<h3>竖版帖子（4:5比例）</h3>
+<p><strong>推荐：1080 × 1350像素。</strong>这是在信息流中最大化屏幕空间的黄金比例。由于4:5的图片比正方形或横版图片占据更多垂直空间，它们在用户滚动时更能吸引注意力。Instagram允许竖版帖子比正方形更高——最高可达4:5比例——但超过此比例的内容会被裁切。</p>
+<p>竖版帖子特别适合时尚摄影、美食摄影、信息图表和名言引用。额外的垂直空间让你可以包含更多视觉信息，而无需用户点击展开。只需记住：Stories和Reels的比例更高（9:16），不要混淆这些宽高比。</p>
+
+<h3>横版帖子（1.91:1比例）</h3>
+<p><strong>推荐：1080 × 566像素。</strong>横版图片适合风景摄影、活动合影和电影感内容。然而，与竖版帖子相比，它们在信息流中占据的屏幕空间更少。Instagram将横版图片裁切到最大1.91:1——任何比这更宽的内容都会被加黑边或裁切。</p>
+<p>常见的错误是上传16:9的图片并期望它完整显示。由于16:9比Instagram的1.91:1限制更宽，顶部和底部会被修剪。如果你的原始图片是16:9的，考虑在上传前添加边框或调整构图。</p>
+
+<h3>Instagram Stories和Reels（9:16比例）</h3>
+<p><strong>推荐：1080 × 1920像素（全高清竖版）。</strong>这是竖版视频和全屏照片真正闪耀的唯一格式。Stories在移动设备上占据整个屏幕，尺寸正确的9:16内容可以填满每个像素。任何小于此尺寸的内容都会在顶部和底部留下黑边。</p>
+<p>对于包含文字或互动元素（如投票和贴纸）的Stories，将重要内容保持在约1080 × 1420像素的"安全区域"内——即底部标签栏上方和顶部状态栏下方的可见区域。放置在边缘附近的叠加元素可能会被Instagram的UI覆盖。</p>
+
+<h2>Instagram头像和缩略图尺寸</h2>
+<p><strong>个人头像：320 × 320像素</strong>（显示为圆形，因此重要元素要居中放置）。<strong>Story精选封面：1080 × 1920像素。</strong>对于信息流缩略图和个人主页网格，所有图片以约293 × 293像素渲染在网格视图中，默认使用中心裁切。这意味着你网格中的横版图片可能看起来很别扭地放大——这是正方形仍然是最安全通用格式的另一个原因。</p>
+
+<h2>图片质量技巧：防止Instagram压缩伪影</h2>
+<p>Instagram的压缩是激进且不可避免的，但你可以将其影响降到最低。<strong>将图片恰好导出为最长边1080像素</strong>——这是Instagram显示的最高分辨率，任何更大的内容都会被缩小。当图片包含文字或锐利图形时，以PNG格式上传，因为JPG压缩对文字元素尤其严苛。对于常规照片，85-90%质量的高品质JPG仍然是标准选择。</p>
+<p>如果你经常在多个平台发帖，手动为每个平台调整尺寸非常耗时。你可以使用<a href="/zh/social">Image Toolbox社交媒体合规器</a>，从一次上传批量生成适配Instagram、Facebook、TikTok等平台的正确尺寸版本。它会根据每个平台的最新规范验证每张图片，让你再也不会发布尺寸错误的图片。</p>
+<p>如需发布前的快速调整，<a href="/zh/resize">Image Toolbox尺寸调整工具</a>支持精准像素尺寸和宽高比锁定，<a href="/zh/compress">压缩工具</a>则帮助你在无明显质量损失的情况下达到文件大小目标。所有处理都在你的浏览器本地完成，照片不会触及任何服务器。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">2026年Instagram帖子的最佳图片尺寸是多少？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">最佳通用尺寸是1080 × 1350像素（4:5竖版比例）。这种格式在不被裁切的情况下占据信息流中最大的屏幕空间，最大化互动率。对于Stories和Reels，使用1080 × 1920像素（9:16）。个人头像建议使用320 × 320像素。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">为什么我的Instagram照片上传后看起来很模糊？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Instagram会压缩所有上传的图片，如果你的源文件本身已经很小或质量较低，就会导致模糊。防止方法：始终以恰好1080px宽度上传，使用高质量JPG（85-90%）或为文字较多的图片使用PNG，避免上传已被其他平台压缩过的图片。以正确尺寸起始也能防止Instagram的缩放算法引入额外的柔化效果。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">可以在Instagram、Facebook和TikTok上使用相同的图片尺寸吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不可以，每个平台有不同的最佳尺寸。Instagram信息流帖子最佳为1080 × 1350px（4:5），Facebook信息流图片为1200 × 630px（1.91:1），TikTok封面为1080 × 1920px（9:16）。使用错误的尺寸会导致不想要的裁切或低质量显示。要想简化工作流程，可以使用Image Toolbox社交媒体合规器，从一张源图片批量生成每个平台的正确尺寸版本。</p>
+    </div>
+  </div>
+</div>`
+    },
   ];
