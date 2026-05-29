@@ -1,5 +1,6 @@
 ---
 import Seo from '../components/Seo.astro';
+import Analytics from '@vercel/analytics/astro';
 
 export interface Props {
   title: string;
@@ -52,6 +53,8 @@ const fullTitle = title ? `${title} | Image Toolbox` : siteTitle;
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <meta name="theme-color" content="#ffffff" />
+
+  <Analytics />
 
   <!-- Google Analytics 4 — REPLACE with your Measurement ID -->
   <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
