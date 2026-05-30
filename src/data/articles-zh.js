@@ -1858,4 +1858,59 @@ export const articles = [
   </div>
 </div>`
     },
+    {
+      slug: 'tiktok-cover-size-guide-2026',
+      title: 'TikTok封面尺寸指南2026：完整尺寸规范与最佳实践',
+      date: '2026-05-30',
+      tags: ['tiktok', '社交媒体', '尺寸'],
+      content: `
+<h2>为什么TikTok封面比你想象的更重要</h2>
+<p>TikTok早已超越对口型应用的定位。月活超过15亿用户，它现在是一个发现引擎，你的个人主页和视频封面就像迷你广告牌。一张精心设计的封面往往是用户点击你的视频和在零点几秒内划走之间的分水岭。然而大多数创作者上传的是TikTok自动生成的缩略图——这是一种很少能赌赢的赌博。</p>
+<p>与Instagram正方形和竖版格式并存不同，TikTok强制使用一种主导宽高比：<strong>9:16竖版</strong>。每个视频封面、每张个人头像、每个视觉品牌元素都必须适配这种高挑的、适合手机的格式。尺寸正确可以确保你的内容从入门级安卓手机到配备高密度视网膜屏幕的最新iPhone Pro机型，在任何设备上都显示清晰。</p>
+<p>TikTok会对每张上传的图片施加自己的压缩，这意味着以正确的尺寸和干净的源文件开始至关重要。如果封面太小，它会被拉伸和像素化。如果是非标准宽高比，TikTok会以不可预测的方式裁切——可能在此过程中截掉文字、人脸或品牌元素。</p>
+
+<h2>TikTok图片尺寸：完整详解</h2>
+
+<h3>视频封面尺寸</h3>
+<p><strong>推荐：1080 × 1920像素（9:16宽高比）。</strong>这是所有TikTok视频封面的黄金标准。9:16比例匹配现代智能手机的完整竖屏，确保封面填满每个像素，不会出现黑边或尴尬裁切。在个人主页网格中，TikTok以约540 × 960像素显示视频封面，但上传完整1080 × 1920像素可以为高DPI显示屏留出余量。</p>
+<p>设计自定义封面时，将关键视觉元素——文字、人脸、Logo——保持在约<strong>1080 × 1420像素的安全区域内</strong>，垂直居中。底部约500像素经常被TikTok的UI叠加层遮挡（视频描述、音乐归属和互动图标）。同样，顶部约100像素可能被状态栏和账号名称覆盖。带着这些边距意识来设计，可以避免精心制作的封面被界面元素遮挡的挫败感。</p>
+<p>文件格式也很重要。TikTok接受JPG和PNG作为封面格式。对于照片类封面，85-90%质量的JPG提供出色的视觉保真度和可控的文件大小（通常200-400KB）。对于文字较多或包含锐利图形的封面，PNG在TikTok压缩下能更好地保留边缘清晰度。避免使用GIF封面——TikTok会将其转换为静态图片。</p>
+
+<h3>个人头像尺寸</h3>
+<p><strong>推荐：最低200 × 200像素，最佳效果使用1080 × 1080像素。</strong>TikTok在大多数设备上以约120 × 120像素的圆形显示头像，但上传更大的正方形图片可以确保在平板和桌面浏览器上的清晰度。图片将被中心裁切为圆形，因此请将重要元素——尤其是你的面部或Logo——保持在画面的中央70%区域内，以避免尴尬的边缘剪切。</p>
+<p>对于企业账号和创作者主页，你的头像是用户在搜索结果和评论线程中看到的第一个视觉元素。模糊或裁切不当的头像传递出业余的信号。以你设计工具支持的最高质量上传，让TikTok处理缩小——它缩小一张图片的效果比你把一张小图片放大的效果好得多。</p>
+
+<h2>制作抓眼的TikTok封面技巧</h2>
+<p>一张技术上完美的1080 × 1920封面并不能保证互动。封面的内容与尺寸同等重要。牢记以下设计原则：</p>
+<ul>
+<li><strong>粗体、可读的文字：</strong>如果封面包含标题，在1080px画布宽度下使用不小于36pt的字体。TikTok用户滚动速度极快，小文字会消失在运动的模糊中。无衬线字体（思源黑体、苹方、Inter）在压缩后比衬线或装饰字体渲染得更干净。</li>
+<li><strong>高对比度色彩：</strong>TikTok的深色模式被广泛使用。在白底画布上设计的封面在黑色背景上可能显得刺眼或过曝。在浅色和深色界面主题下都要测试封面——或使用在两种模式下都清晰可辨的彩色背景。</li>
+<li><strong>人脸和表情：</strong>在盲测A/B对比中，带有强烈表情的面部特写胜过抽象图形。TikTok是一个人格驱动的平台。如果封面包含人物，确保面部至少占据画面的30%。</li>
+<li><strong>一致的品牌风格：</strong>跨多个视频使用一致的封面风格——相同的调色板、相同的字体、相同的模板结构——有助于建立视觉品牌识别。在信息流中认出你风格的用户更有可能停下滚动。</li>
+</ul>
+<p>手动为每个视频创建封面非常耗时，尤其是每天发帖的话。如果你同时在Instagram、YouTube Shorts和TikTok发布内容，每个平台的尺寸都不相同，令人沮丧。你可以使用<a href="/zh/social">Image Toolbox社交媒体合规器</a>，从一张源图片批量生成适配TikTok、Instagram等平台的正确尺寸封面。它会根据每个平台的最新规范验证每次导出，消除跨平台发布的猜测工作。</p>
+<p>如需快速编辑封面，<a href="/zh/resize">Image Toolbox尺寸调整工具</a>支持精准像素尺寸并保持宽高比，<a href="/zh/crop">裁切工具</a>则让你重新构图以适配TikTok高挑的9:16格式。所有处理都在浏览器本地运行，你的创作内容保持私密。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">TikTok封面照片的最佳尺寸是多少？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">最佳TikTok封面尺寸是1080 × 1920像素，9:16宽高比。这匹配智能手机的完整竖屏，确保不会裁切或拉伸。个人头像建议至少200 × 200像素，最佳效果使用1080 × 1080像素以确保在所有设备上的视网膜显示清晰度。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">发布后可以更改TikTok封面照片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以。TikTok允许你在发布后更改任何视频的封面照片。在视频页面，点击三点菜单，选择"编辑封面"，然后选择自定义图片或视频中的某一帧。这在TikTok自动生成的缩略图没有捕捉到精彩瞬间时特别有用。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">为什么我的TikTok封面看起来模糊或会被裁切？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">模糊封面通常是因为上传了小于1080 × 1920像素的图片——TikTok会将它们拉伸以填充屏幕，导致像素化。裁切问题则发生在图片不匹配9:16宽高比时。务必以恰好1080 × 1920像素设计封面，并将关键内容保持在1080 × 1420像素的居中安全区域内，以避免TikTok的UI叠加层遮挡。</p>
+    </div>
+  </div>
+</div>`
+    },
   ];

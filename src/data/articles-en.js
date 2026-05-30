@@ -1862,4 +1862,59 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
   </div>
 </div>`
     },
+    {
+      slug: 'tiktok-cover-size-guide-2026',
+      title: 'TikTok Cover Photo Size Guide 2026: Complete Dimensions & Best Practices',
+      date: '2026-05-30',
+      tags: ['tiktok', 'social-media', 'sizes'],
+      content: `
+<h2>Why Your TikTok Cover Image Matters More Than You Think</h2>
+<p>TikTok has evolved far beyond a lip-syncing app. With over 1.5 billion monthly active users, it is now a discovery engine where your profile and video covers serve as miniature billboards. A well-designed cover image is often the difference between a user tapping your video or scrolling past it in a fraction of a second. Yet most creators upload whatever thumbnail TikTok auto-generates — a gamble that rarely pays off.</p>
+<p>Unlike Instagram where square and portrait formats coexist, TikTok enforces one dominant aspect ratio: <strong>9:16 vertical</strong>. Every video cover, every profile photo, and every piece of visual branding must conform to this tall, phone-friendly format. Getting the dimensions right ensures your content looks sharp on every device, from budget Android phones to the latest iPhone Pro models with their high-density retina displays.</p>
+<p>TikTok applies its own compression to every uploaded image, which means starting with the correct dimensions and a clean source file is critical. If your cover is too small, it will stretch and pixelate. If it's an unusual aspect ratio, TikTok will crop it unpredictably — potentially cutting off text, faces, or brand elements in the process.</p>
+
+<h2>TikTok Image Dimensions: The Complete Breakdown</h2>
+
+<h3>Video Cover Photo Dimensions</h3>
+<p><strong>Recommended: 1080 × 1920 pixels (9:16 aspect ratio).</strong> This is the gold standard for all TikTok video covers. The 9:16 ratio matches the full vertical screen of modern smartphones, ensuring your cover image fills every pixel without letterboxing or awkward cropping. TikTok displays video covers at approximately 540 × 960 pixels on the profile grid, but uploading at full 1080 × 1920 provides headroom for high-DPI displays.</p>
+<p>When designing a custom cover, keep critical visual elements — text, faces, logos — within a <strong>safe zone of roughly 1080 × 1420 pixels</strong>, centered vertically. The bottom ~500 pixels are frequently obscured by TikTok's UI overlay (the video description, music attribution, and engagement icons). Similarly, the top ~100 pixels may be covered by the status bar and account handle. Designing with these margins in mind prevents the frustration of a perfectly crafted cover being hidden behind interface elements.</p>
+<p>File format matters too. TikTok accepts JPG and PNG for covers. For photographs, JPG at 85-90% quality provides excellent visual fidelity at manageable file sizes (typically 200-400KB). For text-heavy covers or designs with sharp graphics, PNG preserves edge clarity better under TikTok's compression. Avoid GIF covers — TikTok converts them to static images.</p>
+
+<h3>Profile Photo Dimensions</h3>
+<p><strong>Recommended: 200 × 200 pixels minimum, 1080 × 1080 for best results.</strong> TikTok displays profile photos as circles at approximately 120 × 120 pixels on most devices, but uploading a larger square image ensures sharpness on tablets and desktop browsers. The image will be center-cropped to a circle, so keep important elements — especially your face or logo — within the central 70% of the frame to avoid awkward edge clipping.</p>
+<p>For business accounts and creator profiles, your profile photo is the first visual element users see in search results and comment threads. A blurry or poorly cropped profile picture signals amateurism. Upload at the highest quality your design tool supports, and let TikTok handle the downscaling — it does a better job shrinking an image than you would stretching a small one.</p>
+
+<h2>Tips for Creating Scroll-Stopping TikTok Covers</h2>
+<p>A technically perfect cover at 1080 × 1920 doesn't guarantee engagement. The content of the cover matters just as much as its dimensions. Keep these design principles in mind:</p>
+<ul>
+<li><strong>Bold, readable text:</strong> If your cover includes a title, use fonts no smaller than 36pt at 1080px canvas width. TikTok users scroll rapidly, and small text disappears into a blur of motion. Sans-serif fonts (Inter, Roboto, Montserrat) render more cleanly after compression than serif or decorative typefaces.</li>
+<li><strong>High contrast colors:</strong> TikTok's dark mode is widely used. Covers designed on a white canvas may look jarring or blown out against a black background. Test your cover against both light and dark interface themes — or use a colored background that reads well in either mode.</li>
+<li><strong>Faces and expressions:</strong> Close-up faces with strong expressions outperform abstract graphics in blind A/B tests. TikTok is a personality-driven platform. If your cover includes a person, make sure their face occupies at least 30% of the frame.</li>
+<li><strong>Consistent branding:</strong> Across multiple videos, a consistent cover style — same color palette, same font, same template structure — builds visual brand recognition. Users who recognize your style in the feed are more likely to stop scrolling.</li>
+</ul>
+<p>Manually creating covers for every video is time-consuming, especially if you post daily. If you publish across Instagram, YouTube Shorts, and TikTok, the dimensions are frustratingly different on each platform. You can use <a href="/social">Image Toolbox's Social Media Compliance Checker</a> to batch-generate correctly sized covers for TikTok, Instagram, and more — all from a single source image. It validates every export against each platform's latest specifications, eliminating the guesswork from cross-platform publishing.</p>
+<p>For quick cover editing, <a href="/resize">Image Toolbox's resize tool</a> handles exact pixel dimensions while preserving aspect ratio, and the <a href="/crop">crop tool</a> lets you reframe compositions to fit TikTok's tall 9:16 format. Everything runs locally in your browser, so your creative work stays private.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What is the best size for a TikTok cover photo?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The optimal TikTok cover size is 1080 × 1920 pixels with a 9:16 aspect ratio. This matches the full vertical screen of smartphones and ensures no cropping or stretching. For the profile photo, use at least 200 × 200 pixels, ideally 1080 × 1080 for retina display sharpness on all devices.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I change my TikTok cover photo after posting?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes. TikTok allows you to change the cover photo for any video after publishing. On the video page, tap the three-dot menu, select "Edit cover," and choose a custom image or a frame from the video. This is particularly useful if TikTok's auto-generated thumbnail didn't capture a compelling moment.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Why does my TikTok cover look blurry or get cropped?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Blur covers usually result from uploading images smaller than 1080 × 1920 pixels — TikTok stretches them to fill the screen, causing pixelation. Cropping issues occur when images don't match the 9:16 aspect ratio. Always design at exactly 1080 × 1920 and keep critical content within a centered safe zone of 1080 × 1420 pixels to avoid TikTok's UI overlays.</p>
+    </div>
+  </div>
+</div>`
+    },
   ];
