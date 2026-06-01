@@ -2,5 +2,10 @@
   "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en.html", "destination": "/", "permanent": true },
+    { "source": "/en/(.*)", "destination": "/$1", "permanent": true }
+  ]
 }
