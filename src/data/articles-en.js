@@ -1977,4 +1977,68 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
   </div>
 </div>`
     },
+    {
+      slug: 'xiaohongshu-image-size-guide-2026',
+      title: 'Xiaohongshu Image Size Guide 2026: Complete Dimensions for Notes, Covers & Ads',
+      date: '2026-06-02',
+      tags: ['xiaohongshu', 'social-media', 'sizes', 'red'],
+      content: `
+<h2>Why Xiaohongshu Image Sizes Matter for Your Content Strategy</h2>
+<p>Xiaohongshu (also known as RED) has evolved from a shopping recommendation app into China's most influential lifestyle platform, boasting over 300 million monthly active users. Unlike Western social platforms where casual snapshots dominate, Xiaohongshu users expect <strong>magazine-quality visuals</strong> in every post. A poorly sized, pixelated, or awkwardly cropped image doesn't just underperform — it signals amateurism in a community that rewards polish and curation above all else.</p>
+<p>What makes Xiaohongshu uniquely challenging for content creators is its <strong>multi-format feed</strong>. A single browse session exposes users to square grid thumbnails, full-width horizontal covers, vertical note images, and video covers — all rendered at different aspect ratios depending on the viewing context (discover feed, search results, or profile grid). Uploading a single image without understanding these dimensional requirements is a guaranteed recipe for unexpected crops, text cutoffs, and lost engagement.</p>
+<p>Xiaohongshu's compression pipeline is also notably aggressive with images that don't match its internal rendering targets. Uploading an oversized 4000-pixel photo may give you a false sense of quality, but the platform will downscale it with its own algorithm — often introducing softness and color shifts that degrade the crisp, high-contrast aesthetic Xiaohongshu users expect. Getting the dimensions right at the source eliminates this middle step entirely.</p>
+
+<h2>Xiaohongshu Image Dimensions: Every Format Explained</h2>
+
+<h3>Feed Note Images (The Core Format)</h3>
+<p><strong>Recommended: 1080 × 1440 pixels (3:4 aspect ratio).</strong> This is the single most important dimension to memorize for Xiaohongshu. The 3:4 vertical ratio fills the maximum allowable screen space in the discover feed without triggering any automatic cropping. Images taller than 3:4 are truncated with a "view full image" overlay, and images wider than 3:4 leave blank space that other creators are filling with content — a competitive disadvantage in a feed where every pixel of vertical real estate counts.</p>
+<p>For multi-image note posts (carousels), all images within the same post should share identical dimensions — ideally all 1080 × 1440. Mixing aspect ratios within a carousel causes jarring transitions as users swipe, breaking the visual flow that makes carousel content so effective on the platform. When exporting, use <strong>JPG at 90-95% quality</strong> or PNG for text-heavy graphics. Xiaohongshu supports images up to 20MB per file, but aiming for 300-800KB per image ensures fast loading without sacrificing the crisp detail users expect.</p>
+<p>If your source images are shot in 4:3, 16:9, or 1:1 aspect ratios and need reframing to 3:4, <a href="/crop">Image Toolbox's crop tool</a> provides precise 3:4 ratio presets with drag-to-reposition controls, so you never accidentally trim off important visual elements during the conversion.</p>
+
+<h3>Cover Image (Note Header)</h3>
+<p><strong>Recommended: 1080 × 1440 pixels (3:4) or 1080 × 1080 pixels (1:1).</strong> The cover image is the first visual users see in search results and the discover feed. It functions as a thumbnail-sized advertisement for your entire note, so treat it accordingly. Xiaohongshu recommends using either 3:4 or 1:1 for covers, with 3:4 being the preferred choice for maximum feed visibility.</p>
+<p>A critical design consideration: Xiaohongshu overlays a <strong>white title bar</strong> at the bottom of cover images in the feed, covering approximately the bottom 15-20% of the image. Any text, faces, or brand elements placed in that zone will be completely hidden. Keep key visual information in the <strong>upper 75% of the frame</strong>, and use the bottom area only for decorative elements or gradients that won't be missed when obscured.</p>
+<p>For covers that include text overlays (which dramatically improve click-through rates), use fonts no smaller than 48pt equivalent at 1080px canvas width. Sans-serif Chinese fonts (PingFang SC, Noto Sans SC, HarmonyOS Sans) render much more cleanly after Xiaohongshu's compression than serif or decorative typefaces. Bold, high-contrast text on a solid or gradient background consistently outperforms text placed directly over busy photographs.</p>
+
+<h3>Video Cover Dimensions</h3>
+<p><strong>Recommended: 1080 × 1920 pixels (9:16 aspect ratio) or 1080 × 1440 pixels (3:4).</strong> Xiaohongshu supports both full-screen vertical video (9:16) and the standard note format (3:4) for video content. Most creators default to 9:16 for video as it fills the entire phone screen during playback. However, the video cover — the static thumbnail displayed before playback begins — should still follow the same safe-zone principles as note covers, with critical content kept away from the bottom overlay zone.</p>
+<p>Unlike Douyin (TikTok) where auto-generated thumbnails from video frames are standard, Xiaohongshu encourages custom cover uploads. A custom-designed video cover with bold typography and branded elements consistently drives higher click-through rates than a random freeze-frame. Upload your cover at the same resolution as your video for consistency — don't design a 1080 × 1920 cover for a 1080 × 1440 video.</p>
+
+<h3>Profile Photo and Background</h3>
+<p><strong>Profile photo: 400 × 400 pixels minimum (displays as a circle).</strong> Upload at least 800 × 800 for retina sharpness on modern phones. Xiaohongshu crops profile photos to a circle with no border, so keep faces and logos within the central 70% of the frame. Unlike Instagram where profile photos are often decorative, Xiaohongshu profile photos strongly influence perceived credibility — a clear, well-lit headshot or clean logo design is the standard.</p>
+<p><strong>Profile background: 1125 × 630 pixels (approximately 16:9).</strong> This banner-style image appears at the top of your profile page and is one of the most underutilized branding opportunities on the platform. Most creators leave it blank or use a default gradient, but a custom background with brand colors, taglines, or portfolio previews immediately distinguishes professional accounts from casual users.</p>
+
+<h2>Xiaohongshu Image Quality: Avoiding the Compression Trap</h2>
+<p>Xiaohongshu's image compression is designed to balance visual quality with loading speed across China's diverse mobile network conditions — from 5G in city centers to slower connections in rural areas. While you can't bypass the compression entirely, you can stack the deck in your favor:</p>
+<ul>
+<li><strong>Upload at exactly the target resolution.</strong> If your image will display at 1080 × 1440, export and upload at exactly 1080 × 1440. Uploading a larger image and relying on Xiaohongshu to downscale introduces a round of interpolation that softens edges and muddies fine details.</li>
+<li><strong>Sharpen slightly before export.</strong> Adding a subtle unsharp mask (amount: 40-60%, radius: 0.8-1.2px) during your final export compensates for the slight softening introduced by platform compression. This is a standard technique among professional Xiaohongshu creators.</li>
+<li><strong>Use sRGB color profile.</strong> Images exported in Adobe RGB or ProPhoto RGB color spaces will appear desaturated and flat after Xiaohongshu's color space conversion. Always convert to sRGB before uploading — this is the web standard that every mobile screen uses.</li>
+<li><strong>Avoid re-compressing already-compressed images.</strong> If you download an image from another social platform and re-upload it to Xiaohongshu, the cumulative compression will produce visible artifacts. Always work from original camera files or high-quality exports.</li>
+</ul>
+<p>For creators who publish across multiple platforms — Xiaohongshu, Douyin, Instagram, WeChat Official Accounts — manually resizing for each one is a massive time sink. The dimensions are different on every platform: 1080 × 1440 for Xiaohongshu notes, 1080 × 1920 for Douyin covers, 1080 × 1350 for Instagram feed, and 900 × 500 for WeChat Official Account header images. You can use <a href="/social">Image Toolbox's Social Media Compliance Checker</a> to batch-generate correctly sized versions for every platform from a single source image. It validates each export against the latest platform specifications and generates previews so you can verify the cropping before posting — no more unpleasant surprises after hitting publish.</p>
+<p>For precise dimensional adjustments, <a href="/resize">the resize tool</a> handles exact pixel dimensions with aspect ratio lock, and <a href="/crop">the crop tool</a> includes Xiaohongshu-specific ratio presets (3:4, 1:1, 9:16) with visual safe-zone guides. All processing runs entirely in your browser — your original photos never leave your device.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What is the best image size for Xiaohongshu notes?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The optimal size for Xiaohongshu note images is 1080 × 1440 pixels with a 3:4 aspect ratio. This fills the maximum allowable vertical space in the discover feed without triggering automatic cropping. For cover images, use the same 1080 × 1440 dimension and keep important content in the upper 75% of the frame to avoid being hidden by Xiaohongshu's bottom overlay. Carousel posts should use identical dimensions for all images in the set.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Why do my Xiaohongshu images look blurry or lose color after uploading?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Blur and color loss typically result from two issues: uploading images at incorrect dimensions (forcing Xiaohongshu to downscale them with its own algorithm) and using the wrong color profile (Adobe RGB or ProPhoto RGB instead of sRGB). Always export at exactly your target resolution (e.g., 1080 × 1440), convert to sRGB color space, and apply a subtle sharpen (unsharp mask 40-60%) during export to compensate for platform compression. Also avoid re-uploading images that have already been compressed by another social platform.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I use the same image dimensions for Xiaohongshu, Douyin, and Instagram?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No, each platform requires different dimensions for optimal display. Xiaohongshu notes work best at 1080 × 1440 pixels (3:4), Douyin covers at 1080 × 1920 pixels (9:16), and Instagram feed posts at 1080 × 1350 pixels (4:5). Using a single size across platforms leads to unwanted cropping or wasted screen space. For efficient cross-platform publishing, use Image Toolbox's Social Media Compliance Checker to batch-generate correctly sized versions from one source image for all your platforms.</p>
+    </div>
+  </div>
+</div>`
+    },
   ];
