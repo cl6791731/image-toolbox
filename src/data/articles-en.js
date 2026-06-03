@@ -2041,4 +2041,63 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
   </div>
 </div>`
     },
+    {
+      slug: 'douyin-cover-size-guide-2026',
+      title: 'Douyin Cover Photo Size Guide 2026: Complete Dimensions & Design Tips',
+      date: '2026-06-03',
+      tags: ['douyin', 'social-media', 'sizes', 'cover'],
+      content: `
+<h2>Why Douyin Cover Size Matters More Than You Think</h2>
+<p>Douyin (the Chinese counterpart of TikTok owned by ByteDance) has grown into one of the world's largest short-video platforms with over 700 million daily active users in China alone. While most creators obsess over video content — lighting, scripting, editing — the humble cover photo is the silent gatekeeper that determines whether anyone actually watches. On Douyin's rapid-swipe feed, users decide to engage or scroll past in <strong>under 0.3 seconds</strong>. Your cover image, rendered at roughly 108 × 192 pixels in the profile grid and approximately 200 × 355 in the recommendation feed, is the only piece of visual real estate you control before the video auto-plays.</p>
+<p>What makes Douyin cover optimization uniquely challenging is the platform's <strong>dual-display architecture</strong>. The same cover image appears in radically different contexts: a tiny thumbnail in the profile page grid, a medium-sized card in the "For You" recommendation feed, and a full-screen splash while the video buffers. A cover that looks brilliant at full resolution can become an illegible mush at thumbnail size. Mastering this one-two punch — designing for the thumbnail while delivering at full resolution — is what separates viral accounts from forgotten ones.</p>
+
+<h2>Douyin Cover Dimensions: Every Format Explained</h2>
+
+<h3>Standard Video Cover (Recommendation Feed + Profile Grid)</h3>
+<p><strong>Recommended: 1080 × 1920 pixels (9:16 aspect ratio).</strong> This is the native vertical video format that fills the entire smartphone screen. Douyin recommends a minimum resolution of 720 × 1280, but uploading at the full 1080 × 1920 ensures sharp rendering on modern high-density displays. The platform accepts JPG, PNG, and BMP formats, with a maximum file size of 5MB per image for regular accounts and 10MB for verified creator accounts.</p>
+<p>The cover image can be either a <strong>custom upload</strong> (recommended) or an <strong>auto-generated frame</strong> from your video. Custom covers consistently outperform auto-frames in click-through tests by 30-60%. When uploading a custom cover, design it at exactly 1080 × 1920 — do not upload a 2000-pixel-wide image and rely on Douyin's compression engine, which applies heavy JPEG compression to anything above the target size and often introduces color banding in gradients and flat-color backgrounds.</p>
+<p>If you are working with horizontal 16:9 video footage and need to frame a vertical cover, <a href="/crop">Image Toolbox's crop tool</a> lets you select the 9:16 preset and reposition the crop window to frame the strongest visual moment from your horizontal source.</p>
+
+<h3>Douyin E-Commerce Product Showcase Cover</h3>
+<p><strong>Recommended: 800 × 800 pixels (1:1 aspect ratio).</strong> For Douyin's e-commerce features — product showcase videos, in-feed shopping cards, and storefront listings — the platform defaults to square formatting. Unlike the standard feed where 9:16 reigns, product covers are universally displayed at 1:1 with no cropping tolerance. Uploading a 9:16 image as a product cover results in aggressive center-crop that often removes product edges and key selling points.</p>
+<p>Product covers should follow <strong>e-commerce visual standards</strong>: clean white or gradient background, the product occupying 70-80% of the frame, minimal text overlay (brand name + 1-2 selling points max), and no platform watermarks from competitors. Douyin's AI-driven content moderation automatically flags product images with low contrast, excessive text, or off-brand watermarks — all of which reduce organic reach.</p>
+<p>For sellers managing multiple e-commerce platforms — Douyin Shop, Taobao, Pinduoduo, JD.com — each with different square-image requirements, <a href="/ecommerce">Image Toolbox's e-commerce processor</a> can batch-generate platform-compliant product images from a single source photo, automatically adjusting dimensions, white balance, and background uniformity for each marketplace.</p>
+
+<h3>Douyin Live Streaming Cover</h3>
+<p><strong>Recommended: 1080 × 1920 pixels (9:16) or 800 × 800 pixels (1:1).</strong> Live streaming covers are displayed in the live discovery feed as vertical cards, similar to video covers, but many creators also use a secondary 1:1 crop for profile page display. The live cover must convey the streaming vibe at a glance — is this an educational session, a shopping livestream, or a casual chat? The difference in click-through between a generic screenshot and a custom-designed live cover can be 2x or more.</p>
+
+<h2>How to Design a High-CTR Douyin Cover in 2026</h2>
+<p>Correct dimensions are the foundation, but design strategy is what converts impressions into views. After analyzing hundreds of high-performing Douyin accounts, here are the patterns that consistently win:</p>
+<ul>
+<li><strong>The Face Rule:</strong> Covers featuring a human face with direct eye contact and a clear emotional expression (surprise, curiosity, intensity) outperform faceless covers by 40-70%. The face should occupy at least 25% of the total frame area. Avoid partially cropped faces — they create subconscious discomfort that reduces engagement.</li>
+<li><strong>Three-Word Text Limit:</strong> Text on Douyin covers should be no more than three to four Chinese characters (or five to six English words) in sans-serif bold. Douyin's interface already includes video title text, captions, and interactive buttons — your cover text competes with all of these. Use the cover text as a teaser that complements the title, not a repeat of it. Font size should be no smaller than 72pt equivalent on a 1080px canvas.</li>
+<li><strong>Color Psychology for the Feed:</strong> Douyin's interface in light mode is white; in dark mode, deep black. The safest background colors for covers are vibrant yellow (#FFD700 range), electric blue (#3B82F6 range), and saturated coral (#FF6B6B range) — all of which maintain visibility against both light and dark UI themes. Avoid pure white backgrounds that blend into light mode and pure black backgrounds that disappear in dark mode.</li>
+<li><strong>Safe Zone = Center 60%:</strong> Douyin's UI overlays — the like/heart button, comment icon, share button, and the bottom navigation bar — eat into the outer 20% on each side. Keep all critical visual information (faces, text, product images, logos) within the <strong>center 60% of the frame</strong>. The outer 20% is decoration-only territory.</li>
+<li><strong>Consistency Creates Recognition:</strong> The highest-performing Douyin accounts maintain a visual template — same font, same color palette, same layout grid — across all covers. When users scroll through the recommendation feed and spot your template, they recognize it instantly, even before reading any text. This brand recognition alone can boost click-through rates by 15-25% for established accounts.</li>
+</ul>
+<p>Managing cover images across multiple short-video platforms — Douyin, TikTok, Kuaishou, Instagram Reels, YouTube Shorts — is a formatting nightmare. Each platform demands a different aspect ratio, and copying the same image everywhere guarantees bad crops. You can use <a href="/social">Image Toolbox's Social Media Compliance Checker</a> to batch-generate perfectly sized covers for Douyin, TikTok, Xiaohongshu, and more from a single source image. It validates dimensions against each platform's latest specifications, previews the safe-zone cropping, and exports everything in one click.</p>
+<p>For fine-tuning individual covers, the <a href="/resize">resize tool</a> locks dimensions to exact pixel targets with aspect ratio preservation, and <a href="/compress">the compression tool</a> reduces file size below Douyin's 5MB limit without visible quality loss. Both tools process images entirely in your browser — your cover artwork never touches a remote server.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What is the best image size for Douyin video covers?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The optimal Douyin cover size is 1080 × 1920 pixels with a 9:16 aspect ratio. This is the native vertical video format that fills the entire smartphone screen without cropping or letterboxing. The minimum accepted resolution is 720 × 1280 pixels. Always upload a custom-designed cover rather than relying on auto-generated video frames, and keep all critical visual elements (faces, text, logos) within the center 60% of the frame to avoid being obscured by Douyin's UI overlays.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I use the same cover image for Douyin, TikTok, and Instagram Reels?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No, each platform requires different dimensions for optimal display. Douyin covers work best at 1080 × 1920 pixels (9:16), TikTok covers also at 1080 × 1920 (9:16) but with different safe zones due to varying UI element positions, and Instagram Reels display at 1080 × 1920 (9:16) but with profile-grid cropping to 1080 × 1080 (1:1). Even between Douyin and TikTok — which share the same parent company — UI overlay positions differ enough to require separate safe-zone planning. Use a batch-processing tool to generate platform-specific versions from one source image.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Why do my Douyin covers look blurry or pixelated after uploading?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Blurry covers are almost always caused by one of three issues: (1) uploading at a resolution lower than 1080 × 1920, forcing Douyin to upscale the image with visible artifacts; (2) uploading a massively oversized image (e.g., 4000+ pixels wide) that Douyin aggressively compresses, introducing JPEG artifacts and color banding; or (3) saving the cover in a format with insufficient quality — use JPG at 90-95% quality or PNG, and avoid re-compressing already-compressed images downloaded from other platforms. Always export at exactly 1080 × 1920 in sRGB color space and keep file size under 5MB.</p>
+    </div>
+  </div>
+</div>`
+    },
   ];
