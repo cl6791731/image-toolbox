@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://img.b1y.ren',
+  site: 'https://b1y.ren',
   integrations: [sitemap()],
   i18n: {
     defaultLocale: 'en',
