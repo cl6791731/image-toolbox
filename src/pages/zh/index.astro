@@ -119,7 +119,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
   .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
 
   .content { flex: 1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
-  .tool-card { background: var(--bg); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 28px; }
+  .tool-card { background: var(--bg); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 28px; overflow: hidden; }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
 
   .upload-area { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 52px 24px; text-align: center; cursor: pointer; transition: var(--transition); background: var(--bg); }
@@ -146,10 +146,10 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
   .range-row { display: flex; align-items: center; gap: 12px; }
   .range-value { font-size: 14px; color: var(--accent); font-weight: 600; min-width: 40px; text-align: right; }
 
-  .preview-area { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
-  .preview-box { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px; text-align: center; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .preview-area { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; overflow: hidden; }
+  .preview-box { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px; text-align: center; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; min-width: 0; }
   .preview-box .label { font-size: 11px; font-weight: 600; color: var(--fg-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; width: 100%; text-align: left; }
-  .preview-box img { max-width: 100%; max-height: 240px; object-fit: contain; border-radius: 4px; }
+  .preview-box img { max-width: 100%; max-height: 360px; width: auto; height: auto; object-fit: contain; border-radius: 4px; display: block; }
   .placeholder { font-size: 13px; color: var(--fg-tertiary); }
 
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 22px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: var(--transition); font-family: var(--font); }
@@ -202,7 +202,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
         $('inputFormatBadge').textContent = fmtName;
         $('inputFormatBadge').style.display = 'inline-block';
         $('fileInfo').style.display = 'flex';
-        $('formatOrigPreview').innerHTML = `<img src="${img.src}" alt="原图预览" width="400" height="300" loading="lazy" decoding="async">`;
+        $('formatOrigPreview').innerHTML = `<img src="${img.src}" alt="原图预览" loading="lazy" decoding="async">`;
         $('formatBtn').disabled = false;
       };
       img.src = e.target.result;
@@ -241,7 +241,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
       }
       resultBlob = blob;
       const url = URL.createObjectURL(blob);
-      $('formatResultPreview').innerHTML = `<img src="${url}" alt="转换结果预览" width="400" height="300" loading="lazy">`;
+      $('formatResultPreview').innerHTML = `<img src="${url}" alt="转换结果预览" loading="lazy">`;
       $('formatDownloadBtn').disabled = false;
       $('formatDownloadBtn').dataset.url = url;
       $('formatDownloadBtn').dataset.type = blob.type;
