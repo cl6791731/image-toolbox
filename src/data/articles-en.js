@@ -200,7 +200,7 @@ export const articles = [
 <p>When it comes to web performance, every kilobyte counts. WebP, developed by Google in 2010, consistently delivers <strong>25–35% smaller file sizes</strong> than JPG at equivalent visual quality. For a typical 1920×1080 photograph, a high-quality JPG might weigh 800KB, while the same image as WebP comes in around 520KB. Multiply that difference across a gallery of 20 images, and you're looking at several megabytes of savings — which translates directly to faster page loads and better Core Web Vitals scores.</p>
 <p>WebP achieves this through more advanced compression algorithms. While JPG relies on discrete cosine transform (DCT) from the early 1990s, WebP uses predictive coding and block prediction similar to video codecs. The result is smoother gradients, fewer blocking artifacts at low quality settings, and better handling of sharp edges.</p>
 
-<img src="/images/webp-vs-jpg-comparison.webp" alt="WebP vs JPG file size comparison showing 30% smaller WebP files at same quality" />
+<img src="/placeholder.svg" alt="WebP vs JPG file size comparison showing 30% smaller WebP files at same quality" />
 
 <h2>Browser Support and Real-World Compatibility</h2>
 <p>As of 2026, WebP enjoys <strong>97%+ browser support</strong> globally. Safari added native WebP support in version 14 (2020), meaning every modern browser on every major platform can display WebP images without plugins or polyfills. The only outliers are Internet Explorer 11 and extremely old Android browsers — both with negligible market share.</p>
@@ -242,7 +242,7 @@ export const articles = [
 <p>At the core of every PNG vs JPG debate is a single technical distinction: <strong>lossless versus lossy compression</strong>. PNG preserves every single pixel exactly as it appeared in the original image. No data is discarded. JPG, by contrast, deliberately throws away information that the human eye is less likely to notice — primarily fine details in high-frequency areas like grass, hair, and textured surfaces.</p>
 <p>This difference explains the file size gap. A 4000×3000 pixel photograph saved as PNG might occupy 15–25MB, while the same photo as JPG at 85% quality weighs just 2–4MB. For screenshots and graphics with large solid-color areas, however, PNG often compresses just as efficiently as JPG, sometimes even better.</p>
 
-<img src="/images/png-vs-jpg-quality-comparison.webp" alt="PNG vs JPG quality comparison showing artifact differences on text and photo" />
+<img src="/placeholder.svg" alt="PNG vs JPG quality comparison showing artifact differences on text and photo" />
 
 <h2>Side-by-Side: Where Each Format Wins</h2>
 <h3>PNG Wins: Screenshots, Logos, and Text</h3>
@@ -286,7 +286,7 @@ export const articles = [
 <p>HEIC (High Efficiency Image Container) is the default photo format on modern iPhones and many Android devices. Apple adopted it in 2017 with iOS 11 because it produces files roughly half the size of JPG at the same visual quality. Sounds great — until you try to open that photo on a Windows PC, upload it to a website, or attach it to an email. Suddenly you're staring at an "unsupported file format" error.</p>
 <p>The problem is ecosystem lock-in. While macOS and iOS handle HEIC natively, Windows 10 and older versions require a paid codec extension. Most web browsers, content management systems, and online forms don't support HEIC at all. The result? A beautifully captured memory that you can't easily share or use outside the Apple ecosystem.</p>
 
-<img src="/images/heic-to-jpg-conversion.webp" alt="Converting HEIC to JPG format for wider compatibility across devices" />
+<img src="/placeholder.svg" alt="Converting HEIC to JPG format for wider compatibility across devices" />
 
 <h2>Three Ways to Convert HEIC to JPG</h2>
 <h3>Method 1: Change iPhone Camera Settings (Preventive)</h3>
@@ -332,7 +332,7 @@ export const articles = [
 <p>AVIF (AV1 Image File Format) is the newest contender in the image format wars. Derived from AV1 video encoding technology developed by the Alliance for Open Media, AVIF brings features that were previously impossible in static image formats: HDR (High Dynamic Range) support, 12-bit color depth, and film grain synthesis. While WebP was a significant leap forward from JPG, AVIF represents another generational improvement — often achieving <strong>20% smaller files than WebP</strong> at the same visual quality.</p>
 <p>The technical foundation matters. AVIF uses intra-frame coding from the AV1 video codec, which means it borrows decades of video compression research. Features like directional intra prediction, tile-based encoding, and advanced deblocking filters allow AVIF to preserve fine detail in ways that WebP and JPG simply cannot match.</p>
 
-<img src="/images/avif-vs-webp-compression.webp" alt="AVIF vs WebP compression benchmark showing 20% smaller file sizes" />
+<img src="/placeholder.svg" alt="AVIF vs WebP compression benchmark showing 20% smaller file sizes" />
 
 <h2>AVIF vs WebP: Real-World Benchmarks</h2>
 <h3>Compression Efficiency</h3>
@@ -385,7 +385,7 @@ export const articles = [
 <p>ICO is the standard Windows icon format, but its most common use on the web is the humble favicon — that tiny image that appears in browser tabs, bookmarks, and search results. Despite its small size (often just 16×16 pixels), the favicon is a critical branding element. It helps users identify your site at a glance among dozens of open tabs and reinforces brand recognition every time someone bookmarks your page.</p>
 <p>Beyond favicons, ICO files are used for Windows desktop shortcuts, application icons, and file type associations. The format's unique feature is its ability to store multiple image sizes within a single file — a capability that PNG, JPG, and WebP lack.</p>
 
-<img src="/images/favicon-sizes-multi-resolution.webp" alt="Favicon multiple sizes stored in single ICO file for different contexts" />
+<img src="/placeholder.svg" alt="Favicon multiple sizes stored in single ICO file for different contexts" />
 
 <h2>ICO File Structure: Multiple Sizes in One</h2>
 <h3>What Sizes Should You Include?</h3>
@@ -438,7 +438,7 @@ export const articles = [
 <p>BMP (Bitmap) is one of the oldest image formats still in circulation, introduced by Microsoft in 1987. It stores image data as an uncompressed grid of pixels, with minimal metadata and no compression algorithm to speak of. In an era when 1MB hard drives were considered spacious, BMP was adequate. In 2026, it's an anachronism — a format that wastes storage space and bandwidth without offering any meaningful advantage over modern alternatives.</p>
 <p>The fundamental problem is size. A 1920×1080 BMP file at 24-bit color depth consumes approximately 6MB. The same image as a PNG typically weighs 1–2MB, and as a high-quality JPG, just 300–500KB. Those differences compound quickly across a website, a document, or an email attachment.</p>
 
-<img src="/images/bmp-vs-png-file-size.webp" alt="BMP vs PNG file size comparison showing BMP is 3-5x larger" />
+<img src="/placeholder.svg" alt="BMP vs PNG file size comparison showing BMP is 3-5x larger" />
 
 <h2>File Size Reality Check</h2>
 <h3>Real-World Comparisons</h3>
@@ -488,7 +488,7 @@ export const articles = [
 <p>GIF has been the lingua franca of web animation since 1987, but its technical limitations have become increasingly painful as display technology advances. The format supports only 256 colors, uses lossless LZW compression from the 1980s, and handles transparency with a crude 1-bit matte — either fully opaque or fully transparent, with no smooth edges. The result? Animated GIFs of any complexity are massive files with jagged edges, banded colors, and visible dithering artifacts.</p>
 <p>Perhaps the most glaring issue is file size. A 5-second animated GIF at 480×270 resolution often exceeds 5MB. The same animation as WebP typically weighs under 1MB — sometimes as little as 300KB. For websites that feature multiple animated elements, this difference has a direct impact on page load times and user experience.</p>
 
-<img src="/images/gif-vs-webp-animation-size.webp" alt="Animated GIF vs WebP file size comparison showing 70% smaller WebP files" />
+<img src="/placeholder.svg" alt="Animated GIF vs WebP file size comparison showing 70% smaller WebP files" />
 
 <h2>WebP Animation: Full Color, Real Transparency</h2>
 <h3>Technical Advantages</h3>

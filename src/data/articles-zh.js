@@ -196,7 +196,7 @@ export const articles = [
 <p>说到网页性能，每一KB都至关重要。WebP 由 Google 于2010年推出，在同等视觉质量下，文件体积比 JPG <strong>小 25–35%</strong>。以一张典型的 1920×1080 照片为例，高品质 JPG 约 800KB，而同样的 WebP 文件仅约 520KB。如果是一个包含20张图片的图库，这个差距累积起来就是数MB的节省——直接转化为更快的页面加载速度和更好的 Core Web Vitals 评分。</p>
 <p>WebP 采用更先进的压缩算法。JPG 依赖1990年代的离散余弦变换（DCT），而 WebP 使用类似视频编码的预测编码和块预测技术。结果是更平滑的渐变、在低质量设置下更少的块状伪影，以及对锐利边缘的更好处理。</p>
 
-<img src="/images/webp-vs-jpg-comparison.webp" alt="WebP 与 JPG 文件大小对比，WebP 在同画质下体积更小" />
+<img src="/placeholder.svg" alt="WebP 与 JPG 文件大小对比，WebP 在同画质下体积更小" />
 
 <h2>浏览器支持与实际兼容性</h2>
 <p>截至2026年，WebP 的全球浏览器支持率超过 <strong>97%</strong>。Safari 在14版本（2020年）就原生支持了 WebP，这意味着所有主流平台的现代浏览器都能无障碍显示 WebP，无需插件或 polyfill。唯一不支持的是 Internet Explorer 11 和极少数老旧安卓浏览器——它们的市场份额已微乎其微。</p>
@@ -238,7 +238,7 @@ export const articles = [
 <p>每场 PNG vs JPG 争论的核心，都是一个技术区别：<strong>无损压缩 vs 有损压缩</strong>。PNG 保留原始图像中的每一个像素，不丢弃任何数据。而 JPG 则故意丢弃人眼不太容易注意到的信息——主要是草地、头发和纹理表面等高频区域的细节。</p>
 <p>这个区别解释了文件大小的差距。一张 4000×3000 像素的照片保存为 PNG 可能占 15–25MB，而同一张照片以85%质量保存为 JPG 只有 2–4MB。但对于截图和大面积纯色的图形，PNG 的压缩效率往往与 JPG 相当，有时甚至更好。</p>
 
-<img src="/images/png-vs-jpg-quality-comparison.webp" alt="PNG 与 JPG 画质对比，展示文字和照片上的伪影差异" />
+<img src="/placeholder.svg" alt="PNG 与 JPG 画质对比，展示文字和照片上的伪影差异" />
 
 <h2>各自擅长的场景</h2>
 <h3>PNG 赢：截图、Logo 和文字</h3>
@@ -282,7 +282,7 @@ export const articles = [
 <p>HEIC（高效图像容器）是现代 iPhone 和许多安卓设备的默认照片格式。Apple 在2017年 iOS 11 中采用它，因为它在同等视觉质量下产生的文件体积大约是 JPG 的一半。听起来很棒——直到你尝试在 Windows 电脑上打开这张照片、上传到网站或作为邮件附件发送。突然间，你面对的是"不支持的文件格式"错误。</p>
 <p>问题在于生态系统锁定。虽然 macOS 和 iOS 原生支持 HEIC，但 Windows 10 及更早版本需要付费的编解码器扩展。大多数网页浏览器、内容管理系统和在线表单完全不支持 HEIC。结果？一张精美拍摄的记忆，你却无法轻松在苹果生态系统之外分享或使用。</p>
 
-<img src="/images/heic-to-jpg-conversion.webp" alt="HEIC 转 JPG 格式转换，实现跨设备兼容" />
+<img src="/placeholder.svg" alt="HEIC 转 JPG 格式转换，实现跨设备兼容" />
 
 <h2>三种 HEIC 转 JPG 的方法</h2>
 <h3>方法一：更改 iPhone 相机设置（预防性）</h3>
@@ -328,7 +328,7 @@ export const articles = [
 <p>AVIF（AV1 图像文件格式）是图像格式大战中的最新竞争者。它源自开放媒体联盟开发的 AV1 视频编码技术，带来了此前静态图像格式无法实现的功能：HDR（高动态范围）支持、12位色深和胶片颗粒合成。如果说 WebP 是从 JPG 的一次重大飞跃，那么 AVIF 代表了又一代的改进——在同等视觉质量下，文件往往比 WebP <strong>小 20%</strong>。</p>
 <p>技术基础很关键。AVIF 使用 AV1 视频编解码器的帧内编码，这意味着它借用了数十年的视频压缩研究成果。定向帧内预测、基于瓦片的编码和高级去块滤波器等功能，使 AVIF 能够以 WebP 和 JPG 根本无法比拟的方式保留精细细节。</p>
 
-<img src="/images/avif-vs-webp-compression.webp" alt="AVIF 与 WebP 压缩基准测试对比" />
+<img src="/placeholder.svg" alt="AVIF 与 WebP 压缩基准测试对比" />
 
 <h2>AVIF vs WebP：实际基准测试</h2>
 <h3>压缩效率</h3>
@@ -381,7 +381,7 @@ export const articles = [
 <p>ICO 是 Windows 的标准图标格式，但它在网页上最常见的用途是那个不起眼的 favicon——出现在浏览器标签页、书签和搜索结果中的那个小图标。尽管尺寸很小（通常只有 16×16 像素），favicon 却是一个关键的品牌元素。它帮助用户在数十个打开的标签中一眼识别你的网站，并在每次有人收藏你的页面时强化品牌认知。</p>
 <p>除了 favicon，ICO 文件还用于 Windows 桌面快捷方式、应用程序图标和文件类型关联。这种格式的独特之处在于它能在单个文件中存储多个图像尺寸——这是 PNG、JPG 和 WebP 都不具备的能力。</p>
 
-<img src="/images/favicon-sizes-multi-resolution.webp" alt="单个 ICO 文件中存储多种尺寸的 favicon 以适配不同场景" />
+<img src="/placeholder.svg" alt="单个 ICO 文件中存储多种尺寸的 favicon 以适配不同场景" />
 
 <h2>ICO 文件结构：一个文件包含多个尺寸</h2>
 <h3>应该包含哪些尺寸？</h3>
@@ -434,7 +434,7 @@ export const articles = [
 <p>BMP（位图）是仍在流通的最古老的图像格式之一，由 Microsoft 在1987年推出。它将图像数据存储为未压缩的像素网格，几乎没有元数据，也没有值得一提的压缩算法。在1MB硬盘被认为 spacious 的时代，BMP 是足够的。在2026年，它是一个时代错误——一种浪费存储空间和带宽的格式，却没有提供任何相对于现代替代方案的有意义优势。</p>
 <p>根本问题在于大小。一个 1920×1080 的24位色深 BMP 文件约消耗 6MB。同样的图像作为 PNG 通常只有 1–2MB，作为高质量 JPG 仅 300–500KB。这些差异在网站、文档或邮件附件中迅速累积。</p>
 
-<img src="/images/bmp-vs-png-file-size.webp" alt="BMP 与 PNG 文件大小对比，BMP 比 PNG 大 3-5 倍" />
+<img src="/placeholder.svg" alt="BMP 与 PNG 文件大小对比，BMP 比 PNG 大 3-5 倍" />
 
 <h2>文件大小现实检查</h2>
 <h3>实际对比数据</h3>
@@ -484,7 +484,7 @@ export const articles = [
 <p>GIF 自1987年以来一直是网页动画的通用语言，但随着显示技术的进步，它的技术限制变得越来越痛苦。这种格式仅支持256色，使用1980年代的 LZW 无损压缩，并用粗糙的1位遮罩处理透明——要么完全不透明，要么完全透明，没有平滑边缘。结果？任何复杂度的动画 GIF 都是巨大的文件，带有锯齿边缘、色带和可见的抖动伪影。</p>
 <p>也许最 glaring 的问题是文件大小。一个 5 秒、480×270 分辨率的动画 GIF 经常超过 5MB。同样的动画作为 WebP 通常不到 1MB——有时仅 300KB。对于包含多个动画元素的网站，这个差异直接影响页面加载时间和用户体验。</p>
 
-<img src="/images/gif-vs-webp-animation-size.webp" alt="动画 GIF 与 WebP 文件大小对比，WebP 小 70%" />
+<img src="/placeholder.svg" alt="动画 GIF 与 WebP 文件大小对比，WebP 小 70%" />
 
 <h2>WebP 动画：全彩、真透明</h2>
 <h3>技术优势</h3>
