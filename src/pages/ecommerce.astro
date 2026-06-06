@@ -224,8 +224,12 @@ const platformsJSON = JSON.stringify(ecommercePlatforms);
     handleFiles($('fileInput').files);
   });
 
-  function handleFiles(files) {
-    sourceFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
+  async function handleFiles(files) {
+    var decoded = [];
+    for (var _i = 0; _i < files.length; _i++) {
+      decoded.push(await decodeHeicFile(files[_i]));
+    }
+    sourceFiles = decoded.filter(f => f.type.startsWith('image/'));
     if (!sourceFiles.length) return;
     $('fileInfo').textContent = sourceFiles.length + ' image(s) loaded';
     $('fileInfo').style.display = 'block';

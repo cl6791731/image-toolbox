@@ -41,7 +41,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
           <line x1="12" y1="3" x2="12" y2="15"/>
         </svg>
         <p>点击上传图片，或拖拽图片到此处</p>
-        <p class="hint">支持 JPG、PNG、WebP、GIF、BMP、SVG、AVIF、ICO、TIFF 等格式</p>
+        <p class="hint">支持 JPG、PNG、WebP、GIF、BMP、SVG、AVIF、ICO、TIFF、HEIC 等格式</p>
         <input type="file" id="fileInput" accept="image/*" aria-label="选择图片文件" />
       </div>
       <div id="fileInfo" class="file-info" style="display:none">
@@ -189,7 +189,8 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
     if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
   });
 
-  function handleFile(file) {
+  async function handleFile(file) {
+    file = await decodeHeicFile(file);
     if (!file.type.startsWith('image/')) return;
     sourceFile = file;
     const reader = new FileReader();

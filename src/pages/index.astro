@@ -41,7 +41,7 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
           <line x1="12" y1="3" x2="12" y2="15"/>
         </svg>
         <p>Click to upload or drag & drop an image</p>
-        <p class="hint">Supports JPG, PNG, WebP, GIF, BMP, SVG, AVIF, ICO, TIFF & more</p>
+        <p class="hint">Supports JPG, PNG, WebP, GIF, BMP, SVG, AVIF, ICO, TIFF, HEIC & more</p>
         <input type="file" id="fileInput" accept="image/*" aria-label="Select image file" />
       </div>
       <div id="fileInfo" class="file-info" style="display:none">
@@ -190,7 +190,8 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
     if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
   });
 
-  function handleFile(file) {
+  async function handleFile(file) {
+    file = await decodeHeicFile(file);
     if (!file.type.startsWith('image/')) return;
     sourceFile = file;
     const reader = new FileReader();

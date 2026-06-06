@@ -170,7 +170,8 @@ const description = 'Optimize images for web development. Convert to WebP and AV
     if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
   });
 
-  function handleFile(file) {
+  async function handleFile(file) {
+    file = await decodeHeicFile(file);
     if (!file.type.startsWith('image/')) return;
     sourceFile = file;
     const reader = new FileReader();

@@ -171,7 +171,8 @@ const description = '为网页开发优化图片。自动转换为 WebP 和 AVIF
     if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
   });
 
-  function handleFile(file) {
+  async function handleFile(file) {
+    file = await decodeHeicFile(file);
     if (!file.type.startsWith('image/')) return;
     sourceFile = file;
     const reader = new FileReader();

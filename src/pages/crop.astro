@@ -133,7 +133,8 @@ const description = 'Free online image cropping tool. Drag to select crop area. 
     if ($('fileInput').files.length) handleFile($('fileInput').files[0]);
   });
 
-  function handleFile(file) {
+  async function handleFile(file) {
+    file = await decodeHeicFile(file);
     if (!file.type.startsWith('image/')) return;
     sourceFile = file;
     crop.loaded = false;
