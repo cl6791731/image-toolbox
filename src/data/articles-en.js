@@ -289,7 +289,7 @@ export const articles = [
 <p>HEIC (High Efficiency Image Container) is the default photo format on modern iPhones and many Android devices. Apple adopted it in 2017 with iOS 11 because it produces files roughly half the size of JPG at the same visual quality. Sounds great — until you try to open that photo on a Windows PC, upload it to a website, or attach it to an email. Suddenly you're staring at an "unsupported file format" error.</p>
 <p>The problem is ecosystem lock-in. While macOS and iOS handle HEIC natively, Windows 10 and older versions require a paid codec extension. Most web browsers, content management systems, and online forms don't support HEIC at all. The result? A beautifully captured memory that you can't easily share or use outside the Apple ecosystem.</p>
 
-<img src="/placeholder.svg" alt="Converting HEIC to JPG format for wider compatibility across devices" />
+<img src="/images/heic-to-jpg-conversion.webp" alt="Converting HEIC to JPG format for wider compatibility across devices" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>Three Ways to Convert HEIC to JPG</h2>
 <h3>Method 1: Change iPhone Camera Settings (Preventive)</h3>

@@ -285,7 +285,7 @@ export const articles = [
 <p>HEIC（高效图像容器）是现代 iPhone 和许多安卓设备的默认照片格式。Apple 在2017年 iOS 11 中采用它，因为它在同等视觉质量下产生的文件体积大约是 JPG 的一半。听起来很棒——直到你尝试在 Windows 电脑上打开这张照片、上传到网站或作为邮件附件发送。突然间，你面对的是"不支持的文件格式"错误。</p>
 <p>问题在于生态系统锁定。虽然 macOS 和 iOS 原生支持 HEIC，但 Windows 10 及更早版本需要付费的编解码器扩展。大多数网页浏览器、内容管理系统和在线表单完全不支持 HEIC。结果？一张精美拍摄的记忆，你却无法轻松在苹果生态系统之外分享或使用。</p>
 
-<img src="/placeholder.svg" alt="HEIC 转 JPG 格式转换，实现跨设备兼容" />
+<img src="/images/heic-to-jpg-conversion.webp" alt="HEIC 转 JPG 格式转换，实现跨设备兼容" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>三种 HEIC 转 JPG 的方法</h2>
 <h3>方法一：更改 iPhone 相机设置（预防性）</h3>
