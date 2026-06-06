@@ -262,7 +262,7 @@ const description = 'Free online image resizer. Resize by percentage or exact pi
         $('fileInfo').style.display = 'block';
         $('resizeControls').style.display = '';
         $('resizePreviewArea').style.display = 'grid';
-        $('resizeOrigPreview').innerHTML = '<img src="' + img.src + '" alt="Original" loading="lazy">';
+        $('resizeOrigPreview').innerHTML = '<img style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block" src="' + img.src + '" alt="Original" loading="lazy">';
         $('resizeOrigDim').textContent = naturalWidth + ' × ' + naturalHeight;
         $('resizeResultPreview').innerHTML = '<span class="placeholder">Click resize</span>';
         $('resizeResultDim').textContent = '';
@@ -303,7 +303,7 @@ const description = 'Free online image resizer. Resize by percentage or exact pi
       if (!blob) return;
       if (resultUrl) URL.revokeObjectURL(resultUrl);
       resultUrl = URL.createObjectURL(blob);
-      $('resizeResultPreview').innerHTML = '<img src="' + resultUrl + '" alt="Resized" loading="lazy">';
+      $('resizeResultPreview').innerHTML = '<img style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block" src="' + resultUrl + '" alt="Resized" loading="lazy">';
       $('resizeResultDim').textContent = w + ' × ' + h;
       $('resizeDownloadBtn').disabled = false;
       $('resizeDownloadBtn').dataset.url = resultUrl;

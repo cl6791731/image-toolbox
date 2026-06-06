@@ -183,7 +183,7 @@ const description = '为网页开发优化图片。自动转换为 WebP 和 AVIF
         $('fileInfo').textContent = file.name + ' · ' + img.naturalWidth + '×' + img.naturalHeight + ' · ' + formatSize(file.size);
         $('fileInfo').style.display = 'block';
         $('optimizePreviewArea').style.display = 'grid';
-        $('origPreview').innerHTML = '<img src="' + img.src + '" alt="原图">';
+        $('origPreview').innerHTML = '<img src="' + img.src + '" alt="原图" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block">';
         $('origSize').textContent = '大小: ' + formatSize(file.size);
         $('webpPreview').innerHTML = '<span class="placeholder">-</span>';
         $('webpSize').textContent = '';
@@ -209,7 +209,7 @@ const description = '为网页开发优化图片。自动转换为 WebP 和 AVIF
     canvas.toBlob(blob => {
       webpBlob = blob;
       const url = URL.createObjectURL(blob);
-      $('webpPreview').innerHTML = '<img src="' + url + '" alt="WebP">';
+      $('webpPreview').innerHTML = '<img src="' + url + '" alt="WebP" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block">';
       const ratio = ((1 - blob.size / sourceFile.size) * 100).toFixed(1);
       $('webpSize').innerHTML = '大小: ' + formatSize(blob.size) + ' <span class="saved">' + (ratio > 0 ? '减小 ' : '增大 ') + ratio + '%</span>';
       checkDone();
@@ -218,7 +218,7 @@ const description = '为网页开发优化图片。自动转换为 WebP 和 AVIF
     canvas.toBlob(blob => {
       avifBlob = blob;
       const url = URL.createObjectURL(blob);
-      $('avifPreview').innerHTML = '<img src="' + url + '" alt="AVIF">';
+      $('avifPreview').innerHTML = '<img src="' + url + '" alt="AVIF" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block">';
       const ratio = ((1 - blob.size / sourceFile.size) * 100).toFixed(1);
       $('avifSize').innerHTML = '大小: ' + formatSize(blob.size) + ' <span class="saved">' + (ratio > 0 ? '减小 ' : '增大 ') + ratio + '%</span>';
       checkDone();

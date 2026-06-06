@@ -181,7 +181,7 @@ const description = 'Optimize images for web development. Convert to WebP and AV
         $('fileInfo').textContent = file.name + ' · ' + img.naturalWidth + '×' + img.naturalHeight + ' · ' + formatSize(file.size);
         $('fileInfo').style.display = 'block';
         $('optimizePreviewArea').style.display = 'grid';
-        $('origPreview').innerHTML = '<img src="' + img.src + '" alt="Original">';
+        $('origPreview').innerHTML = '<img src="' + img.src + '" alt="Original" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block">';
         $('origSize').textContent = 'Size: ' + formatSize(file.size);
         $('webpPreview').innerHTML = '<span class="placeholder">-</span>';
         $('webpSize').textContent = '';
@@ -208,7 +208,7 @@ const description = 'Optimize images for web development. Convert to WebP and AV
     canvas.toBlob(blob => {
       webpBlob = blob;
       const url = URL.createObjectURL(blob);
-      $('webpPreview').innerHTML = '<img src="' + url + '" alt="WebP">';
+      $('webpPreview').innerHTML = '<img src="' + url + '" alt="WebP" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block">';
       const ratio = ((1 - blob.size / sourceFile.size) * 100).toFixed(1);
       $('webpSize').innerHTML = 'Size: ' + formatSize(blob.size) + ' <span class="saved">' + (ratio > 0 ? '-' : '') + ratio + '%</span>';
       checkDone();
@@ -218,7 +218,7 @@ const description = 'Optimize images for web development. Convert to WebP and AV
     canvas.toBlob(blob => {
       avifBlob = blob;
       const url = URL.createObjectURL(blob);
-      $('avifPreview').innerHTML = '<img src="' + url + '" alt="AVIF">';
+      $('avifPreview').innerHTML = '<img src="' + url + '" alt="AVIF" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block">';
       const ratio = ((1 - blob.size / sourceFile.size) * 100).toFixed(1);
       $('avifSize').innerHTML = 'Size: ' + formatSize(blob.size) + ' <span class="saved">' + (ratio > 0 ? '-' : '') + ratio + '%</span>';
       checkDone();
