@@ -149,7 +149,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
   .preview-area { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; overflow: hidden; }
   .preview-box { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px; text-align: center; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; min-width: 0; }
   .preview-box .label { font-size: 11px; font-weight: 600; color: var(--fg-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; width: 100%; text-align: left; }
-  .preview-box img { max-width: 100%; max-height: 360px; width: auto; height: auto; object-fit: contain; border-radius: 4px; display: block; }
+  .preview-box :global(img) { max-width: 100%; max-height: 360px; width: auto; height: auto; object-fit: contain; border-radius: 4px; display: block; }
   .placeholder { font-size: 13px; color: var(--fg-tertiary); }
 
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 22px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: var(--transition); font-family: var(--font); }
@@ -202,7 +202,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
         $('inputFormatBadge').textContent = fmtName;
         $('inputFormatBadge').style.display = 'inline-block';
         $('fileInfo').style.display = 'flex';
-        $('formatOrigPreview').innerHTML = `<img src="${img.src}" alt="原图预览" loading="lazy" decoding="async">`;
+        $('formatOrigPreview').innerHTML = `<img src="${img.src}" alt="原图预览" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block" loading="lazy" decoding="async">`;
         $('formatBtn').disabled = false;
       };
       img.src = e.target.result;
@@ -241,7 +241,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
       }
       resultBlob = blob;
       const url = URL.createObjectURL(blob);
-      $('formatResultPreview').innerHTML = `<img src="${url}" alt="转换结果预览" loading="lazy">`;
+      $('formatResultPreview').innerHTML = `<img src="${url}" alt="转换结果预览" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block" loading="lazy">`;
       $('formatDownloadBtn').disabled = false;
       $('formatDownloadBtn').dataset.url = url;
       $('formatDownloadBtn').dataset.type = blob.type;
