@@ -543,7 +543,7 @@ export const articles = [
 <p>This makes lossless formats ideal for screenshots, diagrams, logos, and any image where text readability or precise color matching matters. The downside is file size. A lossless PNG of a photograph is typically 3–5× larger than a JPG of the same dimensions. For web delivery, this difference directly impacts loading speed and bandwidth costs.</p>
 
 <h3>The Visual Test: Can You See the Difference?</h3>
-<p><img src="/placeholder.svg" alt="Side-by-side comparison of lossy JPG at 60% quality versus lossless PNG showing compression artifacts"></p>
+<p><img src="/images/lossy-vs-lossless-comparison.webp" alt="Side-by-side comparison of lossy JPG at 60% quality versus lossless PNG showing compression artifacts" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>In blind tests, most people cannot distinguish a high-quality JPG (quality 80+) from a PNG at normal viewing size. However, zoom in to 200% or apply heavy compression (quality 40–60), and the differences become stark: JPG shows blocky artifacts and color banding, while PNG remains smooth. For screenshots containing text, the difference is immediately obvious — JPG blurs the edges of characters, while PNG keeps them razor-sharp.</p>
 
 <h2>Decision Matrix: Choose the Right Format</h2>

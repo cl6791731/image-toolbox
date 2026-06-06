@@ -539,7 +539,7 @@ export const articles = [
 <p>这使得无损格式非常适合截图、图表、Logo以及任何文字可读性或精确颜色匹配很重要的图像。缺点是文件大小。一张无损PNG的照片通常是相同尺寸JPG的3到5倍。对于网页传输来说，这种差异直接影响加载速度和带宽成本。</p>
 
 <h3>视觉测试：你能看出区别吗？</h3>
-<p><img src="/placeholder.svg" alt="60%质量JPG与无损PNG的并排对比，展示压缩伪影"></p>
+<p><img src="/images/lossy-vs-lossless-comparison.webp" alt="60%质量JPG与无损PNG的并排对比，展示压缩伪影" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>在盲测中，大多数人在正常观看尺寸下无法区分高质量JPG（质量80+）和PNG。然而，放大到200%或应用高压缩率（质量40-60），区别就会变得明显：JPG出现块状伪影和色带，而PNG保持平滑。对于包含文字的截图，区别立即显现——JPG模糊文字边缘，而PNG保持锐利。</p>
 
 <h2>决策矩阵：选择正确的格式</h2>
