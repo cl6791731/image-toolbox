@@ -38,7 +38,7 @@ const platformsJSON = JSON.stringify(socialPlatforms);
         </svg>
         <p>点击上传或拖拽图片到此处</p>
         <p class="hint">支持 JPG、PNG、WebP、GIF、BMP 等格式</p>
-        <input type="file" id="fileInput" accept="image/*" />
+        <input type="file" id="fileInput" accept="image/*,.heic,.heif" />
       </div>
       <div id="fileInfo" class="file-info" style="display:none"></div>
 
@@ -199,7 +199,7 @@ const platformsJSON = JSON.stringify(socialPlatforms);
 
   async function handleFile(file) {
     file = await decodeHeicFile(file);
-    if (!file.type.startsWith('image/')) return;
+    if (!file.type.startsWith('image/') && !file.name.match(/\.(heic|heif)$/i)) return;
     sourceFile = file;
     const reader = new FileReader();
     reader.onload = e => {

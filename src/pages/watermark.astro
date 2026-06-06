@@ -37,7 +37,7 @@ const description = 'Free online watermark tool. Add text watermarks to images w
         </svg>
         <p>Click to upload or drag & drop an image</p>
         <p class="hint">Supports JPG, PNG, WebP, GIF, BMP & more</p>
-        <input type="file" id="fileInput" accept="image/*" />
+        <input type="file" id="fileInput" accept="image/*,.heic,.heif" />
       </div>
 
       <div id="fileInfo" class="file-info" style="display:none"></div>
@@ -186,7 +186,7 @@ const description = 'Free online watermark tool. Add text watermarks to images w
 
   async function handleFile(file) {
     file = await decodeHeicFile(file);
-    if (!file.type.startsWith('image/')) return;
+    if (!file.type.startsWith('image/') && !file.name.match(/\.(heic|heif)$/i)) return;
     sourceFile = file;
     const reader = new FileReader();
     reader.onload = e => {
