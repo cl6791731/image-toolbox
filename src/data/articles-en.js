@@ -389,7 +389,7 @@ export const articles = [
 <p>ICO is the standard Windows icon format, but its most common use on the web is the humble favicon — that tiny image that appears in browser tabs, bookmarks, and search results. Despite its small size (often just 16×16 pixels), the favicon is a critical branding element. It helps users identify your site at a glance among dozens of open tabs and reinforces brand recognition every time someone bookmarks your page.</p>
 <p>Beyond favicons, ICO files are used for Windows desktop shortcuts, application icons, and file type associations. The format's unique feature is its ability to store multiple image sizes within a single file — a capability that PNG, JPG, and WebP lack.</p>
 
-<img src="/placeholder.svg" alt="Favicon multiple sizes stored in single ICO file for different contexts" />
+<img src="/images/favicon-sizes-multi-resolution.webp" alt="Favicon multiple sizes stored in single ICO file for different contexts" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>ICO File Structure: Multiple Sizes in One</h2>
 <h3>What Sizes Should You Include?</h3>

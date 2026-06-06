@@ -385,7 +385,7 @@ export const articles = [
 <p>ICO 是 Windows 的标准图标格式，但它在网页上最常见的用途是那个不起眼的 favicon——出现在浏览器标签页、书签和搜索结果中的那个小图标。尽管尺寸很小（通常只有 16×16 像素），favicon 却是一个关键的品牌元素。它帮助用户在数十个打开的标签中一眼识别你的网站，并在每次有人收藏你的页面时强化品牌认知。</p>
 <p>除了 favicon，ICO 文件还用于 Windows 桌面快捷方式、应用程序图标和文件类型关联。这种格式的独特之处在于它能在单个文件中存储多个图像尺寸——这是 PNG、JPG 和 WebP 都不具备的能力。</p>
 
-<img src="/placeholder.svg" alt="单个 ICO 文件中存储多种尺寸的 favicon 以适配不同场景" />
+<img src="/images/favicon-sizes-multi-resolution.webp" alt="单个 ICO 文件中存储多种尺寸的 favicon 以适配不同场景" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>ICO 文件结构：一个文件包含多个尺寸</h2>
 <h3>应该包含哪些尺寸？</h3>
