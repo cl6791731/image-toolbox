@@ -123,6 +123,9 @@ const description = 'Free online image cropping tool. Drag to select crop area. 
   }
 
   $('uploadArea').addEventListener('click', () => $('fileInput').click());
+
+  document.addEventListener('dragover', e => e.preventDefault());
+  document.addEventListener('drop', e => e.preventDefault());
   $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); $('uploadArea').classList.add('dragover'); });
   $('uploadArea').addEventListener('dragleave', () => $('uploadArea').classList.remove('dragover'));
   $('uploadArea').addEventListener('drop', e => {

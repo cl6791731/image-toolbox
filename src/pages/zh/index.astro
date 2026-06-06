@@ -179,6 +179,9 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
   }
 
   $('uploadArea').addEventListener('click', () => $('fileInput').click());
+
+  document.addEventListener('dragover', e => e.preventDefault());
+  document.addEventListener('drop', e => e.preventDefault());
   $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); $('uploadArea').classList.add('dragover'); });
   $('uploadArea').addEventListener('dragleave', () => $('uploadArea').classList.remove('dragover'));
   $('uploadArea').addEventListener('drop', e => {

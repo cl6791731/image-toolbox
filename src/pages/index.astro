@@ -180,6 +180,10 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
   }
 
   $('uploadArea').addEventListener('click', () => $('fileInput').click());
+  // Prevent Chrome from intercepting file drops (e.g. opening HEIC in new tab)
+  document.addEventListener('dragover', e => e.preventDefault());
+  document.addEventListener('drop', e => e.preventDefault());
+
   $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); $('uploadArea').classList.add('dragover'); });
   $('uploadArea').addEventListener('dragleave', () => $('uploadArea').classList.remove('dragover'));
   $('uploadArea').addEventListener('drop', e => {

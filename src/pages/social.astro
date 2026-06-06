@@ -191,6 +191,9 @@ const platformsJSON = JSON.stringify(socialPlatforms);
 
   // Upload
   $('uploadArea').addEventListener('click', () => $('fileInput').click());
+
+  document.addEventListener('dragover', e => e.preventDefault());
+  document.addEventListener('drop', e => e.preventDefault());
   $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); });
   $('uploadArea').addEventListener('drop', e => {
     e.preventDefault();

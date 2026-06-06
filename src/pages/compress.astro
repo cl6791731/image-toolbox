@@ -145,6 +145,9 @@ const description = 'Compress images to reduce file size while maintaining quali
 
   // Upload
   $('uploadArea').addEventListener('click', () => $('fileInput').click());
+
+  document.addEventListener('dragover', e => e.preventDefault());
+  document.addEventListener('drop', e => e.preventDefault());
   $('uploadArea').addEventListener('dragover', e => { e.preventDefault(); $('uploadArea').classList.add('dragover'); });
   $('uploadArea').addEventListener('dragleave', () => $('uploadArea').classList.remove('dragover'));
   $('uploadArea').addEventListener('drop', e => {
