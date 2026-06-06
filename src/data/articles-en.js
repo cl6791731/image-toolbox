@@ -200,7 +200,10 @@ export const articles = [
 <p>When it comes to web performance, every kilobyte counts. WebP, developed by Google in 2010, consistently delivers <strong>25–35% smaller file sizes</strong> than JPG at equivalent visual quality. For a typical 1920×1080 photograph, a high-quality JPG might weigh 800KB, while the same image as WebP comes in around 520KB. Multiply that difference across a gallery of 20 images, and you're looking at several megabytes of savings — which translates directly to faster page loads and better Core Web Vitals scores.</p>
 <p>WebP achieves this through more advanced compression algorithms. While JPG relies on discrete cosine transform (DCT) from the early 1990s, WebP uses predictive coding and block prediction similar to video codecs. The result is smoother gradients, fewer blocking artifacts at low quality settings, and better handling of sharp edges.</p>
 
-<img src="/placeholder.svg" alt="WebP vs JPG file size comparison showing 30% smaller WebP files at same quality" />
+<img src="/images/webp-vs-jpg-jpeg-result.png" alt="JPEG conversion result: 5712×3213 photo compressed to 1.85MB at 92% quality" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<p><em>Same photo converted to JPEG at 92% quality — 1.85MB.</em></p>
+<img src="/images/webp-vs-jpg-webp-result.png" alt="WebP conversion result: same photo converted to WebP at 92% quality — only 1.05MB, 43% smaller" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<p><em>Same photo converted to WebP at 92% quality — only 1.05MB, saving 43% over JPEG.</em></p>
 
 <h2>Browser Support and Real-World Compatibility</h2>
 <p>As of 2026, WebP enjoys <strong>97%+ browser support</strong> globally. Safari added native WebP support in version 14 (2020), meaning every modern browser on every major platform can display WebP images without plugins or polyfills. The only outliers are Internet Explorer 11 and extremely old Android browsers — both with negligible market share.</p>

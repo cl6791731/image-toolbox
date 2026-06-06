@@ -196,7 +196,10 @@ export const articles = [
 <p>说到网页性能，每一KB都至关重要。WebP 由 Google 于2010年推出，在同等视觉质量下，文件体积比 JPG <strong>小 25–35%</strong>。以一张典型的 1920×1080 照片为例，高品质 JPG 约 800KB，而同样的 WebP 文件仅约 520KB。如果是一个包含20张图片的图库，这个差距累积起来就是数MB的节省——直接转化为更快的页面加载速度和更好的 Core Web Vitals 评分。</p>
 <p>WebP 采用更先进的压缩算法。JPG 依赖1990年代的离散余弦变换（DCT），而 WebP 使用类似视频编码的预测编码和块预测技术。结果是更平滑的渐变、在低质量设置下更少的块状伪影，以及对锐利边缘的更好处理。</p>
 
-<img src="/placeholder.svg" alt="WebP 与 JPG 文件大小对比，WebP 在同画质下体积更小" />
+<img src="/images/webp-vs-jpg-jpeg-result.png" alt="JPEG 转换结果：5712×3213 照片以 92% 质量压缩为 1.85MB JPEG" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<p><em>同一张照片以 92% 质量转换为 JPEG — 1.85MB。</em></p>
+<img src="/images/webp-vs-jpg-webp-result.png" alt="WebP 转换结果：同一张照片以 92% 质量转换为 WebP — 仅 1.05MB，比 JPEG 小 43%" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<p><em>同一张照片以 92% 质量转换为 WebP — 仅 1.05MB，比 JPEG 节省 43%。</em></p>
 
 <h2>浏览器支持与实际兼容性</h2>
 <p>截至2026年，WebP 的全球浏览器支持率超过 <strong>97%</strong>。Safari 在14版本（2020年）就原生支持了 WebP，这意味着所有主流平台的现代浏览器都能无障碍显示 WebP，无需插件或 polyfill。唯一不支持的是 Internet Explorer 11 和极少数老旧安卓浏览器——它们的市场份额已微乎其微。</p>
