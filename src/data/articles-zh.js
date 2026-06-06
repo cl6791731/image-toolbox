@@ -331,7 +331,8 @@ export const articles = [
 <p>AVIF（AV1 图像文件格式）是图像格式大战中的最新竞争者。它源自开放媒体联盟开发的 AV1 视频编码技术，带来了此前静态图像格式无法实现的功能：HDR（高动态范围）支持、12位色深和胶片颗粒合成。如果说 WebP 是从 JPG 的一次重大飞跃，那么 AVIF 代表了又一代的改进——在同等视觉质量下，文件往往比 WebP <strong>小 20%</strong>。</p>
 <p>技术基础很关键。AVIF 使用 AV1 视频编解码器的帧内编码，这意味着它借用了数十年的视频压缩研究成果。定向帧内预测、基于瓦片的编码和高级去块滤波器等功能，使 AVIF 能够以 WebP 和 JPG 根本无法比拟的方式保留精细细节。</p>
 
-<img src="/placeholder.svg" alt="AVIF 与 WebP 压缩基准测试对比" />
+<img src="/images/avif-vs-webp-compression.webp" alt="AVIF 与 WebP 压缩对比，展示画质和文件大小差异" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<img src="/images/avif-vs-webp-filesize.webp" alt="AVIF 与 WebP 文件大小基准测试结果" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>AVIF vs WebP：实际基准测试</h2>
 <h3>压缩效率</h3>

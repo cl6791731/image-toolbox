@@ -335,7 +335,8 @@ export const articles = [
 <p>AVIF (AV1 Image File Format) is the newest contender in the image format wars. Derived from AV1 video encoding technology developed by the Alliance for Open Media, AVIF brings features that were previously impossible in static image formats: HDR (High Dynamic Range) support, 12-bit color depth, and film grain synthesis. While WebP was a significant leap forward from JPG, AVIF represents another generational improvement — often achieving <strong>20% smaller files than WebP</strong> at the same visual quality.</p>
 <p>The technical foundation matters. AVIF uses intra-frame coding from the AV1 video codec, which means it borrows decades of video compression research. Features like directional intra prediction, tile-based encoding, and advanced deblocking filters allow AVIF to preserve fine detail in ways that WebP and JPG simply cannot match.</p>
 
-<img src="/placeholder.svg" alt="AVIF vs WebP compression benchmark showing 20% smaller file sizes" />
+<img src="/images/avif-vs-webp-compression.webp" alt="AVIF vs WebP compression comparison showing quality and file size differences" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<img src="/images/avif-vs-webp-filesize.webp" alt="AVIF vs WebP file size benchmark results" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>AVIF vs WebP: Real-World Benchmarks</h2>
 <h3>Compression Efficiency</h3>
