@@ -288,5 +288,6 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
   }
 
   $('formatTarget').addEventListener('change', updateQualityUI);
+  $('formatQuality').addEventListener('input', function() { $('formatQualityVal').textContent = this.value + '%'; });
   updateQualityUI();
 </script>
