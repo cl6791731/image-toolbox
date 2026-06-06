@@ -438,7 +438,8 @@ export const articles = [
 <p>BMP（位图）是仍在流通的最古老的图像格式之一，由 Microsoft 在1987年推出。它将图像数据存储为未压缩的像素网格，几乎没有元数据，也没有值得一提的压缩算法。在1MB硬盘被认为 spacious 的时代，BMP 是足够的。在2026年，它是一个时代错误——一种浪费存储空间和带宽的格式，却没有提供任何相对于现代替代方案的有意义优势。</p>
 <p>根本问题在于大小。一个 1920×1080 的24位色深 BMP 文件约消耗 6MB。同样的图像作为 PNG 通常只有 1–2MB，作为高质量 JPG 仅 300–500KB。这些差异在网站、文档或邮件附件中迅速累积。</p>
 
-<img src="/placeholder.svg" alt="BMP 与 PNG 文件大小对比，BMP 比 PNG 大 3-5 倍" />
+<img src="/images/bmp-vs-png-file-size.webp" alt="BMP 与 PNG 文件大小对比，BMP 比 PNG 大 3-5 倍" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<img src="/images/bmp-vs-png-comparison.webp" alt="BMP 与 PNG 详细文件大小对比" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>文件大小现实检查</h2>
 <h3>实际对比数据</h3>

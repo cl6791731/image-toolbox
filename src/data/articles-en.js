@@ -442,7 +442,8 @@ export const articles = [
 <p>BMP (Bitmap) is one of the oldest image formats still in circulation, introduced by Microsoft in 1987. It stores image data as an uncompressed grid of pixels, with minimal metadata and no compression algorithm to speak of. In an era when 1MB hard drives were considered spacious, BMP was adequate. In 2026, it's an anachronism — a format that wastes storage space and bandwidth without offering any meaningful advantage over modern alternatives.</p>
 <p>The fundamental problem is size. A 1920×1080 BMP file at 24-bit color depth consumes approximately 6MB. The same image as a PNG typically weighs 1–2MB, and as a high-quality JPG, just 300–500KB. Those differences compound quickly across a website, a document, or an email attachment.</p>
 
-<img src="/placeholder.svg" alt="BMP vs PNG file size comparison showing BMP is 3-5x larger" />
+<img src="/images/bmp-vs-png-file-size.webp" alt="BMP vs PNG file size comparison showing BMP is 3-5x larger" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<img src="/images/bmp-vs-png-comparison.webp" alt="BMP vs PNG detailed file size comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>File Size Reality Check</h2>
 <h3>Real-World Comparisons</h3>
