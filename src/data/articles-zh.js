@@ -2249,4 +2249,92 @@ export const articles = [
   </div>
 </div>`
     },
+    {
+      slug: 'amazon-image-requirements-2026',
+      title: 'Amazon商品图片要求2026完整指南：卖家必备规范',
+      date: '2026-06-06',
+      tags: ['电商', 'amazon', '商品图片', '优化'],
+      content: `
+<h2>为什么Amazon图片决定你的销售成败</h2>
+<p>Amazon 每月处理超过 4 亿件商品和 35 亿次客户搜索。购物者在搜索结果中滚动时看到的第一样东西就是你的主图——而你有大约 <strong>0.3 秒</strong> 的时间让他们点击。一张专业合规的商品图片不仅仅是为了好看，更关乎满足 Amazon 严格的技术规范，确保你的 Listing 不被抑制、购物车（Buy Box）资格不受影响、转化率不会因为一张模糊或不合规的图片而崩盘。本指南全面拆解截至 2026 年的 Amazon 图片要求，涵盖从主图规则到场景图最佳实践的每一个细节，帮助你建立能排名、能转化、能长期合规的商品页面。</p>
+<p>Amazon 的图片标准由自动化系统和人工审核员在 Listing 创建期间及定期审计中共同执行。不合规的图片会触发<strong>抑制警告</strong>——你的 Listing 仍然在线，但搜索可见度会消失——在严重情况下甚至被<strong>直接下架</strong>。对于 FBA 卖家，如果图片未通过审核，库存可能被滞留。一次把图片做对，能省下与卖家支持反复沟通的时间，也能避免因不可见 Listing 造成的收入损失。</p>
+
+<h2>Amazon主图：不可让步的硬性规则</h2>
+<p>主图（也称为首图、英雄图或 MAIN 图位）拥有最严格的要求，因为它出现在搜索结果、类目浏览页和商品详情页中。每张 Amazon 主图必须无一例外地遵守以下规则：</p>
+<ul>
+<li><strong>纯白背景：</strong>背景必须是纯白色——RGB 255, 255, 255。Amazon 的自动图片扫描器会以程序化方式检查这一点，即使是轻微的偏白色调（254, 253, 253）也可能触发拒绝。使用 <a href="/zh/resize">Image Toolbox 的尺寸调整工具</a>，你可以在提交前预览背景纯度。</li>
+<li><strong>商品占据画面 85% 以上：</strong>商品必须占据图片面积的至少 85%。留白太多会触发"商品太小"的拒绝；裁切太紧可能切掉商品边缘。最佳范围是 85-90% 填充率，四周保留 5-8% 的清爽边距。</li>
+<li><strong>最长边不低于 1000px：</strong>截至 2026 年，Amazon 要求最长边至少 1000 像素才能激活缩放功能。最长边恰好 2000px 或 2001px 是非官方推荐的甜点位——能触发最大缩放深度，同时文件大小仍可管理。低于 1000px 时悬停缩放功能会被禁用，你的 Listing 与竞品相比会显得过时。</li>
+<li><strong>仅展示商品本身，无道具：</strong>主图只能展示所售商品。不能有配件、包装、模特手持无关物品、文字叠加、Logo、水印、边框或嵌套小图。如果你卖 USB 线，就展示 USB 线——不要展示一台笔记本电脑、一部手机再加一根线。不包含在购买范围内的配件不能出现在主图中。</li>
+<li><strong>可接受格式：</strong>JPEG（推荐）、PNG、TIFF 或 GIF（非动画）。Amazon 建议：JPEG，品质 85-95，sRGB 色彩空间。WebP 和 AVIF 格式的商品图片不被支持——只能上传标准格式。</li>
+<li><strong>文件命名：</strong>使用商品标识符加变体代码和文件扩展名。例如：<code>B0XXXXXXX.MAIN.jpg</code> 为主图，<code>B0XXXXXXX.PT01.jpg</code> 为第一张辅图。Amazon 系统会标记随机命名的文件如 <code>IMG_4401.jpg</code>，可能延迟处理。</li>
+</ul>
+
+<h3>辅图：决定能否成交的关键战场</h3>
+<p>Amazon 允许每个 Listing 最多 <strong>9 张图片</strong>（1 张主图 + 最多 8 张辅图），每一个图位都应该填满。Amazon 内部数据和第三方 Listing 审计数据显示，拥有 6-8 张图片的 Listing 比只有 1-2 张图片的转化率高出 <strong>40-65%</strong>。辅图不要求白底——事实上，真实背景下的场景图和生活图对于展示产品尺寸、使用场景和建立购买信心至关重要。</p>
+<p>按客户决策重要程度排列的高效辅图位策略：</p>
+<ol>
+<li><strong>图位1（辅图一）：</strong>45度角产品展示或爆炸视图，突出关键特性。这是点击率最高的辅图。</li>
+<li><strong>图位2（辅图二）：</strong>场景图或使用中的产品展示——真人使用该产品，不是素材库图片。Amazon 算法偏好具有真实场景图片的 Listing。</li>
+<li><strong>图位3（辅图三）：</strong>尺寸和规格参考——产品与常见物品（硬币、手、尺子）的对比，或在图片上叠加尺寸标注。</li>
+<li><strong>图位4（辅图四）：</strong>细节特写（材质纹理、做工质量、缝线、表面处理）。微距镜头能建立对产品品质的信心。</li>
+<li><strong>图位5（辅图五）：</strong>包装内容——开箱清单。通过设定期望值准确来减少退货。</li>
+<li><strong>图位6（辅图六）：</strong>对比图表或信息图。如果产品存在竞品替代品，一张清晰的对比图能减少跳转到竞品 Listing 的流失。</li>
+<li><strong>图位7（辅图七）：</strong>使用演示视频缩略图（Amazon 会将某些图位转换为视频预览——第7个辅图位就是其中之一）。</li>
+<li><strong>图位8（辅图八）：</strong>质保、保障或认证标识图片。在图片栈底部的信任信号——只有高度意向的买家才会滚动到这里。</li>
+</ol>
+
+<h2>类目专属图片要求</h2>
+<p>不同 Amazon 类目在通用主图规则之上还附加了额外要求。遗漏这些会触发自动化拒绝且没有明确的错误信息——你只会看到"图片不合规"而无任何解释。以下是截至 2026 年最常见的类目特定规则：</p>
+<h3>服饰、鞋履与配饰</h3>
+<p>服装和鞋履类 Listing 要求至少 2 张辅图（主图之外）。至少一张辅图必须展示<strong>真人模特穿着</strong>产品（不能是人体模型——Amazon 的图片扫描器会检测模型并拒绝此类服饰图片）。模特必须站立、面朝前方、服装从下摆到领口完整展示。鞋类主图必须展示单只鞋的 45 度角；鞋底和鞋垫必须在辅图中展示。婴幼儿服装可以使用平铺拍摄代替模特，但衣物必须完全展开、无褶皱、在纯白表面上拍摄。</p>
+<h3>电子消费品</h3>
+<p>电子产品主图必须展示产品<strong>开机状态</strong>，屏幕可见且内容清晰可读。如果你的产品有屏幕（平板、智能手表、显示器、电子阅读器），显示屏必须点亮显示可识别的界面——不能是黑屏或空白屏幕。对于包含多个组件（充电器 + 数据线 + 设备）的产品，主图只能展示主要设备。线缆和配件放在辅图中。如果产品需要电池且不包含在包装中，一张辅图必须用叠加文字清晰声明："不含电池。"</p>
+<h3>美容与个人护理</h3>
+<p>美容产品面临着最严格的包装规则：主图必须展示产品在<strong>原装塑封包装</strong>中的样子——不能是拆封的，不能是盖子打开的。声称能展示质地的护肤品（面霜、凝胶、精华液）只能在辅图中演示。香水可以在辅图中展示不带盒子的瓶身；主图必须包含包装。成分标签必须面向镜头且在最低 1000px 分辨率下可读。任何"前后对比"图片被限制在辅图位，且必须包含可见的免责声明："效果因人而异。"</p>
+<h3>食品与消费品</h3>
+<p>食品和补充剂产品必须在至少一张辅图中清晰可读地展示<strong>营养成分表</strong>和<strong>配料表</strong>。任何图片中都不得显示保质期和批号——Amazon 会拒绝批号可读的图片，理由是如果客户收到的批次与拍摄的不同可能产生混淆。对于多件装，主图必须展示完整的多件装配置，而非单件。</p>
+
+<h2>技术规格速查表：分辨率、文件大小与格式</h2>
+<table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;">
+<thead><tr style="background:var(--bg-secondary);">
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">参数</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">要求</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">备注</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>最低分辨率</strong></td><td style="padding:10px; border:1px solid var(--border);">最长边 1000px</td><td style="padding:10px; border:1px solid var(--border);">缩放功能的前置条件</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>推荐分辨率</strong></td><td style="padding:10px; border:1px solid var(--border);">最长边 2000px</td><td style="padding:10px; border:1px solid var(--border);">最佳缩放深度，文件大小可控</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>最大文件大小</strong></td><td style="padding:10px; border:1px solid var(--border);">每张 10MB</td><td style="padding:10px; border:1px solid var(--border);">超过 10MB 立即被拒</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>色彩空间</strong></td><td style="padding:10px; border:1px solid var(--border);">sRGB 或 CMYK</td><td style="padding:10px; border:1px solid var(--border);">推荐 sRGB 以保证网页显示准确性</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>宽高比</strong></td><td style="padding:10px; border:1px solid var(--border);">推荐正方形（1:1）</td><td style="padding:10px; border:1px solid var(--border);">3:2 和 4:3 也可接受；避免 16:9</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>文件格式</strong></td><td style="padding:10px; border:1px solid var(--border);">JPEG、PNG、TIFF、GIF（非动画）</td><td style="padding:10px; border:1px solid var(--border);">不支持 WebP、AVIF、HEIC、BMP、PSD</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>背景</strong></td><td style="padding:10px; border:1px solid var(--border);">纯白（RGB 255,255,255）</td><td style="padding:10px; border:1px solid var(--border);">仅限主图；辅图可有背景</td></tr>
+</tbody>
+</table>
+
+<p>在数百个 SKU 的商品目录中管理这些规格非常耗时。<a href="/zh/ecommerce">Image Toolbox 的电商处理器</a> 可以让你在一个步骤中批量验证和调整产品图片到符合当前 Amazon 规范——检查白底是否为像素级纯白、自动调整为 2000px、转换为 sRGB 格式的 JPEG，并验证每张图片是否通过了 85% 商品填充率阈值。对于多平台上架销售的卖家，同一工具还能从同一批源文件生成适用于 eBay、Shopify 和 Etsy 的合规图片，确保整个电商体系的一致性。如需快速单张图片调整——裁切、压缩和格式转换——<a href="/zh/">Image Toolbox 主工具箱</a> 所有处理都在浏览器本地完成，无需上传服务器。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">如果我的 Amazon 商品图片不符合要求会怎样？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不合规的图片会触发抑制——你的 Listing 保持活跃但失去搜索可见度和购物车（Buy Box）资格，直到问题解决。Amazon 的自动化系统会在 Listing 创建时和定期审计中扫描所有图片。如果主图背景偏白（低于 RGB 255,255,255）、展示了非随附配件或分辨率低于 1000px，Listing 会被标记。你将在卖家中心的"绩效 → 账户状况 → 商品政策合规"下收到通知。修复图片后，Amazon 会在 15 分钟到 24 小时内自动重新扫描。对于严重或屡次违规的情况，整个 ASIN 可能被从搜索结果中抑制。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我可以用场景图作为 Amazon 主图吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不可以。Amazon 的主图规则要求纯白背景（RGB 255,255,255），只展示产品本身——无道具、无模特、无场景环境。场景图和生活图属于辅图位（图位 2-8）。主图必须是干净、独立的商品拍摄图。这条规则适用于除少数特定例外（如图书、音乐、视频和 DVD 类目本身就使用封面图作为主图）之外的所有类目。即使在"家居与厨房"类目这种场景感对转化至关重要的领域中，主图仍必须遵守纯白背景规则——把精美的厨房布景留给辅图二的图位。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">上传多少张商品图片到 Amazon 才能达到最佳转化率？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">上传最高上限——9 张图片（1 主图 + 8 辅图）。根据 Amazon 内部数据和多项第三方 Listing 审计，拥有 6-9 张图片的 Listing 在转化率上始终比只有 1-3 张的高出 40-65%。每多一张图片就能减少购物者的不确定性：主图让他们点击进来，辅图在他们翻看评论之前就回答了他们的疑问。理想的图片组合包括：多角度产品展示、场景使用图、尺寸参考、细节特写、包装内容、对比图表、视频缩略图和信任标识。请记住——每一个空的图位都是错过一次消除异议、促成成交的机会。</p>
+    </div>
+  </div>
+</div>`
+    },
   ];

@@ -2253,4 +2253,92 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
   </div>
 </div>`
     },
+    {
+      slug: 'amazon-image-requirements-2026',
+      title: 'Amazon Product Image Requirements 2026: Complete Seller Guide',
+      date: '2026-06-06',
+      tags: ['ecommerce', 'amazon', 'product-images', 'optimization'],
+      content: `
+<h2>Why Amazon Images Make or Break Your Sales</h2>
+<p>Amazon processes over 400 million products and 3.5 billion customer searches per month. The first thing a shopper sees when scrolling through search results is your main image — and you have roughly <strong>0.3 seconds</strong> to make them click. A professionally compliant product image is not just about looking good; it's about meeting Amazon's strict technical specifications so your listing doesn't get suppressed, your Buy Box eligibility stays intact, and your conversion rate doesn't tank because of a blurry or non-compliant image. This guide breaks down every Amazon image requirement as of 2026, from main image rules to lifestyle photo best practices, so you can build listings that rank, convert, and stay compliant.</p>
+<p>Amazon's image standards are enforced by both automated systems and human reviewers during listing creation and periodic audits. Non-compliant images trigger <strong>suppression warnings</strong> — your listing stays live but loses search visibility — or outright <strong>listing removal</strong> in severe cases. For FBA sellers, inventory can be stranded if images don't pass review. Getting images right the first time saves hours of back-and-forth with Seller Support and prevents lost revenue from invisible listings.</p>
+
+<h2>Amazon Main Image: The Non-Negotiable Rules</h2>
+<p>The main image (also called the primary image, hero image, or MAIN image slot) has the strictest requirements because it appears in search results, category browse pages, and the product detail page. Every Amazon main image must follow these rules without exception:</p>
+<ul>
+<li><strong>Pure white background:</strong> The background must be pure white — RGB 255, 255, 255. Amazon's automated image scanner checks for this programmatically, and even slight off-white tints (254, 253, 253) can trigger rejection. Tools like <a href="/resize">Image Toolbox's Resize tool</a> let you preview background purity before submitting.</li>
+<li><strong>Fill 85%+ of the frame:</strong> The product must occupy at least 85% of the image area. Too much empty space triggers a "product too small" rejection; zoomed too close may cut off product edges. The sweet spot is 85–90% fill with a clean 5–8% margin on all sides.</li>
+<li><strong>1000px minimum on longest side:</strong> As of 2026, Amazon requires at least 1000 pixels on the longest side for the zoom function to activate. Images at exactly 2000px or 2001px on the longest side are the unofficial sweet spot — they trigger maximum zoom depth while keeping file sizes manageable. Below 1000px, the hover-zoom feature is disabled and your listing looks outdated compared to competitors.</li>
+<li><strong>Product only, no props:</strong> The main image must show only the product being sold. No accessories, no packaging, no model holding unrelated items, no text overlays, no logos, no watermarks, no borders, no inset images. If you're selling a USB cable, show a USB cable — not a laptop, a phone, and a cable. Accessories that are not included in the purchase cannot appear in the main image.</li>
+<li><strong>Accepted formats:</strong> JPEG (preferred), PNG, TIFF, or GIF (non-animated). Amazon's recommendation: JPEG at quality 85–95, sRGB color space. WebP and AVIF are not supported for product images — upload only standard formats.</li>
+<li><strong>File naming:</strong> Use the product identifier followed by a variant code and the file extension. Example: <code>B0XXXXXXX.MAIN.jpg</code> for the main image, <code>B0XXXXXXX.PT01.jpg</code> for the first alternate image. Amazon's system flags randomly-named files like <code>IMG_4401.jpg</code> and may delay processing.</li>
+</ul>
+
+<h3>Alternate Images: Where You Win the Sale</h3>
+<p>Amazon allows up to <strong>9 images per listing</strong> (1 main + up to 8 alternate images), and every slot should be filled. Data from Amazon's internal studies and third-party listing audits shows that listings with 6–8 images convert <strong>40–65% better</strong> than listings with only 1–2 images. Alternate images do not require a white background — in fact, lifestyle and in-context images with real backgrounds are essential for demonstrating scale, use cases, and building buyer confidence.</p>
+<p>Effective alternate image slot strategy, in order of customer decision-making importance:</p>
+<ol>
+<li><strong>Slot 1 (Alt 1):</strong> 45-degree angled product shot or exploded view showing key features. This is the most-clicked alternate image.</li>
+<li><strong>Slot 2 (Alt 2):</strong> Lifestyle or in-context image showing the product in use — a real person using the item, not a stock photo. Amazon's algorithm favors listings with authentic lifestyle imagery.</li>
+<li><strong>Slot 3 (Alt 3):</strong> Size and dimension reference — the product next to a common object (coin, hand, ruler) or with measurement callouts overlaid on the image.</li>
+<li><strong>Slot 4 (Alt 4):</strong> Detailed feature close-up (texture, material quality, stitching, finish). Macro shots build confidence in build quality.</li>
+<li><strong>Slot 5 (Alt 5):</strong> Packaging contents — what's in the box. Reduces returns by setting accurate expectations.</li>
+<li><strong>Slot 6 (Alt 6):</strong> Comparison chart or infographic. If your product competes with alternatives, a clean comparison graphic reduces bounce to competitor listings.</li>
+<li><strong>Slot 7 (Alt 7):</strong> Usage demonstration video thumbnail (Amazon converts certain image slots to video previews — the 7th alternate slot is one of them).</li>
+<li><strong>Slot 8 (Alt 8):</strong> Warranty, guarantee, or certification badge image. Builds trust signals at the bottom of the image stack, where only highly interested buyers scroll.</li>
+</ol>
+
+<h2>Category-Specific Image Requirements</h2>
+<p>Different Amazon categories impose additional requirements beyond the universal main image rules. Missing these triggers automated rejections that fail without clear error messages — you'll see "image not compliant" with no explanation. Here are the most common category-specific rules as of 2026:</p>
+<h3>Apparel, Shoes, and Accessories</h3>
+<p>Clothing and footwear listings require at minimum <strong>two alternate images</strong> beyond the main image. At least one alternate must show the product <strong>worn on a model</strong> (no mannequins — Amazon's image scanner detects mannequins and rejects them for apparel). The model must be standing, facing forward, with the full garment visible from hem to collar. For shoes, the main image must show a single shoe at a 45-degree angle; the sole and insole must be shown in alternate slots. Infants' and children's clothing can use flat-lay photography instead of a model, but the garment must be fully spread, unwrinkled, on a pure white surface.</p>
+<h3>Electronics and Consumer Tech</h3>
+<p>Electronics main images must show the product <strong>powered on</strong> with the display visible and the screen content clearly legible. If your product has a screen (tablet, smartwatch, monitor, e-reader), the display must be illuminated with a recognizable interface — not a blank or black screen. For items with multiple components (charger + cable + device), the main image must show only the primary device. Cables and accessories belong in alternate images. If the product requires batteries and they are not included, an alternate image must clearly state this with overlaid text: "Batteries Not Included."</p>
+<h3>Beauty and Personal Care</h3>
+<p>Beauty products face some of the strictest packaging rules: the main image must show the product in its <strong>original, sealed packaging</strong> — not unwrapped, not with the cap removed. Skincare products that claim to show texture (cream, gel, serum) can demonstrate this in alternate images only. Fragrances can show the bottle without the box only in alternate images; the main image must include packaging. Ingredient labels must face the camera and be readable at 1000px minimum resolution. Any "before and after" imagery is restricted to alternate slots and must include a visible disclaimer: "Individual results may vary."</p>
+<h3>Grocery and Consumables</h3>
+<p>Food and supplement products must show the <strong>nutrition facts panel</strong> and <strong>ingredient list</strong> clearly legible in at least one alternate image. Expiration dates and lot numbers must not be visible in any image — Amazon rejects images where batch codes are readable, citing potential confusion if customers receive a different batch than the one photographed. For multipacks, the main image must show the full multipack configuration, not a single unit.</p>
+
+<h2>Technical Specs: Resolution, File Size, and Format Cheat Sheet</h2>
+<table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;">
+<thead><tr style="background:var(--bg-secondary);">
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">Parameter</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">Requirement</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">Notes</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Minimum Resolution</strong></td><td style="padding:10px; border:1px solid var(--border);">1000px (longest side)</td><td style="padding:10px; border:1px solid var(--border);">Required for zoom feature</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Recommended Resolution</strong></td><td style="padding:10px; border:1px solid var(--border);">2000px (longest side)</td><td style="padding:10px; border:1px solid var(--border);">Optimal zoom depth, manageable file size</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Maximum File Size</strong></td><td style="padding:10px; border:1px solid var(--border);">10MB per image</td><td style="padding:10px; border:1px solid var(--border);">Files over 10MB rejected instantly</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Color Space</strong></td><td style="padding:10px; border:1px solid var(--border);">sRGB or CMYK</td><td style="padding:10px; border:1px solid var(--border);">sRGB preferred for web display accuracy</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Aspect Ratio</strong></td><td style="padding:10px; border:1px solid var(--border);">Square (1:1) recommended</td><td style="padding:10px; border:1px solid var(--border);">3:2 and 4:3 also accepted; avoid 16:9</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>File Formats</strong></td><td style="padding:10px; border:1px solid var(--border);">JPEG, PNG, TIFF, GIF (non-animated)</td><td style="padding:10px; border:1px solid var(--border);">No WebP, AVIF, HEIC, BMP, or PSD</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Background</strong></td><td style="padding:10px; border:1px solid var(--border);">Pure white (RGB 255,255,255)</td><td style="padding:10px; border:1px solid var(--border);">Main image only; alternates can have backgrounds</td></tr>
+</tbody>
+</table>
+
+<p>Managing these specifications across product catalogs with hundreds of SKUs is time-consuming. <a href="/ecommerce">Image Toolbox's Ecommerce Processor</a> lets you batch-validate and resize product images against current Amazon specifications in one step — check white backgrounds for pixel-level purity, resize to 2000px automatically, convert to sRGB JPEG, and verify that each image passes the 85% product fill threshold. For sellers listing on multiple platforms, the same tool generates compliant images for eBay, Shopify, and Etsy from the same source files, ensuring consistency across your entire ecommerce presence. For quick single-image adjustments — cropping, compressing, and format conversion — <a href="/">Image Toolbox's main suite</a> processes everything in your browser with no uploads required.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What happens if my Amazon product images don't meet the requirements?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Non-compliant images trigger suppression — your listing remains active but loses search visibility and Buy Box eligibility until the issue is resolved. Amazon's automated system scans all images during listing creation and periodic audits. If a main image has an off-white background (anything below RGB 255,255,255), shows accessories not included with the product, or falls below 1000px resolution, the listing is flagged. You'll receive a notification in Seller Central under Performance → Account Health → Product Policy Compliance. Fix the image and Amazon re-scans automatically within 15 minutes to 24 hours. In severe or repeated cases, the entire ASIN may be suppressed from search results.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I use lifestyle images as my Amazon main image?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. Amazon's main image rules require a pure white background (RGB 255,255,255) with only the product visible — no props, no models, no environments. Lifestyle and in-context images belong in the alternate image slots (slots 2-8). The main image must be a clean, isolated product shot. This rule applies across all categories except for a few specific exceptions like Books, Music, Video, and DVD categories where the cover art itself serves as the main image. Even in Home & Kitchen, where lifestyle context is critical to conversion, the main image must still follow the pure white background rule — save the beautiful kitchen setup for alternate slot 2.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">How many product images should I upload to Amazon for best conversion?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Upload the maximum allowed — 9 images (1 main + 8 alternate). Listings with 6–9 images consistently outperform those with 1–3 images by 40–65% in conversion rate, according to Amazon's internal data and multiple third-party listing audits. Each additional image reduces a shopper's uncertainty: the main image gets them to click, alt images answer their questions before they scroll to reviews. The ideal image stack includes: angled product view, lifestyle/in-context use, size reference, feature close-up, packaging contents, comparison chart, video thumbnail, and trust badges. Remember — every empty image slot is a missed opportunity to answer an objection and close the sale.</p>
+    </div>
+  </div>
+</div>`
+    },
   ];
