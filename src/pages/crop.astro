@@ -191,12 +191,22 @@ const description = 'Free online image cropping tool. Drag to select crop area. 
     }
 
     const box = document.createElement('div');
-    box.className = 'crop-box';
+    box.style.cssText = 'position:absolute;border:2px dashed var(--accent);background:rgba(0,113,227,0.08);cursor:move;';
     box.style.left = crop.x + 'px';
     box.style.top = crop.y + 'px';
     box.style.width = crop.w + 'px';
     box.style.height = crop.h + 'px';
-    box.innerHTML = '<div class="handle nw"></div><div class="handle ne"></div><div class="handle sw"></div><div class="handle se"></div>';
+
+    function makeHandle(cls, css) {
+      var h = document.createElement('div');
+      h.style.cssText = 'position:absolute;width:12px;height:12px;background:var(--accent);border:2px solid #fff;border-radius:2px;' + css;
+      h.className = cls;
+      return h;
+    }
+    box.appendChild(makeHandle('nw', 'top:-6px;left:-6px;cursor:nw-resize;'));
+    box.appendChild(makeHandle('ne', 'top:-6px;right:-6px;cursor:ne-resize;'));
+    box.appendChild(makeHandle('sw', 'bottom:-6px;left:-6px;cursor:sw-resize;'));
+    box.appendChild(makeHandle('se', 'bottom:-6px;right:-6px;cursor:se-resize;'));
     wrapper.appendChild(box);
 
     if (window._cropListeners) {
