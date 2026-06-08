@@ -63,6 +63,7 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
           <optgroup label="Special Use">
             <option value="image/bmp">BMP — Uncompressed bitmap, lossless</option>
             <option value="image/x-icon">ICO — Windows icon, multi-size support</option>
+            <option value="image/tiff">TIFF — Lossless, print and archive standard</option>
           </optgroup>
         </select>
         <div class="desc" id="formatCompatNote"></div>
@@ -239,6 +240,41 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
     const quality = parseInt($('formatQuality').value) / 100;
     const canvas = imageToCanvas(sourceImage);
 
+    // TIFF requires special encoding via UTIF.js (canvas.toBlob doesn't support TIFF)
+    if (type === 'image/tiff') {
+      $('formatBtn').textContent = 'Encoding TIFF...';
+      $('formatBtn').disabled = true;
+      try {
+        if (!window.UTIF) {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/utif@3.1.0/UTIF.js';
+            s.onload = resolve;
+            s.onerror = () => reject(new Error('UTIF.js CDN load failed'));
+            document.head.appendChild(s);
+          });
+        }
+        const imageData = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
+        const ifd = UTIF.encodeImage(imageData.data, canvas.width, canvas.height);
+        const buf = UTIF.writeIFD([ifd]);
+        const blob = new Blob([buf], { type: 'image/tiff' });
+        resultBlob = blob;
+        const url = URL.createObjectURL(blob);
+        $('formatResultPreview').innerHTML = `<img src="${url}" alt="Converted TIFF result" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block" loading="lazy">`;
+        $('formatDownloadBtn').disabled = false;
+        $('formatDownloadBtn').dataset.url = url;
+        $('formatDownloadBtn').dataset.type = 'image/tiff';
+        $('formatCompatNote').textContent = `Converted to TIFF · ${formatSize(blob.size)}`;
+        $('formatCompatNote').style.color = '#34c759';
+      } catch (e) {
+        $('formatResultPreview').innerHTML = `<span class="placeholder error">⚠️ TIFF encoding failed: ${e.message}</span>`;
+        $('formatCompatNote').textContent = 'TIFF encoding failed. Try PNG or BMP instead.';
+      }
+      $('formatBtn').textContent = 'Convert';
+      $('formatBtn').disabled = false;
+      return;
+    }
+
     // Check browser support for target format
     const testCanvas = document.createElement('canvas');
     testCanvas.width = 1; testCanvas.height = 1;
@@ -258,7 +294,7 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
       $('formatDownloadBtn').dataset.type = blob.type;
       $('formatCompatNote').textContent = `Converted to ${formatMimeToName(blob.type)} · ${formatSize(blob.size)}`;
       $('formatCompatNote').style.color = '#34c759';
-    }, type, ['image/bmp','image/x-icon'].includes(type) ? undefined : quality);
+    }, type, ['image/bmp','image/x-icon','image/tiff'].includes(type) ? undefined : quality);
   });
 
   $('formatDownloadBtn').addEventListener('click', () => {
@@ -266,7 +302,7 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
     if (!btn.dataset.url) return;
     const a = document.createElement('a');
     a.href = btn.dataset.url;
-    const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico' }[btn.dataset.type] || 'png';
+    const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico','image/tiff':'tif' }[btn.dataset.type] || 'png';
     const origName = sourceFile ? sourceFile.name.replace(/\.[^.]+$/, '') : 'image';
     a.download = `${origName}_converted.${ext}`;
     a.click();
