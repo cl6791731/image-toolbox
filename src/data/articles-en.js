@@ -844,7 +844,7 @@ export const articles = [
 <p>The background must be uniform. Avoid textured walls, doors, or windows. Professional photographers use a plain backdrop or a white sheet hung flat.</p>
 
 <h3>Step-by-Step: Crop and Resize with Online Tool</h3>
-<p><img src="/placeholder.svg" alt="Passport photo cropping interface showing dimension guides and background check"></p>
+<p><img src="/images/passport-crop-interface.webp" alt="Passport photo cropping interface showing dimension guides and background check" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>You don't need expensive photo studio software to create compliant passport photos. With <a href="/crop">Image Toolbox</a> and <a href="/resize">our resize tool</a>, the process takes under two minutes:</p>
 <ol>
 <li><strong>Take a photo</strong> against a plain wall with even lighting. Face the camera directly, no smile, eyes open.</li>

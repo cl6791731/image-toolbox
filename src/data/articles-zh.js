@@ -840,7 +840,7 @@ export const articles = [
 <p>背景必须是均匀的。避免纹理墙壁、门或窗户。专业摄影师使用纯色背景或平整悬挂的白色床单。</p>
 
 <h3>分步教程：用在线工具裁切和缩放</h3>
-<p><img src="/placeholder.svg" alt="证件照裁切界面显示尺寸指南和背景检查"></p>
+<p><img src="/images/passport-crop-interface.webp" alt="证件照裁切界面显示尺寸指南和背景检查" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>你不需要昂贵的摄影棚软件来创建合规的证件照。使用 <a href="/zh/crop">Image Toolbox</a> 和 <a href="/zh/resize">我们的调整尺寸工具</a>，整个过程不到两分钟：</p>
 <ol>
 <li><strong>拍照</strong>，背靠平整墙壁，光线均匀。正对相机，不微笑，眼睛睁开。</li>
