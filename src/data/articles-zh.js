@@ -708,7 +708,7 @@ export const articles = [
 </table>
 
 <h3>在线批量处理工作流</h3>
-<p><img src="/placeholder.svg" alt="批量上传和压缩界面截图"></p>
+<p><img src="/images/batch-compress-interface.webp" alt="批量上传和压缩界面截图" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>现代在线工具支持拖放多文件上传。使用 <a href="/zh/compress">Image Toolbox</a>，你可以选择一个文件夹中的所有图片，设置目标质量级别（我们推荐网页使用65-75%），并下载整个优化后的集合为ZIP文件。所有处理都在浏览器本地进行——不上传到外部服务器，没有隐私担忧。</p>
 
 <h2>压缩后保持文件夹组织</h2>

@@ -712,7 +712,7 @@ export const articles = [
 </table>
 
 <h3>The Online Batch Workflow</h3>
-<p><img src="/placeholder.svg" alt="Screenshot showing batch upload and compression interface"></p>
+<p><img src="/images/batch-compress-interface.webp" alt="Screenshot showing batch upload and compression interface" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>Modern online tools support multi-file uploads with drag-and-drop. With <a href="/compress">Image Toolbox</a>, you can select all images in a folder, set a target quality level (we recommend 65–75% for web use), and download the entire optimized set as a ZIP file. All processing happens locally in your browser — no upload to external servers, no privacy concerns.</p>
 
 <h2>Keeping Folder Organization After Compression</h2>
