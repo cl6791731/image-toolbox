@@ -773,7 +773,7 @@ export const articles = [
 </ul>
 
 <h3>X/Twitter Image Sizes</h3>
-<p><img src="/placeholder.svg" alt="Social media image size comparison chart for 2026"></p>
+<p><img src="/images/social-media-sizes-chart.webp" alt="Social media image size comparison chart for 2026" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <ul>
 <li><strong>Single image tweet:</strong> 1200 × 675 pixels (16:9 ratio)</li>
 <li><strong>Multi-image tweet:</strong> 1200 × 900 pixels (4:3 ratio)</li>

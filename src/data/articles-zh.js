@@ -769,7 +769,7 @@ export const articles = [
 </ul>
 
 <h3>X/Twitter图片尺寸</h3>
-<p><img src="/placeholder.svg" alt="2026年社交媒体图片尺寸对比图表"></p>
+<p><img src="/images/social-media-sizes-chart.webp" alt="2026年社交媒体图片尺寸对比图表" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <ul>
 <li><strong>单图推文：</strong>1200 × 675像素（16:9比例）</li>
 <li><strong>多图推文：</strong>1200 × 900像素（4:3比例）</li>
