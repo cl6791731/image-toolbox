@@ -200,7 +200,7 @@ const description = 'Free online image cropping tool. Drag to select crop area. 
     function makeHandle(cls, css) {
       var h = document.createElement('div');
       h.style.cssText = 'position:absolute;width:12px;height:12px;background:var(--accent);border:2px solid #fff;border-radius:2px;' + css;
-      h.className = cls;
+      h.setAttribute('data-handle', cls);
       return h;
     }
     box.appendChild(makeHandle('nw', 'top:-6px;left:-6px;cursor:nw-resize;'));
@@ -260,12 +260,12 @@ const description = 'Free online image cropping tool. Drag to select crop area. 
 
     const endDrag = () => { dragState = null; };
 
-    box.addEventListener('mousedown', e => { if (!e.target.classList.contains('handle')) startDrag(e, 'move'); });
-    box.querySelectorAll('.handle').forEach(h => { h.addEventListener('mousedown', e => { e.stopPropagation(); startDrag(e, h.className.split(' ')[1]); }); });
+    box.addEventListener('mousedown', e => { if (!e.target.getAttribute('data-handle')) startDrag(e, 'move'); });
+    box.querySelectorAll('[data-handle]').forEach(h => { h.addEventListener('mousedown', e => { e.stopPropagation(); startDrag(e, h.getAttribute('data-handle')); }); });
     document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseup', endDrag);
     box.addEventListener('touchstart', e => { if (!e.target.classList.contains('handle')) startDrag(e, 'move'); }, { passive: false });
-    box.querySelectorAll('.handle').forEach(h => { h.addEventListener('touchstart', e => { e.stopPropagation(); startDrag(e, h.className.split(' ')[1]); }); }, { passive: false });
+    box.querySelectorAll('[data-handle]').forEach(h => { h.addEventListener('touchstart', e => { e.stopPropagation(); startDrag(e, h.getAttribute('data-handle')); }); }, { passive: false });
     document.addEventListener('touchmove', onMove, { passive: false });
     document.addEventListener('touchend', endDrag);
     window._cropListeners = { onMove, endDrag, onMoveTouch: onMove };
