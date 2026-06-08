@@ -254,7 +254,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
         }
         const imageData = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
         const ifd = UTIF.encodeImage(imageData.data, canvas.width, canvas.height);
-        const buf = UTIF.writeIFD([ifd]);
+        const buf = UTIF.encode([ifd]);
         const blob = new Blob([buf], { type: 'image/tiff' });
         resultBlob = blob;
         const url = URL.createObjectURL(blob);
