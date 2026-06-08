@@ -969,7 +969,7 @@ export const articles = [
 <p>eBay的搜索算法偏爱高质量照片的列表。太小或裁切不当的图片在搜索结果中获得较低的排名。</p>
 
 <h3>Shopify图片优化</h3>
-<p><img src="/placeholder.svg" alt="电商产品照片尺寸指南，显示Amazon、eBay和Shopify的要求"></p>
+<p><img src="/images/ecommerce-photo-sizing.webp" alt="电商产品照片尺寸指南，显示Amazon、eBay和Shopify的要求" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>Shopify自动处理图片优化，但有一些重要的注意事项：</p>
 <ul>
 <li><strong>最大上传尺寸：</strong>每张图片20MB</li>

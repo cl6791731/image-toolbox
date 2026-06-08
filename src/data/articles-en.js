@@ -973,7 +973,7 @@ export const articles = [
 <p>eBay's search algorithm favors listings with high-quality photos. Images that are too small or poorly cropped receive lower placement in search results.</p>
 
 <h3>Shopify Image Optimization</h3>
-<p><img src="/placeholder.svg" alt="E-commerce product photo sizing guide showing Amazon, eBay, and Shopify requirements"></p>
+<p><img src="/images/ecommerce-photo-sizing.webp" alt="E-commerce product photo sizing guide showing Amazon, eBay, and Shopify requirements" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>Shopify handles image optimization automatically but with important caveats:</p>
 <ul>
 <li><strong>Maximum upload size:</strong> 20MB per image</li>
