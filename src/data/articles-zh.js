@@ -1613,7 +1613,8 @@ export const articles = [
 </table>
 
 <h3>什么时候PNG是更好的存档格式</h3>
-<p><img src="/placeholder.svg" alt="对比图展示TIFF和PNG在各种图像类型上的文件大小差异"></p>
+<p><img src="/images/tiff-vs-png-comparison.webp" alt="对比图展示TIFF和PNG在各种图像类型上的文件大小差异" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0">
+<img src="/images/tiff-vs-png-filesize.webp" alt="TIFF 与 PNG 文件大小基准测试结果" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>对大多数数字存档需求来说，PNG是更优选择：</p>
 <ul>
 <li><strong>网页存档：</strong>PNG被所有浏览器和操作系统普遍支持</li>

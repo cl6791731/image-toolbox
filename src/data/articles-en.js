@@ -1617,7 +1617,8 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 </table>
 
 <h3>When PNG Is the Better Archive Format</h3>
-<p><img src="/placeholder.svg" alt="Comparison chart showing file size differences between TIFF and PNG for various image types"></p>
+<p><img src="/images/tiff-vs-png-comparison.webp" alt="Comparison chart showing file size differences between TIFF and PNG for various image types" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0">
+<img src="/images/tiff-vs-png-filesize.webp" alt="TIFF vs PNG file size benchmark results" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>For most digital archiving needs, PNG is the superior choice:</p>
 <ul>
 <li><strong>Web archiving:</strong> PNG is universally supported by all browsers and operating systems</li>
