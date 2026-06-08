@@ -240,24 +240,72 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
     const quality = parseInt($('formatQuality').value) / 100;
     const canvas = imageToCanvas(sourceImage);
 
-    // TIFF requires special encoding via UTIF.js (canvas.toBlob doesn't support TIFF)
+    // TIFF requires special encoding (canvas.toBlob doesn't support TIFF)
     if (type === 'image/tiff') {
       $('formatBtn').textContent = 'Encoding TIFF...';
       $('formatBtn').disabled = true;
       try {
-        if (!window.UTIF) {
-          await new Promise((resolve, reject) => {
-            const s = document.createElement('script');
-            s.src = 'https://cdn.jsdelivr.net/npm/utif@3.1.0/UTIF.js';
-            s.onload = resolve;
-            s.onerror = () => reject(new Error('UTIF.js CDN load failed'));
-            document.head.appendChild(s);
-          });
-        }
         const imageData = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
-        const ifd = UTIF.encodeImage(imageData.data, canvas.width, canvas.height);
-        const buf = UTIF.encode([ifd]);
-        const blob = new Blob([buf], { type: 'image/tiff' });
+        const w = canvas.width, h = canvas.height;
+        const rgba = imageData.data;
+
+        // Minimal TIFF encoder: 8-byte header + IFD + pixel data
+        function encodeTIFF(rgba, w, h) {
+          const stripBytes = w * 3;
+          const stripSize = stripBytes * h;
+          const ifdEntries = 12;
+          const ifdSize = 2 + ifdEntries * 12 + 4;
+          const pixelOffset = 8 + ifdSize;
+          const totalSize = pixelOffset + stripSize;
+
+          const buf = new ArrayBuffer(totalSize);
+          const view = new DataView(buf);
+          const u8 = new Uint8Array(buf);
+
+          // TIFF header (little-endian)
+          view.setUint16(0, 0x4D4D, false); // "II" byte order
+          view.setUint16(2, 42, true); // TIFF magic
+          view.setUint32(4, 8, true); // IFD offset
+
+          // IFD
+          let off = 8;
+          view.setUint16(off, ifdEntries, true); off += 2;
+
+          function tag(id, type, count, value) {
+            view.setUint16(off, id, true); off += 2;
+            view.setUint16(off, type, true); off += 2;
+            view.setUint32(off, count, true); off += 4;
+            view.setUint32(off, value, true); off += 4;
+          }
+
+          tag(256, 3, 1, w);          // ImageWidth
+          tag(257, 3, 1, h);          // ImageLength
+          tag(258, 3, 1, 8);          // BitsPerSample (8)
+          tag(259, 3, 1, 1);          // Compression (none)
+          tag(262, 3, 1, 2);          // PhotometricInterpretation (RGB)
+          tag(273, 3, 1, pixelOffset); // StripOffsets
+          tag(277, 3, 1, 3);          // SamplesPerPixel (3)
+          tag(278, 3, 1, h);          // RowsPerStrip
+          tag(279, 4, 1, stripSize);  // StripByteCounts
+          tag(282, 5, 1, 72);         // XResolution (72)
+          tag(283, 5, 1, 72);         // YResolution (72)
+          tag(296, 3, 1, 2);          // ResolutionUnit (inch)
+
+          // Next IFD offset (0 = no more IFDs)
+          view.setUint32(off, 0, true);
+
+          // Write pixel data (RGBA → RGB, skip alpha)
+          let p = pixelOffset;
+          for (let i = 0; i < rgba.length; i += 4) {
+            u8[p++] = rgba[i];     // R
+            u8[p++] = rgba[i + 1]; // G
+            u8[p++] = rgba[i + 2]; // B
+          }
+
+          return new Blob([buf], { type: 'image/tiff' });
+        }
+
+        const blob = encodeTIFF(rgba, w, h);
         resultBlob = blob;
         const url = URL.createObjectURL(blob);
         $('formatResultPreview').innerHTML = `<img src="${url}" alt="Converted TIFF result" style="max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block" loading="lazy">`;
