@@ -1549,7 +1549,8 @@ export const articles = [
 <p>对大多数网页上传，60-70%质量是最佳选择。使用 <a href="/zh/compress">Image Toolbox</a> 在确认质量级别前预览结果。</p>
 
 <h3>快速修复：调整到屏幕尺寸</h3>
-<p><img src="/placeholder.svg" alt="对比过大的4000px图片与经过优化的1200px屏幕适配版本"></p>
+<p><img src="/images/oversized-vs-optimized-image.webp" alt="对比过大的4000px图片与经过优化的1200px屏幕适配版本" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0">
+<img src="/images/oversized-vs-optimized-filesize.webp" alt="超大图与优化图文件大小对比" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>大多数用户上传的图片远超实际需要。4000 × 3000像素的图片看起来可能很"震撼"，但实际上：</p>
 <ul>
 <li>Instagram以1080px宽度显示</li>

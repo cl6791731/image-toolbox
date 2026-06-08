@@ -1553,7 +1553,8 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <p>For most web uploads, 60–70% quality hits the sweet spot. Use <a href="/compress">Image Toolbox</a> to preview the result before committing to a quality level.</p>
 
 <h3>Quick Fix: Resize to Screen Dimensions</h3>
-<p><img src="/placeholder.svg" alt="Comparison showing oversized 4000px image versus properly sized 1200px screen-optimized version"></p>
+<p><img src="/images/oversized-vs-optimized-image.webp" alt="Comparison showing oversized 4000px image versus properly sized 1200px screen-optimized version" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0">
+<img src="/images/oversized-vs-optimized-filesize.webp" alt="Oversized vs optimized image file size comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0"></p>
 <p>Most users upload images far larger than necessary. A 4000 × 3000 pixel image might look impressive, but:</p>
 <ul>
 <li>Instagram displays it at 1080px wide</li>
