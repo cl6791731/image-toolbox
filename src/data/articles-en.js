@@ -2346,4 +2346,76 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
   </div>
 </div>`
     },
+    {
+      slug: 'taobao-image-requirements-2026',
+      title: 'Taobao Main Image Requirements 2026: Complete Seller\'s Guide',
+      date: '2026-06-08',
+      tags: ['ecommerce', 'taobao', 'image-requirements'],
+      content: `
+<h2>Why Taobao Main Images Matter More Than You Think</h2>
+<p>On Taobao, the main image is not just a product photo — it is your listing's front door. With over <strong>900 million active buyers</strong> scrolling through search results at lightning speed, your main image has roughly <strong>0.3 seconds</strong> to catch attention and earn a click. Taobao's internal data shows that listings with optimized, compliant main images see <strong>30–50% higher click-through rates</strong> than those with average photos. Getting the technical specifications right is the first step; making it visually compelling is the second. This guide covers everything you need to know about Taobao's main image requirements in 2026.</p>
+
+<h2>Taobao Main Image Rules: The Non-Negotiable Essentials</h2>
+<p>Taobao's image compliance system is automated and ruthless — it scans every uploaded image within seconds of submission. Unlike Amazon, Taobao does not reject images outright; instead, non-compliant images are accepted but <strong>buried in search rankings</strong>, costing you visibility without any warning message. Here are the absolute requirements every Taobao seller must follow:</p>
+<ul>
+<li><strong>Minimum resolution:</strong> 800 × 800 pixels. This is the hard floor. Images below 800px on either side trigger automatic search suppression. The practical sweet spot is <strong>1200 × 1200 to 2000 × 2000</strong> pixels — large enough for the pinch-to-zoom detail view, small enough for fast loading on 4G networks.</li>
+<li><strong>Recommended aspect ratio:</strong> Square 1:1 is the safest choice. Taobao's search grid, category browse, and mobile detail view all use square containers. Non-square images (3:2, 4:3, 16:9) are auto-cropped by Taobao's system along the center, often cutting off critical product edges. Upload in 1:1 to control exactly what shoppers see.</li>
+<li><strong>File format:</strong> JPEG (recommended) or PNG. Taobao's uploader accepts both, but JPEG at quality 85–95 delivers the best balance of visual clarity and file size. PNG is acceptable for products with transparency needs (glassware, electronics with screens), but the larger file size can slow mobile loading — a conversion killer on Taobao's predominantly mobile user base.</li>
+<li><strong>Maximum file size:</strong> 3MB per image. Taobao enforces a 3MB cap for direct uploads and a 5MB cap for certain category-specific templates. Images above these limits are compressed by Taobao's server — and not gracefully. Server-side compression often introduces visible banding, color shift, and sharpening artifacts. Always compress to under 3MB before uploading using a tool like <a href="/compress">Image Toolbox's Compress tool</a>.</li>
+<li><strong>Background:</strong> Unlike Amazon, Taobao does <strong>not</strong> require a pure white background for the main image. Many top-performing Taobao listings use lifestyle or contextual backgrounds. However, the background must not contain text, logos, watermarks, promotional badges, or competing platform logos (e.g., a Pinduoduo watermark will get your listing suppressed). If you choose a white background, aim for clean off-white (#F5F5F5 to #FAFAFA) rather than harsh RGB 255,255,255, which can look clinical and cold on Taobao's warmer UI.</li>
+<li><strong>Text and watermarks:</strong> Taobao explicitly prohibits text overlays, watermarks, brand logos, store names, and promotional copy (e.g., "50% OFF," "Free Shipping") on the main image. The system uses OCR detection to flag text-containing images, and flagged listings lose ranking weight. If you need to include a brand logo, use the dedicated brand logo slot in the listing builder — never embed it in the main image.</li>
+<li><strong>Product occupancy:</strong> The product should fill <strong>60–85%</strong> of the image frame. Taobao is more relaxed than Amazon on this — a product occupying 60% with tasteful negative space can perform well, especially in fashion and home decor categories. Below 50% fill, the product looks too small in mobile thumbnails; above 90%, the product feels cramped and shoppers cannot see surrounding context.</li>
+</ul>
+
+<h2>Category-Specific Image Requirements</h2>
+<p>Taobao applies additional image rules by category. These are less rigidly enforced than Amazon's category rules, but non-compliance still impacts search ranking and recommendation algorithm placement. Sellers reporting poor traffic despite competitive pricing often find category-specific image violations are the hidden culprit.</p>
+<h3>Apparel, Shoes, and Fashion Accessories</h3>
+<p>Fashion is Taobao's largest category by volume, and image expectations are the highest. <strong>Flat-lay photography is discouraged</strong> for the main image — Taobao's recommendation algorithm favors listings where the garment is worn on a real model facing the camera. Mannequins are acceptable but perform worse than live models. For shoes, the main image must show the product at a <strong>45-degree profile angle</strong> — front-facing shoe images look flat and underperform by an average of 22% in click-through rate, according to Taobao merchant data. Color accuracy is critical: color discrepancy complaints are the #1 return reason in fashion. Calibrate your display and shoot under consistent 5500K lighting. For multi-color variants, the main image should show the most popular color; variant-specific images are uploaded through the SKU image slot, not the main image position.</p>
+<h3>Electronics, 3C, and Digital Products</h3>
+<p>Electronics main images benefit from showing the product <strong>powered on with the screen illuminated</strong>. A black screen on a phone, tablet, or monitor signals a non-functional display unit to shoppers. The screen content should display a recognizable default interface — the home screen, a settings menu, or a demo mode — never a blank or black rectangle. For multi-component products (e.g., a phone with charger and cable), the main image must show only the primary device. Accessories should appear in alternate image slots. One often-overlooked rule: if the product package does not include batteries, at least one alternate image must clearly state this, as "item not working" returns spike when shoppers assume batteries are included.</p>
+
+<h2>Taobao vs Tmall vs Amazon: Image Requirement Comparison</h2>
+<p>If you sell across multiple platforms, understanding the differences is critical. A single image batch that works for Amazon will likely fail aspects of Taobao's system, and vice versa. Here is how the three major platforms compare on key image dimensions:</p>
+<table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;">
+<thead><tr style="background:var(--bg-secondary);">
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">Requirement</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">Taobao</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">Tmall</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">Amazon</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Background</strong></td><td style="padding:10px; border:1px solid var(--border);">Flexible — lifestyle accepted</td><td style="padding:10px; border:1px solid var(--border);">White strongly preferred</td><td style="padding:10px; border:1px solid var(--border);">Pure white mandatory (255,255,255)</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Minimum Resolution</strong></td><td style="padding:10px; border:1px solid var(--border);">800 × 800px</td><td style="padding:10px; border:1px solid var(--border);">800 × 800px</td><td style="padding:10px; border:1px solid var(--border);">1000px (longest side)</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Recommended Resolution</strong></td><td style="padding:10px; border:1px solid var(--border);">1200–2000px square</td><td style="padding:10px; border:1px solid var(--border);">1200–1600px square</td><td style="padding:10px; border:1px solid var(--border);">2000px (longest side)</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Aspect Ratio</strong></td><td style="padding:10px; border:1px solid var(--border);">1:1 safe; accepts 3:2, 4:3</td><td style="padding:10px; border:1px solid var(--border);">1:1 required</td><td style="padding:10px; border:1px solid var(--border);">1:1 recommended; 3:2, 4:3 accepted</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Max File Size</strong></td><td style="padding:10px; border:1px solid var(--border);">3MB (direct), 5MB (template)</td><td style="padding:10px; border:1px solid var(--border);">3MB</td><td style="padding:10px; border:1px solid var(--border);">10MB</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Text on Main Image</strong></td><td style="padding:10px; border:1px solid var(--border);">Prohibited (OCR enforced)</td><td style="padding:10px; border:1px solid var(--border);">Prohibited</td><td style="padding:10px; border:1px solid var(--border);">Prohibited</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>Lifestyle Shots Allowed</strong></td><td style="padding:10px; border:1px solid var(--border);">Yes, on main image</td><td style="padding:10px; border:1px solid var(--border);">Alternate slots only</td><td style="padding:10px; border:1px solid var(--border);">Alternate slots only</td></tr>
+</tbody>
+</table>
+
+<p>The difference in background rules is the most impactful for cross-platform sellers. An Amazon-ready white-background shot works for Tmall but performs <strong>below average on Taobao</strong>, where buyers expect more visual context. Conversely, a Taobao-optimized lifestyle image will be rejected on Amazon and suppressed on Tmall. <a href="/ecommerce">Image Toolbox's Ecommerce Processor</a> solves this by letting you generate platform-specific variants from a single source image — white background for Amazon, lifestyle crop for Taobao, and brand-aligned template for Tmall — in one batch operation. Pair it with <a href="/resize">Image Toolbox's Resize tool</a> to dial in the exact pixel dimensions each platform requires, and you have a complete multi-platform image workflow without ever leaving your browser.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Does Taobao require a pure white background for product images?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">No. Unlike Amazon, Taobao does not require a pure white background. Lifestyle and contextual backgrounds are not only allowed on Taobao main images — they often perform better in click-through rate. The key restriction is that the background must not contain text, logos, watermarks, promotional slogans, or competing platform branding. If you choose a white background, aim for a slightly warm off-white (#F5F5F5 to #FAFAFA) rather than clinical RGB 255,255,255, which tends to look harsh on Taobao's warm-toned interface. The only exception is Tmall (Taobao's B2C sister platform), where white backgrounds are strongly preferred and lifestyle main images are typically restricted to alternate image slots.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What image size and format works best for Taobao in 2026?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">The optimal Taobao main image specification as of 2026 is: JPEG format, quality 85–95, 1200 × 1200 to 1600 × 1600 pixels, square 1:1 aspect ratio, sRGB color space, and under 1.5MB file size for fastest mobile loading. JPEG at these settings balances crisp detail for the pinch-to-zoom feature with fast loading on China's mobile networks, where the majority of Taobao traffic originates. PNG is acceptable but file sizes will be 2–4× larger at equivalent visual quality, which hurts mobile page speed. Avoid uploading images larger than 2000px — Taobao's server compresses oversize images and the compression algorithm is not quality-optimized. Always resize and compress before uploading using a tool like <a href="/compress">Image Toolbox</a>.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I use the same product images across Taobao, Tmall, and Amazon?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Not optimally. While you can technically upload the same image to all three platforms, each platform has different optimization criteria that affect search ranking and conversion. Amazon requires pure white background and 2000px resolution; Tmall prefers white background at 1200–1600px; Taobao supports lifestyle backgrounds and benefits from more visual context. Using an Amazon-optimized image on Taobao results in a sterile, clinical look that underperforms against competitors using rich lifestyle photography. The practical solution is to generate platform-specific variants from your source photography — <a href="/ecommerce">Image Toolbox's Ecommerce Processor</a> automates this, producing Amazon-ready white background crops, Tmall-branded clean shots, and Taobao lifestyle crops from a single upload. This approach saves hours of manual editing while ensuring each platform gets images optimized for its specific algorithm and buyer expectations.</p>
+    </div>
+  </div>
+</div>`
+    },
   ];

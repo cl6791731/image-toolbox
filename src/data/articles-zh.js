@@ -2342,4 +2342,76 @@ export const articles = [
   </div>
 </div>`
     },
+    {
+      slug: 'taobao-image-requirements-2026',
+      title: '淘宝主图标准 2026：卖家必读的图片规范完全指南',
+      date: '2026-06-08',
+      tags: ['电商', '淘宝', '图片规范'],
+      content: `
+<h2>为什么淘宝主图比你想象的更重要</h2>
+<p>在淘宝上，主图不只是一张商品照片——它是你的 Listing 的门面。超过 <strong>9 亿活跃买家</strong> 在搜索结果中以闪电般的速度滚动浏览，你的主图大约只有 <strong>0.3 秒</strong> 的时间来抓住注意力并获得点击。淘宝内部数据显示，拥有优化合规主图的 Listing 点击率比普通图片高出 <strong>30-50%</strong>。技术规范到位是第一步，视觉吸引力是第二步。本指南涵盖了你需要了解的 2026 年淘宝主图所有规范。</p>
+
+<h2>淘宝主图规则：不可或缺的核心要求</h2>
+<p>淘宝的图片合规系统是自动化且不留情面的——它在图片上传后的几秒内就会扫描每一张图片。与 Amazon 不同的是，淘宝不会直接拒绝图片；相反，不合规的图片会被接受但<strong>在搜索结果中被压制排位</strong>，让你在没有任何警告的情况下损失曝光量。以下是每位淘宝卖家都必须遵守的硬性要求：</p>
+<ul>
+<li><strong>最低分辨率：</strong>800 × 800 像素。这是硬性底线。任意一边低于 800px 的图片都会触发搜索自动压制。实际操作的最佳尺寸是 <strong>1200 × 1200 到 2000 × 2000</strong> 像素——大到能显示捏合缩放细节，小到能在 4G 网络下快速加载。</li>
+<li><strong>推荐宽高比：</strong>正方形 1:1 是最安全的选择。淘宝的搜索网格、类目浏览和移动端详情页都使用正方形容器。非正方形图片（3:2、4:3、16:9）会被淘宝系统居中自动裁剪，经常会切掉关键的商品边缘。上传 1:1 的图片才能完全掌控买家看到的内容。</li>
+<li><strong>文件格式：</strong>JPEG（推荐）或 PNG。淘宝上传器两种都接受，但 JPEG 质量 85-95 提供了视觉清晰度和文件大小之间的最佳平衡。PNG 适用于需要透明背景的产品（玻璃器皿、带屏幕的电子产品），但较大的文件体积会拖慢移动端加载速度——在淘宝以移动端为主的用户群体中，这是转化率的杀手。</li>
+<li><strong>最大文件大小：</strong>每张图片 3MB。淘宝对直传图片强制 3MB 上限，对某些类目专用模板的上限为 5MB。超出这些限制的图片会被淘宝服务器压缩——而且质量并不理想。服务端压缩通常会引入可见的色带、色彩偏移和锐化伪影。上传前务必使用类似 <a href="/zh/compress">Image Toolbox 压缩工具</a> 将图片压到 3MB 以下。</li>
+<li><strong>背景：</strong>与 Amazon 不同，淘宝<strong>不</strong>要求主图使用纯白背景。许多表现优异的淘宝 Listing 使用场景化或生活化背景。但背景不能包含文字、Logo、水印、促销徽章或其他平台 Logo（例如拼多多水印会导致 Listing 被压制）。如果选择白色背景，建议使用干净的偏暖白色（#F5F5F5 到 #FAFAFA），而不是生硬的 RGB 255,255,255，后者在淘宝偏暖色调的界面上会显得冰冷刺眼。</li>
+<li><strong>文字和水印：</strong>淘宝明确禁止在主图上添加文字覆盖、水印、品牌 Logo、店铺名称和促销文案（如"5折"、"包邮"）。系统使用 OCR 检测技术来标记包含文字的图片，被标记的 Listing 会损失排名权重。如需展示品牌 Logo，请使用 Listing 编辑器中专门的品牌 Logo 位——切勿将其嵌入主图中。</li>
+<li><strong>商品占比：</strong>产品应填充画面的 <strong>60-85%</strong>。淘宝在这方面比 Amazon 宽松——产品占 60% 并留出恰当的留白空间也能表现良好，尤其是在服饰和家居装饰类目。低于 50% 的填充率会让产品在移动端缩略图中显得过小；高于 90% 则会显得拥挤，买家看不到周边环境信息。</li>
+</ul>
+
+<h2>各类目的特殊图片要求</h2>
+<p>淘宝对不同类目施加了额外的图片规则。这些规则的执行不如 Amazon 的类目规则那么严格，但不合规仍会影响搜索排名和推荐算法的推荐位。那些价格有竞争力却流量低迷的卖家，往往发现类目特定的图片违规才是隐藏的元凶。</p>
+<h3>服饰、鞋类与时尚配饰</h3>
+<p>服饰是淘宝上体量最大的类目，对图片的期望也最高。<strong>不推荐使用平铺拍摄</strong> 作为主图——淘宝的推荐算法更青睐由真人模特穿着并面向镜头的 Listing。假人模特可以接受，但表现不如真人模特。对于鞋类，主图必须以<strong>45 度侧视角</strong>展示产品——正面拍摄的鞋类图片看起来很平面，根据淘宝商家数据，点击率平均低 22%。色彩准确性至关重要：色差投诉是服饰类目退货的第一原因。校准你的显示器，在一致的 5500K 光源下拍摄。对于多色变体，主图应展示最畅销的颜色；变体图片通过 SKU 图位上传，而非主图位置。</p>
+<h3>电子、3C 和数码产品</h3>
+<p>电子产品主图展示产品<strong>开机且屏幕点亮</strong>的状态效果最好。手机、平板或显示器上的黑屏会让买家以为是故障的展示机。屏幕内容应显示可识别的默认界面——主屏幕、设置菜单或演示模式——绝不能是空白或黑色矩形。对于多组件产品（如手机配充电器和数据线），主图必须只展示主要设备。配件应放在辅图图位。一个常被忽视的规则：如果产品包装不含电池，至少有一张辅图必须明确说明，因为买家假设含电池而导致的"商品无法使用"退货会激增。</p>
+
+<h2>淘宝 vs 天猫 vs Amazon：图片要求对比</h2>
+<p>如果你在多个平台上销售，理解这些差异至关重要。一套适用于 Amazon 的图片批量处理，很可能在淘宝体系中的某些方面不合格，反之亦然。以下是三大平台在关键图片维度上的对比：</p>
+<table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;">
+<thead><tr style="background:var(--bg-secondary);">
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">要求</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">淘宝</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">天猫</th>
+<th style="padding:10px; text-align:left; border:1px solid var(--border);">Amazon</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>背景</strong></td><td style="padding:10px; border:1px solid var(--border);">灵活——接受场景图</td><td style="padding:10px; border:1px solid var(--border);">强烈推荐白底</td><td style="padding:10px; border:1px solid var(--border);">纯白必须（255,255,255）</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>最低分辨率</strong></td><td style="padding:10px; border:1px solid var(--border);">800 × 800px</td><td style="padding:10px; border:1px solid var(--border);">800 × 800px</td><td style="padding:10px; border:1px solid var(--border);">1000px（最长边）</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>推荐分辨率</strong></td><td style="padding:10px; border:1px solid var(--border);">1200–2000px 正方形</td><td style="padding:10px; border:1px solid var(--border);">1200–1600px 正方形</td><td style="padding:10px; border:1px solid var(--border);">2000px（最长边）</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>宽高比</strong></td><td style="padding:10px; border:1px solid var(--border);">1:1 最安全；接受 3:2、4:3</td><td style="padding:10px; border:1px solid var(--border);">1:1 必须</td><td style="padding:10px; border:1px solid var(--border);">1:1 推荐；接受 3:2、4:3</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>最大文件大小</strong></td><td style="padding:10px; border:1px solid var(--border);">3MB（直传）、5MB（模板）</td><td style="padding:10px; border:1px solid var(--border);">3MB</td><td style="padding:10px; border:1px solid var(--border);">10MB</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>主图文字</strong></td><td style="padding:10px; border:1px solid var(--border);">禁止（OCR 强制）</td><td style="padding:10px; border:1px solid var(--border);">禁止</td><td style="padding:10px; border:1px solid var(--border);">禁止</td></tr>
+<tr><td style="padding:10px; border:1px solid var(--border);"><strong>场景图是否允许</strong></td><td style="padding:10px; border:1px solid var(--border);">是，可作为主图</td><td style="padding:10px; border:1px solid var(--border);">仅限辅图位</td><td style="padding:10px; border:1px solid var(--border);">仅限辅图位</td></tr>
+</tbody>
+</table>
+
+<p>背景规则的差异对多平台卖家影响最大。一张 Amazon 合规的白底产品图在天猫上没问题，但在淘宝上表现<strong>低于平均水平</strong>，因为买家期望更多的视觉场景。反过来，一张为淘宝优化的场景图会被 Amazon 拒绝、在天猫上被压制。<a href="/zh/ecommerce">Image Toolbox 的电商处理器</a> 解决了这个问题——让你从同一张源图片生成各平台适配的变体：Amazon 的白底裁剪、淘宝的场景裁剪和天猫的品牌化清爽图——一次批量操作即可完成。搭配 <a href="/zh/resize">Image Toolbox 的尺寸调整工具</a> 精确设定各平台所需的像素尺寸，你就能在不离开浏览器的情况下，拥有完整的多平台图片工作流。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">淘宝要求产品图片必须是纯白背景吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不要求。与 Amazon 不同，淘宝不强制纯白背景。场景化和生活化背景在淘宝主图上不仅被允许——往往点击率表现更好。关键限制是背景中不能包含文字、Logo、水印、促销口号或其他平台品牌标识。如果选择白色背景，建议使用略微偏暖的白色（#F5F5F5 到 #FAFAFA），而不是生硬的 RGB 255,255,255，后者在淘宝偏暖色调的界面上会显得冷硬刺眼。唯一的例外是天猫（淘宝的 B2C 姊妹平台），那里白底被强烈推荐，场景化主图通常只能放在辅图位。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">2026 年淘宝主图用什么尺寸和格式效果最好？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">截至 2026 年，淘宝主图的最佳规格是：JPEG 格式、质量 85-95、1200 × 1200 到 1600 × 1600 像素、正方形 1:1 宽高比、sRGB 色彩空间、文件体积控制在 1.5MB 以下以确保最快移动端加载。这些参数下的 JPEG 能在捏合缩放功能中保持清晰细节，同时在中国移动端网络（淘宝主要流量来源）上快速加载。PNG 也可以接受，但在同等视觉质量下文件体积会大 2-4 倍，损害移动端页面速度。避免上传超过 2000px 的图片——淘宝服务器会压缩过大的图片，且压缩算法并非质量优化型。上传前务必使用 <a href="/zh/compress">Image Toolbox</a> 等工具进行尺寸调整和压缩。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">我能在淘宝、天猫和 Amazon 上用同一套产品图片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">技术上可行但效果不佳。虽然你可以把同一张图片上传到三个平台，但每个平台有不同的优化标准，会影响搜索排名和转化率。Amazon 要求纯白背景和 2000px 分辨率；天猫偏好白底 1200-1600px；淘宝支持场景化背景并受益于更丰富的视觉信息。在淘宝上使用 Amazon 优化的图片会呈现一种冷淡、刻板的视觉效果，在竞争对手采用丰富场景摄影的对比下表现不佳。实际解决方案是从你的原始摄影素材生成各平台适配的变体——<a href="/zh/ecommerce">Image Toolbox 的电商处理器</a> 可以自动化这一过程，从一次上传生成 Amazon 合规的白底裁剪图、天猫品牌化的清爽图和淘宝场景化裁剪图。这种方式节省了数小时的手动编辑时间，同时确保每个平台都能获得针对其算法和买家期望优化的图片。</p>
+    </div>
+  </div>
+</div>`
+    },
   ];
