@@ -20,6 +20,7 @@ const description = 'Learn about image formats, compression techniques, watermar
         <article class="article-card">
           <div class="meta">{article.date}</div>
           <h2><a href={`/articles/${article.slug}`}>{article.title}</a></h2>
+          {article.summary && <p class="summary">{article.summary}</p>}
           <div class="tags">
             {article.tags.map((tag) => (
               <span class="tag">{tag}</span>

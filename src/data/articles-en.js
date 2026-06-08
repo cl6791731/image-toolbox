@@ -4,6 +4,7 @@ export const articles = [
       title: 'WebP vs JPG: Which is Better for Websites?',
       date: '2026-04-29',
       tags: ['format', 'webp', 'optimization'],
+      summary: 'WebP and JPG (JPEG) are two of the most widely used image formats on the web today. JPG has been the de facto standard for photographs since the ea...',
       content: `
 <h2>What Are WebP and JPG?</h2>
 <p>WebP and JPG (JPEG) are two of the most widely used image formats on the web today. JPG has been the de facto standard for photographs since the early 1990s, while WebP was introduced by Google in 2010 as a modern alternative designed specifically for web performance. Understanding the differences between these formats is crucial for anyone building websites, running online stores, or managing digital content.</p>
@@ -72,6 +73,7 @@ export const articles = [
       title: 'How to Compress Images Under 200KB',
       date: '2026-04-30',
       tags: ['compression', 'tutorial'],
+      summary: 'The 200KB threshold is one of the most common file size limits you\'ll encounter online. Many websites, job application portals, email clients, and ...',
       content: `
 <h2>Why the 200KB Limit Matters</h2>
 <p>The 200KB threshold is one of the most common file size limits you'll encounter online. Many websites, job application portals, email clients, and government forms restrict image uploads to 200KB or less. Social media platforms also compress images aggressively, and starting with a smaller file often means less quality loss during their re-processing.</p>
@@ -130,6 +132,7 @@ export const articles = [
       title: 'PNG vs JPG: The Complete Guide',
       date: '2026-05-01',
       tags: ['format', 'beginner'],
+      summary: 'PNG and JPG take fundamentally different approaches to image compression. PNG (Portable Network Graphics) uses lossless compression — every pixel i...',
       content: `
 <h2>The Fundamental Difference: Lossless vs Lossy</h2>
 <p>PNG and JPG take fundamentally different approaches to image compression. <strong>PNG (Portable Network Graphics)</strong> uses lossless compression — every pixel is preserved exactly as it was in the original image. <strong>JPG (Joint Photographic Experts Group)</strong> uses lossy compression — some pixel data is deliberately discarded to achieve smaller file sizes.</p>
@@ -196,6 +199,7 @@ export const articles = [
       title: 'WebP vs JPG: Which Image Format Should You Use in 2026?',
       date: '2026-05-02',
       tags: ['format', 'webp', 'optimization'],
+      summary: 'When it comes to web performance, every kilobyte counts. WebP, developed by Google in 2010, consistently delivers 25–35% smaller file sizes than JP...',
       content: `<h2>File Size Comparison: Same Quality, Smaller Files</h2>
 <p>When it comes to web performance, every kilobyte counts. WebP, developed by Google in 2010, consistently delivers <strong>25–35% smaller file sizes</strong> than JPG at equivalent visual quality. For a typical 1920×1080 photograph, a high-quality JPG might weigh 800KB, while the same image as WebP comes in around 520KB. Multiply that difference across a gallery of 20 images, and you're looking at several megabytes of savings — which translates directly to faster page loads and better Core Web Vitals scores.</p>
 <p>WebP achieves this through more advanced compression algorithms. While JPG relies on discrete cosine transform (DCT) from the early 1990s, WebP uses predictive coding and block prediction similar to video codecs. The result is smoother gradients, fewer blocking artifacts at low quality settings, and better handling of sharp edges.</p>
@@ -241,6 +245,7 @@ export const articles = [
       title: 'PNG vs JPG: The Complete Guide for Beginners',
       date: '2026-05-03',
       tags: ['format', 'beginner', 'comparison'],
+      summary: 'At the core of every PNG vs JPG debate is a single technical distinction: lossless versus lossy compression. PNG preserves every single pixel exact...',
       content: `<h2>The Fundamental Difference: Lossless vs Lossy</h2>
 <p>At the core of every PNG vs JPG debate is a single technical distinction: <strong>lossless versus lossy compression</strong>. PNG preserves every single pixel exactly as it appeared in the original image. No data is discarded. JPG, by contrast, deliberately throws away information that the human eye is less likely to notice — primarily fine details in high-frequency areas like grass, hair, and textured surfaces.</p>
 <p>This difference explains the file size gap. A 4000×3000 pixel photograph saved as PNG might occupy 15–25MB, while the same photo as JPG at 85% quality weighs just 2–4MB. For screenshots and graphics with large solid-color areas, however, PNG often compresses just as efficiently as JPG, sometimes even better.</p>
@@ -285,6 +290,7 @@ export const articles = [
       title: 'How to Convert HEIC to JPG Online (iPhone & Android)',
       date: '2026-05-04',
       tags: ['heic', 'iphone', 'tutorial'],
+      summary: 'HEIC (High Efficiency Image Container) is the default photo format on modern iPhones and many Android devices. Apple adopted it in 2017 with iOS 11...',
       content: `<h2>What Is HEIC and Why Is It So Annoying?</h2>
 <p>HEIC (High Efficiency Image Container) is the default photo format on modern iPhones and many Android devices. Apple adopted it in 2017 with iOS 11 because it produces files roughly half the size of JPG at the same visual quality. Sounds great — until you try to open that photo on a Windows PC, upload it to a website, or attach it to an email. Suddenly you're staring at an "unsupported file format" error.</p>
 <p>The problem is ecosystem lock-in. While macOS and iOS handle HEIC natively, Windows 10 and older versions require a paid codec extension. Most web browsers, content management systems, and online forms don't support HEIC at all. The result? A beautifully captured memory that you can't easily share or use outside the Apple ecosystem.</p>
@@ -534,6 +540,7 @@ export const articles = [
       title: 'Lossy vs Lossless Compression: When to Use Which',
       date: '2026-05-09',
       tags: ['compression', 'format', 'optimization'],
+      summary: 'Lossy compression is the technology behind some of the most common image formats you use every day: JPG, WebP, and AVIF. The core idea is simple — ...',
       content: `<h2>What Is Lossy Compression?</h2>
 <p>Lossy compression is the technology behind some of the most common image formats you use every day: JPG, WebP, and AVIF. The core idea is simple — discard data that the human eye is less sensitive to, in exchange for dramatically smaller file sizes. This process is irreversible: once pixels are thrown away, they cannot be recovered.</p>
 <p>When you save a photo as JPG at 80% quality, the encoder analyzes the image and removes fine details in color transitions, high-frequency textures, and subtle gradients. The result is a file that might be 5–10× smaller than the original, with minimal visible degradation. For photographs, this trade-off is usually worth it. However, lossy compression performs poorly on graphics with sharp edges, text, or large areas of solid color — artifacts become obvious.</p>
@@ -586,6 +593,7 @@ export const articles = [
       title: 'How to Compress Images for Faster Website Loading',
       date: '2026-05-10',
       tags: ['compression', 'web performance', 'seo'],
+      summary: 'Images are the single heaviest component of most web pages. According to HTTP Archive, images account for 50–80% of total page weight on the averag...',
       content: `<h2>Why Image Size Kills Your Page Speed</h2>
 <p>Images are the single heaviest component of most web pages. According to HTTP Archive, images account for <strong>50–80% of total page weight</strong> on the average website. A homepage with 2MB of unoptimized images will load noticeably slower than one with 400KB of optimized images — especially on mobile connections where bandwidth is limited and latency is high.</p>
 <p>Google has made page speed a direct ranking factor. Slow-loading pages suffer in search results, experience higher bounce rates, and convert fewer visitors into customers. The good news? Image optimization is one of the highest-impact, lowest-effort improvements you can make.</p>
@@ -639,6 +647,7 @@ export const articles = [
       title: 'How to Make a Photo Smaller on iPhone and Android',
       date: '2026-05-11',
       tags: ['mobile', 'compression', 'tutorial'],
+      summary: 'By default, modern iPhones capture photos in HEIC format, which produces smaller files than JPG but is not universally compatible. If you frequentl...',
       content: `<h2>iPhone: Change Camera Capture Format</h2>
 <p>By default, modern iPhones capture photos in HEIC format, which produces smaller files than JPG but is not universally compatible. If you frequently share photos with Windows users or upload to older websites, you may want to switch to "Most Compatible" mode:</p>
 <ol>
@@ -691,6 +700,7 @@ export const articles = [
       title: 'Bulk Image Compression: Process 50 Photos at Once',
       date: '2026-05-12',
       tags: ['batch', 'compression', 'workflow'],
+      summary: 'If you\'ve ever tried to optimize images one by one, you know how tedious it is. Now imagine doing it for an entire product catalog, a vacation phot...',
       content: `<h2>Why Batch Compression Saves Hours</h2>
 <p>If you've ever tried to optimize images one by one, you know how tedious it is. Now imagine doing it for an entire product catalog, a vacation photo album, or a month's worth of blog post images. Processing 50 images individually could take over an hour. With batch compression, the same task takes under five minutes.</p>
 <p>Batch compression is essential for:</p>
@@ -753,6 +763,7 @@ export const articles = [
       title: 'Social Media Image Sizes 2026: The Complete Cheat Sheet',
       date: '2026-05-13',
       tags: ['social media', 'resize', 'dimensions'],
+      summary: 'Instagram uses multiple aspect ratios depending on the content type. Using the wrong dimensions means your image gets cropped unpredictably:',
       content: `<h2>Instagram Image Sizes</h2>
 <p>Instagram uses multiple aspect ratios depending on the content type. Using the wrong dimensions means your image gets cropped unpredictably:</p>
 <ul>
@@ -822,6 +833,7 @@ export const articles = [
       title: 'How to Crop a Photo to Passport Size (1×1, 2×2, 35×45mm)',
       date: '2026-05-14',
       tags: ['crop', 'passport', 'resize'],
+      summary: 'Passport photo requirements vary significantly between countries. Using the wrong dimensions is one of the most common reasons applications get rej...',
       content: `<h2>Official Passport Photo Dimensions by Country</h2>
 <p>Passport photo requirements vary significantly between countries. Using the wrong dimensions is one of the most common reasons applications get rejected:</p>
 <ul>
@@ -896,6 +908,7 @@ export const articles = [
       title: 'How to Crop Images for Instagram Without Losing Quality',
       date: '2026-05-15',
       tags: ['crop', 'instagram', 'social media'],
+      summary: 'Instagram doesn\'t display images at their uploaded resolution. Instead, it crops and compresses them based on the aspect ratio. Here\'s what most us...',
       content: `<h2>Instagram's Secret Crop Behavior</h2>
 <p>Instagram doesn't display images at their uploaded resolution. Instead, it crops and compresses them based on the aspect ratio. Here's what most users don't realize: <strong>vertical images at 4:5 ratio receive the most screen real estate</strong> in the feed, while horizontal images are shrunk to fit a much smaller area. This directly impacts engagement — larger images get more attention, more likes, and more comments.</p>
 <p>When you upload an image, Instagram's algorithm also applies compression. A 10MB original might be served to viewers at under 200KB. Starting with the correct dimensions and a high-quality source file ensures the compressed version still looks sharp.</p>
@@ -951,6 +964,7 @@ export const articles = [
       title: 'How to Resize Images for E-Commerce (Amazon, eBay, Shopify)',
       date: '2026-05-16',
       tags: ['resize', 'ecommerce', 'amazon'],
+      summary: 'Amazon has some of the strictest image requirements in e-commerce. Non-compliant images can suppress listings or prevent products from appearing in...',
       content: `<h2>Amazon Product Image Requirements</h2>
 <p>Amazon has some of the strictest image requirements in e-commerce. Non-compliant images can suppress listings or prevent products from appearing in search:</p>
 <ul>
@@ -1024,6 +1038,7 @@ export const articles = [
       title: 'How to Maintain Aspect Ratio When Resizing Images',
       date: '2026-05-17',
       tags: ['resize', 'aspect ratio', 'tutorial'],
+      summary: 'Aspect ratio describes the proportional relationship between an image\'s width and height, expressed as two numbers separated by a colon. Common rat...',
       content: `<h2>What Is Aspect Ratio and Why Does It Matter?</h2>
 <p>Aspect ratio describes the proportional relationship between an image's width and height, expressed as two numbers separated by a colon. Common ratios include:</p>
 <ul>
@@ -1092,6 +1107,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       title: 'How to Crop a Screenshot to Remove Unwanted UI Elements',
       date: '2026-05-18',
       tags: ['crop', 'screenshot', 'tutorial'],
+      summary: 'Screenshots capture everything on your screen — and "everything" often includes elements you don\'t want to share:',
       content: `<h2>Why Screenshots Need Cropping</h2>
 <p>Screenshots capture everything on your screen — and "everything" often includes elements you don't want to share:</p>
 <ul>
@@ -1162,6 +1178,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       title: 'How to Create Perfect YouTube Thumbnails (1280×720)',
       date: '2026-05-19',
       tags: ['youtube', 'thumbnail', 'crop', 'resize'],
+      summary: 'YouTube thumbnails display at 1280 × 720 pixels — a 16:9 widescreen ratio that matches the video player. This isn\'t arbitrary. The 16:9 ratio ensur...',
       content: `<h2>Why 1280×720 Is the YouTube Standard</h2>
 <p>YouTube thumbnails display at 1280 × 720 pixels — a 16:9 widescreen ratio that matches the video player. This isn't arbitrary. The 16:9 ratio ensures your thumbnail looks correct across all devices: desktops, tablets, phones, and smart TVs. Uploading at exactly 1280 × 720 guarantees YouTube won't crop or distort your image during processing.</p>
 <p>File size matters too. YouTube recommends keeping thumbnails under 2MB. A well-compressed JPG at 80% quality typically achieves this while maintaining visual clarity. Larger files upload slower and may be rejected by YouTube's processing pipeline.</p>
@@ -1220,6 +1237,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       title: 'How to Add a Watermark to Photos: Best Practices for 2026',
       date: '2026-05-20',
       tags: ['watermark', 'copyright', 'branding'],
+      summary: 'In an age of AI image generation and instant screenshot sharing, you might wonder if watermarks are still relevant. The answer is yes — but for dif...',
       content: `<h2>Why Watermarks Still Matter</h2>
 <p>In an age of AI image generation and instant screenshot sharing, you might wonder if watermarks are still relevant. The answer is yes — but for different reasons than a decade ago. Watermarks today serve three primary purposes:</p>
 <ul>
@@ -1286,6 +1304,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       title: 'Does Adding a Watermark Really Stop Image Theft?',
       date: '2026-05-21',
       tags: ['watermark', 'copyright', 'protection'],
+      summary: 'Let\'s be direct: a watermark will not stop a determined thief. In 2026, anyone with basic editing skills can remove a corner watermark in under 30 ...',
       content: `<h2>The Honest Answer: Partial Protection Only</h2>
 <p>Let's be direct: a watermark will not stop a determined thief. In 2026, anyone with basic editing skills can remove a corner watermark in under 30 seconds using free tools. AI-powered inpainting features in Photoshop, GIMP, and online editors can seamlessly erase text overlays and reconstruct the underlying image.</p>
 <p>So why bother with watermarks at all? Because <strong>watermarks are not about stopping professional thieves — they're about deterring casual misuse</strong>. The teenager who screenshots your photo for their blog, the small business that grabs your image for a Facebook post, the aggregator site that bulk-collects unmarked photos — these are the users watermarks actually stop.</p>
@@ -1346,6 +1365,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       title: 'How to Remove EXIF Data from Photos Before Sharing',
       date: '2026-05-22',
       tags: ['privacy', 'exif', 'metadata'],
+      summary: 'Every time you take a photo with a smartphone or digital camera, the device embeds hidden metadata called EXIF (Exchangeable Image File Format). Th...',
       content: `<h2>What Is EXIF Data and Why Is It Dangerous?</h2>
 <p>Every time you take a photo with a smartphone or digital camera, the device embeds hidden metadata called EXIF (Exchangeable Image File Format). This data includes:</p>
 <ul>
@@ -1413,6 +1433,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       title: 'How to Create a Transparent PNG Logo from a JPG',
       date: '2026-05-23',
       tags: ['png', 'logo', 'transparency', 'format'],
+      summary: 'A logo without a transparent background is like a painting permanently glued to a white canvas. It limits where and how you can use it. A transpare...',
       content: `<h2>Why Logos Need Transparent Backgrounds</h2>
 <p>A logo without a transparent background is like a painting permanently glued to a white canvas. It limits where and how you can use it. A transparent PNG logo can be placed on any background color — dark websites, colorful social media banners, presentation slides, merchandise, and video overlays — without an awkward white box surrounding it.</p>
 <p>Consider these real-world scenarios:</p>
@@ -1470,6 +1491,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       title: 'Image SEO: How to Optimize Images for Google Search Rankings',
       date: '2026-05-24',
       tags: ['seo', 'optimization', 'google'],
+      summary: 'Google\'s search ecosystem has shifted dramatically toward visual content. Google Images now drives over 20% of all web searches, and the rise of vi...',
       content: `<h2>Why Image SEO Matters More Than Ever</h2>
 <p>Google's search ecosystem has shifted dramatically toward visual content. Google Images now drives over 20% of all web searches, and the rise of visual search — where users upload photos instead of typing queries — has made image optimization a critical SEO discipline.</p>
 <p>Beyond discovery, images directly impact Core Web Vitals, which Google uses as a ranking signal. Slow-loading images hurt your Largest Contentful Paint (LCP) score, potentially pushing your page down in search results. Optimized images, conversely, improve both rankings and user experience simultaneously.</p>
@@ -1531,6 +1553,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'How to Fix "Image Upload Failed: File Too Large" Errors',
       date: '2026-05-25',
       tags: ['upload', 'error', 'compression', 'resize'],
+      summary: 'Every platform that accepts image uploads imposes size limits. Exceeding these limits triggers the dreaded "File too large" error. Here are the lim...',
       content: `<h2>Common Platform Size Limits</h2>
 <p>Every platform that accepts image uploads imposes size limits. Exceeding these limits triggers the dreaded "File too large" error. Here are the limits you need to know:</p>
 <ul>
@@ -1596,6 +1619,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'TIFF vs PNG: Which Is Better for Archiving and Printing?',
       date: '2026-05-26',
       tags: ['tiff', 'png', 'archive', 'printing'],
+      summary: 'TIFF (Tagged Image File Format) has been the gold standard in professional imaging since the 1980s. Unlike consumer formats designed for web delive...',
       content: `<h2>What Is TIFF and Who Uses It?</h2>
 <p>TIFF (Tagged Image File Format) has been the gold standard in professional imaging since the 1980s. Unlike consumer formats designed for web delivery, TIFF was built for maximum fidelity and editing flexibility. Its primary users include:</p>
 <ul>
@@ -1667,6 +1691,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'How to Combine Multiple Images into One Collage (Grid Layout)',
       date: '2026-05-27',
       tags: ['collage', 'grid', 'crop', 'resize'],
+      summary: 'Collages come in endless variations, but certain layouts dominate because they balance visual interest with structural simplicity:',
       content: `<h2>Popular Collage Layouts</h2>
 <p>Collages come in endless variations, but certain layouts dominate because they balance visual interest with structural simplicity:</p>
 <ul>
@@ -1735,6 +1760,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'The Ultimate Image Processing Checklist for 2026',
       date: '2026-05-28',
       tags: ['checklist', 'workflow', 'best practices'],
+      summary: 'The format you choose determines file size, quality, and compatibility. Use this decision tree:',
       content: `<h2>Step 1: Choose the Right Format</h2>
 <p>The format you choose determines file size, quality, and compatibility. Use this decision tree:</p>
 <ul>
@@ -1816,6 +1842,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'Instagram Image Size Guide 2026: Complete Dimensions for All Post Types',
       date: '2026-05-29',
       tags: ['instagram', 'social-media', 'sizes'],
+      summary: 'Instagram remains one of the most visually demanding social platforms, and getting your image dimensions wrong can ruin your content\'s first impres...',
       content: `
 <h2>Why Instagram Image Sizes Matter in 2026</h2>
 <p>Instagram remains one of the most visually demanding social platforms, and getting your image dimensions wrong can ruin your content's first impression. A photo that looked perfect in your camera roll can appear pixelated, awkwardly cropped, or — worst of all — get cut off mid-message when posted at the wrong size. In 2026, with Instagram supporting everything from tiny Stories to sprawling carousel posts, understanding the exact specifications for each format is essential for creators, brands, and marketers alike.</p>
@@ -1874,6 +1901,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'TikTok Cover Photo Size Guide 2026: Complete Dimensions & Best Practices',
       date: '2026-05-30',
       tags: ['tiktok', 'social-media', 'sizes'],
+      summary: 'TikTok has evolved far beyond a lip-syncing app. With over 1.5 billion monthly active users, it is now a discovery engine where your profile and vi...',
       content: `
 <h2>Why Your TikTok Cover Image Matters More Than You Think</h2>
 <p>TikTok has evolved far beyond a lip-syncing app. With over 1.5 billion monthly active users, it is now a discovery engine where your profile and video covers serve as miniature billboards. A well-designed cover image is often the difference between a user tapping your video or scrolling past it in a fraction of a second. Yet most creators upload whatever thumbnail TikTok auto-generates — a gamble that rarely pays off.</p>
@@ -1929,6 +1957,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'YouTube Thumbnail Size Guide 2026: Perfect Dimensions for Every Device',
       date: '2026-06-01',
       tags: ['youtube', 'thumbnail', 'social-media', 'sizes'],
+      summary: 'YouTube processes over 3.7 million new videos every single day. In a content ocean that vast, your thumbnail is the lifeboat that pulls viewers abo...',
       content: `
 <h2>Why YouTube Thumbnails Are Your Most Important Asset</h2>
 <p>YouTube processes over 3.7 million new videos every single day. In a content ocean that vast, your thumbnail is the lifeboat that pulls viewers aboard — or lets them drift past. A well-designed thumbnail can increase your click-through rate (CTR) by 30% or more, making it the single highest-ROI visual asset you will ever create for your channel. Yet a surprising number of creators upload thumbnails that are blurry, poorly cropped, or outright invisible on certain devices.</p>
@@ -1989,6 +2018,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'Xiaohongshu Image Size Guide 2026: Complete Dimensions for Notes, Covers & Ads',
       date: '2026-06-02',
       tags: ['xiaohongshu', 'social-media', 'sizes', 'red'],
+      summary: 'Xiaohongshu (also known as RED) has evolved from a shopping recommendation app into China\'s most influential lifestyle platform, boasting over 300 ...',
       content: `
 <h2>Why Xiaohongshu Image Sizes Matter for Your Content Strategy</h2>
 <p>Xiaohongshu (also known as RED) has evolved from a shopping recommendation app into China's most influential lifestyle platform, boasting over 300 million monthly active users. Unlike Western social platforms where casual snapshots dominate, Xiaohongshu users expect <strong>magazine-quality visuals</strong> in every post. A poorly sized, pixelated, or awkwardly cropped image doesn't just underperform — it signals amateurism in a community that rewards polish and curation above all else.</p>
@@ -2053,6 +2083,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'Douyin Cover Photo Size Guide 2026: Complete Dimensions & Design Tips',
       date: '2026-06-03',
       tags: ['douyin', 'social-media', 'sizes', 'cover'],
+      summary: 'Douyin (the Chinese counterpart of TikTok owned by ByteDance) has grown into one of the world\'s largest short-video platforms with over 700 million...',
       content: `
 <h2>Why Douyin Cover Size Matters More Than You Think</h2>
 <p>Douyin (the Chinese counterpart of TikTok owned by ByteDance) has grown into one of the world's largest short-video platforms with over 700 million daily active users in China alone. While most creators obsess over video content — lighting, scripting, editing — the humble cover photo is the silent gatekeeper that determines whether anyone actually watches. On Douyin's rapid-swipe feed, users decide to engage or scroll past in <strong>under 0.3 seconds</strong>. Your cover image, rendered at roughly 108 × 192 pixels in the profile grid and approximately 200 × 355 in the recommendation feed, is the only piece of visual real estate you control before the video auto-plays.</p>
@@ -2112,6 +2143,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'WebP vs AVIF: Complete Benchmark & Which Format Wins in 2026',
       date: '2026-06-04',
       tags: ['format', 'webp', 'avif', 'web-optimization'],
+      summary: 'The image format landscape has changed dramatically since 2020. For decades, JPEG ruled the web — it was lightweight, universally supported, and "g...',
       content: `
 <h2>What Are WebP and AVIF? A Tale of Two Modern Formats</h2>
 <p>The image format landscape has changed dramatically since 2020. For decades, JPEG ruled the web — it was lightweight, universally supported, and "good enough." Then WebP arrived in 2010 from Google, promising 25-35% smaller files than JPEG at equivalent quality. Fast forward to 2019, and the Alliance for Open Media released AVIF (AV1 Image File Format), built on the same AV1 video codec that powers Netflix and YouTube's 4K streaming. AVIF raised the bar again, delivering <strong>up to 50% smaller file sizes</strong> than JPEG at the same visual quality — and often 20-30% smaller than WebP itself.</p>
@@ -2196,6 +2228,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'Why Instagram Photos Are Blurry? 7 Real Fixes That Work (2026)',
       date: '2026-06-05',
       tags: ['social-media', 'instagram', 'image-quality', 'troubleshooting'],
+      summary: 'You spend 20 minutes editing a photo in Lightroom until every shadow and highlight is perfect. You export it at full resolution, upload it to Insta...',
       content: `
 <h2>The Frustration Is Real: Why Your Perfect Photo Looks Terrible on Instagram</h2>
 <p>You spend 20 minutes editing a photo in Lightroom until every shadow and highlight is perfect. You export it at full resolution, upload it to Instagram, and — wait, why does it look like it was taken with a 2007 flip phone? If this has happened to you, you're not alone. Instagram's compression algorithm is one of the most aggressive in the social media industry, and understanding exactly how it works is the difference between crisp, professional-looking posts and a blurry mess.</p>
@@ -2265,6 +2298,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       title: 'Amazon Product Image Requirements 2026: Complete Seller Guide',
       date: '2026-06-06',
       tags: ['ecommerce', 'amazon', 'product-images', 'optimization'],
+      summary: 'Amazon processes over 400 million products and 3.5 billion customer searches per month. The first thing a shopper sees when scrolling through searc...',
       content: `
 <h2>Why Amazon Images Make or Break Your Sales</h2>
 <p>Amazon processes over 400 million products and 3.5 billion customer searches per month. The first thing a shopper sees when scrolling through search results is your main image — and you have roughly <strong>0.3 seconds</strong> to make them click. A professionally compliant product image is not just about looking good; it's about meeting Amazon's strict technical specifications so your listing doesn't get suppressed, your Buy Box eligibility stays intact, and your conversion rate doesn't tank because of a blurry or non-compliant image. This guide breaks down every Amazon image requirement as of 2026, from main image rules to lifestyle photo best practices, so you can build listings that rank, convert, and stay compliant.</p>

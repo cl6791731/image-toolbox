@@ -9,27 +9,58 @@ const description = 'Image Toolbox 是一个免费、注重隐私的在线图片
 <Layout title={title} description={description} lang="zh">
   <Breadcrumb items={[{label:'首页', href:'/zh/'}, {label:'关于我们'}]} />
 
-
   <article class="page-content">
     <h1>关于 Image Toolbox</h1>
 
-    <p>Image Toolbox 的使命很简单：让用户无需安装软件、无需上传文件到远程服务器，就能快速、免费、私密地处理图片。</p>
+    <p>Image Toolbox 是一个免费的、基于浏览器的图片处理工具包，专为摄影师、设计师、开发者以及所有经常处理图片的人打造。与大多数需要将文件上传到远程服务器的在线工具不同，Image Toolbox 的所有操作都在你的<strong>浏览器内完成</strong> — 你的图片永远不会离开你的设备。</p>
 
-    <h2>为什么选择本地处理？</h2>
-    <p>大多数在线图片工具要求你将文件上传到服务器。这意味着：</p>
+    <h2>我们的使命</h2>
+    <p>我们创建 Image Toolbox 是因为厌倦了在便利和隐私之间做取舍。每次需要快速转换 iPhone 的 HEIC 照片、压缩网站图片，或调整截图尺寸用于社交媒体时，我们都要么安装桌面软件，要么把个人照片上传到某个未知的服务器。</p>
+    <p>我们相信一定有更好的方式。现代浏览器功能强大 — 它们可以解码 HEIC 文件、编码 WebP 和 AVIF、添加水印、执行复杂的图片操作，而无需通过网络传输任何数据。Image Toolbox 将这些能力整合到一个简单、快速的界面中，任何人都能使用。</p>
+
+    <h2>工作原理</h2>
+    <p>当你在 Image Toolbox 上传图片时，文件通过 FileReader API 直接由浏览器读取。所有处理 — 格式转换、压缩、裁切、缩放、水印 — 都使用 HTML5 Canvas API 和 WebAssembly 解码器（如用于 HEIC 支持的 libheif-js）完成。处理结果以 Blob 形式生成，你可以直接下载。</p>
+    <p>在整个过程中，你的图片数据不会发送到任何服务器。没有后端、没有数据库、也没有分析你的图片内容的追踪工具。这不是隐私政策，而是架构层面的技术保证。</p>
+
+    <h2>隐私优先设计</h2>
+    <p>隐私不是事后添加的功能，而是我们的根基。具体来说：</p>
     <ul>
-      <li>你的图片被存储在别人的电脑上</li>
-      <li>你必须相信他们的隐私政策</li>
-      <li>上传和下载需要时间</li>
-      <li>大文件可能失败或超时</li>
+      <li><strong>无需上传：</strong>图片在浏览器内处理，绝不通过网络传输</li>
+      <li><strong>无需注册：</strong>没有账号、没有登录、不收集邮箱</li>
+      <li><strong>无追踪：</strong>我们不对你的图片活动使用 Cookie、指纹识别或第三方分析</li>
+      <li><strong>不存储：</strong>图片仅保存在浏览器内存中，关闭标签页即清除</li>
+      <li><strong>开源架构：</strong>源代码在 <a href="https://github.com/cl6791731/image-toolbox" target="_blank" rel="noopener">GitHub</a> 上公开，任何人都可以审计</li>
     </ul>
-    <p>Image Toolbox 通过在浏览器中完全运行来解决所有这些问题。你的图片永远不会离开你的设备。</p>
 
     <h2>支持的格式</h2>
-    <p>PNG、JPG、WebP、GIF、BMP、SVG、AVIF、ICO、TIFF 等。我们使用现代浏览器 API 原生处理转换和压缩。</p>
+    <p>Image Toolbox 支持多种图片格式的输入和输出：</p>
+    <ul>
+      <li><strong>输入：</strong>JPG、PNG、WebP、GIF、BMP、SVG、AVIF、ICO、TIFF、HEIC/HEIF</li>
+      <li><strong>输出：</strong>JPG、PNG、WebP、AVIF、BMP、ICO、TIFF</li>
+    </ul>
+    <p>HEIC 支持由 <a href="https://github.com/nicholasgasior/libheif-js" target="_blank" rel="noopener">libheif-js</a> 提供，这是一个编译为 WebAssembly 的 libheif 版本，可在浏览器中直接解码 iPhone HEIC 文件。TIFF 导出使用内置编码器以确保最大兼容性。</p>
 
-    <h2>开源理念</h2>
-    <p>我们相信尊重隐私的工具应该对所有人开放。无需注册，无需付费墙，没有追踪像素。</p>
+    <h2>包含的工具</h2>
+    <p>Image Toolbox 包含七个专用工具，每个专注于特定任务：</p>
+    <ul>
+      <li><strong>格式转换器</strong> — 在 JPG、PNG、WebP、AVIF、BMP、ICO、TIFF 之间转换，支持质量控制</li>
+      <li><strong>图片压缩</strong> — 在保持视觉质量的同时减小文件大小，支持批量处理</li>
+      <li><strong>图片裁切</strong> — 使用可视化裁切框和毫米尺寸显示，裁切为任意尺寸</li>
+      <li><strong>水印工具</strong> — 添加文字或图片水印，可自定义透明度、位置和大小</li>
+      <li><strong>尺寸调整</strong> — 将图片缩放到精确像素尺寸，同时保持宽高比</li>
+      <li><strong>社交媒体缩放</strong> — 为 Instagram、TikTok、YouTube、Facebook 等预设模板</li>
+      <li><strong>网页优化器</strong> — 针对网页交付优化图片，支持特定格式的压缩</li>
+    </ul>
+
+    <h2>联系我们</h2>
+    <p>有问题、反馈或发现了 Bug？我们很乐意听到你的声音。</p>
+    <ul>
+      <li><strong>邮箱：</strong>ylnjs@live.com</li>
+      <li><strong>GitHub：</strong><a href="https://github.com/cl6791731/image-toolbox" target="_blank" rel="noopener">github.com/cl6791731/image-toolbox</a> — 提交 Issue 或参与贡献</li>
+    </ul>
+
+    <h2>法律声明</h2>
+    <p>Image Toolbox 以现状提供，供教育和实际使用。详情请参阅我们的<a href="/zh/privacy">隐私政策</a>。我们遵守 GDPR，不通过此服务收集、存储或处理任何个人数据。</p>
   </article>
 </Layout>
 
@@ -41,4 +72,6 @@ const description = 'Image Toolbox 是一个免费、注重隐私的在线图片
   .page-content p { font-size: 16px; line-height: 1.8; color: var(--fg); margin-bottom: 16px; }
   .page-content ul { margin-bottom: 16px; padding-left: 24px; }
   .page-content li { font-size: 16px; line-height: 1.8; margin-bottom: 8px; color: var(--fg-secondary); }
+  .page-content a { color: var(--accent); text-decoration: none; }
+  .page-content a:hover { text-decoration: underline; }
 </style>

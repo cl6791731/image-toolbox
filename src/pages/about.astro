@@ -9,27 +9,58 @@ const description = 'Image Toolbox is a free, privacy-focused online image proce
 <Layout title={title} description={description} lang="en">
   <Breadcrumb items={[{label:'Home', href:'/'}, {label:'About'}]} />
 
-
   <article class="page-content">
     <h1>About Image Toolbox</h1>
 
-    <p>Image Toolbox was built with a simple mission: give users a fast, free, and private way to process images without installing software or uploading files to remote servers.</p>
+    <p>Image Toolbox is a free, browser-based image processing toolkit built for photographers, designers, developers, and anyone who works with images regularly. Unlike most online tools that require uploading your files to a remote server, Image Toolbox processes everything <strong>entirely within your browser</strong> — your images never leave your device.</p>
 
-    <h2>Why Local Processing?</h2>
-    <p>Most online image tools require you to upload your files to a server. That means:</p>
+    <h2>Our Mission</h2>
+    <p>We started Image Toolbox because we were frustrated with the trade-off between convenience and privacy. Every time we needed to quickly convert a HEIC photo from an iPhone, compress an image for a website, or resize a screenshot for social media, we had to either install desktop software or upload our personal photos to some unknown server.</p>
+    <p>We believed there had to be a better way. Modern browsers are incredibly powerful — they can decode HEIC files, encode WebP and AVIF, apply watermarks, and perform complex image manipulations, all without sending a single byte over the network. Image Toolbox harnesses these capabilities into a simple, fast interface that anyone can use.</p>
+
+    <h2>How It Works</h2>
+    <p>When you upload an image to Image Toolbox, the file is read directly by your browser using the FileReader API. All processing — format conversion, compression, cropping, resizing, watermarking — happens using the HTML5 Canvas API and WebAssembly decoders (like libheif-js for HEIC support). The processed result is generated as a Blob that you can download directly.</p>
+    <p>At no point does your image data get sent to a server. There is no backend, no database, and no analytics tracking your image content. This is not just a privacy policy — it's a technical guarantee built into the architecture.</p>
+
+    <h2>Privacy by Design</h2>
+    <p>Privacy isn't an afterthought for us — it's the foundation. Here's what that means in practice:</p>
     <ul>
-      <li>Your images are stored on someone else's computer</li>
-      <li>You have to trust their privacy policy</li>
-      <li>Upload and download take time</li>
-      <li>Large files may fail or timeout</li>
+      <li><strong>No uploads:</strong> Your images are processed in-browser and never transmitted over the network</li>
+      <li><strong>No accounts:</strong> No registration, no login, no email collection</li>
+      <li><strong>No tracking:</strong> We don't use cookies, fingerprinting, or third-party analytics on your image activity</li>
+      <li><strong>No storage:</strong> Images are held in browser memory only and discarded when you close the tab</li>
+      <li><strong>Open architecture:</strong> The source code is available on <a href="https://github.com/cl6791731/image-toolbox" target="_blank" rel="noopener">GitHub</a> for anyone to audit</li>
     </ul>
-    <p>Image Toolbox solves all of these by running entirely in your browser. Your images never leave your device.</p>
 
     <h2>Supported Formats</h2>
-    <p>PNG, JPG, WebP, GIF, BMP, SVG, AVIF, ICO, TIFF and more. We use modern browser APIs to handle conversion and compression natively.</p>
+    <p>Image Toolbox supports a wide range of image formats for both input and output:</p>
+    <ul>
+      <li><strong>Input:</strong> JPG, PNG, WebP, GIF, BMP, SVG, AVIF, ICO, TIFF, HEIC/HEIF</li>
+      <li><strong>Output:</strong> JPG, PNG, WebP, AVIF, BMP, ICO, TIFF</li>
+    </ul>
+    <p>HEIC support is powered by <a href="https://github.com/nicholasgasior/libheif-js" target="_blank" rel="noopener">libheif-js</a>, a WebAssembly build of libheif that decodes iPhone HEIC files directly in the browser. TIFF export uses a built-in encoder for maximum compatibility.</p>
 
-    <h2>Open Source Philosophy</h2>
-    <p>We believe privacy-respecting tools should be accessible to everyone. No registration, no paywall, no tracking pixels.</p>
+    <h2>Tools Included</h2>
+    <p>Image Toolbox includes seven dedicated tools, each focused on a specific task:</p>
+    <ul>
+      <li><strong>Format Converter</strong> — Convert between JPG, PNG, WebP, AVIF, BMP, ICO, and TIFF with quality control</li>
+      <li><strong>Image Compressor</strong> — Reduce file size while maintaining visual quality, with batch processing support</li>
+      <li><strong>Image Cropper</strong> — Crop images to any size with a visual crop box and mm dimension display</li>
+      <li><strong>Watermark Tool</strong> — Add text or image watermarks with customizable opacity, position, and size</li>
+      <li><strong>Resize Tool</strong> — Scale images to exact pixel dimensions while preserving aspect ratio</li>
+      <li><strong>Social Media Resizer</strong> — Pre-configured templates for Instagram, TikTok, YouTube, Facebook, and more</li>
+      <li><strong>Web Optimizer</strong> — Optimize images for web delivery with format-specific compression</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>Have questions, feedback, or found a bug? We'd love to hear from you.</p>
+    <ul>
+      <li><strong>Email:</strong> ylnjs@live.com</li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/cl6791731/image-toolbox" target="_blank" rel="noopener">github.com/cl6791731/image-toolbox</a> — report issues or contribute</li>
+    </ul>
+
+    <h2>Legal</h2>
+    <p>Image Toolbox is provided as-is for educational and practical use. See our <a href="/privacy">Privacy Policy</a> for details on data handling. We comply with GDPR and do not collect, store, or process any personal data through this service.</p>
   </article>
 </Layout>
 
@@ -41,4 +72,6 @@ const description = 'Image Toolbox is a free, privacy-focused online image proce
   .page-content p { font-size: 16px; line-height: 1.8; color: var(--fg); margin-bottom: 16px; }
   .page-content ul { margin-bottom: 16px; padding-left: 24px; }
   .page-content li { font-size: 16px; line-height: 1.8; margin-bottom: 8px; color: var(--fg-secondary); }
+  .page-content a { color: var(--accent); text-decoration: none; }
+  .page-content a:hover { text-decoration: underline; }
 </style>
