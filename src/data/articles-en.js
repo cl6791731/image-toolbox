@@ -1214,6 +1214,8 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
 </ul>
 <p>A raw screenshot says "I grabbed this quickly." A cropped screenshot says "I prepared this thoughtfully." For documentation, tutorials, and professional communication, cropping is not optional — it's essential.</p>
 
+<img src="/images/crop-screenshot-ui.webp" alt="Screenshot cropping before and after" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 <h2>The Perfect Screenshot Dimensions</h2>
 <p>Different contexts call for different screenshot sizes:</p>
 <ul>

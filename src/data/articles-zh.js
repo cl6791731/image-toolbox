@@ -1221,6 +1221,8 @@ export const articles = [
 </ul>
 <p>原始截图说"我快速抓取了这个。"裁切过的截图说"我精心准备了这个。"对于文档、教程和专业沟通，裁切不是可选的——它是必不可少的。</p>
 
+<img src="/images/crop-screenshot-ui.webp" alt="截图裁切前后对比" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 <h2>完美截图尺寸</h2>
 <p>不同场景需要不同的截图尺寸：</p>
 <ul>
