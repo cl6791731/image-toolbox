@@ -258,7 +258,7 @@ export const articles = [
 </div>
 <h2>我们的测试体验</h2>
 <p>我们将 50 张照片 using Image Toolbox, comparing WebP at quality 80, 85, and 90 against JPG at the same settings. <strong>WebP saved 32% more space on average</strong> at quality 85 with visually identical results in blind tests. 最大收益 came from photographs with smooth gradients — skies, skin tones, and sunsets — where WebP's predictive coding outperformed JPG's DCT compression.</p>
-<p>For screenshots and graphics with sharp text, the difference was smaller (15-20%) but still meaningful for page load performance. We also found WebP encoding was roughly 2x slower than JPG in Chrome, worth considering for real-time processing.</p>
+<p>对于带有清晰文字的截图和图形，差异较小（15-20%），但对页面加载性能仍有意义。 We also found WebP encoding was roughly 2x slower than JPG in Chrome, worth considering for real-time processing.</p>
 <h2>延伸阅读</h2>
 <ul>
 <li><a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP 文档</a> — 官方格式规范</li>
@@ -543,7 +543,7 @@ export const articles = [
   </div>
 </div>
 <h2>文件大小对比结果</h2>
-<p>We converted the same 4000×3000 image to both BMP and PNG. BMP 文件为 <strong>18.4MB</strong> while the PNG was <strong>4.2MB</strong> — a 77% reduction with identical visual quality. For web use, there is essentially 没有理由使用 BMP over PNG. Even for archival purposes, PNG's lossless compression makes it the superior choice.</p>
+<p>我们将同一张 4000×3000 的图片分别转换为 BMP 和 PNG。BMP 文件为 <strong>18.4MB</strong>，PNG 为 <strong>4.2MB</strong> — 减少了 77%，视觉质量完全相同。对于网页使用，完全没有理由使用 BMP 而非 PNG。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/BMP_file_format" target="_blank" rel="noopener">Wikipedia: BMP Format</a></li>
@@ -593,7 +593,7 @@ export const articles = [
   </div>
 </div>
 <h2>动画格式基准测试</h2>
-<p>We converted the same 3-second animation (480×270, 30fps) to both GIF and animated WebP. The GIF was <strong>2.4MB</strong>; the animated WebP was <strong>680KB</strong> — a <strong>72% reduction</strong>. WebP 还支持 256 色 transparency versus GIF's 1-bit transparency, producing smoother edges on graphics with alpha channels.</p>
+<p>我们将同一个 3 秒动画（480×270，30fps）分别转换为 GIF 和动画 WebP。GIF 文件为 <strong>2.4MB</strong>，动画 WebP 为 <strong>680KB</strong> — 减少了 <strong>72%</strong>。WebP 还支持 256 色透明度，而 GIF 仅支持 1 位透明度，在带 alpha 通道的图形上产生更平滑的边缘。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://developers.google.com/speed/webp/animated" target="_blank" rel="noopener">Google: Animated WebP</a></li>
@@ -652,7 +652,7 @@ export const articles = [
   </div>
 </div>
 <h2>我们的压缩对比</h2>
-<p>We tested the same photograph at multiple quality levels: lossless PNG (12.1MB), JPG quality 90 (2.8MB, -77%), JPG quality 75 (1.4MB, -88%), and JPG quality 60 (820KB, -93%). In blind tests with 10 reviewers, 质量 80 及以上 was indistinguishable from the original. Below quality 70, blocking artifacts became noticeable in smooth gradients. Our recommendation: <strong>quality 80-85 for photos, lossless for graphics</strong>.</p>
+<p>我们在不同质量级别下测试同一张照片：无损 PNG（12.1MB）、JPG 质量 90（2.8MB，-77%）、JPG 质量 75（1.4MB，-88%）、JPG 质量 60（820KB，-93%）。10 人盲测中，质量 80 及以上与原图无法区分。质量低于 70 时，平滑渐变中出现明显块状伪影。建议：<strong>照片用质量 80-85，图形用无损格式</strong>。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://web.dev/articles/optimizing-content-efficiency" target="_blank" rel="noopener">web.dev: Optimizing Content Efficiency</a></li>
@@ -711,7 +711,7 @@ export const articles = [
   </div>
 </div>
 <h2>实际性能提升</h2>
-<p>We optimized a sample e-commerce page with 20 product images (total 8.2MB) down to 1.9MB using WebP conversion and lazy loading. The Lighthouse 性能评分 went from <strong>42 to 89</strong>. Largest Contentful Paint improved from 4.2s to 1.8s. The key technique was serving responsive images with <code>srcset</code> — mobile users received 400px-wide versions while desktop users got 1200px.</p>
+<p>我们优化了一个包含 20 张产品图片的示例电商页面（总计 8.2MB），通过 WebP 转换和懒加载降至 1.9MB。Lighthouse 性能评分从 <strong>42 提升到 89</strong>。最大内容绘制从 4.2 秒改善到 1.8 秒。关键技术是使用 <code>srcset</code> 提供响应式图片 — 移动端用户收到 400px 宽的版本，桌面端收到 1200px。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev：Core Web Vitals</a></li>
@@ -770,7 +770,7 @@ export const articles = [
   </div>
 </div>
 <h2>手机压缩结果</h2>
-<p>We tested iPhone 15 Pro photos (48MP, ~5-8MB each) through our mobile-optimized compressor. At quality 80, files dropped to <strong>800KB-1.5MB</strong> — a 75-85% reduction — with no visible quality difference on phone screens. The entire process takes under 5 seconds per photo, entirely on-device with no upload required.</p>
+<p>我们通过手机优化压缩器测试了 iPhone 15 Pro 照片（4800 万像素，每张约 5-8MB）。质量 80 时，文件降至 <strong>800KB-1.5MB</strong> — 减少 75-85% — 手机屏幕上无可见质量差异。整个过程每张照片不到 5 秒，完全在设备上完成，无需上传。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://support.apple.com/en-us/108048" target="_blank" rel="noopener">Apple: HEIF and HEIC</a></li>
@@ -839,7 +839,7 @@ export const articles = [
   </div>
 </div>
 <h2>批量处理性能</h2>
-<p>We tested batch compression of 100 images (mix of photos and screenshots) on a standard laptop. All 100 张图片在 <strong>under 45 seconds</strong> using Web Workers for parallel processing. The average compression ratio was 72% — reducing a 500MB photo library to 140MB. Memory usage stayed under 500MB throughout, making it safe even on phones.</p>
+<p>我们在标准笔记本电脑上测试了 100 张图片（照片和截图混合）的批量压缩。使用 Web Workers 并行处理，所有 100 张图片在 <strong>45 秒内完成</strong>。平均压缩率 72% — 将 500MB 的照片库缩减到 140MB。内存使用始终保持在 500MB 以下，在手机上也很安全。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API" target="_blank" rel="noopener">MDN: Web Workers</a></li>
@@ -990,7 +990,7 @@ export const articles = [
   </div>
 </div>
 <h2>证件照测试结果</h2>
-<p>We tested passport photo cropping for US (2×2 inch), UK (35×45mm), and China (33×48mm) standards. Our tool automatically sets the correct aspect ratio and displays millimeter dimensions in real-time. In testing, users achieved compliant photos on the first attempt <strong>90% of the time</strong> — the remaining 10% needed minor head-position adjustments.</p>
+<p>我们测试了美国（2×2 英寸）、英国（35×45mm）和中国（33×48mm）标准的证件照裁切。工具自动设置正确的宽高比并实时显示毫米尺寸。测试中，用户 <strong>90% 的情况</strong>首次即获得合规照片 — 其余 10% 需要微调头部位置。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://travel.state.gov/content/travel/en/passports/requirements/photos.html" target="_blank" rel="noopener">US State Dept: Photo Requirements</a></li>
@@ -1125,7 +1125,7 @@ export const articles = [
   </div>
 </div>
 <h2>电商平台要求</h2>
-<p>We tested product image uploads on Amazon, eBay, and Shopify. Amazon 要求 <strong>minimum 2000×2000px</strong> for zoom functionality — images below this threshold show no zoom. eBay recommends 1600×1200px minimum. Shopify's minimum is 2048×2048px for optimal display. We found that 2000×2000px 是通用 safe target that works across all three platforms.</p>
+<p>我们在 Amazon、eBay 和 Shopify 上测试了产品图片上传。Amazon 要求<strong>最小 2000×2000px</strong> 才能启用缩放功能 — 低于此阈值的图片不显示缩放。eBay 建议最小 1600×1200px。Shopify 最低要求 2048×2048px。我们发现 2000×2000px 是适用于所有三个平台的通用安全目标。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://sellercentral.amazon.com/help/hub/reference/G201105760" target="_blank" rel="noopener">Amazon：图片要求</a></li>
@@ -1339,7 +1339,7 @@ export const articles = [
   </div>
 </div>
 <h2>YouTube 缩略图效果</h2>
-<p>We A/B tested thumbnails on 20 YouTube videos: simple text overlays vs. face photos vs. product shots. Videos with <strong>human faces in thumbnails received 30% more clicks</strong>. The optimal text is 4-6 words in bold font. Our template provides safe zones that keep text readable even when YouTube overlays the duration badge (bottom-right) and channel icon (bottom-left).</p>
+<p>我们对 20 个 YouTube 视频进行了缩略图 A/B 测试：简单文字叠加 vs 人脸照片 vs 产品照片。带有<strong>人脸的缩略图获得了 30% 更多点击</strong>。最佳文字为 4-6 个粗体字。我们的模板提供安全区域，即使 YouTube 叠加时长标签（右下角）和频道图标（左下角），文字仍然可读。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://support.google.com/youtube/answer/72431" target="_blank" rel="noopener">YouTube: Video File Formats</a></li>
@@ -1980,7 +1980,7 @@ export const articles = [
   </div>
 </div>
 <h2>我们的工作流程建议</h2>
-<p>After processing over 100,000 images through Image Toolbox, we've distilled the optimal workflow: (1) <strong>首先裁切</strong> to remove unwanted areas, (2) <strong>Resize</strong> to target dimensions, (3) <strong>Compress</strong> with appropriate quality, (4) <strong>Add watermark</strong> if needed, (5) <strong>Optimize filename</strong> for SEO. This order minimizes redundant processing — compressing before resizing wastes quality on pixels that will be discarded.</p>
+<p>处理超过 10 万张图片后，我们总结出最佳工作流程：(1) <strong>首先裁切</strong>去除不需要的区域，(2) <strong>缩放</strong>到目标尺寸，(3) 以适当质量<strong>压缩</strong>，(4) 需要时<strong>添加水印</strong>，(5) <strong>优化文件名</strong>以利于 SEO。这个顺序最大限度地减少了冗余处理 — 在缩放之前压缩会浪费将被丢弃的像素的质量。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://web.dev/articles/fast" target="_blank" rel="noopener">web.dev：快速加载</a></li>
@@ -2378,7 +2378,7 @@ export const articles = [
   </div>
 </div>
 <h2>AVIF 与 WebP 对比</h2>
-<p>We conducted a rigorous benchmark: 100 images at quality 75, testing file size and encoding speed. AVIF files were <strong>22% smaller than WebP on average</strong>, but encoding took 3.2x longer. For static website images where build time doesn't matter, AVIF is clearly superior. For real-time processing (like our converter tool), WebP offers the best speed/quality trade-off.</p>
+<p>我们进行了严格的基准测试：100 张质量 75 的图片，测试文件大小和编码速度。AVIF 文件平均<strong>比 WebP 小 22%</strong>，但编码时间长 3.2 倍。对于构建时间不重要的静态网站图片，AVIF 明显更优。对于实时处理（如我们的转换工具），WebP 提供了最佳的速度/质量平衡。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://aomediacodec.github.io/av1-avif/" target="_blank" rel="noopener">AVIF 规范</a></li>
@@ -2629,7 +2629,7 @@ export const articles = [
   </div>
 </div>
 <h2>淘宝图片优化</h2>
-<p>We tested Taobao's image upload pipeline with various formats and sizes. The platform accepts JPG, PNG, and WebP, but internally converts everything to JPG. 在 <strong>800×800px minimum for main images</strong> display sharply on both mobile and desktop. For detail pages, 750px wide is the standard. We found that uploading WebP results in slightly lower quality than directly uploading JPG due to double transcoding.</p>
+<p>我们测试了淘宝的图片上传流程，使用了各种格式和大小。平台接受 JPG、PNG 和 WebP，但内部将所有格式转换为 JPG。主图<strong>最小 800×800px</strong>在手机和电脑上都能清晰显示。详情页标准宽度为 750px。我们发现上传 WebP 会因双重转码导致质量略低于直接上传 JPG。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://rule.taobao.com/detail-26.htm" target="_blank" rel="noopener">淘宝：图片规则</a></li>
