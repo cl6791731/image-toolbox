@@ -64,6 +64,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
             <option value="image/bmp">BMP — 无压缩位图，完全无损</option>
             <option value="image/x-icon">ICO — Windows 图标格式，支持多尺寸</option>
             <option value="image/tiff">TIFF — 无损格式，印刷和存档标准</option>
+            <option value="image/gif">GIF — 动画图片，256 色调色板</option>
           </optgroup>
         </select>
         <div class="desc" id="formatCompatNote"></div>
@@ -330,7 +331,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
       $('formatDownloadBtn').dataset.type = blob.type;
       $('formatCompatNote').textContent = `已转换为 ${formatMimeToName(blob.type)} · ${formatSize(blob.size)}`;
       $('formatCompatNote').style.color = '#34c759';
-    }, type, ['image/bmp','image/x-icon','image/tiff'].includes(type) ? undefined : quality);
+    }, type, ['image/bmp','image/x-icon','image/tiff','image/gif'].includes(type) ? undefined : quality);
   });
 
   $('formatDownloadBtn').addEventListener('click', () => {
@@ -338,7 +339,7 @@ const description = '在浏览器本地完成 6+ 种图片格式互转，支持 
     if (!btn.dataset.url) return;
     const a = document.createElement('a');
     a.href = btn.dataset.url;
-    const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico','image/tiff':'tif' }[btn.dataset.type] || 'png';
+    const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico','image/tiff':'tif','image/gif':'gif' }[btn.dataset.type] || 'png';
     const origName = sourceFile ? sourceFile.name.replace(/\.[^.]+$/, '') : 'image';
     a.download = `${origName}_converted.${ext}`;
     a.click();

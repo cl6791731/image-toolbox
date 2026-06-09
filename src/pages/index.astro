@@ -64,6 +64,7 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
             <option value="image/bmp">BMP — Uncompressed bitmap, lossless</option>
             <option value="image/x-icon">ICO — Windows icon, multi-size support</option>
             <option value="image/tiff">TIFF — Lossless, print and archive standard</option>
+            <option value="image/gif">GIF — Animated images, 256-color palette</option>
           </optgroup>
         </select>
         <div class="desc" id="formatCompatNote"></div>
@@ -342,7 +343,7 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
       $('formatDownloadBtn').dataset.type = blob.type;
       $('formatCompatNote').textContent = `Converted to ${formatMimeToName(blob.type)} · ${formatSize(blob.size)}`;
       $('formatCompatNote').style.color = '#34c759';
-    }, type, ['image/bmp','image/x-icon','image/tiff'].includes(type) ? undefined : quality);
+    }, type, ['image/bmp','image/x-icon','image/tiff','image/gif'].includes(type) ? undefined : quality);
   });
 
   $('formatDownloadBtn').addEventListener('click', () => {
@@ -350,7 +351,7 @@ const description = 'Convert images between 6+ formats (PNG, JPEG, WebP, AVIF, B
     if (!btn.dataset.url) return;
     const a = document.createElement('a');
     a.href = btn.dataset.url;
-    const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico','image/tiff':'tif' }[btn.dataset.type] || 'png';
+    const ext = { 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif','image/x-icon':'ico','image/tiff':'tif','image/gif':'gif' }[btn.dataset.type] || 'png';
     const origName = sourceFile ? sourceFile.name.replace(/\.[^.]+$/, '') : 'image';
     a.download = `${origName}_converted.${ext}`;
     a.click();
