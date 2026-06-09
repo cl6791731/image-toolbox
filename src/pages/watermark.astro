@@ -274,16 +274,27 @@ const description = 'Free online watermark tool. Add text watermarks to images w
       overlay.style.top = '0';
       overlay.style.left = '0';
     } else if (wmMode === 'overlay') {
-      overlay.textContent = text;
+      // Overlay: multiple layers at different angles for anti-theft
+      const size = parseInt($('wmSize').value) * 2.5;
+      const angleVal = parseInt(angle) || 0;
+      let html = '';
+      const offsets = [
+        { dx: '30%', dy: '35%', a: angleVal },
+        { dx: '15%', dy: '25%', a: angleVal - 15 },
+        { dx: '45%', dy: '45%', a: angleVal + 15 },
+        { dx: '20%', dy: '50%', a: angleVal + 30 },
+        { dx: '40%', dy: '25%', a: angleVal - 30 },
+      ];
+      offsets.forEach(function(o) {
+        html += '<span style="position:absolute;left:' + o.dx + ';top:' + o.dy + ';transform:translate(-50%,-50%) rotate(' + o.a + 'deg);font-size:' + size + 'px;white-space:nowrap;pointer-events:none;">' + text + '</span>';
+      });
+      overlay.innerHTML = html;
       overlay.style.background = 'none';
-      overlay.style.display = 'flex';
-      overlay.style.alignItems = 'center';
-      overlay.style.justifyContent = 'center';
+      overlay.style.display = 'block';
       overlay.style.width = '100%';
       overlay.style.height = '100%';
       overlay.style.top = '0';
       overlay.style.left = '0';
-      overlay.style.fontSize = parseInt($('wmSize').value) * 3 + 'px';
     } else {
       overlay.textContent = text;
       overlay.style.background = 'none';
@@ -390,20 +401,28 @@ const description = 'Free online watermark tool. Add text watermarks to images w
       }
       ctx.restore();
     } else if (wmMode === 'overlay') {
-      // Overlay: large centered watermark
-      const overlayFontSize = canvasFontSize * 3;
+      // Overlay: multiple watermark layers at different angles and offsets
+      const overlayFontSize = canvasFontSize * 2.5;
       ctx.font = 'bold ' + overlayFontSize + 'px -apple-system, "Noto Sans SC", sans-serif';
       ctx.shadowBlur = overlayFontSize * 0.05;
       ctx.shadowOffsetY = overlayFontSize * 0.02;
-      const cx = c.width / 2;
-      const cy = c.height / 2;
-      if (angle !== 0) {
-        ctx.translate(cx, cy);
-        ctx.rotate(angle * Math.PI / 180);
+      const centerX = c.width / 2;
+      const centerY = c.height / 2;
+      // Draw 5 layers: center + 4 diagonal offsets at different angles
+      const layers = [
+        { dx: 0, dy: 0, angle: angle },
+        { dx: -c.width * 0.15, dy: -c.height * 0.1, angle: angle - 15 },
+        { dx: c.width * 0.15, dy: c.height * 0.1, angle: angle + 15 },
+        { dx: -c.width * 0.1, dy: c.height * 0.15, angle: angle + 30 },
+        { dx: c.width * 0.1, dy: -c.height * 0.15, angle: angle - 30 },
+      ];
+      layers.forEach(layer => {
+        ctx.save();
+        ctx.translate(centerX + layer.dx, centerY + layer.dy);
+        ctx.rotate(layer.angle * Math.PI / 180);
         ctx.fillText(text, 0, 0);
-      } else {
-        ctx.fillText(text, cx, cy);
-      }
+        ctx.restore();
+      });
     } else {
       // Single: watermark at dragged position
       const cx = c.width * wmState.x;
