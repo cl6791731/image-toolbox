@@ -563,6 +563,9 @@ export const articles = [
 <h3>技术优势</h3>
 <p>WebP 动画继承了静态 WebP 的所有优点：24位色（1670万色 vs GIF 的256色）、8位 Alpha 透明以实现平滑边缘，以及来自 VP8 视频编码的 superior 压缩。动画 WebP 支持有损和无损压缩模式，让创作者根据内容类型灵活选择。</p>
 <p>对于 UI 动画、图标过渡和简单的动态图形，WebP 提供了 GIF 根本无法比拟的锐利边缘和平滑透明。文字叠加保持可读，渐变保持平滑，文件大小平均减少 50–70%。</p>
+<img src="/images/gif-vs-webp-animation-size.webp" alt="动画 GIF 与 WebP 文件大小对比" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/gif-vs-webp-animation-quality.webp" alt="动画 GIF 与 WebP 画质对比" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>浏览器支持与后备策略</h2>
 <p>截至2026年，动画 WebP 得到 Chrome、Firefox、Safari（14+）、Edge 和 Opera 的支持——覆盖全球超过 97% 的用户。对于剩余的 legacy 浏览器，静态后备图像或简单的 CSS 动画可以替代动画元素而不会破坏页面。</p>

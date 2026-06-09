@@ -556,6 +556,9 @@ export const articles = [
 <h3>Technical Advantages</h3>
 <p>WebP animation inherits all the benefits of static WebP: 24-bit color (16.7 million colors vs GIF's 256), 8-bit alpha transparency for smooth edges, and superior compression from VP8 video coding. Animated WebP supports both lossy and lossless compression modes, giving creators flexibility based on content type.</p>
 <p>For UI animations, icon transitions, and simple motion graphics, WebP delivers crisp edges and smooth transparency that GIF simply cannot match. Text overlays remain readable, gradients stay smooth, and file sizes shrink by 50–70% on average.</p>
+<img src="/images/gif-vs-webp-animation-size.webp" alt="Animated GIF vs WebP file size comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/gif-vs-webp-animation-quality.webp" alt="Animated GIF vs WebP quality comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>Browser Support and Fallback Strategy</h2>
 <p>As of 2026, animated WebP is supported by Chrome, Firefox, Safari (14+), Edge, and Opera — covering over 97% of global users. For the remaining legacy browsers, a static fallback image or a simple CSS animation can replace the animated element without breaking the page.</p>
