@@ -62,12 +62,12 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Our Testing Experience</h2>
-<p>When we benchmarked 50 photographs in Image Toolbox, WebP at quality 85 averaged <strong>32% smaller files</strong> than JPG at the same quality setting. The gains were most dramatic in images with smooth gradients — skies and skin tones showed the clearest improvement. For screenshots with sharp text, the savings were smaller (15-20%) but still worthwhile for page speed.</p>
-<h2>References</h2>
+<h2>我们的测试体验</h2>
+<p>当我们对 50 张照片进行基准测试时 in Image Toolbox, WebP at quality 85 averaged <strong>32% smaller files</strong> than JPG at the same quality setting. The gains were most dramatic in images with smooth gradients — skies and skin tones showed the clearest improvement. 对于带有清晰文字的截图, the savings were smaller (15-20%) but still worthwhile for page speed.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP Documentation</a></li>
-<li><a href="https://caniuse.com/webp" target="_blank" rel="noopener">Can I Use: WebP</a></li>
+<li><a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP 文档</a></li>
+<li><a href="https://caniuse.com/webp" target="_blank" rel="noopener">Can I Use：WebP</a></li>
 </ul>
 `
     },
@@ -128,11 +128,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>What We Found in Testing</h2>
-<p>We tested compression on 100 real-world images: iPhone photos (4000×3000), DSLR exports (6000×4000), screenshots (1920×1080), and web graphics. For <strong>photographs</strong>, JPEG quality 70-80 consistently delivered files under 200KB at 1920px wide. For <strong>screenshots</strong>, quality 85 kept text sharp while staying well under 200KB. The key insight: <strong>resize first, then compress</strong> — a 4000px photo at quality 75 still exceeds 200KB, but resizing to 1920px first gives excellent results at 80-150KB.</p>
-<h2>References</h2>
+<h2>我们的测试发现</h2>
+<p>我们在 100 张真实图片上测试了压缩: iPhone photos (4000×3000), DSLR exports (6000×4000), screenshots (1920×1080), and web graphics. For <strong>photographs</strong>, JPEG quality 70-80 consistently delivered files under 200KB at 1920px wide. For <strong>screenshots</strong>, quality 85 kept text sharp while staying well under 200KB. 关键洞察: <strong>resize first, then compress</strong> — a 4000px photo at quality 75 still exceeds 200KB, but resizing to 1920px first gives excellent results at 80-150KB.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://web.dev/articles/fast" target="_blank" rel="noopener">web.dev: Fast load times</a> — Google's image optimization guidelines</li>
+<li><a href="https://web.dev/articles/fast" target="_blank" rel="noopener">web.dev: Fast load times</a> — Google 图片优化指南</li>
 <li><a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a> — Test your Core Web Vitals</li>
 </ul>
 `
@@ -202,9 +202,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Our Comparison Results</h2>
-<p>We created a standardized test: the same 4000×3000 photograph exported as PNG and JPG at quality 80, 85, and 90. PNG weighed 18.2MB, while JPG at quality 90 was 3.8MB — a <strong>79% reduction</strong> with virtually no visible difference. For graphics with text overlays, JPG introduced artifacts around text at quality 70 and below, while PNG maintained perfect clarity. This confirmed: <strong>use PNG for graphics, JPG for photographs</strong>.</p>
-<h2>References</h2>
+<h2>我们的对比结果</h2>
+<p>我们创建了标准化测试: the same 4000×3000 photograph exported as PNG and JPG at quality 80, 85, and 90. PNG weighed 18.2MB, while JPG at quality 90 was 3.8MB — a <strong>79% reduction</strong> with virtually no visible difference. For graphics with text overlays, JPG introduced artifacts around text at quality 70 and below, while PNG maintained perfect clarity. This confirmed: <strong>use PNG for graphics, JPG for photographs</strong>.</p>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/JPEG" target="_blank" rel="noopener">Wikipedia: JPEG</a> — Technical background on JPEG compression</li>
 <li><a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics" target="_blank" rel="noopener">Wikipedia: PNG</a> — PNG format specification</li>
@@ -256,13 +256,13 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Our Testing Experience</h2>
-<p>We converted 50 photographs using Image Toolbox, comparing WebP at quality 80, 85, and 90 against JPG at the same settings. <strong>WebP saved 32% more space on average</strong> at quality 85 with visually identical results in blind tests. The biggest wins came from photographs with smooth gradients — skies, skin tones, and sunsets — where WebP's predictive coding outperformed JPG's DCT compression.</p>
+<h2>我们的测试体验</h2>
+<p>我们将 50 张照片 using Image Toolbox, comparing WebP at quality 80, 85, and 90 against JPG at the same settings. <strong>WebP saved 32% more space on average</strong> at quality 85 with visually identical results in blind tests. 最大收益 came from photographs with smooth gradients — skies, skin tones, and sunsets — where WebP's predictive coding outperformed JPG's DCT compression.</p>
 <p>For screenshots and graphics with sharp text, the difference was smaller (15-20%) but still meaningful for page load performance. We also found WebP encoding was roughly 2x slower than JPG in Chrome, worth considering for real-time processing.</p>
-<h2>Further Reading</h2>
+<h2>延伸阅读</h2>
 <ul>
-<li><a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP Documentation</a> — Official format specification</li>
-<li><a href="https://caniuse.com/webp" target="_blank" rel="noopener">Can I Use: WebP</a> — Browser compatibility data</li>
+<li><a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP 文档</a> — 官方格式规范</li>
+<li><a href="https://caniuse.com/webp" target="_blank" rel="noopener">Can I Use：WebP</a> — 浏览器兼容性数据</li>
 <li><a href="https://web.dev/articles/serve-images-webp" target="_blank" rel="noopener">web.dev: Serve images in modern formats</a> — Google's guide to WebP adoption</li>
 </ul>`
     },
@@ -308,11 +308,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>What We Tell Our Users</h2>
-<p>Based on thousands of conversions through Image Toolbox, we consistently see beginners choose the wrong format. Our data shows that <strong>80% of web photos should use JPG</strong> (smaller files, great quality) while <strong>screenshots and graphics should use PNG</strong> (no text artifacts). The simple rule: if it was taken by a camera, use JPG. If it has text or sharp edges, use PNG.</p>
-<h2>References</h2>
+<h2>我们告诉用户的经验</h2>
+<p>基于数千次转换 through Image Toolbox, we consistently see beginners choose the wrong format. Our data shows that <strong>80% of web photos should use JPG</strong> (smaller files, great quality) while <strong>screenshots and graphics should use PNG</strong> (no text artifacts). The simple rule: if it was taken by a camera, use JPG. If it has text or sharp edges, use PNG.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://web.dev/articles/uses-responsive-images" target="_blank" rel="noopener">web.dev: Responsive Images</a></li>
+<li><a href="https://web.dev/articles/uses-responsive-images" target="_blank" rel="noopener">web.dev：响应式图片</a></li>
 </ul>`
     },
     {
@@ -361,11 +361,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Our HEIC Conversion Results</h2>
-<p>We tested HEIC decoding from iPhone 12, 14, and 16 photos using our built-in libheif-js decoder. All files decoded successfully in Chrome and Safari, producing JPEG output that was <strong>60-80% smaller</strong> than the original HEIC with no visible quality loss. The process takes 2-5 seconds per image in the browser — slower than server-side but with the benefit of complete privacy.</p>
-<h2>References</h2>
+<h2>HEIC 转换结果</h2>
+<p>我们测试了 HEIC 解码 from iPhone 12, 14, and 16 photos using our built-in libheif-js decoder. All files decoded successfully in Chrome and Safari, producing JPEG output that was <strong>60-80% smaller</strong> than the original HEIC with no visible quality loss. The process takes 2-5 seconds per image in the browser — slower than server-side but with the benefit of complete privacy.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://github.com/nicholasgasior/libheif-js" target="_blank" rel="noopener">libheif-js</a> — Browser-based HEIC decoder</li>
+<li><a href="https://github.com/nicholasgasior/libheif-js" target="_blank" rel="noopener">libheif-js</a> — 基于浏览器的 HEIC 解码器</li>
 <li><a href="https://support.apple.com/en-us/108048" target="_blank" rel="noopener">Apple: HEIC and HEIF</a></li>
 </ul>`
     },
@@ -423,12 +423,12 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Real-World AVIF Performance</h2>
-<p>We benchmarked AVIF against WebP and JPG using 30 diverse images. AVIF at quality 50 produced files <strong>20-30% smaller than WebP</strong> at equivalent quality, and <strong>50% smaller than JPG</strong>. The trade-off: AVIF encoding in the browser takes 3-5x longer than WebP. For batch processing, we recommend WebP for speed; for final delivery where file size matters most, AVIF wins.</p>
-<h2>References</h2>
+<h2>AVIF 实际性能</h2>
+<p>我们将 AVIF 与 WebP and JPG using 30 diverse images. AVIF at quality 50 produced files <strong>20-30% smaller than WebP</strong> at equivalent quality, and <strong>50% smaller than JPG</strong>. The trade-off: AVIF encoding in the browser takes 3-5x longer than WebP. For batch processing, we recommend WebP for speed; for final delivery where file size matters most, AVIF wins.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://aomediacodec.github.io/av1-avif/" target="_blank" rel="noopener">AVIF Format Specification</a></li>
-<li><a href="https://caniuse.com/avif" target="_blank" rel="noopener">Can I Use: AVIF</a></li>
+<li><a href="https://aomediacodec.github.io/av1-avif/" target="_blank" rel="noopener">AVIF 格式规范</a></li>
+<li><a href="https://caniuse.com/avif" target="_blank" rel="noopener">Can I Use：AVIF</a></li>
 </ul>`
     },
     {
@@ -483,9 +483,9 @@ export const articles = [
       <p itemprop="text">不会。ICO 支持无损存储，因此嵌入的图像保留与源 PNG 相同的质量。但是，包含许多高分辨率图像的非常大的 ICO 文件可能变得笨重。对于网页 favicon，嵌入最大 128×128 的尺寸通常就足够了。</p>
     </div>
   </div>
-<h2>Our Favicon Generation Process</h2>
-<p>We generate ICO files with 16×16, 32×32, and 48×48 sizes from a single PNG upload. A <strong>48×48 source</strong> produces the cleanest results.</p>
-<h2>References</h2>
+<h2>我们的 Favicon 生成流程</h2>
+<p>我们生成 ICO 文件 with 16×16, 32×32, and 48×48 sizes from a single PNG upload. A <strong>48×48 source</strong> produces the cleanest results.</p>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://web.dev/articles/add-manifest" target="_blank" rel="noopener">web.dev: Web App Manifest</a></li>
 </ul>
@@ -542,9 +542,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Size Comparison Results</h2>
-<p>We converted the same 4000×3000 image to both BMP and PNG. The BMP file was <strong>18.4MB</strong> while the PNG was <strong>4.2MB</strong> — a 77% reduction with identical visual quality. For web use, there is essentially no reason to use BMP over PNG. Even for archival purposes, PNG's lossless compression makes it the superior choice.</p>
-<h2>References</h2>
+<h2>文件大小对比结果</h2>
+<p>We converted the same 4000×3000 image to both BMP and PNG. BMP 文件为 <strong>18.4MB</strong> while the PNG was <strong>4.2MB</strong> — a 77% reduction with identical visual quality. For web use, there is essentially 没有理由使用 BMP over PNG. Even for archival purposes, PNG's lossless compression makes it the superior choice.</p>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/BMP_file_format" target="_blank" rel="noopener">Wikipedia: BMP Format</a></li>
 </ul>`
@@ -592,9 +592,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Animation Format Benchmarks</h2>
-<p>We converted the same 3-second animation (480×270, 30fps) to both GIF and animated WebP. The GIF was <strong>2.4MB</strong>; the animated WebP was <strong>680KB</strong> — a <strong>72% reduction</strong>. WebP also supported 256-color transparency versus GIF's 1-bit transparency, producing smoother edges on graphics with alpha channels.</p>
-<h2>References</h2>
+<h2>动画格式基准测试</h2>
+<p>We converted the same 3-second animation (480×270, 30fps) to both GIF and animated WebP. The GIF was <strong>2.4MB</strong>; the animated WebP was <strong>680KB</strong> — a <strong>72% reduction</strong>. WebP 还支持 256 色 transparency versus GIF's 1-bit transparency, producing smoother edges on graphics with alpha channels.</p>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://developers.google.com/speed/webp/animated" target="_blank" rel="noopener">Google: Animated WebP</a></li>
 </ul>`
@@ -651,9 +651,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Our Compression Comparison</h2>
-<p>We tested the same photograph at multiple quality levels: lossless PNG (12.1MB), JPG quality 90 (2.8MB, -77%), JPG quality 75 (1.4MB, -88%), and JPG quality 60 (820KB, -93%). In blind tests with 10 reviewers, quality 80 and above was indistinguishable from the original. Below quality 70, blocking artifacts became noticeable in smooth gradients. Our recommendation: <strong>quality 80-85 for photos, lossless for graphics</strong>.</p>
-<h2>References</h2>
+<h2>我们的压缩对比</h2>
+<p>We tested the same photograph at multiple quality levels: lossless PNG (12.1MB), JPG quality 90 (2.8MB, -77%), JPG quality 75 (1.4MB, -88%), and JPG quality 60 (820KB, -93%). In blind tests with 10 reviewers, 质量 80 及以上 was indistinguishable from the original. Below quality 70, blocking artifacts became noticeable in smooth gradients. Our recommendation: <strong>quality 80-85 for photos, lossless for graphics</strong>.</p>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://web.dev/articles/optimizing-content-efficiency" target="_blank" rel="noopener">web.dev: Optimizing Content Efficiency</a></li>
 </ul>`
@@ -710,11 +710,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Real Performance Gains</h2>
-<p>We optimized a sample e-commerce page with 20 product images (total 8.2MB) down to 1.9MB using WebP conversion and lazy loading. The Lighthouse Performance score went from <strong>42 to 89</strong>. Largest Contentful Paint improved from 4.2s to 1.8s. The key technique was serving responsive images with <code>srcset</code> — mobile users received 400px-wide versions while desktop users got 1200px.</p>
-<h2>References</h2>
+<h2>实际性能提升</h2>
+<p>We optimized a sample e-commerce page with 20 product images (total 8.2MB) down to 1.9MB using WebP conversion and lazy loading. The Lighthouse 性能评分 went from <strong>42 to 89</strong>. Largest Contentful Paint improved from 4.2s to 1.8s. The key technique was serving responsive images with <code>srcset</code> — mobile users received 400px-wide versions while desktop users got 1200px.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev: Core Web Vitals</a></li>
+<li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev：Core Web Vitals</a></li>
 <li><a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a></li>
 </ul>`
     },
@@ -769,9 +769,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Mobile Compression Results</h2>
+<h2>手机压缩结果</h2>
 <p>We tested iPhone 15 Pro photos (48MP, ~5-8MB each) through our mobile-optimized compressor. At quality 80, files dropped to <strong>800KB-1.5MB</strong> — a 75-85% reduction — with no visible quality difference on phone screens. The entire process takes under 5 seconds per photo, entirely on-device with no upload required.</p>
-<h2>References</h2>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://support.apple.com/en-us/108048" target="_blank" rel="noopener">Apple: HEIF and HEIC</a></li>
 </ul>`
@@ -838,9 +838,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Batch Processing Performance</h2>
-<p>We tested batch compression of 100 images (mix of photos and screenshots) on a standard laptop. All 100 images processed in <strong>under 45 seconds</strong> using Web Workers for parallel processing. The average compression ratio was 72% — reducing a 500MB photo library to 140MB. Memory usage stayed under 500MB throughout, making it safe even on phones.</p>
-<h2>References</h2>
+<h2>批量处理性能</h2>
+<p>We tested batch compression of 100 images (mix of photos and screenshots) on a standard laptop. All 100 张图片在 <strong>under 45 seconds</strong> using Web Workers for parallel processing. The average compression ratio was 72% — reducing a 500MB photo library to 140MB. Memory usage stayed under 500MB throughout, making it safe even on phones.</p>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API" target="_blank" rel="noopener">MDN: Web Workers</a></li>
 </ul>`
@@ -989,9 +989,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Passport Photo Results</h2>
+<h2>证件照测试结果</h2>
 <p>We tested passport photo cropping for US (2×2 inch), UK (35×45mm), and China (33×48mm) standards. Our tool automatically sets the correct aspect ratio and displays millimeter dimensions in real-time. In testing, users achieved compliant photos on the first attempt <strong>90% of the time</strong> — the remaining 10% needed minor head-position adjustments.</p>
-<h2>References</h2>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://travel.state.gov/content/travel/en/passports/requirements/photos.html" target="_blank" rel="noopener">US State Dept: Photo Requirements</a></li>
 </ul>`
@@ -1124,11 +1124,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>E-commerce Platform Requirements</h2>
-<p>We tested product image uploads on Amazon, eBay, and Shopify. Amazon requires <strong>minimum 2000×2000px</strong> for zoom functionality — images below this threshold show no zoom. eBay recommends 1600×1200px minimum. Shopify's minimum is 2048×2048px for optimal display. We found that 2000×2000px is the universal safe target that works across all three platforms.</p>
-<h2>References</h2>
+<h2>电商平台要求</h2>
+<p>We tested product image uploads on Amazon, eBay, and Shopify. Amazon 要求 <strong>minimum 2000×2000px</strong> for zoom functionality — images below this threshold show no zoom. eBay recommends 1600×1200px minimum. Shopify's minimum is 2048×2048px for optimal display. We found that 2000×2000px 是通用 safe target that works across all three platforms.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://sellercentral.amazon.com/help/hub/reference/G201105760" target="_blank" rel="noopener">Amazon: Image Requirements</a></li>
+<li><a href="https://sellercentral.amazon.com/help/hub/reference/G201105760" target="_blank" rel="noopener">Amazon：图片要求</a></li>
 </ul>`
     },
     {
@@ -1197,11 +1197,11 @@ export const articles = [
       <p itemprop="text">可以，但这需要裁切而不是调整大小。使用裁切工具从原始图像中选择不同的比例。裁切框内的内容将保持其比例，但你会丢失框外部分的图像。</p>
     </div>
   </div>
-<h2>Aspect Ratio Pitfalls</h2>
-<p>Most common mistake: resizing width-only. <strong>Proportional resize preserves 98% visual quality</strong> at any target size.</p>
-<h2>References</h2>
+<h2>宽高比陷阱</h2>
+<p>最常见的错误: resizing width-only. <strong>等比例缩放保留 98% visual quality</strong> at any target size.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Manipulating_canvas" target="_blank" rel="noopener">MDN: Canvas Manipulation</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Manipulating_canvas" target="_blank" rel="noopener">MDN：Canvas 操作</a></li>
 </ul>
 </div>`
     },
@@ -1273,11 +1273,11 @@ export const articles = [
       <p itemprop="text">如果可能，完全裁切掉敏感区域。如果敏感数据与你需要显示的内容混合在一起，使用纯色矩形覆盖（涂黑）而不是模糊——模糊的文字有时可以还原。</p>
     </div>
   </div>
-<h2>Screenshot Cropping Tips</h2>
+<h2>截图裁切技巧</h2>
 <p>Common uses: docs (38%), bug reports (27%), social (22%). <strong>Cropping improves readability by 40%</strong> vs full-page screenshots.</p>
-<h2>References</h2>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/captureVisibleTab" target="_blank" rel="noopener">MDN: Screen Capture API</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/captureVisibleTab" target="_blank" rel="noopener">MDN：屏幕截图 API</a></li>
 </ul>
 </div>`
     },
@@ -1338,9 +1338,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>YouTube Thumbnail Performance</h2>
+<h2>YouTube 缩略图效果</h2>
 <p>We A/B tested thumbnails on 20 YouTube videos: simple text overlays vs. face photos vs. product shots. Videos with <strong>human faces in thumbnails received 30% more clicks</strong>. The optimal text is 4-6 words in bold font. Our template provides safe zones that keep text readable even when YouTube overlays the duration badge (bottom-right) and channel icon (bottom-left).</p>
-<h2>References</h2>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://support.google.com/youtube/answer/72431" target="_blank" rel="noopener">YouTube: Video File Formats</a></li>
 </ul>`
@@ -1469,11 +1469,11 @@ export const articles = [
       <p itemprop="text">没有单一方法是万无一失的。最佳保护是分层方法：可见水印、EXIF元数据、明确的使用条款、低分辨率网页预览，以及通过反向图片搜索的主动监控。</p>
     </div>
   </div>
-<h2>Watermark Position Analysis</h2>
-<p>Corner watermarks removed in <strong>85% of theft cases</strong>. Center at 20% opacity: only 15% removed. <strong>Center at 15-20% is optimal.</strong></p>
-<h2>References</h2>
+<h2>水印位置分析</h2>
+<p>角落水印被移除 in <strong>85% of theft cases</strong>. Center at 20% opacity: only 15% removed. <strong>Center at 15-20% is optimal.</strong></p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://www.digimarc.com/" target="_blank" rel="noopener">Digimarc: Digital Watermarking</a></li>
+<li><a href="https://www.digimarc.com/" target="_blank" rel="noopener">Digimarc：数字水印</a></li>
 </ul>
 </div>`
     },
@@ -1600,9 +1600,9 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Transparency Format Comparison</h2>
-<p>We tested transparent backgrounds across formats: PNG supports full alpha transparency and is supported by <strong>99% of tools and browsers</strong>. WebP supports transparency with smaller files but has limited editor support. SVG is ideal for logos (vector, infinitely scalable) but not for photographs. For most logo use cases, we recommend <strong>PNG with transparency</strong> as the universal format.</p>
-<h2>References</h2>
+<h2>透明度格式对比</h2>
+<p>我们测试了透明背景 across formats: PNG supports full alpha transparency and is supported by <strong>99% of tools and browsers</strong>. WebP supports transparency with smaller files but has limited editor support. SVG is ideal for logos (vector, infinitely scalable) but not for photographs. For most logo use cases, we recommend <strong>PNG with transparency</strong> as the universal format.</p>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://caniuse.com/png-transparency" target="_blank" rel="noopener">Can I Use: PNG Alpha</a></li>
 </ul>`
@@ -1667,12 +1667,12 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>SEO Impact We've Measured</h2>
-<p>We optimized images on 5 test websites: adding descriptive filenames, alt text, WebP format, and proper dimensions. After 30 days, organic image traffic increased by <strong>45% on average</strong>. The biggest factor was file format — WebP pages loaded 30% faster, directly improving Core Web Vitals scores and search rankings. Descriptive filenames contributed an additional 12% improvement.</p>
-<h2>References</h2>
+<h2>我们衡量的 SEO 影响</h2>
+<p>我们优化了 5 test websites: adding descriptive filenames, alt text, WebP format, and proper dimensions. After 30 days, organic image traffic increased by <strong>45% on average</strong>. 最大因素 was file format — WebP pages loaded 30% faster, directly improving Core Web Vitals scores and search rankings. Descriptive filenames contributed an additional 12% improvement.</p>
+<h2>参考来源</h2>
 <ul>
 <li><a href="https://developers.google.com/search/docs/appearance/google-images" target="_blank" rel="noopener">Google: Image SEO Best Practices</a></li>
-<li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev: Core Web Vitals</a></li>
+<li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev：Core Web Vitals</a></li>
 </ul>`
     },
     {
@@ -1739,11 +1739,11 @@ export const articles = [
       <p itemprop="text">缩小尺寸不会降低质量——它只是移除了本来就不会显示的像素。质量损失发生在压缩过程中（降低质量百分比）或在放大时（将图片缩放超过其原始尺寸）。</p>
     </div>
   </div>
-<h2>Common Issues</h2>
-<p>Top failures: (1) <strong>file >50MB</strong>, (2) <strong>unsupported format</strong>, (3) <strong>corrupted headers</strong>. Our tool handles all three.</p>
-<h2>References</h2>
+<h2>常见问题</h2>
+<p>Top failures: (1) <strong>file >50MB</strong>, (2) <strong>不支持的格式</strong>, (3) <strong>corrupted headers</strong>. Our tool handles all three.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" target="_blank" rel="noopener">MDN: FileReader API</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" target="_blank" rel="noopener">MDN：FileReader API</a></li>
 </ul>
 </div>`
     },
@@ -1818,11 +1818,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Archival Format Testing</h2>
-<p>We compared TIFF and PNG for long-term archival of 50 photographs. TIFF files averaged <strong>52MB per image</strong> (uncompressed) while PNG files averaged <strong>12MB</strong> (lossless compressed) — a 77% savings with identical pixel data. For digital archives where storage cost matters, PNG is the better choice. TIFF remains preferred for print workflows that require specific color profiles (CMYK, Adobe RGB).</p>
-<h2>References</h2>
+<h2>存档格式测试</h2>
+<p>我们将 TIFF 和 PNG 进行对比 for long-term archival of 50 photographs. TIFF files averaged <strong>52MB per image</strong> (uncompressed) while PNG files averaged <strong>12MB</strong> (lossless compressed) — a 77% savings with identical pixel data. For digital archives where storage cost matters, PNG is the better choice. TIFF remains preferred for print workflows that require specific color profiles (CMYK, Adobe RGB).</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://www.loc.gov/preservation/digital/formats/content/tiff.shtml" target="_blank" rel="noopener">Library of Congress: TIFF Format</a></li>
+<li><a href="https://www.loc.gov/preservation/digital/formats/content/tiff.shtml" target="_blank" rel="noopener">美国国会图书馆：TIFF 格式</a></li>
 </ul>`
     },
     {
@@ -1891,11 +1891,11 @@ export const articles = [
       <p itemprop="text">对于Instagram帖子，目标1080 × 1350像素（4:5）。对于网站页眉，匹配你的内容宽度（通常1200-1400像素）。对于打印，根据你期望的物理尺寸以300 DPI计算。</p>
     </div>
   </div>
-<h2>Collage Results</h2>
+<h2>拼图结果</h2>
 <p>Equal-cell grids received <strong>18% more engagement</strong> than mixed layouts. 2×2 grid with consistent padding looks most professional.</p>
-<h2>References</h2>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="noopener">MDN: Canvas API</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="noopener">MDN：Canvas API</a></li>
 </ul>
 </div>`
     },
@@ -1979,11 +1979,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Our Workflow Recommendations</h2>
-<p>After processing over 100,000 images through Image Toolbox, we've distilled the optimal workflow: (1) <strong>Crop first</strong> to remove unwanted areas, (2) <strong>Resize</strong> to target dimensions, (3) <strong>Compress</strong> with appropriate quality, (4) <strong>Add watermark</strong> if needed, (5) <strong>Optimize filename</strong> for SEO. This order minimizes redundant processing — compressing before resizing wastes quality on pixels that will be discarded.</p>
-<h2>References</h2>
+<h2>我们的工作流程建议</h2>
+<p>After processing over 100,000 images through Image Toolbox, we've distilled the optimal workflow: (1) <strong>首先裁切</strong> to remove unwanted areas, (2) <strong>Resize</strong> to target dimensions, (3) <strong>Compress</strong> with appropriate quality, (4) <strong>Add watermark</strong> if needed, (5) <strong>Optimize filename</strong> for SEO. This order minimizes redundant processing — compressing before resizing wastes quality on pixels that will be discarded.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://web.dev/articles/fast" target="_blank" rel="noopener">web.dev: Fast Load Times</a></li>
+<li><a href="https://web.dev/articles/fast" target="_blank" rel="noopener">web.dev：快速加载</a></li>
 </ul>`
     },
     {
@@ -2160,11 +2160,11 @@ export const articles = [
       <p itemprop="text">YouTube会根据设备和场景以不同尺寸显示缩略图。桌面端搜索结果中缩略图约为246 × 138像素；移动端缩小到约168 × 94像素——几乎只有桌面端的一半；电视端则可以显示完整的1280 × 720分辨率。在桌面上看起来很精致的细节和小字在移动端可能完全无法辨认。务必在多种尺寸下测试缩略图：缩放到20%来模拟移动端效果，同时在完整1280 × 720下检查电视画质的清晰度。</p>
     </div>
   </div>
-<h2>Thumbnail A/B Results</h2>
+<h2>缩略图 A/B 测试结果</h2>
 <p><strong>Human faces: 30% more clicks</strong>. 1280×720 optimal. Auto-generated thumbs perform 40% worse.</p>
-<h2>References</h2>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://support.google.com/youtube/answer/72431" target="_blank" rel="noopener">YouTube: Upload Requirements</a></li>
+<li><a href="https://support.google.com/youtube/answer/72431" target="_blank" rel="noopener">YouTube：上传要求</a></li>
 </ul>
 </div>`
     },
@@ -2377,12 +2377,12 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>AVIF vs WebP Head-to-Head</h2>
+<h2>AVIF 与 WebP 对比</h2>
 <p>We conducted a rigorous benchmark: 100 images at quality 75, testing file size and encoding speed. AVIF files were <strong>22% smaller than WebP on average</strong>, but encoding took 3.2x longer. For static website images where build time doesn't matter, AVIF is clearly superior. For real-time processing (like our converter tool), WebP offers the best speed/quality trade-off.</p>
-<h2>References</h2>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://aomediacodec.github.io/av1-avif/" target="_blank" rel="noopener">AVIF Specification</a></li>
-<li><a href="https://caniuse.com/avif" target="_blank" rel="noopener">Can I Use: AVIF</a></li>
+<li><a href="https://aomediacodec.github.io/av1-avif/" target="_blank" rel="noopener">AVIF 规范</a></li>
+<li><a href="https://caniuse.com/avif" target="_blank" rel="noopener">Can I Use：AVIF</a></li>
 </ul>`
     },
     {
@@ -2453,11 +2453,11 @@ export const articles = [
       <p itemprop="text">是的。Instagram 对快拍施加的压缩比帖子明显更激进，因为快拍是临时性内容、快速连续浏览——平台优先追求加载速度而非画质。同一张照片发布到帖子和快拍，帖子版本会更清晰。为了补偿快拍压缩，额外施加 15-20% 的锐化，避免使用会暴露色带的深色渐变，并以精确的 1080 × 1920 像素（9:16）在 sRGB 色彩空间中导出。同时确保在 设置 → 账户 → 流量使用 中开启"以最高画质上传"。</p>
     </div>
   </div>
-<h2>Compression Analysis</h2>
+<h2>压缩分析</h2>
 <p><strong>1080px+: 95%+ quality retained</strong>. 640px → re-encoded to 480px (25% loss). Upload as JPEG to avoid double compression.</p>
-<h2>References</h2>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://help.instagram.com/1038071743007909" target="_blank" rel="noopener">Instagram: Supported Formats</a></li>
+<li><a href="https://help.instagram.com/1038071743007909" target="_blank" rel="noopener">Instagram：支持的格式</a></li>
 </ul>
 </div>`
     },
@@ -2549,11 +2549,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Amazon Compliance Testing</h2>
-<p>We uploaded test product images to Amazon Seller Central at various sizes. Images at <strong>2000×2000px triggered the zoom feature</strong> correctly; images at 1500×1500px did not. Amazon's JPEG compression reduced a 5MB upload to approximately 300KB at display resolution. We recommend uploading at 2000×2000px, JPEG quality 90, with a pure white background (#FFFFFF) for main images.</p>
-<h2>References</h2>
+<h2>Amazon 合规测试</h2>
+<p>我们上传了测试产品图片 to Amazon Seller Central at various sizes. 在 <strong>2000×2000px triggered the zoom feature</strong> correctly; images at 1500×1500px did not. Amazon's JPEG compression reduced a 5MB upload to approximately 300KB at display resolution. We recommend uploading at 2000×2000px, JPEG quality 90, with a pure white background (#FFFFFF) for main images.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://sellercentral.amazon.com/help/hub/reference/G201105760" target="_blank" rel="noopener">Amazon: Image Requirements</a></li>
+<li><a href="https://sellercentral.amazon.com/help/hub/reference/G201105760" target="_blank" rel="noopener">Amazon：图片要求</a></li>
 </ul>`
     },
     {
@@ -2628,11 +2628,11 @@ export const articles = [
     </div>
   </div>
 </div>
-<h2>Taobao Image Optimization</h2>
-<p>We tested Taobao's image upload pipeline with various formats and sizes. The platform accepts JPG, PNG, and WebP, but internally converts everything to JPG. Images at <strong>800×800px minimum for main images</strong> display sharply on both mobile and desktop. For detail pages, 750px wide is the standard. We found that uploading WebP results in slightly lower quality than directly uploading JPG due to double transcoding.</p>
-<h2>References</h2>
+<h2>淘宝图片优化</h2>
+<p>We tested Taobao's image upload pipeline with various formats and sizes. The platform accepts JPG, PNG, and WebP, but internally converts everything to JPG. 在 <strong>800×800px minimum for main images</strong> display sharply on both mobile and desktop. For detail pages, 750px wide is the standard. We found that uploading WebP results in slightly lower quality than directly uploading JPG due to double transcoding.</p>
+<h2>参考来源</h2>
 <ul>
-<li><a href="https://rule.taobao.com/detail-26.htm" target="_blank" rel="noopener">Taobao: Image Rules</a></li>
+<li><a href="https://rule.taobao.com/detail-26.htm" target="_blank" rel="noopener">淘宝：图片规则</a></li>
 </ul>`
     },
   ];
