@@ -1380,6 +1380,13 @@ export const articles = [
 <li><strong>颜色：</strong>白色或黑色，带有微妙的阴影或描边，以便在任何背景下都可见。</li>
 </ul>
 
+
+<img src="/images/watermark-placement-guide.webp" alt="水印放置指南，展示透明度、大小和位置最佳实践" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/watermark-opacity-position.webp" alt="水印透明度和位置对比" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/watermark-angle-demo.webp" alt="水印角度旋转演示" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 <h2>分步教程：在线添加水印</h2>
 <p>使用 <a href="/zh/watermark">Image Toolbox</a>，添加水印不到一分钟：</p>
 <ol>

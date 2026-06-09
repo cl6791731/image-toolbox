@@ -1373,6 +1373,13 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
 <li><strong>Color:</strong> White or black with a subtle shadow or outline for visibility against any background.</li>
 </ul>
 
+
+<img src="/images/watermark-placement-guide.webp" alt="Watermark placement guide showing opacity, size, and position best practices" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/watermark-opacity-position.webp" alt="Watermark opacity and position comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/watermark-angle-demo.webp" alt="Watermark angle rotation demonstration" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 <h2>Step-by-Step: Add Watermark Online</h2>
 <p>With <a href="/watermark">Image Toolbox</a>, adding watermarks takes under a minute:</p>
 <ol>
