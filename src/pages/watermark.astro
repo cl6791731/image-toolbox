@@ -277,21 +277,27 @@ const description = 'Free online watermark tool. Add text watermarks to images w
       overlay.style.top = '0';
       overlay.style.left = '0';
     } else if (wmMode === 'overlay') {
-      // Overlay: single draggable element, 5 layers via CSS
-      overlay.innerHTML = '';
-      overlay.textContent = text;
-      overlay.style.fontSize = parseInt($('wmSize').value) * 2.5 + 'px';
+      // Overlay: show 5 layers in preview, draggable as a group
+      const size = parseInt($('wmSize').value) * 2.5;
+      const angleVal = parseInt(angle) || 0;
+      let html = '';
+      const layers = [
+        { dx: '50%', dy: '50%', a: angleVal },
+        { dx: '25%', dy: '30%', a: angleVal - 15 },
+        { dx: '75%', dy: '30%', a: angleVal + 15 },
+        { dx: '30%', dy: '70%', a: angleVal + 30 },
+        { dx: '70%', dy: '70%', a: angleVal - 30 },
+      ];
+      layers.forEach(function(o) {
+        html += '<span style="position:absolute;left:' + o.dx + ';top:' + o.dy + ';transform:translate(-50%,-50%) rotate(' + o.a + 'deg);font-size:' + size + 'px;white-space:nowrap;pointer-events:none;">' + text + '</span>';
+      });
+      overlay.innerHTML = html;
       overlay.style.background = 'none';
-      overlay.style.display = '';
-      overlay.style.width = '';
-      overlay.style.height = '';
-      overlay.style.top = '';
-      overlay.style.left = '';
-      overlay.style.position = 'absolute';
-      overlay.style.whiteSpace = 'nowrap';
-      overlay.style.pointerEvents = 'auto';
-      // Apply rotation via transform; the visual 5-layer effect comes from the canvas rendering
-      overlay.style.transform = 'rotate(' + angle + 'deg)';
+      overlay.style.display = 'block';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
     } else {
       overlay.textContent = text;
       overlay.style.background = 'none';
