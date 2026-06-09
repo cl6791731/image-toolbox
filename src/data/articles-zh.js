@@ -2664,6 +2664,9 @@ export const articles = [
 <p>Core Web Vitals 是 Google 提出的三项以用户为中心的性能指标：LCP（最大内容绘制）衡量加载速度、INP（交互到下次绘制）衡量响应性能、CLS（累积布局偏移）衡量视觉稳定性。截至 2026 年，这三项指标仍然是 Google 确认的搜索排名因素——综合评分达到"良好"的网站，搜索可见度明显更高。而在所有页面元素中，<strong>图片是拖累 Core Web Vitals 评分的头号元凶</strong>。一张未优化的首屏大图可以毁掉 LCP，缺少宽高属性会让 CLS 崩盘，一个依赖 JavaScript 重载的图片轮播足以拖垮 INP。搞定图片优化，不是可选项——而是通往"全绿"Core Web Vitals 的最短路径。</p>
 <p>好消息是：绝大多数图片相关的性能问题都有简单直接的修复方案。本文整理了直接影响三项 Core Web Vitals 的图片优化清单，按指标分类，每一条都具体、可衡量、今天就能落地。无论你是前端开发者、内容运营还是 SEO 负责人，这些优化都不需要推翻现有架构。</p>
 
+<img src="/images/page-speed-score.webp" alt="PageSpeed Insights 桌面端性能评分" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+<img src="/images/page-speed-mobile.webp" alt="PageSpeed Insights 移动端性能评分" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 <h2>LCP：优化最大内容绘制</h2>
 <p>LCP 衡量的是页面最大可见元素（通常是首屏大图、Banner 或轮播图）渲染完成所需的时间。Google 将 2.5 秒以内定义为"良好"。根据 HTTP Archive 的数据，网页上约 70% 的 LCP 元素是图片。如果你的 LCP 亮红灯，图片几乎一定是罪魁祸首。</p>
 

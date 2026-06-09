@@ -2655,6 +2655,10 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <h2>What Are Core Web Vitals and Why Do Images Matter?</h2>
 <p>Core Web Vitals are Google's three user-centric performance metrics that measure loading speed (LCP), interactivity (INP), and visual stability (CLS). As of 2026, they remain a confirmed Google ranking factor — sites that score "good" across all three metrics see measurably better search visibility. Among all page elements, images are the single largest contributor to poor Core Web Vitals scores. An unoptimized hero image can destroy LCP, a missing width/height attribute can tank CLS, and a heavy JavaScript image carousel can cripple INP. Getting images right is not optional — it's the fastest path to a "good" Core Web Vitals assessment.</p>
 <p>The good news: most image-related performance issues have straightforward fixes. This checklist covers every image optimization that directly impacts your Core Web Vitals scores, organized by metric. Whether you're a frontend developer, a content manager, or an SEO specialist, these optimizations are concrete, measurable, and implementable today.</p>
+<img src="/images/page-speed-score.webp" alt="PageSpeed Insights desktop performance score for b1y.ren" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/page-speed-mobile.webp" alt="PageSpeed Insights mobile performance score for b1y.ren" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 
 <h2>LCP: Optimizing Largest Contentful Paint</h2>
 <p>Largest Contentful Paint measures how quickly the largest visible page element — usually a hero image, banner, or carousel — finishes rendering. Google considers LCP under 2.5 seconds "good." Images account for roughly 70% of LCP elements on the web, according to HTTP Archive data. If your LCP is in the red, your images are almost certainly the culprit.</p>
