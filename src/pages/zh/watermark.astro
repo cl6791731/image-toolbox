@@ -47,6 +47,14 @@ const description = '免费在线水印工具。为图片添加文字水印，�
           <label for="wmText">水印文字</label>
           <input type="text" id="wmText" value="Watermark" placeholder="输入水印文字" />
         </div>
+        <div class="control-group">
+          <label>模式</label>
+          <div class="mode-row">
+            <button class="mode-btn active" data-mode="single">单个</button>
+            <button class="mode-btn" data-mode="tiled">平铺</button>
+            <button class="mode-btn" data-mode="overlay">叠加</button>
+          </div>
+        </div>
         <div class="control-row">
           <div class="control-group">
             <label for="wmSize">字体大小</label>
@@ -114,7 +122,11 @@ const description = '免费在线水印工具。为图片添加文字水印，�
   .tab-btn:hover { color: var(--fg); }
   .tab-btn.active { background: var(--bg); color: var(--fg); box-shadow: var(--shadow-sm); }
   .content { flex:1; max-width: var(--max-w); margin: 0 auto; padding: 0 24px 64px; width: 100%; }
-  .tool-card { background: var(--bg); border:1px solid var(--border-light); border-radius: var(--radius); padding: 28px; }
+  .tool-card { background: var(--bg); border:1px solid var(--border-light); border-radius: var(--radius); padding: 28px; overflow: hidden; }
+  .mode-row { display: flex; gap: 4px; }
+  .mode-btn { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--fg-secondary); font-size: 13px; font-weight: 500; cursor: pointer; transition: var(--transition); }
+  .mode-btn:hover { border-color: var(--accent); color: var(--fg); }
+  .mode-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
   .sr-only { position: absolute; width:1px; height:1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
   .upload-area { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 52px 24px; text-align: center; cursor: pointer; transition: var(--transition); background: var(--bg); }
   .upload-area:hover, .upload-area:focus { border-color: var(--accent); background: rgba(0,113,227,0.02); outline: none; }
@@ -181,6 +193,17 @@ const description = '免费在线水印工具。为图片添加文字水印，�
   $('wmColor').addEventListener('input', function() { $('wmColorHex').textContent = this.value; refreshOverlay(); });
   $('wmText').addEventListener('input', refreshOverlay);
 
+  // Mode switching
+  let wmMode = 'single';
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      wmMode = this.dataset.mode;
+      refreshOverlay();
+    });
+  });
+
   $('uploadArea').addEventListener('click', () => $('fileInput').click());
 
   document.addEventListener('dragover', e => e.preventDefault());
@@ -225,6 +248,36 @@ const description = '免费在线水印工具。为图片添加文字水印，�
     overlay.style.opacity = parseInt($('wmOpacity').value) / 100;
     overlay.style.color = $('wmColor').value || '#ffffff';
     overlay.style.transform = 'rotate(' + $('wmAngle').value + 'deg)';
+    overlay.style.whiteSpace = 'nowrap';
+    overlay.style.pointerEvents = 'auto';
+    if (wmMode === 'tiled') {
+      overlay.style.background = 'repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(255,255,255,0.05) 80px, rgba(255,255,255,0.05) 82px)';
+      overlay.style.display = 'flex';
+      overlay.style.flexWrap = 'wrap';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+    } else if (wmMode === 'overlay') {
+      overlay.style.background = 'none';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.fontSize = parseInt($('wmSize').value) * 3 + 'px';
+    } else {
+      overlay.style.background = 'none';
+      overlay.style.display = '';
+      overlay.style.width = '';
+      overlay.style.height = '';
+      overlay.style.top = '';
+      overlay.style.left = '';
+    }
   }
 
   function setupWatermark() {
@@ -302,15 +355,49 @@ const description = '免费在线水印工具。为图片添加文字水印，�
     ctx.shadowColor = 'rgba(0,0,0,0.3)';
     ctx.shadowBlur = canvasFontSize * 0.05;
     ctx.shadowOffsetY = canvasFontSize * 0.02;
-    const cx = c.width * wmState.x;
-    const cy = c.height * wmState.y;
-    if (angle !== 0) {
-      ctx.translate(cx, cy);
-      ctx.rotate(angle * Math.PI / 180);
-      ctx.fillText(text, 0, 0);
+
+    if (wmMode === 'tiled') {
+      const angleRad = angle * Math.PI / 180;
+      const spacing = canvasFontSize * 4;
+      const cosA = Math.cos(angleRad);
+      const sinA = Math.sin(angleRad);
+      for (let y = -c.height; y < c.height * 2; y += spacing) {
+        for (let x = -c.width; x < c.width * 2; x += spacing) {
+          const rx = x * cosA - y * sinA;
+          const ry = x * sinA + y * cosA;
+          ctx.save();
+          ctx.translate(rx, ry);
+          ctx.rotate(angleRad);
+          ctx.fillText(text, 0, 0);
+          ctx.restore();
+        }
+      }
+    } else if (wmMode === 'overlay') {
+      const overlayFontSize = canvasFontSize * 3;
+      ctx.font = 'bold ' + overlayFontSize + 'px -apple-system, "Noto Sans SC", sans-serif';
+      ctx.shadowBlur = overlayFontSize * 0.05;
+      ctx.shadowOffsetY = overlayFontSize * 0.02;
+      const cx = c.width / 2;
+      const cy = c.height / 2;
+      if (angle !== 0) {
+        ctx.translate(cx, cy);
+        ctx.rotate(angle * Math.PI / 180);
+        ctx.fillText(text, 0, 0);
+      } else {
+        ctx.fillText(text, cx, cy);
+      }
     } else {
-      ctx.fillText(text, cx, cy);
+      const cx = c.width * wmState.x;
+      const cy = c.height * wmState.y;
+      if (angle !== 0) {
+        ctx.translate(cx, cy);
+        ctx.rotate(angle * Math.PI / 180);
+        ctx.fillText(text, 0, 0);
+      } else {
+        ctx.fillText(text, cx, cy);
+      }
     }
+
     c.toBlob(blob => {
       if (!blob) return;
       resultBlob = blob;
