@@ -2161,7 +2161,7 @@ export const articles = [
     </div>
   </div>
 <h2>缩略图 A/B 测试结果</h2>
-<p><strong>Human faces: 30% more clicks</strong>. 1280×720 optimal. Auto-generated thumbs perform 40% worse.</p>
+<p><strong>人脸缩略图获得更多点击</strong>。1280×720 最佳。自动生成的缩略图效果差 40%。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://support.google.com/youtube/answer/72431" target="_blank" rel="noopener">YouTube：上传要求</a></li>
@@ -2356,7 +2356,7 @@ export const articles = [
 <p>这对用户体验零额外成本——浏览器原生解析 <code>&lt;picture&gt;</code> 元素，只下载它支持的第一个格式。JPEG <code>&lt;img&gt;</code> 源作为终极兜底方案，覆盖既不支持 WebP 也不支持 AVIF 的剩余 1-2% 浏览器。配合 <code>loading="lazy"</code> 和显式的 <code>width</code>/<code>height</code> 属性防止累积布局偏移（CLS），你已在 2026 年完成了所有的图片性能优化功课。</p>
 <p>为每一张图片生成三种格式变体听起来繁琐，但完全不必手动操作。开发者可以使用 <a href="/web-optimizer">Image Toolbox 的网页优化器</a> 从源图片批量生成 WebP 和 AVIF 版本——同时输出 <code>&lt;picture&gt;</code> 代码片段、提供并排文件体积对比和自动质量调节。上传一个文件夹的 JPEG 或 PNG，它会输出一份包含三种格式且回退顺序正确的可部署 HTML 片段。如果只是快速转换单张图片，<a href="/">首页格式转换工具</a> 支持 JPEG、PNG、WebP 和 AVIF 的双向互转，所有处理都在浏览器本地完成，无需上传服务器。</p>
 
-<h2>Frequently Asked Questions</h2>
+<h2>常见问题</h2>
 <div class="faq" itemscope itemtype="https://schema.org/FAQPage">
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">2026 年 AVIF 比 WebP 更好吗？</h3>
