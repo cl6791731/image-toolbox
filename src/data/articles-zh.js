@@ -1481,6 +1481,12 @@ export const articles = [
     </div>
   </div>
 <h2>水印位置分析</h2>
+
+<img src="/images/watermark-comparison.webp" alt="水印位置对比，展示角落、中心和平铺放置" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/watermark-tiled-demo.webp" alt="平铺水印模式演示" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/watermark-overlay-demo.webp" alt="叠加水印多层防盗演示" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 <p>角落水印被移除 in <strong>85% of theft cases</strong>. Center at 20% opacity: only 15% removed. <strong>Center at 15-20% is optimal.</strong></p>
 <h2>参考来源</h2>
 <ul>

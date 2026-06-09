@@ -1474,6 +1474,12 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
     </div>
   </div>
 <h2>Watermark Position Analysis</h2>
+
+<img src="/images/watermark-comparison.webp" alt="Watermark position comparison showing corner vs center vs tiled placement" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/watermark-tiled-demo.webp" alt="Tiled watermark pattern demonstration" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/watermark-overlay-demo.webp" alt="Overlay watermark multi-layer anti-theft demonstration" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 <p>Corner watermarks removed in <strong>85% of theft cases</strong>. Center at 20% opacity: only 15% removed. <strong>Center at 15-20% is optimal.</strong></p>
 <h2>References</h2>
 <ul>
