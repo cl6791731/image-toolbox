@@ -270,26 +270,20 @@ const description = '免费在线水印工具。为图片添加文字水印，�
       overlay.style.top = '0';
       overlay.style.left = '0';
     } else if (wmMode === 'overlay') {
-      const size = parseInt($('wmSize').value) * 2.5;
-      const angleVal = parseInt(angle) || 0;
-      let html = '';
-      const offsets = [
-        { dx: '30%', dy: '35%', a: angleVal },
-        { dx: '15%', dy: '25%', a: angleVal - 15 },
-        { dx: '45%', dy: '45%', a: angleVal + 15 },
-        { dx: '20%', dy: '50%', a: angleVal + 30 },
-        { dx: '40%', dy: '25%', a: angleVal - 30 },
-      ];
-      offsets.forEach(function(o) {
-        html += '<span style="position:absolute;left:' + o.dx + ';top:' + o.dy + ';transform:translate(-50%,-50%) rotate(' + o.a + 'deg);font-size:' + size + 'px;white-space:nowrap;pointer-events:none;">' + text + '</span>';
-      });
-      overlay.innerHTML = html;
+      overlay.innerHTML = '';
+      overlay.textContent = text;
+      overlay.style.fontSize = parseInt($('wmSize').value) * 2.5 + 'px';
       overlay.style.background = 'none';
-      overlay.style.display = 'block';
-      overlay.style.width = '100%';
-      overlay.style.height = '100%';
-      overlay.style.top = '0';
-      overlay.style.left = '0';
+      overlay.style.display = '';
+      overlay.style.width = '';
+      overlay.style.height = '';
+      overlay.style.top = '';
+      overlay.style.left = '';
+      overlay.style.position = 'absolute';
+      overlay.style.whiteSpace = 'nowrap';
+      overlay.style.pointerEvents = 'auto';
+      overlay.style.transform = 'rotate(' + angle + 'deg)';
+    } else {
     } else {
       overlay.textContent = text;
       overlay.style.background = 'none';
@@ -399,24 +393,23 @@ const description = '免费在线水印工具。为图片添加文字水印，�
       }
       ctx.restore();
     } else if (wmMode === 'overlay') {
-      // Overlay: multiple watermark layers at different angles and offsets
       const overlayFontSize = canvasFontSize * 2.5;
       ctx.font = 'bold ' + overlayFontSize + 'px -apple-system, "Noto Sans SC", sans-serif';
       ctx.shadowBlur = overlayFontSize * 0.05;
       ctx.shadowOffsetY = overlayFontSize * 0.02;
-      const centerX = c.width / 2;
-      const centerY = c.height / 2;
+      const cx = c.width * wmState.x;
+      const cy = c.height * wmState.y;
       const layers = [
-        { dx: 0, dy: 0, angle: angle },
-        { dx: -c.width * 0.15, dy: -c.height * 0.1, angle: angle - 15 },
-        { dx: c.width * 0.15, dy: c.height * 0.1, angle: angle + 15 },
-        { dx: -c.width * 0.1, dy: c.height * 0.15, angle: angle + 30 },
-        { dx: c.width * 0.1, dy: -c.height * 0.15, angle: angle - 30 },
+        { dx: 0, dy: 0, a: angle },
+        { dx: -c.width * 0.15, dy: -c.height * 0.1, a: angle - 15 },
+        { dx: c.width * 0.15, dy: c.height * 0.1, a: angle + 15 },
+        { dx: -c.width * 0.1, dy: c.height * 0.15, a: angle + 30 },
+        { dx: c.width * 0.1, dy: -c.height * 0.15, a: angle - 30 },
       ];
       layers.forEach(layer => {
         ctx.save();
-        ctx.translate(centerX + layer.dx, centerY + layer.dy);
-        ctx.rotate(layer.angle * Math.PI / 180);
+        ctx.translate(cx + layer.dx, cy + layer.dy);
+        ctx.rotate(layer.a * Math.PI / 180);
         ctx.fillText(text, 0, 0);
         ctx.restore();
       });
