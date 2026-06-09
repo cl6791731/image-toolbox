@@ -203,7 +203,7 @@ export const articles = [
   </div>
 </div>
 <h2>我们的对比结果</h2>
-<p>我们创建了标准化测试: the same 4000×3000 photograph exported as PNG and JPG at quality 80, 85, and 90. PNG weighed 18.2MB, while JPG at quality 90 was 3.8MB — a <strong>79% reduction</strong> with virtually no visible difference. For graphics with text overlays, JPG introduced artifacts around text at quality 70 and below, while PNG maintained perfect clarity. This confirmed: <strong>use PNG for graphics, JPG for photographs</strong>.</p>
+<p>我们创建了标准化测试：同一张 4000×3000 的照片分别以质量 80、85、90 导出为 PNG 和 JPG。PNG 版本重 18.2MB，JPG 质量 90 为 3.8MB — <strong>减少了 79%</strong>，几乎没有可见差异。对于带有文字叠加的图形，JPG 在质量 70 及以下时在文字周围引入伪影，而 PNG 始终保持完美清晰。这确认了：<strong>图形用 PNG，照片用 JPG</strong>。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/JPEG" target="_blank" rel="noopener">Wikipedia: JPEG</a> — Technical background on JPEG compression</li>
@@ -258,7 +258,7 @@ export const articles = [
 </div>
 <h2>我们的测试体验</h2>
 <p>我们使用 Image Toolbox 将 50 张照片在质量 80、85、90 下分别转换为 WebP 和 JPG 进行对比。<strong>WebP 在质量 85 时平均节省了 32% 的空间</strong>，盲测中视觉效果几乎相同。最大收益来自带有平滑渐变的照片 — 天空、肤色和日落 — WebP 的预测编码在这些场景中优于 JPG 的 DCT 压缩。</p>
-<p>对于带有清晰文字的截图和图形，差异较小（15-20%），但对页面加载性能仍有意义。 We also found WebP encoding was roughly 2x slower than JPG in Chrome, worth considering for real-time processing.</p>
+<p>对于带有清晰文字的截图和图形，差异较小（15-20%），但对页面加载性能仍有意义。我们还发现 WebP 编码在 Chrome 中大约比 JPG 慢 2 倍，在实时处理场景中需要考虑这一点。</p>
 <h2>延伸阅读</h2>
 <ul>
 <li><a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP 文档</a> — 官方格式规范</li>
@@ -309,7 +309,7 @@ export const articles = [
   </div>
 </div>
 <h2>我们告诉用户的经验</h2>
-<p>基于数千次转换 through Image Toolbox, we consistently see beginners choose the wrong format. Our data shows that <strong>80% of web photos should use JPG</strong> (smaller files, great quality) while <strong>screenshots and graphics should use PNG</strong> (no text artifacts). The simple rule: if it was taken by a camera, use JPG. If it has text or sharp edges, use PNG.</p>
+<p>基于 Image Toolbox 上数千次转换的经验，我们发现初学者经常选错格式。数据显示 <strong>80% 的网页照片应该用 JPG</strong>（文件更小，质量更好），而<strong>截图和图形应该用 PNG</strong>（无文字伪影）。简单规则：相机拍摄的用 JPG，有文字或尖锐边缘的用 PNG。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://web.dev/articles/uses-responsive-images" target="_blank" rel="noopener">web.dev：响应式图片</a></li>
@@ -362,7 +362,7 @@ export const articles = [
   </div>
 </div>
 <h2>HEIC 转换结果</h2>
-<p>我们测试了 HEIC 解码 from iPhone 12, 14, and 16 photos using our built-in libheif-js decoder. All files decoded successfully in Chrome and Safari, producing JPEG output that was <strong>60-80% smaller</strong> than the original HEIC with no visible quality loss. The process takes 2-5 seconds per image in the browser — slower than server-side but with the benefit of complete privacy.</p>
+<p>我们使用内置的 libheif-js 解码器测试了 iPhone 12、14 和 16 照片的 HEIC 解码。所有文件在 Chrome 和 Safari 中均成功解码，生成的 JPEG 输出比原始 HEIC <strong>小 60-80%</strong>，且无可见质量损失。浏览器中处理每张图片需要 2-5 秒 — 比服务器端慢，但具有完全隐私的优势。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://github.com/nicholasgasior/libheif-js" target="_blank" rel="noopener">libheif-js</a> — 基于浏览器的 HEIC 解码器</li>
@@ -424,7 +424,7 @@ export const articles = [
   </div>
 </div>
 <h2>AVIF 实际性能</h2>
-<p>我们将 AVIF 与 WebP and JPG using 30 diverse images. AVIF at quality 50 produced files <strong>20-30% smaller than WebP</strong> at equivalent quality, and <strong>50% smaller than JPG</strong>. The trade-off: AVIF encoding in the browser takes 3-5x longer than WebP. For batch processing, we recommend WebP for speed; for final delivery where file size matters most, AVIF wins.</p>
+<p>我们使用 30 张不同类型的图片将 AVIF 与 WebP 和 JPG 进行对比。质量 50 的 AVIF 产生的文件<strong>比 WebP 小 20-30%</strong>，<strong>比 JPG 小 50%</strong>。权衡点在于：浏览器中 AVIF 编码比 WebP 慢 3-5 倍。批量处理建议用 WebP 追求速度；最终交付中文件大小最重要时，AVIF 胜出。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://aomediacodec.github.io/av1-avif/" target="_blank" rel="noopener">AVIF 格式规范</a></li>
@@ -484,7 +484,7 @@ export const articles = [
     </div>
   </div>
 <h2>我们的 Favicon 生成流程</h2>
-<p>我们生成 ICO 文件 with 16×16, 32×32, and 48×48 sizes from a single PNG upload. A <strong>48×48 source</strong> produces the cleanest results.</p>
+<p>我们从单个 PNG 上传生成包含 16×16、32×32 和 48×48 尺寸的 ICO 文件。<strong>48×48 的源图片</strong>缩放后效果最好。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://web.dev/articles/add-manifest" target="_blank" rel="noopener">web.dev：Web App Manifest</a></li>
@@ -1198,7 +1198,7 @@ export const articles = [
     </div>
   </div>
 <h2>宽高比陷阱</h2>
-<p>最常见的错误: resizing width-only. <strong>等比例缩放保留 98% visual quality</strong> at any target size.</p>
+<p>最常见的错误：只缩放宽度而不约束高度。<strong>等比例缩放在任何目标尺寸下保留 98% 的视觉质量</strong>。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Manipulating_canvas" target="_blank" rel="noopener">MDN：Canvas 操作</a></li>
@@ -1601,7 +1601,7 @@ export const articles = [
   </div>
 </div>
 <h2>透明度格式对比</h2>
-<p>我们测试了透明背景 across formats: PNG supports full alpha transparency and is supported by <strong>99% of tools and browsers</strong>. WebP supports transparency with smaller files but has limited editor support. SVG is ideal for logos (vector, infinitely scalable) but not for photographs. For most logo use cases, we recommend <strong>PNG with transparency</strong> as the universal format.</p>
+<p>我们测试了各种格式的透明背景：PNG 支持完整的 alpha 透明度，被 <strong>99% 的工具和浏览器</strong>支持。WebP 支持透明度且文件更小，但编辑器支持有限。SVG 是标志的理想选择（矢量、无限缩放）但不适用于照片。对于大多数标志使用场景，建议使用<strong>带透明度的 PNG</strong> 作为通用格式。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://caniuse.com/png-transparency" target="_blank" rel="noopener">Can I Use: PNG Alpha</a></li>
@@ -1668,10 +1668,10 @@ export const articles = [
   </div>
 </div>
 <h2>我们衡量的 SEO 影响</h2>
-<p>我们优化了 5 test websites: adding descriptive filenames, alt text, WebP format, and proper dimensions. After 30 days, organic image traffic increased by <strong>45% on average</strong>. 最大因素 was file format — WebP pages loaded 30% faster, directly improving Core Web Vitals scores and search rankings. Descriptive filenames contributed an additional 12% improvement.</p>
+<p>我们优化了 5 个测试网站的图片：添加描述性文件名、alt 文本、WebP 格式和正确尺寸。30 天后，自然图片流量平均<strong>增长了 45%</strong>。最大因素是文件格式 — WebP pages loaded 30% faster, directly improving Core Web Vitals scores and search rankings. Descriptive filenames contributed an additional 12% improvement.</p>
 <h2>参考来源</h2>
 <ul>
-<li><a href="https://developers.google.com/search/docs/appearance/google-images" target="_blank" rel="noopener">Google: Image SEO Best Practices</a></li>
+<li><a href="https://developers.google.com/search/docs/appearance/google-images" target="_blank" rel="noopener">Google：图片 SEO 最佳实践</a></li>
 <li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev：Core Web Vitals</a></li>
 </ul>`
     },
@@ -2301,7 +2301,7 @@ export const articles = [
       summary: '2020 年以来，图片格式的格局发生了翻天覆地的变化。过去几十年，JPEG 一直是网页图片的霸主——轻量、通用、堪称"够用"。2010 年，Google 推出了 WebP，承诺在同等画质下比 JPEG 减小 25-35% 的文件体积。到了 2019 年，开放媒体联盟（Alliance for ...',
       content: `
 <h2>什么是 WebP 和 AVIF？两大现代格式的前世今生</h2>
-<p>2020 年以来，图片格式的格局发生了翻天覆地的变化。过去几十年，JPEG 一直是网页图片的霸主——轻量、通用、堪称"够用"。2010 年，Google 推出了 WebP，承诺在同等画质下比 JPEG 减小 25-35% 的文件体积。到了 2019 年，开放媒体联盟（Alliance for Open Media）发布了 AVIF（AV1 Image File Format），它基于与 Netflix 和 YouTube 4K 视频流相同的 AV1 编解码器。AVIF 再次拔高了天花板，在同等视觉质量下，文件体积比 JPEG <strong>最多减小 50%</strong>，比 WebP 自身还要小 20-30%。</p>
+<p>2020 年以来，图片格式的格局发生了翻天覆地的变化。过去几十年，JPEG 一直是网页图片的霸主——轻量、通用、堪称"够用"。2010 年，Google 推出了 WebP，承诺在同等画质下比 JPEG 减小 25-35% 的文件体积。到了 2019 年，开放媒体联盟发布了 AVIF（AV1 Image File Format），它基于与 Netflix 和 YouTube 4K 视频流相同的 AV1 编解码器。AVIF 再次拔高了天花板，在同等视觉质量下，文件体积比 JPEG <strong>最多减小 50%</strong>，比 WebP 自身还要小 20-30%。</p>
 <p>但更小的文件并非故事的全部。每种格式都代表了压缩效率、编码速度和浏览器覆盖率之间的不同取舍。选错了格式，Core Web Vitals 评分可能骤降，更糟糕的是，一部分用户会直接看到破损图片。本文将深入对比 WebP 与 AVIF 在真实场景下的性能差异，提供可信的基准测试数据和一个可直接套用在项目中的选择框架。</p>
 
 <h2>文件大小与画质：数据不会说谎</h2>
@@ -2454,7 +2454,7 @@ export const articles = [
     </div>
   </div>
 <h2>压缩分析</h2>
-<p><strong>1080px+: 95%+ quality retained</strong>. 640px → re-encoded to 480px (25% loss). Upload as JPEG to avoid double compression.</p>
+<p><strong>1080px 及以上：保留 95% 以上质量</strong>。640px → 重新编码为 480px（25% 损失）。以 JPEG 格式上传以避免双重压缩。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://help.instagram.com/1038071743007909" target="_blank" rel="noopener">Instagram：支持的格式</a></li>
@@ -2550,7 +2550,7 @@ export const articles = [
   </div>
 </div>
 <h2>Amazon 合规测试</h2>
-<p>我们上传了测试产品图片 to Amazon Seller Central at various sizes. 在 <strong>2000×2000px triggered the zoom feature</strong> correctly; images at 1500×1500px did not. Amazon's JPEG compression reduced a 5MB upload to approximately 300KB at display resolution. We recommend uploading at 2000×2000px, JPEG quality 90, with a pure white background (#FFFFFF) for main images.</p>
+<p>我们在 Amazon 卖家中心上传了不同尺寸的测试产品图片。<strong>2000×2000px 的图片正确触发了缩放功能</strong>; images at 1500×1500px did not. Amazon 的 JPEG 压缩将 5MB 上传在显示分辨率下缩减到约 300KB。建议主图上传 2000×2000px、JPEG 质量 90、纯白背景（#FFFFFF）。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://sellercentral.amazon.com/help/hub/reference/G201105760" target="_blank" rel="noopener">Amazon：图片要求</a></li>
