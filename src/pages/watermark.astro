@@ -246,24 +246,33 @@ const description = 'Free online watermark tool. Add text watermarks to images w
     const overlay = $('wmOverlay');
     if (!overlay) return;
     const text = $('wmText').value || 'Watermark';
-    overlay.textContent = text;
+    const angle = $('wmAngle').value;
+    overlay.style.color = $('wmColor').value || '#ffffff';
     overlay.style.fontSize = parseInt($('wmSize').value) + 'px';
     overlay.style.opacity = parseInt($('wmOpacity').value) / 100;
-    overlay.style.color = $('wmColor').value || '#ffffff';
-    overlay.style.transform = 'rotate(' + $('wmAngle').value + 'deg)';
+    overlay.style.transform = 'rotate(' + angle + 'deg)';
     overlay.style.whiteSpace = 'nowrap';
     overlay.style.pointerEvents = 'auto';
+
     if (wmMode === 'tiled') {
-      overlay.style.background = 'repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(255,255,255,0.05) 80px, rgba(255,255,255,0.05) 82px)';
-      overlay.style.display = 'flex';
-      overlay.style.flexWrap = 'wrap';
-      overlay.style.alignItems = 'center';
-      overlay.style.justifyContent = 'center';
+      // Build a CSS grid of repeated watermark text
+      const size = parseInt($('wmSize').value);
+      const spacing = size * 4;
+      let html = '';
+      for (let y = 0; y < 20; y++) {
+        for (let x = 0; x < 10; x++) {
+          html += '<span style="position:absolute;left:' + (x * spacing) + 'px;top:' + (y * spacing) + 'px;white-space:nowrap;pointer-events:none;">' + text + '</span>';
+        }
+      }
+      overlay.innerHTML = html;
+      overlay.style.background = 'none';
+      overlay.style.display = 'block';
       overlay.style.width = '100%';
       overlay.style.height = '100%';
       overlay.style.top = '0';
       overlay.style.left = '0';
     } else if (wmMode === 'overlay') {
+      overlay.textContent = text;
       overlay.style.background = 'none';
       overlay.style.display = 'flex';
       overlay.style.alignItems = 'center';
@@ -274,12 +283,14 @@ const description = 'Free online watermark tool. Add text watermarks to images w
       overlay.style.left = '0';
       overlay.style.fontSize = parseInt($('wmSize').value) * 3 + 'px';
     } else {
+      overlay.textContent = text;
       overlay.style.background = 'none';
       overlay.style.display = '';
       overlay.style.width = '';
       overlay.style.height = '';
       overlay.style.top = '';
       overlay.style.left = '';
+      overlay.style.fontSize = parseInt($('wmSize').value) + 'px';
     }
   }
 
