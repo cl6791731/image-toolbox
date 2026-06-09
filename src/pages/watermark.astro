@@ -63,11 +63,20 @@ const description = 'Free online watermark tool. Add text watermarks to images w
             </div>
           </div>
         </div>
-        <div class="control-group">
-          <label for="wmColor">Color</label>
-          <div class="color-row">
-            <input type="color" id="wmColor" value="#ffffff" />
-            <span class="color-hex" id="wmColorHex">#ffffff</span>
+        <div class="control-row">
+          <div class="control-group">
+            <label for="wmAngle">Angle</label>
+            <div class="range-row">
+              <input type="range" id="wmAngle" min="-180" max="180" value="0" aria-label="Watermark angle">
+              <span class="range-value" id="wmAngleVal">0°</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="wmColor">Color</label>
+            <div class="color-row">
+              <input type="color" id="wmColor" value="#ffffff" />
+              <span class="color-hex" id="wmColorHex">#ffffff</span>
+            </div>
           </div>
         </div>
       </div>
@@ -169,6 +178,7 @@ const description = 'Free online watermark tool. Add text watermarks to images w
   // Slider updates
   $('wmSize').addEventListener('input', function() { $('wmSizeVal').textContent = this.value + 'px'; refreshOverlay(); });
   $('wmOpacity').addEventListener('input', function() { $('wmOpacityVal').textContent = this.value + '%'; refreshOverlay(); });
+  $('wmAngle').addEventListener('input', function() { $('wmAngleVal').textContent = this.value + '°'; refreshOverlay(); });
   $('wmColor').addEventListener('input', function() { $('wmColorHex').textContent = this.value; refreshOverlay(); });
   $('wmText').addEventListener('input', refreshOverlay);
 
@@ -216,6 +226,7 @@ const description = 'Free online watermark tool. Add text watermarks to images w
     overlay.style.fontSize = parseInt($('wmSize').value) + 'px';
     overlay.style.opacity = parseInt($('wmOpacity').value) / 100;
     overlay.style.color = $('wmColor').value || '#ffffff';
+    overlay.style.transform = 'rotate(' + $('wmAngle').value + 'deg)';
   }
 
   function setupWatermark() {
@@ -278,6 +289,7 @@ const description = 'Free online watermark tool. Add text watermarks to images w
     const fontSize = parseInt($('wmSize').value);
     const opacity = parseInt($('wmOpacity').value) / 100;
     const color = $('wmColor').value || '#ffffff';
+    const angle = parseInt($('wmAngle').value) || 0;
     const c = imageToCanvas(sourceImage);
     const ctx = c.getContext('2d');
     const imgEl = $('wmBaseImg');
@@ -292,7 +304,15 @@ const description = 'Free online watermark tool. Add text watermarks to images w
     ctx.shadowColor = 'rgba(0,0,0,0.3)';
     ctx.shadowBlur = canvasFontSize * 0.05;
     ctx.shadowOffsetY = canvasFontSize * 0.02;
-    ctx.fillText(text, c.width * wmState.x, c.height * wmState.y);
+    const cx = c.width * wmState.x;
+    const cy = c.height * wmState.y;
+    if (angle !== 0) {
+      ctx.translate(cx, cy);
+      ctx.rotate(angle * Math.PI / 180);
+      ctx.fillText(text, 0, 0);
+    } else {
+      ctx.fillText(text, cx, cy);
+    }
     c.toBlob(blob => {
       if (!blob) return;
       resultBlob = blob;
