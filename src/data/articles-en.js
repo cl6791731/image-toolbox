@@ -725,6 +725,8 @@ export const articles = [
 </ol>
 <p>This forces the camera to save photos as JPG, which are larger than HEIC but work everywhere. A better approach is to keep HEIC for storage and convert to JPG only when needed — this preserves storage space while ensuring compatibility.</p>
 
+<img src="/images/phone-storage-settings.webp" alt="Phone storage optimization settings screenshot" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 <h2>Android: Compress Before Sharing</h2>
 <p>Android phones vary by manufacturer, but most offer built-in compression options:</p>
 <ul>

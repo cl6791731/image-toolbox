@@ -732,6 +732,8 @@ export const articles = [
 </ol>
 <p>这会强制相机将照片保存为JPG，比HEIC大但在任何地方都能使用。更好的方法是将HEIC用于存储，仅在需要时转换为JPG——这样既节省存储空间又确保兼容性。</p>
 
+<img src="/images/phone-storage-settings.webp" alt="手机存储优化设置截图" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 <h2>Android：分享前压缩</h2>
 <p>Android手机因制造商而异，但大多数都提供内置压缩选项：</p>
 <ul>
