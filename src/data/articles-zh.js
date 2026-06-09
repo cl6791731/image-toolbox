@@ -63,7 +63,7 @@ export const articles = [
   </div>
 </div>
 <h2>我们的测试体验</h2>
-<p>当我们对 50 张照片进行基准测试时 in Image Toolbox, WebP at quality 85 averaged <strong>32% smaller files</strong> than JPG at the same quality setting. The gains were most dramatic in images with smooth gradients — skies and skin tones showed the clearest improvement. 对于带有清晰文字的截图, the savings were smaller (15-20%) but still worthwhile for page speed.</p>
+<p>当我们通过 Image Toolbox 对 50 张照片进行基准测试时，质量 85 的 WebP 平均比同质量 JPG <strong>文件小 32%</strong>。平滑渐变的图片收益最大 — 天空和肤色显示出最明显的改善。对于带有清晰文字的截图，节省幅度较小（15-20%），但对页面速度仍有意义。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP 文档</a></li>
@@ -129,7 +129,7 @@ export const articles = [
   </div>
 </div>
 <h2>我们的测试发现</h2>
-<p>我们在 100 张真实图片上测试了压缩: iPhone photos (4000×3000), DSLR exports (6000×4000), screenshots (1920×1080), and web graphics. For <strong>photographs</strong>, JPEG quality 70-80 consistently delivered files under 200KB at 1920px wide. For <strong>screenshots</strong>, quality 85 kept text sharp while staying well under 200KB. 关键洞察: <strong>resize first, then compress</strong> — a 4000px photo at quality 75 still exceeds 200KB, but resizing to 1920px first gives excellent results at 80-150KB.</p>
+<p>我们在 100 张真实图片上测试了压缩：iPhone 照片（4000×3000）、单反导出（6000×4000）、截图（1920×1080）和网页图形。对于<strong>照片</strong>，JPEG 质量 70-80 在 1920px 宽度下始终输出 200KB 以下。对于<strong>截图</strong>，质量 85 保持文字清晰且远低于 200KB。关键洞察：<strong>先缩放，再压缩</strong> — 4000px 宽的照片压缩到质量 75 仍超过 200KB，但先缩放到 1920px 再压缩到质量 80，可在 80-150KB 内获得优秀效果。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://web.dev/articles/fast" target="_blank" rel="noopener">web.dev: Fast load times</a> — Google 图片优化指南</li>
@@ -257,7 +257,7 @@ export const articles = [
   </div>
 </div>
 <h2>我们的测试体验</h2>
-<p>我们将 50 张照片 using Image Toolbox, comparing WebP at quality 80, 85, and 90 against JPG at the same settings. <strong>WebP saved 32% more space on average</strong> at quality 85 with visually identical results in blind tests. 最大收益 came from photographs with smooth gradients — skies, skin tones, and sunsets — where WebP's predictive coding outperformed JPG's DCT compression.</p>
+<p>我们使用 Image Toolbox 将 50 张照片在质量 80、85、90 下分别转换为 WebP 和 JPG 进行对比。<strong>WebP 在质量 85 时平均节省了 32% 的空间</strong>，盲测中视觉效果几乎相同。最大收益来自带有平滑渐变的照片 — 天空、肤色和日落 — WebP 的预测编码在这些场景中优于 JPG 的 DCT 压缩。</p>
 <p>对于带有清晰文字的截图和图形，差异较小（15-20%），但对页面加载性能仍有意义。 We also found WebP encoding was roughly 2x slower than JPG in Chrome, worth considering for real-time processing.</p>
 <h2>延伸阅读</h2>
 <ul>
@@ -1819,7 +1819,7 @@ export const articles = [
   </div>
 </div>
 <h2>存档格式测试</h2>
-<p>我们将 TIFF 和 PNG 进行对比 for long-term archival of 50 photographs. TIFF files averaged <strong>52MB per image</strong> (uncompressed) while PNG files averaged <strong>12MB</strong> (lossless compressed) — a 77% savings with identical pixel data. For digital archives where storage cost matters, PNG is the better choice. TIFF remains preferred for print workflows that require specific color profiles (CMYK, Adobe RGB).</p>
+<p>我们将 TIFF 和 PNG 用于 50 张照片的长期存档进行了对比。TIFF 文件平均<strong>每张 52MB</strong>（未压缩），PNG 文件平均<strong>每张 12MB</strong>（无损压缩）— 在像素数据完全相同的情况下节省了 77%。对于需要考虑存储成本的数字存档，PNG 是更好的选择。TIFF 仍然是需要特定色彩配置文件（CMYK、Adobe RGB）的印刷工作流程的首选。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://www.loc.gov/preservation/digital/formats/content/tiff.shtml" target="_blank" rel="noopener">美国国会图书馆：TIFF 格式</a></li>
