@@ -245,6 +245,9 @@ const description = 'Free online watermark tool. Add text watermarks to images w
   function refreshOverlay() {
     const overlay = $('wmOverlay');
     if (!overlay) return;
+    // Preserve current position before refresh
+    const savedLeft = overlay.style.left;
+    const savedTop = overlay.style.top;
     const text = $('wmText').value || 'Watermark';
     const angle = $('wmAngle').value;
     overlay.style.color = $('wmColor').value || '#ffffff';
@@ -298,6 +301,11 @@ const description = 'Free online watermark tool. Add text watermarks to images w
       overlay.style.top = '';
       overlay.style.left = '';
       overlay.style.fontSize = parseInt($('wmSize').value) + 'px';
+    }
+    // Restore position for single and overlay modes
+    if (wmMode !== 'tiled' && savedLeft && savedTop) {
+      overlay.style.left = savedLeft;
+      overlay.style.top = savedTop;
     }
   }
 
