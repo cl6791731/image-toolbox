@@ -487,7 +487,7 @@ export const articles = [
 <p>我们生成 ICO 文件 with 16×16, 32×32, and 48×48 sizes from a single PNG upload. A <strong>48×48 source</strong> produces the cleanest results.</p>
 <h2>参考来源</h2>
 <ul>
-<li><a href="https://web.dev/articles/add-manifest" target="_blank" rel="noopener">web.dev: Web App Manifest</a></li>
+<li><a href="https://web.dev/articles/add-manifest" target="_blank" rel="noopener">web.dev：Web App Manifest</a></li>
 </ul>
 </div>`
     },
@@ -546,7 +546,7 @@ export const articles = [
 <p>我们将同一张 4000×3000 的图片分别转换为 BMP 和 PNG。BMP 文件为 <strong>18.4MB</strong>，PNG 为 <strong>4.2MB</strong> — 减少了 77%，视觉质量完全相同。对于网页使用，完全没有理由使用 BMP 而非 PNG。</p>
 <h2>参考来源</h2>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/BMP_file_format" target="_blank" rel="noopener">Wikipedia: BMP Format</a></li>
+<li><a href="https://en.wikipedia.org/wiki/BMP_file_format" target="_blank" rel="noopener">维基百科：BMP 格式</a></li>
 </ul>`
     },
     {
@@ -596,7 +596,7 @@ export const articles = [
 <p>我们将同一个 3 秒动画（480×270，30fps）分别转换为 GIF 和动画 WebP。GIF 文件为 <strong>2.4MB</strong>，动画 WebP 为 <strong>680KB</strong> — 减少了 <strong>72%</strong>。WebP 还支持 256 色透明度，而 GIF 仅支持 1 位透明度，在带 alpha 通道的图形上产生更平滑的边缘。</p>
 <h2>参考来源</h2>
 <ul>
-<li><a href="https://developers.google.com/speed/webp/animated" target="_blank" rel="noopener">Google: Animated WebP</a></li>
+<li><a href="https://developers.google.com/speed/webp/animated" target="_blank" rel="noopener">Google：动画 WebP</a></li>
 </ul>`
     },
     {
@@ -655,7 +655,7 @@ export const articles = [
 <p>我们在不同质量级别下测试同一张照片：无损 PNG（12.1MB）、JPG 质量 90（2.8MB，-77%）、JPG 质量 75（1.4MB，-88%）、JPG 质量 60（820KB，-93%）。10 人盲测中，质量 80 及以上与原图无法区分。质量低于 70 时，平滑渐变中出现明显块状伪影。建议：<strong>照片用质量 80-85，图形用无损格式</strong>。</p>
 <h2>参考来源</h2>
 <ul>
-<li><a href="https://web.dev/articles/optimizing-content-efficiency" target="_blank" rel="noopener">web.dev: Optimizing Content Efficiency</a></li>
+<li><a href="https://web.dev/articles/optimizing-content-efficiency" target="_blank" rel="noopener">web.dev：优化内容效率</a></li>
 </ul>`
     },
     {
@@ -842,7 +842,7 @@ export const articles = [
 <p>我们在标准笔记本电脑上测试了 100 张图片（照片和截图混合）的批量压缩。使用 Web Workers 并行处理，所有 100 张图片在 <strong>45 秒内完成</strong>。平均压缩率 72% — 将 500MB 的照片库缩减到 140MB。内存使用始终保持在 500MB 以下，在手机上也很安全。</p>
 <h2>参考来源</h2>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API" target="_blank" rel="noopener">MDN: Web Workers</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API" target="_blank" rel="noopener">MDN：Web Workers</a></li>
 </ul>`
     },
     {
@@ -993,7 +993,7 @@ export const articles = [
 <p>我们测试了美国（2×2 英寸）、英国（35×45mm）和中国（33×48mm）标准的证件照裁切。工具自动设置正确的宽高比并实时显示毫米尺寸。测试中，用户 <strong>90% 的情况</strong>首次即获得合规照片 — 其余 10% 需要微调头部位置。</p>
 <h2>参考来源</h2>
 <ul>
-<li><a href="https://travel.state.gov/content/travel/en/passports/requirements/photos.html" target="_blank" rel="noopener">US State Dept: Photo Requirements</a></li>
+<li><a href="https://travel.state.gov/content/travel/en/passports/requirements/photos.html" target="_blank" rel="noopener">美国国务院：护照照片要求</a></li>
 </ul>`
     },
     {
@@ -1274,7 +1274,7 @@ export const articles = [
     </div>
   </div>
 <h2>截图裁切技巧</h2>
-<p>Common uses: docs (38%), bug reports (27%), social (22%). <strong>Cropping improves readability by 40%</strong> vs full-page screenshots.</p>
+<p>常见使用场景：文档（38%）、错误报告（27%）、社交分享（22%）。<strong>裁切到内容区域比全页截图提高 40% 的可读性</strong>。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/captureVisibleTab" target="_blank" rel="noopener">MDN：屏幕截图 API</a></li>
@@ -1342,7 +1342,7 @@ export const articles = [
 <p>我们对 20 个 YouTube 视频进行了缩略图 A/B 测试：简单文字叠加 vs 人脸照片 vs 产品照片。带有<strong>人脸的缩略图获得了 30% 更多点击</strong>。最佳文字为 4-6 个粗体字。我们的模板提供安全区域，即使 YouTube 叠加时长标签（右下角）和频道图标（左下角），文字仍然可读。</p>
 <h2>参考来源</h2>
 <ul>
-<li><a href="https://support.google.com/youtube/answer/72431" target="_blank" rel="noopener">YouTube: Video File Formats</a></li>
+<li><a href="https://support.google.com/youtube/answer/72431" target="_blank" rel="noopener">YouTube：视频文件格式</a></li>
 </ul>`
     },
     {
@@ -1740,7 +1740,7 @@ export const articles = [
     </div>
   </div>
 <h2>常见问题</h2>
-<p>Top failures: (1) <strong>file >50MB</strong>, (2) <strong>不支持的格式</strong>, (3) <strong>corrupted headers</strong>. Our tool handles all three.</p>
+<p>前三大失败原因：(1) <strong>文件大于 50MB</strong>，(2) <strong>不支持的格式</strong>，(3) <strong>损坏的文件头</strong>。我们的工具处理了这三种情况。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" target="_blank" rel="noopener">MDN：FileReader API</a></li>
@@ -1892,7 +1892,7 @@ export const articles = [
     </div>
   </div>
 <h2>拼图结果</h2>
-<p>Equal-cell grids received <strong>18% more engagement</strong> than mixed layouts. 2×2 grid with consistent padding looks most professional.</p>
+<p>等大单元格的网格拼图比混合布局<strong>多获得 18% 的互动</strong>。2×2 网格配以一致的间距看起来最专业。</p>
 <h2>参考来源</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="noopener">MDN：Canvas API</a></li>
