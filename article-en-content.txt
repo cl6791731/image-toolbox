@@ -1,0 +1,70 @@
+<h2>What Are Core Web Vitals and Why Do Images Matter?</h2>
+<p>Core Web Vitals are Google's three user-centric performance metrics that measure loading speed (LCP), interactivity (INP), and visual stability (CLS). As of 2026, they remain a confirmed Google ranking factor — sites that score "good" across all three metrics see measurably better search visibility. Among all page elements, images are the single largest contributor to poor Core Web Vitals scores. An unoptimized hero image can destroy LCP, a missing width/height attribute can tank CLS, and a heavy JavaScript image carousel can cripple INP. Getting images right is not optional — it's the fastest path to a "good" Core Web Vitals assessment.</p>
+<p>The good news: most image-related performance issues have straightforward fixes. This checklist covers every image optimization that directly impacts your Core Web Vitals scores, organized by metric. Whether you're a frontend developer, a content manager, or an SEO specialist, these optimizations are concrete, measurable, and implementable today.</p>
+
+<h2>LCP: Optimizing Largest Contentful Paint</h2>
+<p>Largest Contentful Paint measures how quickly the largest visible page element — usually a hero image, banner, or carousel — finishes rendering. Google considers LCP under 2.5 seconds "good." Images account for roughly 70% of LCP elements on the web, according to HTTP Archive data. If your LCP is in the red, your images are almost certainly the culprit.</p>
+
+<h3>1. Use Modern Image Formats (WebP / AVIF)</h3>
+<p>WebP delivers <strong>25–35% smaller files</strong> than JPEG at equivalent quality. AVIF goes further — up to <strong>50% smaller</strong> than JPEG, with better detail preservation. For LCP images, every kilobyte counts. A 200KB AVIF loads significantly faster than a 500KB JPEG, especially on mobile connections. Use the <a href="/">Image Toolbox format converter</a> to batch-convert your hero images to WebP or AVIF in seconds, entirely in your browser.</p>
+
+<h3>2. Preload Your LCP Image</h3>
+<p>Browsers discover images late in the parsing process — after CSS and synchronous JavaScript. By adding a <code>&lt;link rel="preload"&gt;</code> tag for your hero image, you tell the browser to fetch it immediately, shaving 500ms–1.5s off LCP. Always pair preload with the <code>fetchpriority="high"</code> attribute on the <code>&lt;img&gt;</code> tag itself for maximum effect.</p>
+
+<h3>3. Avoid Lazy-Loading Above-the-Fold Images</h3>
+<p>This is a surprisingly common mistake. <code>loading="lazy"</code> is excellent for below-the-fold images, but applying it to your LCP hero image forces the browser to defer the most important resource on the page. Remove <code>loading="lazy"</code> from any image that appears in the initial viewport. Combine this with <code>fetchpriority="high"</code> for the LCP candidate, and <code>loading="lazy"</code> plus <code>decoding="async"</code> for everything else.</p>
+
+<h3>4. Serve Properly Sized Images</h3>
+<p>Serving a 4000px-wide photo in a 800px container is the most common LCP killer. Always resize images to match their actual display dimensions. Use responsive images with <code>srcset</code> and <code>sizes</code> so mobile users download appropriately scaled versions. For developers, the <a href="/web-optimizer">Image Toolbox Web Optimizer</a> automatically generates WebP/AVIF variants with matching <code>&lt;picture&gt;</code> markup, eliminating manual sizing guesswork.</p>
+
+<h2>CLS: Eliminating Cumulative Layout Shift</h2>
+<p>Cumulative Layout Shift measures how much page content unexpectedly moves during loading. Google's target is a CLS score under 0.1. Images without explicit dimensions are the #1 cause of layout shift — the browser reserves zero space for them, then pushes everything down when they load. Users clicking on a link that suddenly jumps away is a CLS problem.</p>
+
+<h3>1. Always Set Width and Height Attributes</h3>
+<p>The fix is dead simple: every <code>&lt;img&gt;</code> tag must include <code>width</code> and <code>height</code> attributes matching the image's natural aspect ratio. Modern browsers then calculate the correct space reservation — even inside responsive containers using CSS <code>aspect-ratio</code>. This alone eliminates the vast majority of image-related CLS issues. For CSS background images, use the <code>aspect-ratio</code> property on the container.</p>
+
+<h3>2. Reserve Space for Ad and Embed Containers</h3>
+<p>Ads, embedded videos, and social media iframes are notorious CLS offenders. Always wrap them in a container with explicit dimensions, or use CSS <code>min-height</code> to reserve space even when the content hasn't loaded. For dynamically injected images (like user-generated content), set a placeholder with matching dimensions until the actual image resolves.</p>
+
+<h3>3. Font Loading and Image Text Overlays</h3>
+<p>When text overlays images — common in hero banners and promotional graphics — a web font that loads late can cause the text to reflow and shift the surrounding layout. Use <code>font-display: swap</code> or <code>font-display: optional</code> with a properly sized fallback font, and ensure the text container has a fixed height independent of the font loading state.</p>
+
+<h2>INP: Interaction to Next Paint</h2>
+<p>Interaction to Next Paint measures a page's responsiveness to user input — clicks, taps, and key presses. Google's "good" threshold is under 200ms. While INP is less directly image-related than LCP or CLS, heavy image processing — like JavaScript-based lazy loaders, complex carousels, or client-side format detection — can delay the main thread and degrade INP scores.</p>
+
+<h3>1. Use Native Lazy Loading</h3>
+<p>JavaScript-based lazy loading libraries add main-thread overhead on every scroll event. The native <code>loading="lazy"</code> attribute is browser-implemented in C++ and runs off the main thread — zero JavaScript cost. For modern websites targeting 2026 browsers, there's almost no reason to use a JS lazy loader. The one exception: if you need art-direction-based loading (different images at different breakpoints), combine native lazy loading with <code>&lt;picture&gt;</code> and <code>srcset</code>.</p>
+
+<h3>2. Decode Images Asynchronously</h3>
+<p>Add <code>decoding="async"</code> to non-critical images. This tells the browser to decode the image off the main thread, preventing jank during scroll. Pair this with <code>loading="lazy"</code> for below-the-fold images and <code>fetchpriority="low"</code> for images that don't affect the initial user experience.</p>
+
+<h3>3. Avoid Heavy Image Processing in JavaScript</h3>
+<p>Client-side image manipulation — format detection, color adjustments, watermarking — consumes significant CPU and can degrade INP, especially on mid-range mobile devices. Offload processing to build-time tools or use Web Workers. If you need runtime format conversion, the browser-native Canvas API with <code>toBlob()</code> is lighter than importing an entire image processing library.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What is the number one image mistake that hurts Core Web Vitals?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Serving oversized, unoptimized hero images is the single most damaging mistake. An LCP image that's 3MB, 4000px wide, displayed in an 800px container with no preload, no width/height attributes, and in an outdated format like uncompressed PNG will independently fail all three Core Web Vitals: bloated LCP from the large file size, CLS from missing dimensions, and potential INP issues if a JS library processes it. Start by resizing to display dimensions, converting to WebP or AVIF, adding width/height attributes, and preloading the LCP image. Tools like <a href="/web-optimizer">Image Toolbox Web Optimizer</a> automate all of this in a single workflow.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">How much does image optimization actually improve LCP scores?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Real-world data shows dramatic improvements. HTTP Archive statistics indicate that sites converting from JPEG to WebP see average LCP reductions of 300–800ms. Adding image preloading cuts another 200–500ms. Resizing images to display dimensions (eliminating the "4000px in 800px container" problem) often delivers the largest single gain — 500ms to 2 seconds depending on the original file size. Combined, a full image optimization pass typically reduces LCP by 1–3 seconds. For reference, Google's "good" threshold is 2.5 seconds — so image optimization alone can move many sites from "poor" to "good."</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Should I use AVIF or WebP for Core Web Vitals optimization?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Use AVIF for the best compression (30–50% smaller than JPEG) but provide a WebP or JPEG fallback for browsers that don't support it — Safari only added AVIF support in version 16. The ideal production setup uses <code>&lt;picture&gt;</code> with AVIF as the first source, WebP as the second, and JPEG as the final fallback. This pattern covers 100% of browsers while delivering the smallest possible file to each. Developers can use <a href="/web-optimizer">Image Toolbox's Web Optimizer</a> to auto-generate all three variants plus the complete <code>&lt;picture&gt;</code> markup. For most sites in 2026, the pragmatic sweet spot is: WebP for broad compatibility with excellent compression, plus AVIF for future-proofing as Safari 16+ adoption grows.</p>
+    </div>
+  </div>
+</div>
+<h2>References</h2>
+<ul>
+<li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Google: Core Web Vitals Documentation</a></li>
+<li><a href="https://httparchive.org/reports/state-of-images" target="_blank" rel="noopener">HTTP Archive: State of Images Report</a></li>
+<li><a href="https://developer.chrome.com/docs/lighthouse/performance/performance-scoring" target="_blank" rel="noopener">Chrome: Lighthouse Performance Scoring</a></li>
+</ul>
