@@ -687,6 +687,8 @@ export const articles = [
              photo-1200.jpg 1200w"
      sizes="(max-width: 600px) 400px, 800px"
      alt="描述性alt文本"&gt;</code></pre>
+
+<img src="/images/responsive-srcset-code.webp" alt="响应式图片 srcset 代码示例" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 <p>仅此一项技术就可以将移动数据使用量减少50%以上，而不会有任何可见的质量损失。</p>
 
 <h2>免费批量优化你的图片</h2>

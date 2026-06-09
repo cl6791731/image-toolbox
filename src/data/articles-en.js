@@ -680,6 +680,8 @@ export const articles = [
              photo-1200.jpg 1200w"
      sizes="(max-width: 600px) 400px, 800px"
      alt="A descriptive alt text"&gt;</code></pre>
+
+<img src="/images/responsive-srcset-code.webp" alt="Responsive image srcset code example" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 <p>This single technique can reduce mobile data usage by 50% or more without any visible quality loss.</p>
 
 <h2>Bulk Optimize Your Images for Free</h2>
