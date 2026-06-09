@@ -255,12 +255,14 @@ const description = 'Free online watermark tool. Add text watermarks to images w
     overlay.style.pointerEvents = 'auto';
 
     if (wmMode === 'tiled') {
-      // Build a CSS grid of repeated watermark text
+      // Build a grid of repeated watermark text with proper spacing
       const size = parseInt($('wmSize').value);
-      const spacing = size * 4;
+      // Estimate text width: each char is roughly 0.6 * fontSize
+      const textLen = text.length * size * 0.6;
+      const spacing = textLen * 1.8;
       let html = '';
-      for (let y = 0; y < 20; y++) {
-        for (let x = 0; x < 10; x++) {
+      for (let y = 0; y < 30; y++) {
+        for (let x = 0; x < 15; x++) {
           html += '<span style="position:absolute;left:' + (x * spacing) + 'px;top:' + (y * spacing) + 'px;white-space:nowrap;pointer-events:none;">' + text + '</span>';
         }
       }
@@ -371,9 +373,12 @@ const description = 'Free online watermark tool. Add text watermarks to images w
     ctx.shadowOffsetY = canvasFontSize * 0.02;
 
     if (wmMode === 'tiled') {
-      // Tiled: repeat watermark across entire image in a grid pattern
+      // Tiled: measure text width for proper spacing
       const angleRad = angle * Math.PI / 180;
-      const spacing = canvasFontSize * 4;
+      ctx.save();
+      ctx.font = 'bold ' + canvasFontSize + 'px -apple-system, "Noto Sans SC", sans-serif';
+      const textWidth = ctx.measureText(text).width;
+      const spacing = textWidth * 1.8;
       const cosA = Math.cos(angleRad);
       const sinA = Math.sin(angleRad);
       for (let y = -c.height; y < c.height * 2; y += spacing) {
@@ -387,6 +392,7 @@ const description = 'Free online watermark tool. Add text watermarks to images w
           ctx.restore();
         }
       }
+      ctx.restore();
     } else if (wmMode === 'overlay') {
       // Overlay: large centered watermark
       const overlayFontSize = canvasFontSize * 3;
