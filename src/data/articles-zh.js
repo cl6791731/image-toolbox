@@ -2602,11 +2602,19 @@ export const articles = [
 
 <h2>各类目的特殊图片要求</h2>
 <p>淘宝对不同类目施加了额外的图片规则。这些规则的执行不如 Amazon 的类目规则那么严格，但不合规仍会影响搜索排名和推荐算法的推荐位。那些价格有竞争力却流量低迷的卖家，往往发现类目特定的图片违规才是隐藏的元凶。</p>
+
+<img src="/images/taobao-product-sizing.webp" alt="Resize image to Taobao recommended dimensions" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/taobao-compress-before-upload.webp" alt="Compress images before uploading to Taobao" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/taobao-image-rules-diagram.webp" alt="Taobao image composition rules diagram" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 <h3>服饰、鞋类与时尚配饰</h3>
 <p>服饰是淘宝上体量最大的类目，对图片的期望也最高。<strong>不推荐使用平铺拍摄</strong> 作为主图——淘宝的推荐算法更青睐由真人模特穿着并面向镜头的 Listing。假人模特可以接受，但表现不如真人模特。对于鞋类，主图必须以<strong>45 度侧视角</strong>展示产品——正面拍摄的鞋类图片看起来很平面，根据淘宝商家数据，点击率平均低 22%。色彩准确性至关重要：色差投诉是服饰类目退货的第一原因。校准你的显示器，在一致的 5500K 光源下拍摄。对于多色变体，主图应展示最畅销的颜色；变体图片通过 SKU 图位上传，而非主图位置。</p>
 <h3>电子、3C 和数码产品</h3>
 <p>电子产品主图展示产品<strong>开机且屏幕点亮</strong>的状态效果最好。手机、平板或显示器上的黑屏会让买家以为是故障的展示机。屏幕内容应显示可识别的默认界面——主屏幕、设置菜单或演示模式——绝不能是空白或黑色矩形。对于多组件产品（如手机配充电器和数据线），主图必须只展示主要设备。配件应放在辅图图位。一个常被忽视的规则：如果产品包装不含电池，至少有一张辅图必须明确说明，因为买家假设含电池而导致的"商品无法使用"退货会激增。</p>
 
+
+<img src="/images/taobao-category-comparison.webp" alt="Taobao search results comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 <h2>淘宝 vs 天猫 vs Amazon：图片要求对比</h2>
 <p>如果你在多个平台上销售，理解这些差异至关重要。一套适用于 Amazon 的图片批量处理，很可能在淘宝体系中的某些方面不合格，反之亦然。以下是三大平台在关键图片维度上的对比：</p>
 <table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;">

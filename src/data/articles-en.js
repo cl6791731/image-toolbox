@@ -2594,11 +2594,19 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 
 <h2>Category-Specific Image Requirements</h2>
 <p>Taobao applies additional image rules by category. These are less rigidly enforced than Amazon's category rules, but non-compliance still impacts search ranking and recommendation algorithm placement. Sellers reporting poor traffic despite competitive pricing often find category-specific image violations are the hidden culprit.</p>
+
+<img src="/images/taobao-product-sizing.webp" alt="Resize image to Taobao recommended dimensions" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/taobao-compress-before-upload.webp" alt="Compress images before uploading to Taobao" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
+<img src="/images/taobao-image-rules-diagram.webp" alt="Taobao image composition rules diagram" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 <h3>Apparel, Shoes, and Fashion Accessories</h3>
 <p>Fashion is Taobao's largest category by volume, and image expectations are the highest. <strong>Flat-lay photography is discouraged</strong> for the main image — Taobao's recommendation algorithm favors listings where the garment is worn on a real model facing the camera. Mannequins are acceptable but perform worse than live models. For shoes, the main image must show the product at a <strong>45-degree profile angle</strong> — front-facing shoe images look flat and underperform by an average of 22% in click-through rate, according to Taobao merchant data. Color accuracy is critical: color discrepancy complaints are the #1 return reason in fashion. Calibrate your display and shoot under consistent 5500K lighting. For multi-color variants, the main image should show the most popular color; variant-specific images are uploaded through the SKU image slot, not the main image position.</p>
 <h3>Electronics, 3C, and Digital Products</h3>
 <p>Electronics main images benefit from showing the product <strong>powered on with the screen illuminated</strong>. A black screen on a phone, tablet, or monitor signals a non-functional display unit to shoppers. The screen content should display a recognizable default interface — the home screen, a settings menu, or a demo mode — never a blank or black rectangle. For multi-component products (e.g., a phone with charger and cable), the main image must show only the primary device. Accessories should appear in alternate image slots. One often-overlooked rule: if the product package does not include batteries, at least one alternate image must clearly state this, as "item not working" returns spike when shoppers assume batteries are included.</p>
 
+
+<img src="/images/taobao-category-comparison.webp" alt="Taobao search results comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 <h2>Taobao vs Tmall vs Amazon: Image Requirement Comparison</h2>
 <p>If you sell across multiple platforms, understanding the differences is critical. A single image batch that works for Amazon will likely fail aspects of Taobao's system, and vice versa. Here is how the three major platforms compare on key image dimensions:</p>
 <table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;">
