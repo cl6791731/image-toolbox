@@ -2144,6 +2144,8 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 </ul>
 <p>The thumb-rule for composition is simple: <strong>design for the smallest size, polish for the largest.</strong> Squint at your thumbnail from across the room. If the core message — a face, a bold number, a key object — is still readable, your composition works.</p>
 
+<img src="/images/youtube-thumbnail-template.webp" alt="YouTube thumbnail safe zone template" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
+
 <h2>Design Tips for High-CTR YouTube Thumbnails</h2>
 <p>Getting the dimensions right is only half the battle. The design itself determines whether someone clicks. Here is what separates top-performing thumbnails from also-rans:</p>
 <ul>
@@ -2154,6 +2156,8 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 </ul>
 <p>If you are managing multiple social channels — YouTube, TikTok, Instagram, Facebook — the dimensional differences between platforms can drive you crazy. A 1280 × 720 YouTube thumbnail does not work as a 1080 × 1920 TikTok cover, and neither fits Instagram's 1080 × 1350 feed format. You can use <a href="/social">Image Toolbox's Social Media Compliance Checker</a> to batch-generate correctly sized thumbnails for every platform from a single source image. It validates every export against each platform's latest specifications, saving hours of manual resizing.</p>
 <p>For precise thumbnail editing, the <a href="/resize">resize tool</a> locks your image to exact 1280 × 720 dimensions while the <a href="/crop">crop tool</a> helps you reframe compositions to 16:9. Both run entirely in your browser — your creative work never leaves your computer.</p>
+
+<img src="/images/youtube-thumbnail-comparison.webp" alt="YouTube thumbnail comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq" itemscope itemtype="https://schema.org/FAQPage">
