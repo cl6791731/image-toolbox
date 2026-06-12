@@ -2831,5 +2831,63 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <li><a href="https://web.dev/articles/serve-responsive-images" target="_blank" rel="noopener">web.dev: Serve Responsive Images</a></li>
 <li><a href="https://caniuse.com/picture" target="_blank" rel="noopener">Can I Use: Picture Element Browser Support</a></li>
 </ul>`
-    }
+    },
+    {
+      slug: 'ebay-image-requirements-2026',
+      title: 'eBay Image Requirements 2026: The Complete Seller\'s Guide',
+      date: '2026-06-12',
+      tags: ['ebay', 'ecommerce', 'product-photography', 'image-optimization'],
+      summary: 'eBay has strict image requirements that directly impact your listing visibility, conversion rates, and seller performance metrics. This comprehensive guide covers every technical specification — from minimum resolution and allowed formats to Gallery Plus best practices and common rejection reasons. Learn how to create eBay-compliant product images that attract buyers and boost sales in 2026.',
+      content: `
+<h2>Why eBay Image Requirements Matter</h2>
+<p>On eBay, your product images are not just decoration — they are the single most influential factor in whether a buyer clicks on your listing, stays on the page, and ultimately makes a purchase. Unlike physical retail where customers can touch and examine products, online shoppers rely almost entirely on images to assess quality, condition, and authenticity. eBay's own data shows that listings with high-quality, compliant images see <strong>up to 5% higher conversion rates</strong> and significantly better visibility in search results.</p>
+<p>eBay enforces image requirements for good reason. Clean, professional images create trust between buyers and sellers, reduce return rates from "item not as described" claims, and maintain the marketplace's overall quality reputation. The first image in your listing is free, and it is also the image that appears in search results and on mobile browsing feeds — making it the most valuable real estate in your entire listing. Getting it right is not optional if you want to compete effectively.</p>
+
+<h2>eBay Image Technical Specifications</h2>
+<h3>Resolution and Size Requirements</h3>
+<p>The minimum resolution for any eBay product image is <strong>500 pixels on the longest side</strong>. Anything below this threshold will be rejected during upload, and your listing may not go live. However, the minimum is far from optimal. eBay recommends images of at least <strong>1600 pixels on the longest side</strong> to enable the zoom-in feature, which allows buyers to hover over your image and see fine details up close. Listings with zoom-enabled images consistently outperform those without.</p>
+<p>File size is capped at <strong>7MB per image</strong> for standard listings. For most product photos shot at 1600px in JPEG format at 85-90% quality, the file size will naturally fall between 200KB and 1.5MB — well within the limit. If you are uploading ultra-high-resolution source files directly from a DSLR, consider compressing them first. <a href="/compress">Image Toolbox's image compressor</a> can reduce file size without visible quality loss, keeping you well within eBay's upload limits.</p>
+<p>eBay supports images up to 9000px on the longest side for ultra-high resolution use cases, but this is rarely necessary. For the vast majority of product categories, 1600-2000px provides the best balance of zoom detail and upload speed.</p>
+<h3>Accepted Formats and Quality Guidelines</h3>
+<p>eBay accepts the following image formats for listing uploads: <strong>JPEG (.jpg/.jpeg), PNG (.png), TIFF (.tif/.tiff), BMP (.bmp), and GIF (.gif)</strong>. Among these, JPEG is the recommended and most practical format for product photography — it offers excellent compression, universal compatibility, and small file sizes. PNG should be reserved for images requiring transparency (such as product cutouts on a white background), while GIF is suitable only for animated demonstrations. TIFF and BMP are technically accepted but produce excessively large files and are not recommended for web use.</p>
+<p>eBay does not support WebP or AVIF for listing images, even though these modern formats are superior for web performance. If your workflow generates WebP images (for example, from a smartphone camera app or a modern web tool), you must convert them to JPEG before uploading. This is a common pitfall for sellers who use automated image pipelines.</p>
+
+<h2>Gallery Plus and Listing Image Best Practices</h2>
+<p>eBay's <strong>Gallery Plus</strong> feature allows buyers to view a larger pop-up image directly from search results without clicking into the listing. To qualify, your primary image must be at least 1600px on the longest side and follow all standard image policies. Gallery Plus is automatically enabled when you meet the criteria, and it has been shown to increase click-through rates by making your listing more visually prominent among competitors.</p>
+<p>Each listing allows up to <strong>24 images</strong>, with the first 12 being free. Savvy sellers use every available slot: front view, back view, side profiles, detail close-ups, size reference shots, packaging, and — for used items — clear photos of any wear or defects. The more visual information you provide, the fewer questions buyers will ask and the lower your return rate will be.</p>
+<p>eBay's image policy prohibits several practices that sellers need to be aware of. You <strong>cannot add borders</strong> to your images, use <strong>text overlays or promotional messages</strong> on photos, include <strong>watermarks that obscure the product</strong>, or use <strong>placeholder images</strong> (such as "image coming soon" graphics). The primary image must show only the item being sold, with a clean background — preferably white or neutral. For used, vintage, or refurbished items, showing the actual item condition is required rather than using a stock catalog photo.</p>
+
+<h2>Common eBay Image Rejection Reasons and How to Avoid Them</h2>
+<p>The most frequent causes of image rejection on eBay are surprisingly simple to fix. The number one issue is <strong>images below the 500px minimum</strong> — this often happens when sellers screenshot a photo from their phone gallery instead of uploading the original file. Screenshots compress and downscale dramatically. Always upload the original camera file or use a tool that preserves resolution.</p>
+<p>Another common rejection is <strong>watermarks or seller-added text</strong> that violates eBay's policy. While subtle branding in a corner is sometimes tolerated, any text that reads like an advertisement, a phone number, a website URL, or a call-to-action will trigger a rejection. eBay wants the focus on the product, not on your off-platform contact information. Similarly, <strong>borders and frames</strong> — which some sellers add for aesthetic reasons — are explicitly prohibited and will be flagged automatically by eBay's image review system.</p>
+<p>For sellers listing across multiple platforms, the biggest headache is meeting <em>different</em> image requirements for each marketplace. Amazon requires pure white backgrounds (RGB 255,255,255) and a minimum of 1000px; Taobao has its own dimension and watermark standards; Shopify gives you complete freedom but requires optimization for site speed. This is where <a href="/ecommerce">Image Toolbox's Ecommerce Processor</a> becomes invaluable — it batch-generates platform-compliant product images for Amazon, eBay, Taobao, and other marketplaces from a single set of source photos, handling format conversion, resizing, background processing, and compression in one workflow.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I use the same images for eBay and Amazon?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Not directly. While both platforms accept JPEG and require high resolution, Amazon enforces a strict pure white background policy (RGB 255,255,255) for main images and prohibits props, while eBay allows lifestyle images and neutral backgrounds. Amazon also requires at least 1000px (versus eBay's 500px minimum), and Amazon prohibits watermarks entirely — whereas eBay tolerates subtle branding. The safest approach is to maintain separate image sets for each platform. <a href="/ecommerce">Image Toolbox's Ecommerce Processor</a> can batch-process a single set of source photos into platform-specific compliant images for Amazon, eBay, Taobao, Shopify, and other marketplaces automatically.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What happens if my eBay listing images don\'t meet the requirements?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">eBay's system performs automated checks during the listing creation process. If your images fail the minimum resolution check (below 500px) or use an unsupported format, the upload will be <strong>blocked immediately</strong> and you will not be able to publish the listing. For policy violations discovered after publishing — such as text overlays, borders, or placeholder images — eBay may remove the listing, send a policy violation notice, and in repeat cases, impose selling restrictions or account suspension. Additionally, listings with non-compliant images may be excluded from eBay's promotional programs (such as Promoted Listings) and will not qualify for the Gallery Plus feature. It is always better to verify your images against current requirements before listing.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">How many photos should I include in an eBay listing?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">eBay allows up to 24 images per listing, with the first 12 being free. For most products, <strong>6-12 well-planned photos</strong> is the sweet spot. A recommended shot list includes: (1) front view on white/neutral background, (2) back view, (3) side profile, (4) detail close-up of logo/label, (5) additional angle or texture detail, (6) size reference (next to a common object or ruler), (7) packaging or included accessories, and (8) any defects or wear for used items. For categories like fashion, include model-worn shots; for electronics, show ports and screens powered on. Remember that more high-quality images correlate with lower return rates — buyers who can see every angle are far less likely to claim the item was "not as described."</p>
+    </div>
+  </div>
+</div>
+<h2>References</h2>
+<ul>
+<li><a href="https://www.ebay.com/help/selling/listings/creating-managing-listings/photos-requirements?id=4136" target="_blank" rel="noopener">eBay Official: Photo Requirements for Listings</a></li>
+<li><a href="https://www.ebay.com/help/selling/listings/creating-managing-listings/adding-pictures-listings?id=4159" target="_blank" rel="noopener">eBay: Adding Pictures to Your Listing</a></li>
+<li><a href="https://developer.ebay.com/api-docs/sell/static/inventory/listing-images.html" target="_blank" rel="noopener">eBay Developer: Listing Image API Documentation</a></li>
+</ul>`
+    },
   ];

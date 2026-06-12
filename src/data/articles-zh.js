@@ -2834,5 +2834,63 @@ export const articles = [
 <li><a href="https://web.dev/articles/serve-responsive-images" target="_blank" rel="noopener">web.dev：提供响应式图片</a></li>
 <li><a href="https://caniuse.com/picture" target="_blank" rel="noopener">Can I Use：Picture 元素浏览器支持</a></li>
 </ul>`
-    }
+    },
+    {
+      slug: 'ebay-image-requirements-2026',
+      title: 'eBay 图片要求 2026：卖家完整指南',
+      date: '2026-06-12',
+      tags: ['eBay', '电商', '产品摄影', '图片优化'],
+      summary: 'eBay 对商品图片有严格的要求，这些要求直接影响你的 listing 曝光率、转化率和卖家绩效指标。本指南全面覆盖每项技术要求——从最低分辨率和允许的格式，到 Gallery Plus 最佳实践和常见被拒原因。学会如何创建符合 eBay 规范的产品图片，在 2026 年吸引买家并提升销量。',
+      content: `
+<h2>为什么 eBay 图片规范如此重要</h2>
+<p>在 eBay 上，产品图片不仅仅是装饰——它们是决定买家是否会点击你的 listing、停留在页面并最终下单的最关键因素。与实体零售不同，网购消费者几乎完全依赖图片来评估产品质量、状况和真实性。eBay 自己的数据显示，使用高质量、合规图片的 listing 能获得<strong>高达 5% 的转化率提升</strong>，并在搜索结果中获得更好的曝光排名。</p>
+<p>eBay 执行图片规范是有充分理由的。干净、专业的图片能在买卖双方之间建立信任，减少因"实物与描述不符"引起的退货，并维护平台的整体品质口碑。你的 listing 中第一张图片是免费的，同时也是在搜索结果和移动端浏览流中展示的图片——它是你整个 listing 中最宝贵的展示位。如果想要有效竞争，做好这张图是必选项。</p>
+
+<h2>eBay 图片技术要求</h2>
+<h3>分辨率和尺寸要求</h3>
+<p>eBay 产品图片的最低分辨率是<strong>最长边 500 像素</strong>。低于此标准的图片在上传时会被直接拒绝，listing 可能无法上线。然而，最低标准远非最佳标准。eBay 建议图片至少达到<strong>最长边 1600 像素</strong>以启用放大镜功能，让买家可以在图片上悬停查看细节。拥有缩放功能的 listing 表现始终优于没有此功能的 listing。</p>
+<p>单张图片的文件大小上限为 <strong>7MB</strong>。对于大多数在 1600px 分辨率下以 JPEG 格式 85-90% 质量拍摄的产品照片，文件大小通常在 200KB 到 1.5MB 之间——远在限制之内。如果你直接从单反相机上传超高分辨率源文件，建议先进行压缩。<a href="/zh/compress">Image Toolbox 图片压缩工具</a>可以在可见质量无损的前提下大幅缩小文件体积，确保你不超出 eBay 的上传限制。</p>
+<p>eBay 支持最长边高达 9000px 的图片，但这种超高分辨率很少有必要。对于绝大多数产品类目，1600-2000px 即可在缩放细节与上传速度之间达到最佳平衡。</p>
+<h3>支持的格式和质量指南</h3>
+<p>eBay 接受以下图片格式用于 listing 上传：<strong>JPEG（.jpg/.jpeg）、PNG（.png）、TIFF（.tif/.tiff）、BMP（.bmp）和 GIF（.gif）</strong>。其中，JPEG 是产品摄影中推荐且最实用的格式——它提供出色的压缩率、广泛的兼容性和较小的文件体积。PNG 应保留用于需要透明度的图片（如白底抠图产品照），而 GIF 仅适合动画演示。TIFF 和 BMP 在技术上被接受，但生成的文件过大，不推荐用于网页展示。</p>
+<p>eBay <strong>不支持 WebP 或 AVIF</strong> 作为 listing 图片格式，即便这两种现代格式在网页性能上更优秀。如果你的工作流生成 WebP 图片（例如通过智能手机相机应用或现代网页工具），必须在上传前将其转换为 JPEG。这是使用自动化图片管线卖家容易踩的一个常见坑。</p>
+
+<h2>Gallery Plus 与 Listing 图片最佳实践</h2>
+<p>eBay 的 <strong>Gallery Plus</strong> 功能允许买家在搜索结果中直接查看更大的弹出图片，无需点击进入 listing。要获得 Gallery Plus 资格，你的主图必须至少为 1600px（最长边），并遵循所有标准图片政策。达标后 Gallery Plus 会自动启用，它已被证明能显著提升点击率，让你的 listing 在竞争对手中脱颖而出。</p>
+<p>每个 listing 最多可使用 <strong>24 张图片</strong>，其中前 12 张免费。聪明的卖家会充分利用每一个图片位：正面视图、背面视图、侧面轮廓、细节特写、尺寸参照、包装展示，以及——对于二手商品——清晰展示任何磨损或瑕疵的照片。你提供的视觉信息越多，买家提问就越少，退货率也就越低。</p>
+<p>eBay 的图片政策禁止卖家注意的几项操作：<strong>不得添加边框</strong>，<strong>不得在图片上叠加文字或促销信息</strong>，<strong>不得添加遮挡产品的水印</strong>，<strong>不得使用占位图片</strong>（如"即将上架"等图形）。主图必须只展示待售商品，背景干净——建议白色或中性色。对于二手、复古或翻新商品，必须展示实物照片而非使用产品目录图。</p>
+
+<h2>常见 eBay 图片被拒原因及解决方法</h2>
+<p>eBay 图片被拒的最常见原因出奇地简单。第一大问题是<strong>图片低于 500px 最低标准</strong>——这通常发生在卖家从手机相册截图而非上传原文件时。截图会大幅压缩并降低分辨率。请务必上传原始相机文件，或使用能保留分辨率的工具。</p>
+<p>另一个常见被拒原因是<strong>违反政策的水印或卖家添加的文字</strong>。虽然角落处低调的品牌标识有时会被容忍，但任何读起来像广告、电话号码、网站 URL 或行动号召的文字都会触发拒绝。eBay 希望焦点在产品上，而不是你的站外联系方式。同样，<strong>边框和装饰框</strong>——一些卖家为了美观而添加——是被明确禁止的，会被 eBay 的图片审核系统自动标记。</p>
+<p>对于跨平台销售的卖家来说，最大的痛点是满足每个平台<em>不同的</em>图片要求。Amazon 要求纯白背景（RGB 255,255,255）且最低 1000px；淘宝有自己的尺寸和水印标准；Shopify 给予完全自由但需要优化网站速度。这正是 <a href="/zh/ecommerce">Image Toolbox 电商处理器</a>的价值所在——它能从一套源照片批量生成 Amazon、eBay、淘宝、Shopify 等平台的合规产品图片，一站式完成格式转换、尺寸调整、背景处理和压缩。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">可以在 eBay 和 Amazon 上使用同一套图片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不能直接使用。虽然两个平台都接受 JPEG 格式并要求高分辨率，但 Amazon 强制要求主图使用纯白背景（RGB 255,255,255）且禁止出现道具，而 eBay 允许生活场景图和中性背景。Amazon 还要求至少 1000px（eBay 是 500px），并且 Amazon 完全禁止水印——而 eBay 允许低调的品牌标识。最稳妥的做法是每个平台维护独立的图片集。<a href="/zh/ecommerce">Image Toolbox 电商处理器</a>可以自动将一套源照片批量处理为 Amazon、eBay、淘宝、Shopify 等平台的合规图片。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">如果 eBay listing 图片不符合要求会怎样？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">eBay 系统会在 listing 创建过程中进行自动检查。如果图片未通过最低分辨率检查（低于 500px）或使用了不支持的格式，上传将被<strong>立即阻止</strong>，无法发布 listing。对于发布后被发现的政策违规——如文字叠加、边框或占位图片——eBay 可能下架该 listing、发送政策违规通知，严重或重复违规时可能施加销售限制甚至账号冻结。此外，图片不合规的 listing 可能被排除在 eBay 推广计划（如 Promoted Listings）之外，且无法获得 Gallery Plus 功能。在上架前对照最新要求验证图片总是更明智的做法。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">eBay listing 应该放多少张照片？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">eBay 每个 listing 最多允许 24 张图片，其中前 12 张免费。对大多数产品而言，<strong>6-12 张精心规划的图片</strong>是最佳选择。推荐的拍摄清单包括：(1) 白底/中性背景正面视图，(2) 背面视图，(3) 侧面轮廓，(4) Logo/标签细节特写，(5) 其他角度或材质细节，(6) 尺寸参照（与常见物品或尺子对比），(7) 包装或随附配件，(8) 二手商品需展示瑕疵或磨损。对于时尚类目，加入模特上身照；对于电子产品，展示接口和开机屏幕。记住，高质量的图片越多，退货率越低——能从各个角度看清商品的买家，极少会以"实物与描述不符"为由提出退货。</p>
+    </div>
+  </div>
+</div>
+<h2>参考来源</h2>
+<ul>
+<li><a href="https://www.ebay.com/help/selling/listings/creating-managing-listings/photos-requirements?id=4136" target="_blank" rel="noopener">eBay 官方：Listing 图片要求</a></li>
+<li><a href="https://www.ebay.com/help/selling/listings/creating-managing-listings/adding-pictures-listings?id=4159" target="_blank" rel="noopener">eBay：为 Listing 添加图片</a></li>
+<li><a href="https://developer.ebay.com/api-docs/sell/static/inventory/listing-images.html" target="_blank" rel="noopener">eBay Developer：Listing 图片 API 文档</a></li>
+</ul>`
+    },
   ];
