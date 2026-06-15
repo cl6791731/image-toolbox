@@ -2893,4 +2893,90 @@ export const articles = [
 <li><a href="https://developer.ebay.com/api-docs/sell/static/inventory/listing-images.html" target="_blank" rel="noopener">eBay Developer：Listing 图片 API 文档</a></li>
 </ul>`
     },
+    {
+      slug: 'auto-generate-image-code',
+      title: '如何自动生成优化的图片代码：Picture 标签、srcset 与 WebP/AVIF',
+      date: '2026-06-15',
+      tags: ['web-optimizer', 'html', 'code-generation', 'web-performance'],
+      summary: '手写响应式图片的 HTML 优化代码极其繁琐——Picture 标签格式切换、srcset 分辨率适配、跨浏览器兜底管理。图片代码自动生成器彻底消除这些手动工作。了解如何自动生成可直接上线的 Picture 和 img 代码，支持 WebP/AVIF、响应式 srcset 和懒加载——无需手写一行 HTML。',
+      content: `
+<h2>为什么手写图片代码是个问题</h2>
+<p>如果你曾手写过图片优化的 HTML 代码，就知道这有多痛苦。一张响应式图片可能需要 10 到 20 行 HTML。乘以网站上的每一张图片，就是成百上千行代码——其中大部分是重复的、容易出错的样板代码。srcset 里少一个逗号，MIME 类型配错一个，你精心优化的图片就根本加载不出来。</p>
+<p>现代网页对每张图片提出了三项要求：<strong>格式优化</strong>（给 Chrome 提供 WebP，给新版浏览器提供 AVIF，用 JPG 作为兜底）、<strong>响应式尺寸</strong>（为每种屏幕尺寸提供合适的分辨率）、<strong>懒加载</strong>（延迟加载屏幕外的图片）。即便只是一个小型网站，手写这些代码也绝非繁琐二字可以概括——在规模化场景下根本无法持续。</p>
+<p>这正是<strong>图片代码自动生成</strong>所解决的问题。你不再需要手动编写 HTML，只需一次性配置优化规则，工具即可为项目中的每张图片生成可直接上线的代码。使用 <a href="/zh/web-optimizer">Image Toolbox 网页优化器</a>的开发者可以自动生成 WebP/AVIF 对比报告和完整的 <code>&lt;picture&gt;</code> 代码，将前端图片优化时间缩短 80% 以上。</p>
+
+<h2>图片代码自动生成能产出什么</h2>
+<p>图片代码生成器不仅仅是一个代码片段工具——它是一套完整的工作流：输入源图片，输出经过全面优化、浏览器可直接使用的 HTML。生成的代码同时覆盖三个关键优化维度：</p>
+<h3>用 Picture 元素实现格式切换</h3>
+<p><code>&lt;picture&gt;</code> 元素是提供现代格式并保留传统兜底方案的标准方式。一个结构良好的 picture 标签如下：</p>
+<pre><code>&lt;picture&gt;
+  &lt;source srcset="photo.avif" type="image/avif"&gt;
+  &lt;source srcset="photo.webp" type="image/webp"&gt;
+  &lt;img src="photo.jpg" alt="描述" loading="lazy" width="800" height="600"&gt;
+&lt;/picture&gt;</code></pre>
+<p>浏览器从上往下读取：如果支持 AVIF，就用第一个 source；不支持则回退到 WebP；如果都不支持，传统的 JPG <code>&lt;img&gt;</code> 作为最终兜底。自动生成器为你创建这整个结构——你只需提供图片、选择格式，工具就能生成可直接粘贴到代码库中的 HTML。</p>
+<h3>用 srcset 和 sizes 实现响应式分辨率</h3>
+<p>在 375px 宽的手机屏幕上展示 2000px 宽的图片纯属浪费流量、拖慢页面速度。<code>srcset</code> 属性让你提供同一张图片的多个分辨率版本，浏览器自动选择最合适的：</p>
+<pre><code>&lt;img
+  src="photo-800w.jpg"
+  srcset="photo-400w.jpg 400w, photo-800w.jpg 800w, photo-1200w.jpg 1200w"
+  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+  alt="描述"
+  loading="lazy"
+  decoding="async"
+&gt;</code></pre>
+<p>计算正确的断点、生成每种分辨率版本、正确填写 <code>sizes</code> 属性——这些恰恰是大多数开发者最容易出错的地方。自动生成器替你搞定一切：它分析你的布局断点、据此调整图片尺寸，并输出正确的 srcset 和 sizes 值——结合 picture 格式切换后，还能在每个断点生成 WebP/AVIF 变体。</p>
+
+<h2>如何使用 Image Toolbox 网页优化器生成图片代码</h2>
+<p><a href="/zh/web-optimizer">Image Toolbox 网页优化器</a>消除了图片代码编写的复杂性。它专为开发者和内容管理者设计，提供了一套精简的工作流，为你上传的每张图片生成完整、可直接上线的 HTML。与需要脚本配置和配置文件的命令行工具不同，网页优化器完全在浏览器中运行，支持即时预览。</p>
+<h3>操作步骤</h3>
+<ol>
+<li><strong>上传源图片。</strong>使用你拥有的最高分辨率原图——优化器会自动生成更小尺寸的变体。支持 JPG、PNG、WebP、AVIF 和 TIFF 格式。</li>
+<li><strong>选择目标格式。</strong>选择要提供哪些现代格式：仅 WebP，或 WebP + AVIF 以最大化压缩效果。工具会自动生成正确的 source 顺序和 MIME 类型。</li>
+<li><strong>设置响应式断点。</strong>定义图片尺寸应发生变化的屏幕宽度。优化器在每个分辨率下生成图片变体，并自动编写 <code>srcset</code> 和 <code>sizes</code> 属性。</li>
+<li><strong>启用优化选项。</strong>开启懒加载、异步解码、显式宽高属性以防止累积布局偏移（CLS）。工具会将每项优化标记添加到生成的代码中。</li>
+<li><strong>复制生成的代码。</strong>输出为即可粘贴使用的完整 HTML 片段。对于格式切换场景，包含完整的 <code>&lt;picture&gt;</code> 结构；对于单格式响应式图片，生成带 srcset 的简洁 <code>&lt;img&gt;</code> 标签。</li>
+</ol>
+<p>开发者可以用 <a href="/zh/web-optimizer">Image Toolbox 网页优化器</a>自动生成 WebP/AVIF 对比和 picture 代码——一次上传即可替代原本每张图片 15-20 分钟的手写 HTML 工作。</p>
+
+<h2>常见陷阱及自动生成如何解决</h2>
+<p>即使是经验丰富的开发者，手写响应式图片代码时也会出错。以下是最常见的错误——以及自动生成如何彻底消除它们：</p>
+<ul>
+<li><strong>MIME 类型排序错误。</strong>在 picture 元素中，AVIF 必须放在 WebP 前面，否则同时支持两者的浏览器会加载体积更大的 WebP。自动生成器始终按正确顺序排列 source。</li>
+<li><strong>sizes 属性缺失或计算错误。</strong>没有正确的 <code>sizes</code> 值，浏览器默认按 100vw 处理，可能加载远超实际需求的图片。生成器根据你声明的断点计算 sizes。</li>
+<li><strong>各变体宽高不一致。</strong>srcset 中的每个变体必须有对应的宽度描述符。生成器确保所有描述符一致并与图片文件正确配对。</li>
+<li><strong>首屏以下图片未启用懒加载。</strong>生成器默认为你标记为首屏以下的图片添加 <code>loading="lazy"</code>，并包含 <code>decoding="async"</code> 以防止渲染阻塞。</li>
+</ul>
+<p>对于构建包含数十或数百张图片网站的团队来说，节省的时间会急剧累积。开发者每张图片需要 15 分钟的工作——格式转换、分辨率生成、代码编写、测试——使用自动生成器不到一分钟即可完成。按 100 张图片计算，大约节省 25 小时。</p>
+<p>除了节省时间，代码自动生成还从根本上消除了一整类 Bug。手动输入的 srcset 描述符拼写错误、指向不存在文件的 source 元素、MIME 类型与实际格式不匹配——这些问题可能悄悄降低你整站的图片加载质量。使用自动生成器，输出是确定且经过验证的——每个生成的标签指向的文件都确实存在，每个 MIME 类型都匹配实际格式，每个 srcset 描述符都对应一个真实生成的图片变体。对于生产级网站来说，破损图片意味着收入损失，这种可靠性保障价值不可估量。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">使用图片代码生成器需要懂 HTML 吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">不需要。图片代码生成器设计初衷就是生成可直接使用的 HTML，你可以直接粘贴到网站代码中，无需理解底层标签。不过，具备基础 HTML 知识有助于将生成的代码放置在正确位置。像 <a href="/zh/web-optimizer">Image Toolbox 网页优化器</a>这样的工具会生成包含所有属性的完整 <code>&lt;picture&gt;</code> 和 <code>&lt;img&gt;</code> 标签，输出结果可在任何网站、CMS 或静态站点生成器上立即使用。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">生成的代码可以用于 React、Next.js 等框架吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以。生成的 HTML 使用的是标准 <code>&lt;picture&gt;</code> 和 <code>&lt;img&gt;</code> 标签，适用于任何框架。在 Next.js 中，你可以直接在 JSX 中使用生成的代码（React 原生支持标准 picture/img 标签），也可以提取 srcset 值和 MIME 类型传入 Next.js 的 <code>&lt;Image&gt;</code> 组件。关键价值在于生成器替你完成了繁琐的部分——格式选择、分辨率尺寸计算、MIME 类型排序——你只需将输出适配到框架的组件 API。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">优化图片代码后网站能变快多少？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">提升幅度取决于优化前的起点，但典型效果是显著的。从仅提供 JPG 切换到 WebP/AVIF + srcset 通常能减少 40-60% 的图片载荷。对于图片总量 2MB 的页面，意味着每次加载节省 800KB-1.2MB。配合懒加载，页面在移动端的可交互时间可提前 1-2 秒。Google Core Web Vitals 评估会因这些改进而奖励更高的 PageSpeed 评分，这可能提升搜索排名。像 <a href="/zh/web-optimizer">网页优化器</a>这样的工具可以在一个工作流中完成所有这些优化。</p>
+    </div>
+  </div>
+</div>
+<h2>参考来源</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture" target="_blank" rel="noopener">MDN：Picture 元素</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#attr-srcset" target="_blank" rel="noopener">MDN：响应式图片 srcset</a></li>
+<li><a href="https://web.dev/articles/serve-responsive-images" target="_blank" rel="noopener">web.dev：提供响应式图片</a></li>
+</ul>`
+    }
+
   ];
