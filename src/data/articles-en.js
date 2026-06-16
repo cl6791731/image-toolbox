@@ -2974,6 +2974,93 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset" target="_blank" rel="noopener">MDN: Responsive Images with srcset</a></li>
 <li><a href="https://web.dev/articles/serve-responsive-images" target="_blank" rel="noopener">web.dev: Serve Responsive Images</a></li>
 </ul>`
+    },
+    {
+      slug: 'shopify-image-requirements-2026',
+      title: 'Shopify Image Sizes and Requirements 2026: Complete Guide',
+      date: '2026-06-16',
+      tags: ['shopify', 'ecommerce', 'image-requirements', 'product-images'],
+      summary: 'Shopify product images must meet specific size, format, and quality requirements to display correctly across your store. This 2026 guide covers every image context — product gallery, hero banners, blog featured images, and logos — with exact pixel dimensions, file size limits, and practical tips for optimizing your Shopify store visuals.',
+      content: `
+<h2>Shopify Product Image Requirements in 2026</h2>
+<p>Shopify is one of the most popular e-commerce platforms in the world, hosting over 4 million active stores. Whether you sell fashion, electronics, handmade crafts, or digital products, your product images are the first thing customers see — and often the only thing they can judge before buying. Getting your image sizes and formats right is not just a technical detail; it directly impacts conversion rates, mobile user experience, and your store's perceived professionalism.</p>
+<p>Shopify's image requirements have remained largely consistent since 2024, but theme updates and new responsive features mean some best practices have shifted. Here is everything you need to know about Shopify image requirements in 2026.</p>
+
+<h3>Core Product Image Specifications</h3>
+<p>Shopify recommends <strong>2048 × 2048 pixels</strong> as the ideal product image resolution. This square format (1:1 aspect ratio) ensures your images look uniform in the product grid, enable the zoom feature on desktop, and scale cleanly on mobile devices. The minimum resolution Shopify accepts is <strong>800 × 800 pixels</strong>, but anything below 1024 × 1024 will degrade zoom quality noticeably.</p>
+<ul>
+<li><strong>Recommended resolution:</strong> 2048 × 2048 px (square)</li>
+<li><strong>Minimum resolution:</strong> 800 × 800 px (for zoom to work, aim for 1024+)</li>
+<li><strong>Maximum file size:</strong> 5 MB per image</li>
+<li><strong>Accepted formats:</strong> JPG, PNG, GIF, WebP (Shopify now supports WebP for faster loading)</li>
+<li><strong>Aspect ratio:</strong> 1:1 (square) is strongly recommended for consistency</li>
+</ul>
+<p>While Shopify supports non-square images, the platform crops them to fit the product grid, which can produce unexpected results. A tall product photo (like a dress on a model) gets cropped from the top and bottom, potentially removing key details. Sticking to square images avoids this problem entirely and keeps your catalog looking clean.</p>
+<p>For stores with large catalogs, manually resizing hundreds of images to 2048 × 2048 can be tedious. E-commerce sellers can use <a href="/ecommerce">Image Toolbox's E-commerce Processor</a> to batch-generate platform-compliant product images for Shopify, Amazon, Taobao, and more — one upload produces correctly sized outputs for every platform you sell on.</p>
+
+<h2>Image Sizes for Every Shopify Context</h2>
+<p>Product gallery images are the most important, but Shopify uses images in several other contexts. Each has its own ideal dimensions and considerations.</p>
+
+<h3>Product Gallery Images</h3>
+<p>Each product can have up to <strong>250 images</strong> in its gallery. The first image becomes the "featured" image shown on collection pages and in search results. All product images should follow the same 1:1 square format at 2048 × 2048 px. Consistent sizing across your entire catalog makes your store look professional and prevents awkward layout shifts.</p>
+<p>Here is what each product image role does:</p>
+<ul>
+<li><strong>Featured image:</strong> The first image. Appears on collection pages, search results, social media shares, and Google Shopping feeds. This image must be your highest-quality shot — clear, well-lit, with the product centered.</li>
+<li><strong>Variant images:</strong> You can assign specific images to product variants (e.g., a red dress gets its own photo). When a customer selects a variant, the gallery switches to show that variant's image first.</li>
+<li><strong>Detail/close-up images:</strong> Show texture, stitching, material quality, or functional details. These images build buyer confidence, especially for apparel, jewelry, and artisanal goods.</li>
+<li><strong>Lifestyle/context images:</strong> Show the product in use — a bag being carried, a lamp in a living room. These help customers visualize ownership and dramatically improve conversion rates.</li>
+</ul>
+<p>For best results, upload all product images at 2048 × 2048 px and let Shopify's CDN handle responsive sizing. If your original photos are much larger, <a href="/resize">resize them first</a> — uploading a 6000 × 4000 portrait and hoping Shopify crops it correctly will almost always produce a bad result.</p>
+
+<h3>Store Banner and Hero Images</h3>
+<p>Shopify themes use banner or hero images at the top of your homepage and collection pages. The ideal size depends on your theme, but most modern themes recommend:</p>
+<ul>
+<li><strong>Homepage slideshow:</strong> 1920 × 600–1000 px (wide format, 2:1 to 3:1 ratio)</li>
+<li><strong>Full-width hero banner:</strong> 1920 × 800 px is a safe default</li>
+<li><strong>Collection page banner:</strong> 1920 × 400–600 px</li>
+</ul>
+<p>Because these banners span the full viewport width on desktop, they must be wide. On mobile, Shopify themes typically crop the sides and show a centered portion — so place your key visual content in the center of the banner, with decorative elements on the edges. A 1920 × 800 px banner with the hero product centered will look great on both desktop and mobile.</p>
+<p>File size matters more for banners than product images because they load first and set the tone. Keep banners under <strong>200 KB</strong> by using <a href="/compress">Image Toolbox's compression tool</a> — a 5 MB banner will cause a slow first paint and hurt your conversion rate before customers even see your products.</p>
+
+<h2>Best Practices for Shopify Product Images</h2>
+<p>Beyond meeting the minimum requirements, following these best practices will make your Shopify store look professional and convert better:</p>
+<ul>
+<li><strong>Enable the zoom feature.</strong> Shopify's built-in zoom lets customers hover over a product image to see detail. This requires images at 2048 × 2048 px. Lower resolutions produce a blurry zoom that frustrates buyers. If your supplier only provides 1024 × 1024 images, consider requesting higher-resolution assets — zoom is one of the top conversion drivers for online stores.</li>
+<li><strong>Use consistent aspect ratios.</strong> Mixing square and tall images in the same collection looks unprofessional. Even if your products vary in shape (a handbag vs. a necklace), crop them to fit a 1:1 square so the grid stays uniform.</li>
+<li><strong>Optimize file size without visible quality loss.</strong> Shopify's CDN converts images to WebP for browsers that support it, but the original file size still affects upload speed and storage limits. Aim for 200–400 KB per product image at 2048 × 2048 px. JPG quality of 80–85 is the sweet spot — visibly identical to 100 but 40% smaller.</li>
+<li><strong>Add alt text to every image.</strong> Alt text is essential for SEO and accessibility. Describe the product clearly: "Women's red leather crossbody bag, front view, Model X brand." This text appears in Google Shopping feeds and helps visually impaired customers navigate your store.</li>
+<li><strong>White or neutral backgrounds for the featured image.</strong> Amazon and Google Shopping both require white backgrounds for main product images. Even if Shopify does not enforce this, a white-background featured image looks cleaner in grids and is ready for multi-platform selling.</li>
+<li><strong>Shoot at the highest resolution possible.</strong> Start with raw photos at 4000+ pixels from your camera or phone. Then resize to 2048 × 2048. This gives you room to crop, adjust composition, and maintain sharpness. Starting from a low-resolution source and trying to upscale produces blurry, unprofessional results.</li>
+</ul>
+<p>For sellers managing products across Shopify, Amazon, Taobao, eBay, and other platforms simultaneously, maintaining per-platform image specifications is a major operational burden. E-commerce sellers can use <a href="/ecommerce">Image Toolbox's E-commerce Processor</a> to batch-generate compliant product images for each platform from a single high-resolution source — upload once, get correctly sized, cropped, and compressed outputs for every marketplace.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Does Shopify support WebP images?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes. As of 2026, Shopify accepts WebP uploads for product images. Shopify's CDN also automatically converts JPG/PNG uploads to WebP for browsers that support the format, serving the optimal version to each visitor. You can upload either JPG or WebP — Shopify handles the format negotiation. For best results, upload JPG at quality 80–85 and let Shopify's CDN do the WebP conversion, as its automatic pipeline produces better compression than most manual WebP encodes.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What happens if I upload a non-square product image?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Shopify will display it, but the platform crops non-square images to fit the product grid. If you upload a 1600 × 2400 portrait, Shopify crops the top and bottom, potentially cutting off the product's head or feet. The zoom feature also behaves inconsistently with non-square images. For a clean, professional catalog, always crop your images to 1:1 square (2048 × 2048 px) before uploading. You can <a href="/resize">resize and crop images to exact dimensions</a> in seconds using browser-based tools that process everything locally.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">How many product images should I upload per product?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Research shows that products with <strong>3–7 images</strong> convert best. The first image should be the main product on a clean background. Then add: a detail/close-up shot, a lifestyle/context image, a variant-specific image (if applicable), and a size/scale reference image. Avoid uploading more than 10 images per product — excessive galleries increase page load time and can overwhelm buyers. Focus on quality over quantity, and make sure every image serves a specific purpose in the buyer's decision process.</p>
+    </div>
+  </div>
+</div>
+<h2>References</h2>
+<ul>
+<li><a href="https://help.shopify.com/en/manual/products/images" target="_blank" rel="noopener">Shopify Help: Product Images</a></li>
+<li><a href="https://www.shopify.com/blog/product-photos" target="_blank" rel="noopener">Shopify Blog: Product Photography Guide</a></li>
+<li><a href="https://help.shopify.com/en/manual/online-store/themes/theme-structure/slider" target="_blank" rel="noopener">Shopify Help: Slideshow Images</a></li>
+</ul>`
     }
 
   ];

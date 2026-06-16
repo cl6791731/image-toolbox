@@ -2977,6 +2977,93 @@ export const articles = [
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#attr-srcset" target="_blank" rel="noopener">MDN：响应式图片 srcset</a></li>
 <li><a href="https://web.dev/articles/serve-responsive-images" target="_blank" rel="noopener">web.dev：提供响应式图片</a></li>
 </ul>`
+    },
+    {
+      slug: 'shopify-image-requirements-2026',
+      title: 'Shopify 图片尺寸与规范 2026：完整指南',
+      date: '2026-06-16',
+      tags: ['Shopify', '电商', '图片规范', '商品主图'],
+      summary: 'Shopify 商品图片必须满足特定的尺寸、格式和质量要求才能在各终端正确展示。本 2026 指南涵盖所有图片场景——商品图库、首页横幅、博客封面和品牌 Logo——提供精确像素尺寸、文件大小限制及实用优化建议，帮助你打造专业级 Shopify 店铺视觉体系。',
+      content: `
+<h2>2026 年 Shopify 商品图片要求</h2>
+<p>Shopify 是全球最受欢迎的电商平台之一，托管超过 400 万家活跃店铺。无论你销售服饰、电子产品、手工艺品还是数字产品，商品图片是顾客最先看到的内容——往往是他们下单前唯一的判断依据。图片尺寸和格式是否正确不只是技术细节，它直接影响转化率、移动端用户体验和店铺的专业形象。</p>
+<p>Shopify 的图片规范自 2024 年以来基本稳定，但主题更新和新增的响应式功能让一些最佳实践有所调整。以下是 2026 年 Shopify 图片要求的完整解读。</p>
+
+<h3>核心商品图片规格</h3>
+<p>Shopify 推荐 <strong>2048 × 2048 像素</strong>作为理想的商品图片分辨率。这种正方形格式（1:1 比例）确保图片在商品网格中呈现一致、支持桌面端缩放功能、并在移动设备上清晰缩放。Shopify 接受的最低分辨率为 <strong>800 × 800 像素</strong>，但低于 1024 × 1024 的图片会明显降低缩放质量。</p>
+<ul>
+<li><strong>推荐分辨率：</strong>2048 × 2048 px（正方形）</li>
+<li><strong>最低分辨率：</strong>800 × 800 px（建议至少 1024+ 以支持缩放）</li>
+<li><strong>最大文件大小：</strong>每张 5 MB</li>
+<li><strong>支持格式：</strong>JPG、PNG、GIF、WebP（Shopify 已支持 WebP 加速加载）</li>
+<li><strong>推荐比例：</strong>1:1 正方形（强烈推荐保持统一）</li>
+</ul>
+<p>虽然 Shopify 支持非正方形图片，但平台会自动裁剪以适配商品网格，可能导致意外结果。一张竖版商品照（比如模特穿着连衣裙）会被从上下裁剪，可能截掉关键细节。坚持使用正方形图片可以完全避免这个问题，让你的商品目录看起来整洁统一。</p>
+<p>对于拥有大量商品目录的店铺，手动将数百张图片调整为 2048 × 2048 尺寸可能非常繁琐。电商卖家可以用 <a href="/zh/ecommerce">Image Toolbox 电商处理器</a>批量生成各平台合规主图——一次上传即可为 Shopify、Amazon、淘宝等每个销售平台生成正确尺寸的输出。</p>
+
+<h2>各场景的 Shopify 图片尺寸</h2>
+<p>商品图库是最重要的部分，但 Shopify 在多个场景中使用图片。每个场景都有各自的理想尺寸和注意事项。</p>
+
+<h3>商品图库图片</h3>
+<p>每个商品最多可添加 <strong>250 张</strong>图片到图库。第一张图片会成为"主图"，展示在分类页面和搜索结果中。所有商品图片应遵循相同的 1:1 正方形格式和 2048 × 2048 px 尺寸。整个目录统一的尺寸让店铺显得专业，也避免布局错位。</p>
+<p>每种商品图片角色的作用如下：</p>
+<ul>
+<li><strong>主图：</strong>第一张图片。出现在分类页、搜索结果、社交媒体分享和 Google Shopping 动态中。这张图片必须是你质量最高的拍摄——清晰、光线充足、产品居中。</li>
+<li><strong>变体图：</strong>可以将特定图片绑定到商品变体（例如红色连衣裙有自己的照片）。顾客选择变体时，图库会优先显示该变体的图片。</li>
+<li><strong>细节/特写图：</strong>展示纹理、缝线、材质质感或功能细节。这些图片建立购买信心，尤其对服饰、珠宝和手工品类目至关重要。</li>
+<li><strong>生活场景图：</strong>展示商品使用状态——一个手提包被人背在肩上、一盏灯放在客厅里。这些帮助顾客想象拥有感，能显著提升转化率。</li>
+</ul>
+<p>最佳做法是上传所有商品图片为 2048 × 2048 px，让 Shopify CDN 处理响应式缩放。如果原图远大于此，<a href="/zh/resize">先进行裁切调整尺寸</a>——上传一张 6000 × 4000 的竖版照片然后期望 Shopify 正确裁剪，几乎总会得到糟糕的结果。</p>
+
+<h3>店铺横幅和首页大图</h3>
+<p>Shopify 主题在首页和分类页顶部使用横幅或大图。理想尺寸取决于你使用的主题，但大多数现代主题推荐：</p>
+<ul>
+<li><strong>首页幻灯片：</strong>1920 × 600–1000 px（宽幅，2:1 到 3:1 比例）</li>
+<li><strong>全宽首页大图：</strong>1920 × 800 px 是通用安全值</li>
+<li><strong>分类页横幅：</strong>1920 × 400–600 px</li>
+</ul>
+<p>因为这些横幅在桌面端横跨整个视口宽度，所以必须足够宽。在移动端，Shopify 主题通常裁剪两侧并展示居中部分——所以要把核心视觉内容放在横幅中央，装饰元素放在两侧。一张 1920 × 800 px 的横幅，主产品居中，在桌面和移动端都好看。</p>
+<p>文件大小对横幅比商品图更重要，因为它们最先加载、决定第一印象。使用 <a href="/zh/compress">Image Toolbox 压缩工具</a>将横幅控制在 <strong>200 KB</strong>以内——一张 5 MB 的横幅会导致首屏加载缓慢，在顾客看到商品之前就损害转化率。</p>
+
+<h2>Shopify 商品图片最佳实践</h2>
+<p>除了满足最低要求，遵循以下最佳实践能让你的 Shopify 店铺看起来更专业、转化更好：</p>
+<ul>
+<li><strong>启用缩放功能。</strong>Shopify 内置缩放允许顾客悬停查看商品细节。这需要图片为 2048 × 2048 px。更低分辨率会导致模糊缩放，让买家感到沮丧。如果你的供应商只提供 1024 × 1024 图片，考虑索取更高分辨率的素材——缩放是线上店铺最有效的转化驱动因素之一。</li>
+<li><strong>保持统一的图片比例。</strong>在同一分类中混用正方形和竖版图片看起来不专业。即使产品形状各异（手提包 vs 项链），也要裁剪为 1:1 正方形让网格保持整齐。</li>
+<li><strong>压缩文件大小但不损失可见质量。</strong>Shopify CDN 会为支持 WebP 的浏览器自动转换，但原始文件大小仍影响上传速度和存储额度。目标：2048 × 2048 px 的商品图控制在 200–400 KB。JPG 质量 80–85 是最佳平衡点——视觉上与 100 几乎相同但体积减少 40%。</li>
+<li><strong>为每张图片添加 Alt 文本。</strong>Alt 文本对 SEO 和可访问性至关重要。清晰描述商品："女士红色皮革斜挎包，正面视角，X 品牌。"这段文字出现在 Google Shopping 动态中，也帮助视障顾客浏览你的店铺。</li>
+<li><strong>主图使用白色或中性背景。</strong>Amazon 和 Google Shopping 都要求主图白底。即使 Shopify 不强制，白底主图在网格中更整洁，也方便多平台同步销售。</li>
+<li><strong>以最高分辨率拍摄原始素材。</strong>从相机或手机的 4000+ 像素原始照片开始，再调整到 2048 × 2048。这给你留出裁切、调整构图和保持清晰度的空间。从低分辨率素材放大只会产生模糊、不专业的结果。</li>
+</ul>
+<p>对于同时在 Shopify、Amazon、淘宝、eBay 等多个平台销售商品的卖家，维护每个平台的图片规格是一项重大的运营负担。电商卖家可以用 <a href="/zh/ecommerce">Image Toolbox 电商处理器</a>从一张高清原图批量生成各平台合规主图——一次上传，即可为每个销售平台获得正确尺寸、裁切和压缩的输出。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Shopify 支持 WebP 图片吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">支持。截至 2026 年，Shopify 接受 WebP 格式的商品图片上传。Shopify CDN 还会自动将 JPG/PNG 上传转换为 WebP，为支持该格式的浏览器提供最优版本。你可以上传 JPG 或 WebP——Shopify 会处理格式协商。最佳做法是上传 JPG 质量 80–85，让 Shopify CDN 自动做 WebP 转换，因为其自动管线比大多数手动 WebP 编码压缩效果更好。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">上传非正方形商品图片会怎样？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Shopify 会显示它，但平台会裁剪非正方形图片以适配商品网格。如果你上传一张 1600 × 2400 的竖版照片，Shopify 会裁掉上下部分，可能截掉产品的头部或底部。缩放功能对非正方形图片的表现也不一致。为了整洁专业的目录展示，始终在上传前将图片裁剪为 1:1 正方形（2048 × 2048 px）。你可以使用浏览器端的工具在几秒内<a href="/zh/resize">调整图片到精确尺寸</a>，所有处理都在本地完成。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">每个商品应该上传多少张图片？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">研究表明，<strong>3–7 张图片</strong>的商品转化率最高。第一张应为白底主图。然后依次添加：细节/特写图、生活场景图、变体专属图（如有变体）、尺寸参考图。避免每个商品超过 10 张——过多图片增加页面加载时间，也可能让买家感到困惑。注重质量而非数量，确保每张图片在买家决策过程中都有明确的作用。</p>
+    </div>
+  </div>
+</div>
+<h2>参考来源</h2>
+<ul>
+<li><a href="https://help.shopify.com/zh-CN/manual/products/images" target="_blank" rel="noopener">Shopify 帮助：商品图片</a></li>
+<li><a href="https://www.shopify.com/blog/product-photos" target="_blank" rel="noopener">Shopify 博客：商品摄影指南</a></li>
+<li><a href="https://help.shopify.com/zh-CN/manual/online-store/themes/theme-structure/slider" target="_blank" rel="noopener">Shopify 帮助：幻灯片图片</a></li>
+</ul>`
     }
 
   ];
