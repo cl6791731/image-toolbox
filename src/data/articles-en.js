@@ -3061,6 +3061,99 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <li><a href="https://www.shopify.com/blog/product-photos" target="_blank" rel="noopener">Shopify Blog: Product Photography Guide</a></li>
 <li><a href="https://help.shopify.com/en/manual/online-store/themes/theme-structure/slider" target="_blank" rel="noopener">Shopify Help: Slideshow Images</a></li>
 </ul>`
+    },
+    {
+      slug: 'facebook-image-size-guide-2026',
+      title: 'Facebook Image Sizes Guide 2026: All Dimensions in One Place',
+      date: '2026-06-17',
+      tags: ['facebook', 'social-media', 'image-sizes', 'social-media-compliance'],
+      summary: 'Facebook uses different image sizes for profile pictures, cover photos, posts, ads, events, and groups — and using the wrong dimensions can make your content look unprofessional. This 2026 guide covers every Facebook image size you need to know, with exact pixel dimensions and practical tips to keep your visuals sharp across all devices.',
+      content: `
+<h2>Facebook Profile Picture and Cover Photo Sizes</h2>
+<p>Your profile picture and cover photo are the most visible parts of your Facebook presence. They appear on your timeline, in comments, in search results, and in Messenger. Getting these dimensions right is critical because Facebook crops and resizes them differently on desktop, mobile, and tablet screens.</p>
+
+<h3>Profile Picture Dimensions</h3>
+<p>Facebook profile pictures display at <strong>170 × 170 pixels</strong> on desktop and <strong>128 × 128 pixels</strong> on mobile. However, Facebook recommends uploading at <strong>360 × 360 pixels</strong> minimum to ensure sharpness across all display contexts. The image must be a square (1:1 ratio). Facebook automatically crops uploaded images — anything that is not square gets cropped from the center outward. If you upload a rectangular photo, Facebook will show only the center square, which often cuts off important details like the top of a person's head.</p>
+<ul>
+<li><strong>Display size (desktop):</strong> 170 × 170 px</li>
+<li><strong>Display size (mobile):</strong> 128 × 128 px</li>
+<li><strong>Upload recommendation:</strong> 360 × 360 px (minimum) to 720 × 720 px for crisp rendering on high-DPI screens</li>
+<li><strong>Aspect ratio:</strong> 1:1 (square) — anything else gets cropped</li>
+<li><strong>Format:</strong> JPG or PNG</li>
+</ul>
+<p>For businesses and creators, the profile picture is often a logo or brand mark. If your logo includes text, make sure it is centered and legible at 128 × 128 px — the smallest display size on mobile. Before uploading, use <a href="/crop">Image Toolbox's crop tool</a> to create a clean 1:1 square and preview how it looks at small sizes.</p>
+
+<h3>Cover Photo Dimensions</h3>
+<p>The Facebook cover photo (also called the banner) displays at <strong>820 × 312 pixels</strong> on desktop and <strong>640 × 360 pixels</strong> on mobile. The desktop and mobile viewports show different crops of the same image — desktop shows a wide, short rectangle, while mobile shows a taller, narrower area. This means any critical content (text, logos, faces) should be placed in the center of the image, away from the edges that might be cropped on different devices.</p>
+<ul>
+<li><strong>Desktop display:</strong> 820 × 312 px</li>
+<li><strong>Mobile display:</strong> 640 × 360 px</li>
+<li><strong>Upload recommendation:</strong> 820 × 462 px (covers both crops safely) or 1640 × 924 px for retina screens</li>
+<li><strong>Aspect ratio:</strong> Approximately 2.6:1</li>
+<li><strong>Format:</strong> JPG (keep under 100 KB for fast loading) or PNG</li>
+</ul>
+<p>Facebook compresses cover photos significantly, so starting with a sharp, well-optimized image helps preserve quality. If your cover photo file is too large, <a href="/compress">compress it first</a> to stay under 100 KB without visible quality loss. A slow-loading cover photo makes your page feel sluggish — and on mobile data, every kilobyte counts.</p>
+
+<h2>Facebook Post Image Sizes</h2>
+<p>Organic posts appear in the News Feed, on your timeline, and in group feeds. Facebook recommends <strong>1200 × 630 pixels</strong> for shared link images and <strong>1080 × 1080 pixels</strong> for standard photo posts. However, the exact behavior depends on whether you are posting a single image, a carousel, or a shared link.</p>
+
+<h3>Photo Post Dimensions</h3>
+<ul>
+<li><strong>Square post:</strong> 1080 × 1080 px (ideal for mobile feed, displays well on desktop)</li>
+<li><strong>Landscape post:</strong> 1200 × 630 px (standard 1.91:1 ratio for link previews and timeline photos)</li>
+<li><strong>Portrait post:</strong> 1080 × 1350 px (maximum 4:5 ratio; taller images get cropped)</li>
+<li><strong>Maximum file size:</strong> 30 MB for photos, 10 GB for videos (but smaller files load faster)</li>
+</ul>
+<p>A 1080 × 1080 square post works universally well because it fills the mobile screen horizontally without the user needing to tap to expand. This square format is also the same size used by Instagram, so you can create one image and post it across both platforms. With dozens of social platforms each requiring slightly different dimensions, keeping track manually is nearly impossible — you can use <a href="/social">Image Toolbox's Social Media Compiler</a> to generate correctly sized images for Facebook, Instagram, TikTok, X, and LinkedIn at once, from a single upload.</p>
+
+<h3>Facebook Carousel Image Dimensions</h3>
+<p>Facebook carousel ads and organic carousel posts display multiple images that users can swipe through horizontally. Each carousel card should be <strong>1080 × 1080 pixels</strong> (square) or <strong>1080 × 608 pixels</strong> (landscape). All cards in a single carousel must share the same aspect ratio — you cannot mix square and landscape cards. Carousels support 2 to 10 cards per post.</p>
+<p>For e-commerce brands, carousels are one of the most effective Facebook post formats. Each card can link to a different product page, making it a compact catalog right in the News Feed. However, uneven image sizes across cards create jarring transitions — make sure all images are identically sized before assembling your carousel. You can batch-crop multiple images to 1080 × 1080 px in seconds using a browser-based resize tool.</p>
+
+<h2>Facebook Ad Image Specifications</h2>
+<p>Facebook ads follow slightly different rules than organic posts. Meta's Ads Manager enforces image requirements to ensure ads display correctly across placements — News Feed, Stories, Marketplace, Instant Articles, and the Audience Network. Using the wrong ad image size can result in your ad being rejected or displaying poorly.</p>
+<ul>
+<li><strong>Feed ads (single image):</strong> 1080 × 1080 px (square) or 1200 × 628 px (landscape 1.91:1). Minimum 600 × 600 px.</li>
+<li><strong>Stories ads:</strong> 1080 × 1920 px (9:16 full-screen vertical). Leave 250 px of blank space at the top for the profile icon and call-to-action overlay.</li>
+<li><strong>Carousel ads:</strong> 1080 × 1080 px per card (square). 2–10 cards per ad.</li>
+<li><strong>Collection ads:</strong> Cover image at 1200 × 628 px, product images at 600 × 600 px.</li>
+<li><strong>Right column ads:</strong> 1200 × 1200 px (minimum 254 × 133 px, though 1200 ensures sharpness on high-DPI desktops).</li>
+<li><strong>Instant Articles:</strong> 1200 × 628 px for inline images.</li>
+<li><strong>Text in images:</strong> Meta's 20% text rule still applies. Images with more than 20% text area may receive reduced delivery. Use Facebook's Text Overlay Tool to check before launching.</li>
+</ul>
+<p>Facebook's advertising ecosystem spans multiple placements, and creating platform-compliant images for each one can be tedious. You can use <a href="/social">Image Toolbox's Social Media Compiler</a> to generate perfectly sized images for every Facebook ad placement — plus equivalent sizes for Instagram, TikTok, and LinkedIn — from a single high-resolution source image.</p>
+
+<h2>Event and Group Cover Photos</h2>
+<p>Facebook events and groups have their own cover photo requirements. Event covers display at <strong>1200 × 628 pixels</strong> — a landscape 1.91:1 ratio that matches the News Feed link preview size. This makes event covers highly shareable: when someone shares your event, the cover image appears as a clean preview card with a date and title overlay added by Facebook. Keep the top and bottom thirds of the image free of text, as Facebook may overlay the event name and date.</p>
+<p>Group covers display at <strong>1640 × 856 pixels</strong> (approximately 1.91:1 ratio). Like profile covers, group covers are cropped differently on desktop versus mobile — the center portion of the image is the safe zone. Unlike event covers, group covers appear less frequently in the News Feed, so optimization matters less — but a visually distinct group cover helps members recognize the group in their sidebar and notification list.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Does Facebook compress uploaded images? How can I avoid quality loss?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes, Facebook applies aggressive compression to all uploaded images to save bandwidth and storage. To minimize quality loss: upload images at the exact recommended dimensions so Facebook does not resize them, use PNG for graphics with text or sharp edges (Facebook compresses PNG less aggressively than JPG), and export JPGs at quality 100 from your image editor — Facebook's own compression will handle the final optimization. If you notice blurring, upload at 2× resolution (e.g., 2048 × 2048 px instead of 1080 × 1080 px) so the downscaled version retains detail. Test different formats on a private post before going live with important content.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What is the best image format for Facebook posts — JPG or PNG?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">JPG is the best format for photographs and most Facebook posts. It offers a good balance of quality and file size, and Facebook's compression pipeline handles JPG well. Use PNG for graphics that contain text, logos, or vector-style artwork — PNG preserves sharp edges better than JPG after Facebook's compression. Avoid uploading BMP or TIFF files; Facebook may reject them or convert them poorly. If you are unsure, upload both formats to a private test post and compare the results on a phone, since most Facebook browsing happens on mobile.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Can I use the same image for Facebook and Instagram?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes, if you use a <strong>1080 × 1080 px square</strong> image, it will display correctly on both Facebook and Instagram feeds. This size is the native square format for Instagram posts and fills the Facebook mobile feed nicely. However, Instagram Stories and Facebook Stories use 1080 × 1920 px (9:16), and Facebook link previews use 1200 × 630 px (1.91:1). For multi-platform posting, a square image is the safest common denominator. You can use a social media image resizing tool to generate platform-specific versions from a single master image — upload once and get Facebook, Instagram, TikTok, X, and LinkedIn sizes without manual cropping.</p>
+    </div>
+  </div>
+</div>
+<h2>References</h2>
+<ul>
+<li><a href="https://www.facebook.com/business/help/310426412574162" target="_blank" rel="noopener">Meta Business Help: Image Sizes for Facebook Ads</a></li>
+<li><a href="https://developers.facebook.com/docs/sharing/best-practices" target="_blank" rel="noopener">Facebook Developers: Sharing Best Practices</a></li>
+<li><a href="https://www.facebook.com/help/125379107800605" target="_blank" rel="noopener">Facebook Help: Cover Photo Guidelines</a></li>
+</ul>`
     }
 
   ];

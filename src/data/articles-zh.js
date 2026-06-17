@@ -3064,6 +3064,99 @@ export const articles = [
 <li><a href="https://www.shopify.com/blog/product-photos" target="_blank" rel="noopener">Shopify 博客：商品摄影指南</a></li>
 <li><a href="https://help.shopify.com/zh-CN/manual/online-store/themes/theme-structure/slider" target="_blank" rel="noopener">Shopify 帮助：幻灯片图片</a></li>
 </ul>`
+    },
+    {
+      slug: 'facebook-image-size-guide-2026',
+      title: 'Facebook 图片尺寸指南 2026：所有规格一站查',
+      date: '2026-06-17',
+      tags: ['Facebook', '社交媒体', '图片尺寸', '社交媒体合规'],
+      summary: 'Facebook 的封面图、头像、帖子、广告、活动与小组各自使用不同的图片尺寸——用错尺寸会让你的内容看起来不专业。本 2026 指南涵盖你需要的每一项 Facebook 图片尺寸，提供精确像素规格和实用技巧，让视觉内容在所有设备上都保持清晰锐利。',
+      content: `
+<h2>Facebook 头像与封面图尺寸</h2>
+<p>头像是你在 Facebook 上最核心的身份标识，封面图则是个人主页或品牌专页的门面。这两个图片元素同时出现在动态消息、评论、搜索结果和 Messenger 中，是访客对你的第一印象。掌握正确的尺寸至关重要，因为 Facebook 在桌面端、手机端和平板端会以不同的方式裁切和缩放它们。</p>
+
+<h3>头像尺寸规范</h3>
+<p>Facebook 头像在桌面端的显示尺寸为 <strong>170 × 170 像素</strong>，在移动端缩减为 <strong>128 × 128 像素</strong>。但 Facebook 建议至少上传 <strong>360 × 360 像素</strong>以确保在各个显示场景中都清晰。头像必须是正方形（1:1 比例）。Facebook 会自动裁切上传的图片——任何非正方形的图片都会被从中心向外裁切。如果你上传的是矩形照片，Facebook 只会显示中央的正方形区域，常常会截掉关键内容，比如人物的头顶。</p>
+<ul>
+<li><strong>桌面端显示尺寸：</strong>170 × 170 px</li>
+<li><strong>移动端显示尺寸：</strong>128 × 128 px</li>
+<li><strong>建议上传尺寸：</strong>360 × 360 px（最低）至 720 × 720 px（高 DPI 屏幕更清晰）</li>
+<li><strong>宽高比：</strong>1:1（正方形），否则会被自动裁切</li>
+<li><strong>格式：</strong>JPG 或 PNG</li>
+</ul>
+<p>对于企业和创作者来说，头像通常是 Logo 或品牌标识。如果你的 Logo 包含文字，务必确保文字在 128 × 128 px（移动端最小尺寸）下仍然清晰可辨。上传前，可以用 <a href="/zh/crop">Image Toolbox 裁切工具</a>处理成干净的 1:1 正方形，并预览在小尺寸下的显示效果。</p>
+
+<h3>封面图尺寸规范</h3>
+<p>Facebook 封面图（也叫 Banner）在桌面端的显示尺寸为 <strong>820 × 312 像素</strong>，在移动端则为 <strong>640 × 360 像素</strong>。桌面和移动端会显示同一张图片的不同裁剪区域——桌面端是宽而矮的矩形，移动端则是更窄但更高的区域。这意味着所有关键内容（文字、Logo、人脸）都应该放在图片的中央安全区，避开可能在不同设备上被裁掉的边缘。</p>
+<ul>
+<li><strong>桌面端显示：</strong>820 × 312 px</li>
+<li><strong>移动端显示：</strong>640 × 360 px</li>
+<li><strong>推荐上传尺寸：</strong>820 × 462 px（同时覆盖桌面和移动端）或 1640 × 924 px（Retina 屏）</li>
+<li><strong>宽高比：</strong>约 2.6:1</li>
+<li><strong>格式：</strong>JPG（控制在 100 KB 以内以加快加载）或 PNG</li>
+</ul>
+<p>Facebook 对封面图的压缩非常激进，因此从一张清晰、优化得当的图片开始非常重要。如果封面图文件过大，可以先<a href="/zh/compress">用压缩工具处理</a>，保持 100 KB 以下同时不损失可见质量。一张加载缓慢的封面图会让你的页面显得卡顿——在移动数据网络下，每一 KB 都影响体验。</p>
+
+<h2>Facebook 帖子图片尺寸</h2>
+<p>普通帖文出现在动态消息、个人时间线和小组留言中。Facebook 推荐共享链接图片使用 <strong>1200 × 630 像素</strong>，标准照片帖使用 <strong>1080 × 1080 像素</strong>。但具体行为取决于你是发单张图片、轮播帖还是分享链接。</p>
+
+<h3>照片帖尺寸</h3>
+<ul>
+<li><strong>正方形帖：</strong>1080 × 1080 px（最适合移动端浏览，桌面端表现也好）</li>
+<li><strong>横版帖：</strong>1200 × 630 px（标准 1.91:1 比例，适合链接预览和时间线照片）</li>
+<li><strong>竖版帖：</strong>1080 × 1350 px（最大 4:5 比例，更高的图片会被裁切）</li>
+<li><strong>最大文件大小：</strong>照片 30 MB，视频 10 GB（但文件越小加载越快）</li>
+</ul>
+<p>1080 × 1080 的正方形帖文适用性最广——它能填满手机屏幕的宽度而无需用户点击放大，同时与 Instagram 的标准帖文尺寸完全一致，你可以做一张图同时在两个平台发。面对数十个社交平台各自不同的尺寸要求，手动记录和适配几乎是不可能的——你可以用 <a href="/zh/social">Image Toolbox 社交媒体合规器</a>，一次上传即可同时生成 Facebook、Instagram、TikTok、X 和 LinkedIn 的正确尺寸图片。</p>
+
+<h3>Facebook 轮播图片尺寸</h3>
+<p>Facebook 轮播广告和轮播帖文可以展示多张图片，用户可横向滑动浏览。每张轮播卡应为 <strong>1080 × 1080 像素</strong>（正方形）或 <strong>1080 × 608 像素</strong>（横版）。同一轮播中的所有卡片必须使用相同的宽高比——不能混合正方形和横版卡片。每个轮播帖支持 2 到 10 张卡片。</p>
+<p>对于电商品牌来说，轮播是 Facebook 帖文中转化效果最好的格式之一。每张卡片可以链接到不同的商品页面，相当于在动态消息中嵌入了一个迷你商品目录。但是各卡片之间尺寸不统一会产生割裂感——务必在组装轮播前确保所有图片尺寸一致。可以用浏览器端的批量裁切工具，在几秒内将多张图片统一调整为 1080 × 1080 px。</p>
+
+<h2>Facebook 广告图片规格</h2>
+<p>Facebook 广告的规则与自然帖文略有不同。Meta 广告管理平台对图片规格有严格要求，以确保广告在所有版位——动态消息、快拍、Marketplace、即阅文和 Audience Network——都能正确展示。广告图片尺寸不对可能导致广告被拒或展示效果差。</p>
+<ul>
+<li><strong>动态消息广告（单图）：</strong>1080 × 1080 px（正方形）或 1200 × 628 px（横版 1.91:1）。最低 600 × 600 px。</li>
+<li><strong>快拍广告：</strong>1080 × 1920 px（9:16 全屏竖版）。顶部留 250 px 空白区域给头像和行动号召按钮。</li>
+<li><strong>轮播广告：</strong>每张卡 1080 × 1080 px（正方形）。每条广告 2–10 张卡片。</li>
+<li><strong>精品栏广告：</strong>封面图 1200 × 628 px，商品图 600 × 600 px。</li>
+<li><strong>右边栏广告：</strong>1200 × 1200 px（最低 254 × 133 px，但 1200 可确保高 DPI 桌面端清晰度）。</li>
+<li><strong>即阅文广告：</strong>内嵌图片 1200 × 628 px。</li>
+<li><strong>图片中的文字：</strong>Meta 的 20% 文字规则仍然有效。图片中文字区域超 20% 的广告可能被限制投放。发广告前使用 Facebook 的文字叠加检测工具自查。</li>
+</ul>
+<p>Facebook 广告生态覆盖多个版位，为每个版位分别制作合规图片非常繁琐。你可以用 <a href="/zh/social">Image Toolbox 社交媒体合规器</a>，从一张高清原图一键生成每个 Facebook 广告版位的正确尺寸——同时还可以生成 Instagram、TikTok 和 LinkedIn 的对应尺寸。</p>
+
+<h2>活动封面与小组封面</h2>
+<p>Facebook 活动和小组有各自独立的封面图要求。活动封面显示尺寸为 <strong>1200 × 628 像素</strong>——1.91:1 的横版比例，与动态消息链接预览尺寸一致。这让活动封面非常适合分享：当有人分享你的活动时，封面图会作为整洁的预览卡片出现，Facebook 会自动叠加活动名称和日期。注意让图片上下三分之一留白，因为 Facebook 可能在这些位置叠加文字信息。</p>
+<p>小组封面的显示尺寸为 <strong>1640 × 856 像素</strong>（约 1.91:1 比例）。与个人封面类似，小组封面在桌面和移动端有不同的裁切——图片中央区域是安全区。小组封面不像活动封面那样频繁出现在动态消息中，所以优化优先级略低——但一个视觉鲜明的小组封面有助于成员在侧边栏和通知列表中快速辨识。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Facebook 会压缩上传的图片吗？如何避免画质损失？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">会。Facebook 对所有上传图片进行强力压缩，以节省带宽和存储空间。减少画质损失的方法有：按推荐尺寸精确上传，这样 Facebook 不需要再次缩放；含文字或清晰边缘的图形使用 PNG 格式（Facebook 对 PNG 的压缩比 JPG 温和）；从图片编辑软件中导出 JPG 质量 100，让 Facebook 自己的压缩管线做最终优化。如果发现模糊，可以按 2 倍分辨率上传（如 2048 × 2048 px 代替 1080 × 1080 px），缩小时能保留更多细节。重要内容发正式帖之前，可以先发一条仅自己可见的测试帖对比效果。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Facebook 帖文用什么格式最好——JPG 还是 PNG？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">照片和大多数帖文推荐使用 JPG 格式。JPG 在质量和文件大小之间取得了良好的平衡，Facebook 的压缩管线对 JPG 的处理也较为成熟。包含文字、Logo 或矢量风格图形的图片则建议用 PNG——PNG 在 Facebook 压缩后能更好地保留清晰边缘。避免上传 BMP 或 TIFF 文件，Facebook 可能拒绝或处理不当。如果不确定，可以同时上传两种格式到仅自己可见的测试帖，在手机上对比效果，因为大多数 Facebook 浏览发生在移动端。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">同一张图片可以同时用于 Facebook 和 Instagram 吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">可以。使用 <strong>1080 × 1080 px 正方形</strong>图片即可在 Facebook 和 Instagram 动态中正确显示。这个尺寸既是 Instagram 帖子的原生正方形格式，也能完美填满 Facebook 移动端动态的宽度。不过，Instagram 快拍和 Facebook 快拍使用 1080 × 1920 px（9:16 竖版），而 Facebook 链接预览使用 1200 × 630 px（1.91:1 横版）。对于多平台发帖，一张正方形图片是最安全的通用格式。你可以用社交媒体图片批量处理工具从一张主图生成各平台专属版本——上传一次即可获得 Facebook、Instagram、TikTok、X、LinkedIn 等全部尺寸，无需手动逐个裁切。</p>
+    </div>
+  </div>
+</div>
+<h2>参考来源</h2>
+<ul>
+<li><a href="https://www.facebook.com/business/help/310426412574162" target="_blank" rel="noopener">Meta Business 帮助：Facebook 广告图片尺寸</a></li>
+<li><a href="https://developers.facebook.com/docs/sharing/best-practices" target="_blank" rel="noopener">Facebook 开发者：分享最佳实践</a></li>
+<li><a href="https://www.facebook.com/help/125379107800605" target="_blank" rel="noopener">Facebook 帮助：封面图规范</a></li>
+</ul>`
     }
 
   ];
