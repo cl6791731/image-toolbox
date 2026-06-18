@@ -3157,6 +3157,92 @@ export const articles = [
 <li><a href="https://developers.facebook.com/docs/sharing/best-practices" target="_blank" rel="noopener">Facebook 开发者：分享最佳实践</a></li>
 <li><a href="https://www.facebook.com/help/125379107800605" target="_blank" rel="noopener">Facebook 帮助：封面图规范</a></li>
 </ul>`
+    },
+    {
+      slug: 'lazy-loading-images-guide',
+      title: '图片懒加载完全指南：让网页加载速度翻倍',
+      date: '2026-06-18',
+      tags: ['懒加载', '性能优化', '网页加速'],
+      summary: '图片懒加载是一种网页性能优化技术，它会延迟加载屏幕外的图片，直到用户即将滚动到它们时才下载。相比于页面加载时一次性下载所有图片的默认浏...',
+      content: `
+<h2>什么是懒加载，为什么它如此重要？</h2>
+<p>图片懒加载（Lazy Loading）是一种网页性能优化技术。它的核心思路很简单：不一次性加载页面上的所有图片，而是等到用户即将滚动到某张图片时，再开始下载它。浏览器的默认行为是解析到 <code>&lt;img&gt;</code> 标签就立即下载——不管这张图用户能不能看到。懒加载打破了这个默认规则。</p>
+<p>性能收益非常可观。HTTP Archive 2024 年的研究显示，图片平均占据网页总加载量的 <strong>45%</strong>。如果一个页面有 20 张图片，可能有 15 张位于首屏之外——这意味着浏览器在浪费 75% 的图片带宽去下载用户可能根本不会滚动到的内容。懒加载能直接消除这种浪费，同时减少首屏加载时间、节省用户流量并降低服务器请求压力。</p>
+<p>Google 明确将懒加载列为性能最佳实践，它直接优化 <strong>LCP（最大内容绘制）</strong>——影响搜索排名的三大 Core Web Vitals 指标之一。推迟非首屏图片的加载，浏览器就能把带宽集中用于用户最先看到的内容，从而显著提升感知加载速度。</p>
+
+<h3>懒加载的工作原理</h3>
+<p>浏览器加载页面时，会解析 HTML 并开始下载所有带 <code>src</code> 属性的 <code>&lt;img&gt;</code> 元素——不管图片是否在可见区域内。懒加载打断了这个过程：图片地址暂存在另一个属性中（或者浏览器被明确告知"稍后再下载"），只有当图片即将进入视口时，下载才真正触发。</p>
+<p>触发时机通常设在图片距离可见区域 <strong>500–1000 像素</strong>时，给浏览器一个提前量，确保用户滚动到该位置时图片已经加载完成。"提前加载但不过度预加载"的平衡，是懒加载实现得好坏的关键。</p>
+
+<h2>使用 loading 属性实现原生懒加载</h2>
+<p>2026 年最简单的懒加载方案不需要一行 JavaScript，只需要一个 HTML 属性。在任何 <code>&lt;img&gt;</code> 或 <code>&lt;iframe&gt;</code> 标签上添加 <code>loading="lazy"</code>：</p>
+<pre><code>&lt;img src="hero-banner.jpg" alt="首图" loading="lazy" width="1200" height="630"&gt;</code></pre>
+<p><code>loading</code> 属性有三个可选值：<code>lazy</code>（延迟至接近视口时加载）、<code>eager</code>（立即加载，默认行为）和 <code>auto</code>（由浏览器自行决定）。对于首屏关键图片——首图、Logo、第一屏可见内容——请使用 <code>loading="eager"</code> 或不加此属性。对于首屏以下的所有内容，<code>loading="lazy"</code> 是最佳选择。</p>
+<p>原生懒加载的浏览器支持已全面覆盖：Chrome（v77 起）、Firefox（v75）、Safari（v15.4）、Edge（v79）均支持。与 JavaScript 方案不同，原生懒加载在 JavaScript 被禁用或加载失败时依然能正常工作，是真正的渐进增强方案。</p>
+
+<h3>关键要求：必须指定 width 和 height</h3>
+<p>使用原生懒加载时有一条铁律：<strong>必须为每张图片设置 width 和 height 属性</strong>。如果缺少这两个属性，浏览器无法在图片加载前预留空间，导致 CLS（累计布局偏移）——页面在图片陆续加载时会不断跳动。这不仅影响用户体验，还会拉低 Core Web Vitals 得分。请始终为图片定义明确尺寸，或使用 CSS <code>aspect-ratio</code> 作为替代方案：</p>
+<pre><code>img { aspect-ratio: 16 / 9; width: 100%; height: auto; }</code></pre>
+
+<h2>使用 Intersection Observer 实现高级懒加载</h2>
+<p>如果你需要更灵活的控制——自定义触发距离、动态切换图片源、加载动画效果等——Intersection Observer API 提供了强大的编程式方案：</p>
+<pre><code>const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;
+      img.classList.add('loaded');
+      observer.unobserve(img);
+    }
+  });
+}, { rootMargin: '200px' });
+
+document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));</code></pre>
+<p>这种模式中，图片使用 <code>data-src</code> 替代 <code>src</code>，observer 在图片进入视口（加 200px 提前量）时完成 src 替换。<code>rootMargin: '200px'</code> 选项意味着在图片距离可视区域还有 200 像素时就开始加载——与原生懒加载的提前量一致。</p>
+<p>Intersection Observer 适合以下场景：(1) 需要淡入动画或骨架屏效果；(2) 根据屏幕尺寸加载不同图片（艺术指导）；(3) 统计用户实际浏览了哪些图片；(4) 兼容原生 loading 属性出现之前的旧浏览器。对于大多数现代网站，原生懒加载已经够用——但遇到复杂需求时，Intersection Observer 仍然是首选方案。</p>
+<p>如果你是开发者，可以用 <a href="/zh/web-optimizer">Image Toolbox 网页优化器</a> 来自动生成懒加载代码——它提供即用的 HTML 片段，包含正确配置的 loading 属性、明确的 width/height 以及 WebP/AVIF 回落方案，一条代码解决所有问题。</p>
+
+<h2>懒加载最佳实践与常见错误</h2>
+<h3>不要对首屏图片使用懒加载</h3>
+<p>懒加载最常见的错误是把 <code>loading="lazy"</code> 加到了首图或 LCP 元素上。当浏览器看到首屏图片被标记为 lazy 时，它会延迟下载——结果直接<strong>拉低了 LCP 分数</strong>，适得其反。务必确保前 1–2 屏的图片使用急切加载（eager）。快速自查方法：打开 Chrome DevTools，运行 Lighthouse 性能报告，检查 LCP 元素是否被误加了 <code>loading="lazy"</code>。</p>
+
+<h3>先优化图片体积，再做懒加载</h3>
+<p>懒加载只是改变了下载时机，并不会减少图片的数据消耗。一张 2MB 的首图，触发加载时依然需要 2MB 的流量——懒加载改变的只是时间点。在实施懒加载之前，请先把图片压缩到合理大小。推荐使用 <a href="/zh">WebP 或 AVIF</a> 等现代格式获得最佳的压缩质量比，并为不同视口提供合适尺寸的图片。懒加载和图片压缩是互补技术——两者结合使用效果最佳。</p>
+
+<h3>提供低质量图片占位符（LQIP）</h3>
+<p>即使用了懒加载，用户在快速滚动时仍可能看到空白区域或裂图图标。一张极小的模糊占位图——通常称为 LQIP（低质量图片占位符）——能显著提升感知性能。生成一张 20×20 像素的缩略图，用 CSS 模糊放大，加载完成后替换为原图：</p>
+<pre><code>&lt;img src="placeholder-20px.jpg" data-src="full-image.jpg" loading="lazy"
+     style="filter: blur(20px); transition: filter 0.3s;"
+     onload="this.style.filter='none'"&gt;</code></pre>
+<p>这个技巧让页面滚动体验丝滑流畅。占位图通常不到 1KB，几乎不增加带宽开销，却能极大改善视觉体验。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">懒加载能提升 SEO 排名吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">能，但属于间接影响。Google 将 Core Web Vitals——包括 LCP（最大内容绘制）——纳入排名信号。懒加载通过推迟非首屏图片的加载改善 LCP，减少首屏加载时间，而更快的页面通常排名更高。此外，Googlebot 可以正常抓取使用原生 loading="lazy" 属性的图片——只要实现方式标准，图片仍然会被索引。避免使用纯 JavaScript 方案隐藏了图片源地址的懒加载，可能导致爬虫无法索引。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">该用 loading="lazy" 还是第三方 JS 库？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">97% 的网站用原生 loading="lazy" 就足够了。它不需要 JavaScript、所有现代浏览器都支持、由浏览器厂商维护——没有库更新和破坏性变更的烦恼。只有在需要高级功能（如动画占位符、自定义触发距离、浏览数据统计、兼容 Chrome 77 / Safari 15.4 之前的浏览器）时才考虑用 JS 库或 Intersection Observer。如果原生方案已经满足需求，多加一个库只会增加不必要的 JavaScript 体积。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">懒加载在移动端生效吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">完全生效。原生懒加载在所有移动浏览器上都可用——Chrome Android、Safari iOS、Firefox Android 均支持 loading="lazy"。移动端反而是懒加载收益最大的场景，因为蜂窝网络延迟更高且流量通常按量计费。推迟非首屏图片的加载，每次页面访问可为移动用户节省数 MB 流量——在流量费用较高的地区，这可能是决定用户去留的关键因素。懒加载是移动优先设计的性能必备实践。</p>
+    </div>
+  </div>
+</div>
+<h2>参考来源</h2>
+<ul>
+<li><a href="https://web.dev/articles/lazy-loading-images" target="_blank" rel="noopener">web.dev：图片懒加载</a> — Google 官方指南</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Lazy_loading" target="_blank" rel="noopener">MDN：懒加载</a> — Mozilla 完整参考文档</li>
+<li><a href="https://developer.chrome.com/docs/lighthouse/performance/" target="_blank" rel="noopener">Chrome DevTools：Lighthouse 性能审查</a> — 测试你的 Core Web Vitals</li>
+</ul>`
     }
 
   ];

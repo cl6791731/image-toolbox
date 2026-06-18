@@ -3154,6 +3154,92 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <li><a href="https://developers.facebook.com/docs/sharing/best-practices" target="_blank" rel="noopener">Facebook Developers: Sharing Best Practices</a></li>
 <li><a href="https://www.facebook.com/help/125379107800605" target="_blank" rel="noopener">Facebook Help: Cover Photo Guidelines</a></li>
 </ul>`
+    },
+    {
+      slug: 'lazy-loading-images-guide',
+      title: 'Lazy Loading Images: The Complete Guide to Faster Web Pages',
+      date: '2026-06-18',
+      tags: ['lazy-loading', 'performance', 'web-optimization'],
+      summary: 'Lazy loading is a web performance technique that defers the loading of off-screen images until the user scrolls near them. Instead of downloading e...',
+      content: `
+<h2>What Is Lazy Loading and Why Does It Matter?</h2>
+<p>Lazy loading is a web performance technique that defers the loading of off-screen images until the user is about to scroll them into view. Instead of downloading every image on a page when it first loads — the default browser behavior — lazy loading tells the browser: "Wait until the user actually needs this image."</p>
+<p>The performance impact is substantial. A 2024 HTTP Archive study found that images account for roughly <strong>45% of the total page weight</strong> on an average website. On a page with 20 images, 15 of those might be below the fold — meaning the browser is downloading 75% of the image bytes for content the user may never see. Lazy loading eliminates this waste upfront, reducing initial page load time, data usage, and server requests simultaneously.</p>
+<p>Google explicitly recommends lazy loading as a performance best practice, and it directly improves your <strong>Largest Contentful Paint (LCP)</strong> — one of the three Core Web Vitals metrics that affect search rankings. By deferring off-screen images, the browser can focus its bandwidth on the above-the-fold content that users see first, delivering a meaningfully faster experience.</p>
+
+<h3>How Lazy Loading Works Under the Hood</h3>
+<p>When a browser loads a page, it parses the HTML and starts downloading every <code>&lt;img&gt;</code> element with a <code>src</code> attribute — regardless of whether that image is visible. Lazy loading interrupts this process. Instead of downloading immediately, the image source is held in a different attribute (or the browser is told to defer it), and the download only triggers when the image approaches the viewport.</p>
+<p>The trigger typically fires when the image is <strong>500–1000 pixels below the visible area</strong>, giving the browser a head start so the image finishes loading by the time the user scrolls to it. This balance between "load early enough" and "don't load too many at once" is what makes lazy loading implementations effective or wasteful.</p>
+
+<h2>Native Lazy Loading with the loading Attribute</h2>
+<p>The simplest way to implement lazy loading in 2026 requires zero JavaScript and just one HTML attribute. Add <code>loading="lazy"</code> to any <code>&lt;img&gt;</code> or <code>&lt;iframe&gt;</code> element:</p>
+<pre><code>&lt;img src="hero-banner.jpg" alt="Hero" loading="lazy" width="1200" height="630"&gt;</code></pre>
+<p>The <code>loading</code> attribute accepts three values: <code>lazy</code> (defer until near viewport), <code>eager</code> (load immediately, the default), and <code>auto</code> (let the browser decide). For images above the fold — the hero banner, logo, and first visible content — use <code>loading="eager"</code> or omit the attribute entirely. For everything below the fold, <code>loading="lazy"</code> is the right choice.</p>
+<p>Browser support for native lazy loading is now universal: Chrome (since v77), Firefox (v75), Safari (v15.4), and Edge (v79) all support it. Unlike JavaScript-based approaches, native lazy loading works even when JavaScript is disabled or fails to load, making it a genuine progressive enhancement.</p>
+
+<h3>Critical Requirement: Always Include width and height</h3>
+<p>There is one non-negotiable rule when using native lazy loading: <strong>always specify width and height attributes</strong> on your images. Without them, the browser cannot reserve space for the image before it loads, causing Cumulative Layout Shift (CLS) — the page jumps around as images pop in. This degrades both user experience and Core Web Vitals scores. Always define explicit dimensions, or use the CSS <code>aspect-ratio</code> property as a fallback:</p>
+<pre><code>img { aspect-ratio: 16 / 9; width: 100%; height: auto; }</code></pre>
+
+<h2>Intersection Observer for Advanced Lazy Loading</h2>
+<p>For developers who need more control — custom thresholds, dynamic source swapping, or loading animations — the Intersection Observer API provides a flexible programmatic solution:</p>
+<pre><code>const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;
+      img.classList.add('loaded');
+      observer.unobserve(img);
+    }
+  });
+}, { rootMargin: '200px' });
+
+document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));</code></pre>
+<p>In this pattern, images use <code>data-src</code> instead of <code>src</code>, and the observer swaps them when the image enters the viewport (plus 200px of margin). The <code>rootMargin: '200px'</code> option triggers loading 200 pixels before the image becomes visible — the same head start the browser gives native lazy loading.</p>
+<p>Intersection Observer is useful when you need to: (1) apply fade-in animations or loading skeletons, (2) load different image sources based on screen size (art direction), (3) track which images users actually viewed for analytics, or (4) support legacy browsers that predate the native <code>loading</code> attribute. For most modern websites, native lazy loading is sufficient — but Intersection Observer remains the go-to for complex requirements.</p>
+<p>For developers building production websites, you can simplify this process significantly. Use the <a href="/web-optimizer">Image Toolbox Web Optimizer</a> to auto-generate lazy loading code — it provides ready-to-use HTML with properly configured loading attributes, explicit width/height, and WebP/AVIF fallbacks, all in one snippet.</p>
+
+<h2>Lazy Loading Best Practices and Common Mistakes</h2>
+<h3>Do Not Lazy Load Above-the-Fold Images</h3>
+<p>The most common lazy loading mistake is applying <code>loading="lazy"</code> to the hero image or LCP element. When the browser sees <code>loading="lazy"</code> on an above-the-fold image, it delays downloading it — which directly <strong>hurts your LCP score</strong> instead of helping it. Always ensure the first 1–2 screenfuls of images load eagerly. A quick audit: open Chrome DevTools, run a Lighthouse performance report, and check the LCP element — make sure it has no <code>loading="lazy"</code> attribute.</p>
+
+<h3>Optimize Image File Size First</h3>
+<p>Lazy loading defers when images load, but it does not reduce how much data they consume. A 2MB hero image will still take 2MB to download when it triggers — lazy loading only changes the timing. Before implementing lazy loading, compress your images to appropriate file sizes. Use modern formats like <a href="/">WebP or AVIF</a> for the best compression-to-quality ratio, and serve appropriately sized images for each viewport. Lazy loading and image compression are complementary techniques — use both for the best results.</p>
+
+<h3>Provide Low-Quality Image Placeholders (LQIP)</h3>
+<p>Even with lazy loading, users may see blank spaces or broken image icons while scrolling quickly. A tiny blurred placeholder — often called LQIP (Low-Quality Image Placeholder) — improves perceived performance. Create a 20×20 pixel thumbnail, scale it up with CSS blur, and replace it with the full image on load:</p>
+<pre><code>&lt;img src="placeholder-20px.jpg" data-src="full-image.jpg" loading="lazy"
+     style="filter: blur(20px); transition: filter 0.3s;"
+     onload="this.style.filter='none'"&gt;</code></pre>
+<p>This technique makes scrolling feel smooth and polished. The placeholder weighs less than 1KB, so it adds negligible bandwidth overhead while dramatically improving the visual experience.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Does lazy loading improve SEO?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes, indirectly. Google uses Core Web Vitals — including LCP (Largest Contentful Paint) — as a ranking signal. Lazy loading improves LCP by deferring off-screen images, which reduces initial page load time. Faster pages tend to rank higher. However, Googlebot can crawl lazy-loaded images as long as they use the native loading="lazy" attribute or a standard Intersection Observer implementation — the images will still be indexed. Avoid JavaScript-only lazy loading solutions that hide images from crawlers.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Should I use loading="lazy" or a JavaScript library?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">For 97% of websites, the native loading="lazy" attribute is the best choice. It requires zero JavaScript, works in all modern browsers, and is maintained by browser vendors — no library updates or breaking changes to worry about. Use a JavaScript library (or Intersection Observer) only if you need advanced features like animated placeholders, custom threshold distances, analytics tracking, or support for browsers older than Chrome 77 / Safari 15.4. If native lazy loading covers your needs, adding a library adds unnecessary JavaScript weight.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Does lazy loading work on mobile devices?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes. Native lazy loading works on all mobile browsers — Chrome for Android, Safari on iOS, and Firefox for Android all support loading="lazy". Mobile devices actually benefit the most from lazy loading, since cellular networks have higher latency and often metered data. Deferring off-screen images can save mobile users megabytes of data per page visit, which is critical in regions with expensive mobile data plans. Lazy loading is a performance best practice for mobile-first design.</p>
+    </div>
+  </div>
+</div>
+<h2>References</h2>
+<ul>
+<li><a href="https://web.dev/articles/lazy-loading-images" target="_blank" rel="noopener">web.dev: Lazy Loading Images</a> — Google's official guide</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading" target="_blank" rel="noopener">MDN: Lazy Loading</a> — Mozilla's comprehensive reference</li>
+<li><a href="https://developer.chrome.com/docs/lighthouse/performance/" target="_blank" rel="noopener">Chrome DevTools: Lighthouse Performance Audit</a> — Test your Core Web Vitals</li>
+</ul>`
     }
 
   ];
