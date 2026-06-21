@@ -5,6 +5,7 @@ import { articles } from '../../data/articles-en.js';
 
 const title = 'Image Processing Tips & Guides';
 const description = 'Learn about image formats, compression techniques, watermarking best practices, and social media image sizing guides.';
+const sortedArticles = [...articles].sort((a, b) => b.date.localeCompare(a.date));
 ---
 
 <Layout title={title} description={description} seoType="website" lang="en">
@@ -16,7 +17,7 @@ const description = 'Learn about image formats, compression techniques, watermar
   </section>
 <div class="content">
     <div class="article-list">
-      {articles.map((article) => (
+      {sortedArticles.map((article) => (
         <article class="article-card">
           <div class="meta">{article.date}</div>
           <h2><a href={`/articles/${article.slug}`}>{article.title}</a></h2>
