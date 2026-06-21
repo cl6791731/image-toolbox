@@ -2794,6 +2794,110 @@ document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Lazy_loading" target="_blank" rel="noopener">MDN：懒加载</a> — Mozilla 完整参考文档</li>
 <li><a href="https://developer.chrome.com/docs/lighthouse/performance/" target="_blank" rel="noopener">Chrome DevTools：Lighthouse 性能审查</a> — 测试你的 Core Web Vitals</li>
 </ul>`
+    },
+    {
+      slug: 'responsive-images-srcset-guide',
+      title: '响应式图片 srcset 完全指南：前端开发者必读',
+      date: '2026-06-21',
+      modified: '2026-07-01',
+      tags: ['响应式图片', 'srcset', '前端性能'],
+      summary: 'HTML 的 srcset 属性是前端工具箱中最强大却也最容易被误解的工具之一。正确实现后，它能将移动端的图片带宽消耗减少 60% 以上，同时为 5K 桌面显示器保留原始清晰度……',
+      content: `
+<h2>响应式图片的核心矛盾：一张图无法适配所有屏幕</h2>
+<p>每个前端开发者都经历过这个场景。你在 27 寸显示器上精心制作了一张 2400 像素宽的 Hero 横幅，视觉效果惊艳。然后掏出手机打开同一个页面：这张 2400px 的图片通过 4G 网络加载，消耗 2MB 流量，最终显示在一个 375px 宽的容器里。用户没有获得任何清晰度的提升，却承担了全部带宽成本。</p>
+<p>这不是感觉上的小问题，而是一个可量化的大问题。<strong>HTTP Archive 2025 Web Almanac</strong> 的数据显示，62% 的桌面端图片流量在移动视口上被白白浪费——因为网站不加区分地向所有设备投放了桌面尺寸的图片。每访问一次页面就多消耗几 MB 流量，乘以上百万用户，后果是实实在在的：弱网环境下跳出率飙升、CDN 账单膨胀、Core Web Vitals 评分拉低进而直接影响搜索排名。</p>
+<p>解决之道不是一刀切地缩小所有图片——5K 显示器上的桌面用户确实需要那 2400px。解决之道是<strong>为每台设备精准投喂合适尺寸的图片</strong>，而 <code>srcset</code> 属性就是为此而生。</p>
+
+<h2>srcset 语法全解：宽度描述符、像素密度描述符与 sizes</h2>
+<p><code>srcset</code> 属性的核心能力是告诉浏览器"这张图我准备了多个版本，你挑最合适的用"。它有两个流派：<strong>宽度描述符</strong>（现代标准写法）和<strong>像素密度描述符</strong>（历史遗留写法）。实际项目中二者都会遇到，掌握两种写法是基本素养。</p>
+
+<h3>宽度描述符（w）——推荐写法</h3>
+<p>宽度描述符告知浏览器每个候选图的实际像素宽度。配合 <code>sizes</code> 属性使用，浏览器能在页面布局完成之前就计算出该下载哪张图：</p>
+<pre><code>&lt;img
+  src="hero-800w.jpg"
+  srcset="hero-400w.jpg 400w,
+          hero-800w.jpg 800w,
+          hero-1200w.jpg 1200w,
+          hero-2400w.jpg 2400w"
+  sizes="(max-width: 600px) 100vw,
+         (max-width: 1200px) 50vw,
+         33vw"
+  alt="产品主图"
+  width="2400"
+  height="1600"&gt;</code></pre>
+<p>来拆解一下执行过程。浏览器先读 <code>sizes</code>，计算图片槽位的实际显示宽度——在 375px 手机上，这是 100vw 即 375px。然后从 <code>srcset</code> 中挑出最接近且不小于 375px 的候选图——即 400w 版本。在 1440px 桌面上，图片占据 33vw 即 475px，浏览器选用 800w 版本。<code>src</code> 属性作为回退，供不支持 srcset 的浏览器使用——2026 年基本不存在这种浏览器，但写上依然是好的工程习惯。</p>
+<p>这个机制的巧妙之处在于，图片选择发生在 <strong>CSS 和 JavaScript 执行之前</strong>。浏览器仅凭媒体查询就能计算出 sizes，立刻启动正确的图片下载——没有布局抖动、没有 JavaScript 依赖、零带宽浪费。</p>
+
+<h3>像素密度描述符（x）——老派写法</h3>
+<p>在宽度描述符普及之前，开发者用像素密度描述符为 Retina 屏提供高清图片：</p>
+<pre><code>&lt;img
+  src="photo-1x.jpg"
+  srcset="photo-1x.jpg 1x,
+          photo-2x.jpg 2x,
+          photo-3x.jpg 3x"
+  alt="产品照片"&gt;</code></pre>
+<p><code>1x</code>、<code>2x</code>、<code>3x</code> 对应设备像素比（DPR）。普通屏拿 1x 版本，2x Retina 屏拿更清晰的 2x 版本。这种写法更简单，但有个根本缺陷：<strong>它不考虑图片的实际显示尺寸</strong>。Retina 手机上的 2x 图可能仍然远超实际需要——如果图片只占屏幕宽度的四分之一，加载 2x 图就是无谓的浪费。正因如此，宽度描述符已在现代开发中全面取代密度描述符——但你在老项目和简单实现中仍会见到密度描述符的身影。</p>
+
+<h2>srcset 落地实战：能上线的正确姿势</h2>
+<p>理解语法是第一步。真正有价值的功夫在于解决生产环境中的实际问题：每个图片该生成几个变体、如何确定分界点、怎样避免维护二十个版本的噩梦。</p>
+
+<h3>三段式分界点原则</h3>
+<p>初学者的常见错误是为每张图生成 10–12 个变体——制造了大量维护负担却换不来对应的性能收益。实际经验表明，<strong>三档宽度覆盖 90% 的场景</strong>：400w 给手机、800w 给平板、1600w 给桌面。如果设计中存在横跨全屏的 Hero 大图，额外增加一档 2400w 给大屏 Retina 显示器。对于缩略图和内容插图（显示宽度不超过 600px），两档（400w 和 800w）就足够了。</p>
+<p>生成变体之前，请先把原始图片压缩到位。使用 <a href="/zh/compress">Image Toolbox 图片压缩工具</a> 批量减小文件体积——一张充分压缩的 1600px 图片可以控制在 100KB 以内，让最大变体也保持轻盈。再将格式优化叠加上去：用 <a href="/zh">WebP 或 AVIF 格式</a> 配合 srcset，在响应式投递的基础上进一步压缩，小型项目可以直接在浏览器中完成格式转换，无需服务器端处理。</p>
+
+<h3>自动化生成响应式代码</h3>
+<p>为页面上每一张图片手写正确的 srcset 和 sizes 属性，既枯燥又容易出错。<code>sizes</code> 属性尤其麻烦——你需要精确知道图片在每个断点下的渲染宽度，而这些信息散落在 CSS 文件中。工具化是解决之道。试试 <a href="/zh/web-optimizer">Image Toolbox 网页优化器</a> 的自动生成功能——它分析你的原始图片，生成合理的 srcset 变体，根据你的布局计算最优 sizes 值，并输出即粘贴即用的 HTML 代码，附带 WebP/AVIF 格式回落，一步到位。这消除了大量让开发者对响应式图片望而却步的手动调试。</p>
+
+<h3>srcset + picture：何时组合使用</h3>
+<p><code>&lt;picture&gt;</code> 元素和 <code>srcset</code> 经常被混淆，但它们解决的是不同的问题。当需要<strong>艺术指导</strong>（Art Direction）——在手机和桌面展示裁剪或构图不同的图片时——使用 <code>&lt;picture&gt;</code>。当需要<strong>分辨率切换</strong>——同一张图片的不同文件尺寸时——使用 <code>srcset</code>。生产环境中，两者经常组合出场：</p>
+<pre><code>&lt;picture&gt;
+  &lt;source
+    media="(max-width: 600px)"
+    srcset="hero-mobile-400w.webp 400w,
+            hero-mobile-800w.webp 800w"
+    sizes="100vw"
+    type="image/webp"&gt;
+  &lt;source
+    srcset="hero-desktop-800w.webp 800w,
+            hero-desktop-1600w.webp 1600w"
+    sizes="(max-width: 1200px) 100vw, 66vw"
+    type="image/webp"&gt;
+  &lt;img
+    src="hero-fallback.jpg"
+    alt="首屏横幅"
+    width="1600"
+    height="900"
+    loading="eager"&gt;
+&lt;/picture&gt;</code></pre>
+<p>这段代码浓缩了多项最佳实践：用 <code>&lt;source media&gt;</code> 实现艺术指导（移动端用竖版裁剪）、每个 source 内用 <code>srcset</code> 实现分辨率切换、优先使用 WebP 格式、在 <code>&lt;img src&gt;</code> 中放置 JPG 回退、显式给出 width/height 防止布局偏移。浏览器自上而下逐个匹配条件，选中第一个满足条件的 <code>&lt;source&gt;</code>——如果都不匹配（或不支持 WebP），则回退到 <code>&lt;img&gt;</code> 元素。</p>
+
+<h2>常见问题</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">srcset 和 picture 元素有什么区别？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">srcset 处理分辨率切换——同一张图片提供不同文件尺寸。picture 元素处理艺术指导——根据屏幕条件提供完全不同的图片（不同的裁剪、宽高比或构图）。当图片内容相同但需要不同文件大小时用 srcset，当需要在手机上展示竖版特写、桌面展示横版全景时用 picture。二者是互补关系，生产网站经常组合使用——picture 包裹带 srcset 的 source 元素。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">一个图片应该生成几个 srcset 变体？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">从三档开始：400w（手机）、800w（平板）、1600w（桌面）。仅在全宽 Hero 大图且需要覆盖大型 Retina 显示器时增加 2400w 变体。避免单张图生成超过五个变体——每增加一个变体都带来递增的维护成本，但性能收益递减。把优化精力放在充分压缩每个变体上（目标是 800w 变体不超过 100KB，1600w 变体不超过 200KB），而不是生成更多尺寸档位。浏览器找不到精确匹配时会自动选用略大的图片，在合理压缩水平下，800w 和 1000w 之间的带宽差异微乎其微。</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">srcset 能配合 WebP 和 AVIF 等现代格式使用吗？</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">完全可以，而且这是最佳实践。用 picture 元素配合 type="image/webp" 或 type="image/avif" 在 source 元素中声明格式偏好，然后在每个 source 内使用带宽度描述符的 srcset。2026 年 WebP 和 AVIF 的浏览器支持率分别达到 97% 和 93% 以上，放心地优先使用现代格式，同时在 img 元素中保留 JPG 或 PNG 回退。WebP + srcset 组合通常比等效的 JPG srcset 体积小 25–35%——在响应式投递上叠加格式优化，实现双重收益。</p>
+    </div>
+  </div>
+</div>
+<h2>参考来源</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#attr-srcset" target="_blank" rel="noopener">MDN：img srcset 属性</a> — Mozilla 关于 srcset 和 sizes 的权威参考文档</li>
+<li><a href="https://web.dev/articles/serve-responsive-images" target="_blank" rel="noopener">web.dev：提供响应式图片</a> — Google 响应式图片最佳实践指南</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture" target="_blank" rel="noopener">MDN：Picture 元素</a> — 艺术指导和格式切换的完整文档</li>
+</ul>`
     }
 
   ];

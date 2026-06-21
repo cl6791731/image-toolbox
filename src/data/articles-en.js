@@ -2789,6 +2789,110 @@ document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading" target="_blank" rel="noopener">MDN: Lazy Loading</a> — Mozilla's comprehensive reference</li>
 <li><a href="https://developer.chrome.com/docs/lighthouse/performance/" target="_blank" rel="noopener">Chrome DevTools: Lighthouse Performance Audit</a> — Test your Core Web Vitals</li>
 </ul>`
+    },
+    {
+      slug: 'responsive-images-srcset-guide',
+      title: 'Responsive Images srcset: The Complete Guide for Developers',
+      date: '2026-06-21',
+      modified: '2026-07-01',
+      tags: ['responsive-images', 'srcset', 'web-performance'],
+      summary: 'The HTML srcset attribute is one of the most powerful yet misunderstood tools in a front-end developer\'s toolkit. When implemented correctly, it can sl...',
+      content: `
+<h2>The Responsive Image Problem: Why One Size Hurts Everyone</h2>
+<p>Here's a scenario every web developer has encountered. You build a beautiful hero banner at 2400 pixels wide — it looks stunning on your 27-inch monitor. Then you check your site on a phone: the same 2400px image loads over a 4G connection, burning through 2MB of data to display in a 375px-wide container. The user sees zero quality benefit, but they pay the full bandwidth cost.</p>
+<p>This isn't just a mobile annoyance — it's a measurable problem. The <strong>HTTP Archive's 2025 Web Almanac</strong> found that 62% of desktop image bytes are wasted on mobile viewports because sites serve desktop-sized images to all devices indiscriminately. That's megabytes of unnecessary data on every single page view. Multiply that across millions of visitors, and you're looking at real-world consequences: higher bounce rates on slow connections, inflated CDN bills, and lower Core Web Vitals scores that directly affect search rankings.</p>
+<p>The solution isn't to serve smaller images everywhere — desktop users on retina displays need those 2400px images. The solution is to <strong>serve the right image for each device</strong>, and that's exactly what the <code>srcset</code> attribute does.</p>
+
+<h2>srcset Syntax: Width Descriptors, Density Descriptors, and sizes</h2>
+<p>The <code>srcset</code> attribute lets you provide multiple versions of an image and let the browser pick the best one. There are two flavors: <strong>width descriptors</strong> (the modern standard) and <strong>pixel density descriptors</strong> (the legacy approach). Understanding both is essential because you'll encounter each in real codebases.</p>
+
+<h3>Width Descriptors (w) — The Right Way</h3>
+<p>Width descriptors tell the browser the actual pixel width of each image candidate. Paired with the <code>sizes</code> attribute, the browser calculates which image to download before the page layout is even complete:</p>
+<pre><code>&lt;img
+  src="hero-800w.jpg"
+  srcset="hero-400w.jpg 400w,
+          hero-800w.jpg 800w,
+          hero-1200w.jpg 1200w,
+          hero-2400w.jpg 2400w"
+  sizes="(max-width: 600px) 100vw,
+         (max-width: 1200px) 50vw,
+         33vw"
+  alt="Product hero image"
+  width="2400"
+  height="1600"&gt;</code></pre>
+<p>Here's what happens step by step. The browser reads <code>sizes</code> and determines how wide the image slot will be — on a 375px phone, that's 100vw (375px). It then picks the smallest image in <code>srcset</code> that's at least 375px wide — in this case, the 400w version. On a 1440px desktop where the image occupies 33vw (475px), the browser reaches for the 800w candidate. The <code>src</code> attribute serves as a fallback for browsers that don't understand srcset, which in 2026 means essentially none — but it's still good practice to include it.</p>
+<p>The magic of this approach is that it works <strong>before CSS and JavaScript execute</strong>. The browser calculates the sizes from media conditions alone, meaning it can start downloading the right image immediately — no layout thrashing, no JavaScript dependency, and no wasted bandwidth.</p>
+
+<h3>Pixel Density Descriptors (x) — The Legacy Approach</h3>
+<p>Before width descriptors became widespread, developers used pixel density descriptors to serve higher-resolution images to retina displays:</p>
+<pre><code>&lt;img
+  src="photo-1x.jpg"
+  srcset="photo-1x.jpg 1x,
+          photo-2x.jpg 2x,
+          photo-3x.jpg 3x"
+  alt="Product photo"&gt;</code></pre>
+<p>The <code>1x</code>, <code>2x</code>, and <code>3x</code> values refer to device-pixel-ratio (DPR). A standard display gets the 1x image; a 2x retina display gets the sharper 2x version. This approach is simpler but has a fundamental flaw: it doesn't account for image display size. A 2x image served to a retina phone may still be far larger than necessary if the image only occupies a quarter of the screen width. For that reason, width descriptors have largely replaced density descriptors in modern development — but you'll still find density descriptors in older codebases and simpler implementations.</p>
+
+<h2>Making srcset Work in Production: Patterns That Ship</h2>
+<p>Understanding the syntax is step one. Applying it effectively requires solving the practical problems every production site faces: how many image variants to generate, which breakpoints to target, and how to avoid maintaining 20 versions of every photo.</p>
+
+<h3>The Three-Breakpoint Rule</h3>
+<p>A common mistake is generating too many variants — 10 or 12 per image — which creates a maintenance burden without meaningful performance gains. In practice, <strong>three image widths cover 90% of use cases</strong>: 400w for mobile, 800w for tablet, and 1600w for desktop. If your design has a critical hero image that spans the full viewport, add a 2400w variant for large retina displays. For thumbnails and in-content images that never exceed 600px, two variants (400w and 800w) are sufficient.</p>
+<p>Before generating these variants, compress your source images first. Use <a href="/compress">Image Toolbox Compress</a> to batch-reduce file sizes — a well-compressed 1600px image can weigh under 100KB, making even your largest variant lightweight. Combine this with modern formats: serving WebP or AVIF with srcset delivers maximum compression alongside responsive delivery. You can <a href="/">convert to WebP or AVIF</a> directly in the browser, no server-side processing required for smaller projects.</p>
+
+<h3>Automating Responsive Image Code</h3>
+<p>Writing correct srcset and sizes attributes for every image on a page is tedious and error-prone. The <code>sizes</code> attribute in particular requires knowing exactly how wide each image renders at every breakpoint — information that lives in your CSS, not your HTML. This is where tooling makes a difference. Use the <a href="/web-optimizer">Image Toolbox Web Optimizer</a> to auto-generate responsive image code — it analyzes your image, generates the right srcset variants, calculates optimal sizes values based on your layout, and outputs ready-to-paste HTML with WebP/AVIF fallbacks in one step. This eliminates the manual trial-and-error that turns many developers away from responsive images entirely.</p>
+
+<h3>srcset + picture: When to Combine Them</h3>
+<p>The <code>&lt;picture&gt;</code> element and <code>srcset</code> are often confused, but they solve different problems. Use <code>&lt;picture&gt;</code> when you need <strong>art direction</strong> — showing a cropped or differently composed image on mobile vs desktop. Use <code>srcset</code> when you need <strong>resolution switching</strong> — the same image at different file sizes. In practice, you often combine them:</p>
+<pre><code>&lt;picture&gt;
+  &lt;source
+    media="(max-width: 600px)"
+    srcset="hero-cropped-400w.webp 400w,
+            hero-cropped-800w.webp 800w"
+    sizes="100vw"
+    type="image/webp"&gt;
+  &lt;source
+    srcset="hero-wide-800w.webp 800w,
+            hero-wide-1600w.webp 1600w"
+    sizes="(max-width: 1200px) 100vw, 66vw"
+    type="image/webp"&gt;
+  &lt;img
+    src="hero-fallback.jpg"
+    alt="Hero banner"
+    width="1600"
+    height="900"
+    loading="eager"&gt;
+&lt;/picture&gt;</code></pre>
+<p>This snippet demonstrates several best practices at once: art direction via <code>&lt;source media&gt;</code> (a mobile-optimized crop), resolution switching via <code>srcset</code> on each source, WebP format preference with JPG fallback in <code>&lt;img src&gt;</code>, and explicit width/height to prevent layout shift. The browser processes these conditions top-down, selecting the first matching <code>&lt;source&gt;</code> — if none match (or the browser doesn't support WebP), it falls through to the standard <code>&lt;img&gt;</code> element.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">What is the difference between srcset and the picture element?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">srcset handles resolution switching — serving different sizes of the same image. The picture element handles art direction — serving entirely different images (different crops, aspect ratios, or compositions) based on media conditions. Use srcset when the image content is identical but needs different file sizes. Use picture when you want a tight portrait crop on mobile and a wide landscape version on desktop. They're complementary, and production sites frequently use both together, with picture wrapping srcset-equipped source elements.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">How many image variants should I generate for srcset?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Start with three: 400w (mobile), 800w (tablet), and 1600w (desktop). Add a 2400w variant only for full-width hero images on large retina displays. Avoid generating more than five variants per image — each additional variant adds maintenance overhead with diminishing returns. Focus your optimization effort on compressing each variant well (target under 100KB for 800w, under 200KB for 1600w) rather than generating more size steps. The browser will pick a slightly larger image when the exact match isn't available, and the bandwidth difference between, say, an 800w and 1000w image at reasonable compression levels is negligible.</p>
+    </div>
+  </div>
+  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Does srcset work with modern image formats like WebP and AVIF?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Yes, and combining them is a best practice. Use the picture element with type="image/webp" or type="image/avif" on source elements, and add srcset with width descriptors inside each source. Browser support for both WebP and AVIF is excellent in 2026 (97%+ and 93%+ respectively), so serve modern formats preferentially while keeping a JPG or PNG fallback in the img element. A WebP with srcset typically delivers 25-35% smaller files than the equivalent JPG srcset — stacking format optimization on top of responsive delivery gives you the best of both worlds.</p>
+    </div>
+  </div>
+</div>
+<h2>References</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset" target="_blank" rel="noopener">MDN: img srcset attribute</a> — Mozilla's authoritative reference on srcset and sizes</li>
+<li><a href="https://web.dev/articles/serve-responsive-images" target="_blank" rel="noopener">web.dev: Serve Responsive Images</a> — Google's responsive image best practices guide</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture" target="_blank" rel="noopener">MDN: The Picture element</a> — Full documentation on art direction and format switching</li>
+</ul>`
     }
 
   ];
