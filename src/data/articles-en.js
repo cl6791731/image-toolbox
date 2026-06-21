@@ -62,7 +62,7 @@ export const articles = [
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">Can I convert JPG to WebP for free?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Absolutely. Use a free online tool like Image Toolbox to convert JPG to WebP directly in your browser. No upload to servers, no registration, and no quality watermark. Just upload, convert, and download.</p>
+      <p itemprop="text">Absolutely. Use any free online converter or desktop software. Most modern image editors support WebP export natively.</p>
     </div>
   </div>
 <h2>Our Testing Experience</h2>
@@ -144,7 +144,7 @@ export const articles = [
     {
       slug: 'png-vs-jpg-guide',
       title: 'PNG vs JPG: The Complete Guide',
-      date: '2026-05-01',
+      date: '2026-05-06',
       tags: ['format', 'beginner'],
       summary: 'PNG and JPG take fundamentally different approaches to image compression. PNG (Portable Network Graphics) uses lossless compression — every pixel i...',
       content: `
@@ -361,7 +361,7 @@ export const articles = [
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">Can I batch convert HEIC files online?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes. Image Toolbox processes files locally in your browser, so you can convert HEIC images one by one without uploading to external servers. For true batch processing with hundreds of files, desktop tools like iMazing HEIC Converter or command-line utilities are more efficient.</p>
+      <p itemprop="text">For single files, any modern browser-based converter works. For batch processing of hundreds of files, desktop tools like iMazing HEIC Converter or command-line utilities are more efficient.</p>
     </div>
   </div>
 </div>
@@ -422,7 +422,7 @@ export const articles = [
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">Can I convert JPG to AVIF for free?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Absolutely. Image Toolbox supports AVIF conversion directly in your browser. Upload a JPG or PNG, select AVIF as the output format, and download the optimized file. All processing happens locally for maximum privacy.</p>
+      <p itemprop="text">Yes. Most modern browsers support AVIF encoding through the Canvas API, and desktop tools like ImageMagick or Squoosh can also produce AVIF output.</p>
     </div>
   </div>
 </div>`
@@ -598,7 +598,7 @@ export const articles = [
     {
       slug: 'lossy-vs-lossless-compression',
       title: 'Lossy vs Lossless Compression: When to Use Which',
-      date: '2026-05-09',
+      date: '2026-05-07',
       tags: ['compression', 'format', 'optimization'],
       summary: 'Lossy compression is the technology behind some of the most common image formats you use every day: JPG, WebP, and AVIF. The core idea is simple — ...',
       content: `<h2>What Is Lossy Compression?</h2>
@@ -657,7 +657,7 @@ export const articles = [
     {
       slug: 'compress-images-faster-website',
       title: 'How to Compress Images for Faster Website Loading',
-      date: '2026-05-10',
+      date: '2026-05-08',
       tags: ['compression', 'web performance', 'seo'],
       summary: 'Images are the single heaviest component of most web pages. According to HTTP Archive, images account for 50–80% of total page weight on the averag...',
       content: `<h2>Why Image Size Kills Your Page Speed</h2>
@@ -719,7 +719,7 @@ export const articles = [
     {
       slug: 'make-photo-smaller-phone',
       title: 'How to Make a Photo Smaller on iPhone and Android',
-      date: '2026-05-11',
+      date: '2026-05-09',
       tags: ['mobile', 'compression', 'tutorial'],
       summary: 'By default, modern iPhones capture photos in HEIC format, which produces smaller files than JPG but is not universally compatible. If you frequentl...',
       content: `<h2>iPhone: Change Camera Capture Format</h2>
@@ -779,7 +779,7 @@ export const articles = [
     {
       slug: 'bulk-image-compression',
       title: 'Bulk Image Compression: Process 50 Photos at Once',
-      date: '2026-05-12',
+      date: '2026-05-10',
       tags: ['batch', 'compression', 'workflow'],
       summary: 'If you\'ve ever tried to optimize images one by one, you know how tedious it is. Now imagine doing it for an entire product catalog, a vacation phot...',
       content: `<h2>Why Batch Compression Saves Hours</h2>
@@ -848,7 +848,7 @@ export const articles = [
     {
       slug: 'social-media-image-sizes-2026',
       title: 'Social Media Image Sizes 2026: The Complete Cheat Sheet',
-      date: '2026-05-13',
+      date: '2026-06-12',
       tags: ['social media', 'resize', 'dimensions'],
       summary: 'Instagram uses multiple aspect ratios depending on the content type. Using the wrong dimensions means your image gets cropped unpredictably:',
       content: `<h2>Instagram Image Sizes</h2>
@@ -918,7 +918,7 @@ export const articles = [
     {
       slug: 'crop-photo-passport-size',
       title: 'How to Crop a Photo to Passport Size (1×1, 2×2, 35×45mm)',
-      date: '2026-05-14',
+      date: '2026-05-15',
       tags: ['crop', 'passport', 'resize'],
       summary: 'Passport photo requirements vary significantly between countries. Using the wrong dimensions is one of the most common reasons applications get rej...',
       content: `<h2>Official Passport Photo Dimensions by Country</h2>
@@ -1054,7 +1054,7 @@ export const articles = [
     {
       slug: 'resize-images-ecommerce',
       title: 'How to Resize Images for E-Commerce (Amazon, eBay, Shopify)',
-      date: '2026-05-16',
+      date: '2026-05-27',
       tags: ['resize', 'ecommerce', 'amazon'],
       summary: 'Amazon has some of the strictest image requirements in e-commerce. Non-compliant images can suppress listings or prevent products from appearing in...',
       content: `<h2>Amazon Product Image Requirements</h2>
@@ -1134,7 +1134,7 @@ export const articles = [
     {
       slug: 'maintain-aspect-ratio',
       title: 'How to Maintain Aspect Ratio When Resizing Images',
-      date: '2026-05-17',
+      date: '2026-06-11',
       tags: ['resize', 'aspect ratio', 'tutorial'],
       summary: 'Aspect ratio describes the proportional relationship between an image\'s width and height, expressed as two numbers separated by a colon. Common rat...',
       content: `<h2>What Is Aspect Ratio and Why Does It Matter?</h2>
@@ -1423,7 +1423,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
     {
       slug: 'watermark-stop-image-theft',
       title: 'Does Adding a Watermark Really Stop Image Theft?',
-      date: '2026-05-21',
+      date: '2026-05-25',
       tags: ['watermark', 'copyright', 'protection'],
       summary: 'Let\'s be direct: a watermark will not stop a determined thief. In 2026, anyone with basic editing skills can remove a corner watermark in under 30 ...',
       content: `<h2>The Honest Answer: Partial Protection Only</h2>
@@ -1625,7 +1625,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
     {
       slug: 'image-seo-optimize-google',
       title: 'Image SEO: How to Optimize Images for Google Search Rankings',
-      date: '2026-05-24',
+      date: '2026-06-11',
       tags: ['seo', 'optimization', 'google'],
       summary: 'Google\'s search ecosystem has shifted dramatically toward visual content. Google Images now drives over 20% of all web searches, and the rise of vi...',
       content: `<h2>Why Image SEO Matters More Than Ever</h2>
@@ -1765,7 +1765,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
     {
       slug: 'tiff-vs-png-archiving',
       title: 'TIFF vs PNG: Which Is Better for Archiving and Printing?',
-      date: '2026-05-26',
+      date: '2026-06-03',
       tags: ['tiff', 'png', 'archive', 'printing'],
       summary: 'TIFF (Tagged Image File Format) has been the gold standard in professional imaging since the 1980s. Unlike consumer formats designed for web delive...',
       content: `<h2>What Is TIFF and Who Uses It?</h2>
@@ -2004,7 +2004,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
     {
       slug: 'instagram-image-size-guide-2026',
       title: 'Instagram Image Size Guide 2026: Complete Dimensions for All Post Types',
-      date: '2026-05-29',
+      date: '2026-06-11',
       tags: ['instagram', 'social-media', 'sizes'],
       summary: 'Instagram remains one of the most visually demanding social platforms, and getting your image dimensions wrong can ruin your content\'s first impres...',
       content: `
@@ -2063,7 +2063,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
     {
       slug: 'tiktok-cover-size-guide-2026',
       title: 'TikTok Cover Photo Size Guide 2026: Complete Dimensions & Best Practices',
-      date: '2026-05-30',
+      date: '2026-06-07',
       tags: ['tiktok', 'social-media', 'sizes'],
       summary: 'TikTok has evolved far beyond a lip-syncing app. With over 1.5 billion monthly active users, it is now a discovery engine where your profile and vi...',
       content: `
@@ -2190,7 +2190,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
     {
       slug: 'xiaohongshu-image-size-guide-2026',
       title: 'Xiaohongshu Image Size Guide 2026: Complete Dimensions for Notes, Covers & Ads',
-      date: '2026-06-02',
+      date: '2026-06-09',
       tags: ['xiaohongshu', 'social-media', 'sizes', 'red'],
       summary: 'Xiaohongshu (also known as RED) has evolved from a shopping recommendation app into China\'s most influential lifestyle platform, boasting over 300 ...',
       content: `
@@ -2315,7 +2315,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
     {
       slug: 'webp-vs-avif-benchmark',
       title: 'WebP vs AVIF: Complete Benchmark & Which Format Wins in 2026',
-      date: '2026-06-04',
+      date: '2026-06-10',
       tags: ['format', 'webp', 'avif', 'web-optimization'],
       summary: 'The image format landscape has changed dramatically since 2020. For decades, JPEG ruled the web — it was lightweight, universally supported, and "g...',
       content: `

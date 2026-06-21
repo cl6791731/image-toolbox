@@ -38,7 +38,7 @@ export const articles = [
 </ul>
 
 <h2>如何将 JPG 转换为 WebP</h2>
-<p>将现有的 JPG 图片转换为 WebP 非常简单。你可以使用 <a href="/zh/">Image Toolbox</a> 进行快速浏览器端转换，无需安装软件。上传 JPG，选择 WebP 作为目标格式，调整质量滑块，然后下载结果。所有处理都在浏览器本地完成，图片不会上传到服务器。</p>
+<p>将现有的 JPG 图片转换为 WebP 非常简单。大多数图片编辑器都支持 WebP 导出，也可以使用在线转换工具。</p>
 <p>如果需要批量转换，可以使用 <code>cwebp</code>（Google 的命令行编码器）、Squoosh 或 ImageMagick 等工具一次性处理大量文件。</p>
 
 <h2>常见问题</h2>
@@ -58,7 +58,7 @@ export const articles = [
   <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">可以免费把 JPG 转成 WebP 吗？</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">当然可以。使用 Image Toolbox 等免费在线工具可以直接在浏览器中完成 JPG 到 WebP 的转换，无需上传到服务器，无需注册，也没有水印。上传、转换、下载，一步到位。</p>
+      <p itemprop="text">可以。使用任何免费在线转换器或桌面软件即可。大多数现代浏览器都原生支持 WebP 导出。</p>
     </div>
   </div>
 </div>
@@ -140,7 +140,7 @@ export const articles = [
     {
       slug: 'png-vs-jpg-guide',
       title: 'PNG 和 JPG 完全指南：何时用哪个？',
-      date: '2026-05-01',
+      date: '2026-06-11',
       tags: ['格式', '入门'],
       summary: 'PNG 和 JPG 的根本区别在于压缩方式。PNG（便携式网络图形）使用无损压缩——每个像素都精确保留原始数据。JPG（联合图像专家组）使用有损压缩——故意丢弃部分像素数据来换取更小的文件体积。',
       content: `
@@ -232,7 +232,7 @@ export const articles = [
 <p>尽管 WebP 优势明显，JPG 并未过时。如果你需要通过邮件发送图片、使用老旧的CMS系统，或者需要与旧版印刷流程保持最大兼容性，JPG 仍然是更稳妥的选择。部分社交媒体平台对上传图片会进行激进的二次压缩，以 JPG 作为起点有时能获得更可预测的结果。</p>
 
 <h2>如何免费将 JPG 转换为 WebP</h2>
-<p>格式转换从未如此简单。使用 <a href="/">Image Toolbox</a>，你可以直接在浏览器中将 JPG 转换为 WebP——无需上传到外部服务器，无需安装软件，也没有质量水印。只需将图片拖入转换器，选择 WebP 作为输出格式，调整质量滑块，即可立即下载优化后的文件。所有处理都在本地完成，你的图片不会离开设备。</p>
+<p>使用任何免费在线转换工具或桌面软件即可完成格式转换。</p>
 <p>对于需要管理大量图片库的开发者，<code>cwebp</code>（Google 的命令行编码器）或 Squoosh 等工具提供批量转换功能。但对于快速、一次性的转换，浏览器端工具往往是最快的选择。</p>
 
 <h2>常见问题解答</h2>
@@ -285,7 +285,7 @@ export const articles = [
 <p>对于照片，JPG 几乎是无敌的。照片天然的视觉复杂性——微妙的渐变、混合的纹理、丰富的色彩——掩盖了 JPG 的压缩伪影。在75–85的质量设置下，大多数观看者无法区分 JPG 和原图。 meanwhile，文件体积的节省是巨大的：一张典型的智能手机照片从 5MB 缩小到不到 1MB，肉眼却看不出质量损失。</p>
 
 <h2>无需 Photoshop 也能快速转换</h2>
-<p>在格式之间切换不需要昂贵的软件。<a href="/">Image Toolbox</a> 让你在浏览器中瞬间完成 PNG 和 JPG 的相互转换。上传图片，选择目标格式，按需调整质量，然后下载——全程无需将文件发送到远程服务器。批量转换时，可以逐个处理，或者使用 ImageMagick 等命令行工具实现自动化。</p>
+<p>在在格式之间切换不需要昂贵的软件。大多数图片编辑器都支持格式转换，命令行工具如 ImageMagick 也可以批量处理。</p>
 
 <h2>常见问题解答</h2>
 <div class="faq" itemscope itemtype="https://schema.org/FAQPage">
@@ -332,7 +332,7 @@ export const articles = [
 <p>你可以从源头阻止这个问题。前往 设置 → 相机 → 格式，选择"兼容性最佳"而非"高效"。从那时起，你的 iPhone 将以 JPG 格式保存照片。缺点？照片将占用大约两倍的存储空间。对于64GB或128GB设备的用户来说，这个权衡可能不可持续。</p>
 
 <h3>方法二：在线转换（最快，无需安装）</h3>
-<p>对于偶尔的转换，在线工具是最快的途径。<a href="/">Image Toolbox</a> 可以直接在浏览器中处理 HEIC 转 JPG。上传 HEIC 文件，选择 JPG 作为输出格式，然后下载——无需安装软件，无需创建账户，文件也不会发送到外部服务器。由于处理在本地进行，即使是敏感照片也能保持私密。</p>
+<p>在线工具是偶尔转换的最快途径。大多数现代浏览器和桌面应用都支持 HEIC 格式。</p>
 
 <h3>方法三：Windows 照片应用</h3>
 <p>Windows 11 和已更新的 Windows 10 可以通过照片应用打开 HEIC 文件，但保存为 JPG 可能仍需要 HEVC 视频扩展编解码器。这种方法适用于单个文件，但批量转换时会很繁琐。</p>
@@ -372,7 +372,7 @@ export const articles = [
     {
       slug: 'avif-format-explained',
       title: 'AVIF 格式详解：它已经准备好取代 WebP 了吗？',
-      date: '2026-05-05',
+      date: '2026-05-15',
       tags: ['avif', '格式', '进阶'],
       summary: 'AVIF（AV1 图像文件格式）是图像格式大战中的最新竞争者。它源自开放媒体联盟开发的 AV1 视频编码技术，带来了此前静态图像格式无法实现的功能：HDR（高动态范围）支持、12位色深和胶片颗粒合成。如果说 WebP 是从 JPG 的一次重大飞跃，那么 AVIF 代表了又一代的改进——在同等视...',
       content: `<h2>AVIF 与其他格式有什么不同？</h2>
@@ -726,7 +726,7 @@ export const articles = [
     {
       slug: 'make-photo-smaller-phone',
       title: '如何在iPhone和Android上缩小照片',
-      date: '2026-05-11',
+      date: '2026-06-09',
       tags: ['手机', '压缩', '教程'],
       summary: '默认情况下，现代iPhone以HEIC格式拍摄照片，比JPG产生更小的文件，但并非普遍兼容。如果你经常与Windows用户分享照片或上传到较旧的网站，你可能希望切换到"最兼容"模式：',
       content: `<h2>iPhone：更改相机拍摄格式</h2>
@@ -786,7 +786,7 @@ export const articles = [
     {
       slug: 'bulk-image-compression',
       title: '批量图片压缩：一次处理50张照片',
-      date: '2026-05-12',
+      date: '2026-05-27',
       tags: ['批量', '压缩', '工作流'],
       summary: '如果你曾经尝试逐一优化图片，你就知道这有多繁琐。现在想象一下为整个产品目录、一本 vacation 相册或一个月的博客文章图片做这件事。逐个处理50张图像可能需要一个多小时。使用批量压缩，同样的任务只需不到五分钟。',
       content: `<h2>为什么批量压缩能节省数小时</h2>
@@ -855,7 +855,7 @@ export const articles = [
     {
       slug: 'social-media-image-sizes-2026',
       title: '2026年社交媒体图片尺寸大全',
-      date: '2026-05-13',
+      date: '2026-06-09',
       tags: ['社交媒体', '调整尺寸', '尺寸'],
       summary: 'Instagram根据内容类型使用多种宽高比。使用错误的尺寸意味着你的图像会被不可预测地裁切：',
       content: `<h2>Instagram图片尺寸</h2>
@@ -925,7 +925,7 @@ export const articles = [
     {
       slug: 'crop-photo-passport-size',
       title: '如何将照片裁切成证件照尺寸（1寸、2寸、35×45mm）',
-      date: '2026-05-14',
+      date: '2026-06-03',
       tags: ['裁切', '证件照', '调整尺寸'],
       summary: '各国护照照片要求差异很大。使用错误的尺寸是申请被拒绝最常见的原因之一：',
       content: `<h2>各国证件照官方尺寸</h2>
@@ -1061,7 +1061,7 @@ export const articles = [
     {
       slug: 'resize-images-ecommerce',
       title: '如何为电商平台调整图片尺寸（Amazon、eBay、Shopify）',
-      date: '2026-05-16',
+      date: '2026-06-06',
       tags: ['调整尺寸', '电商', 'amazon'],
       summary: 'Amazon拥有电商中最严格的图片要求之一。不合规的图片可能会抑制商品列表或阻止产品出现在搜索结果中：',
       content: `<h2>Amazon商品图片要求</h2>
@@ -1141,7 +1141,7 @@ export const articles = [
     {
       slug: 'maintain-aspect-ratio',
       title: '如何在调整图片大小时保持宽高比',
-      date: '2026-05-17',
+      date: '2026-05-25',
       tags: ['调整尺寸', '宽高比', '教程'],
       summary: '宽高比描述图像宽度与高度之间的比例关系，用两个用冒号分隔的数字表示。常见比例包括：',
       content: `<h2>什么是宽高比，为什么重要？</h2>
@@ -1430,7 +1430,7 @@ export const articles = [
     {
       slug: 'watermark-stop-image-theft',
       title: '添加水印真的能阻止盗图吗？',
-      date: '2026-05-21',
+      date: '2026-06-11',
       tags: ['水印', '版权', '保护'],
       summary: '让我们直接说：水印无法阻止决心偷图的人。在2026年，任何具有基本编辑技能的人都可以使用免费工具在30秒内去除角落水印。Photoshop、GIMP和在线编辑器中的AI驱动修复功能可以无缝擦除文字叠加并重建底层图像。',
       content: `<h2>诚实答案：只能部分保护</h2>
@@ -1632,7 +1632,7 @@ export const articles = [
     {
       slug: 'image-seo-optimize-google',
       title: '图片SEO：如何优化图片以获得Google搜索排名',
-      date: '2026-05-24',
+      date: '2026-06-14',
       tags: ['seo', '优化', 'google'],
       summary: 'Google的搜索生态系统已大幅转向视觉内容。Google图片搜索现在占所有网页搜索的20%以上，而视觉搜索的兴起——用户上传照片而不是输入查询——使图片优化成为关键的SEO学科。',
       content: `<h2>为什么图片SEO比以往更重要</h2>
@@ -1772,7 +1772,7 @@ export const articles = [
     {
       slug: 'tiff-vs-png-archiving',
       title: 'TIFF vs PNG：哪种更适合存档和印刷？',
-      date: '2026-05-26',
+      date: '2026-06-07',
       tags: ['tiff', 'png', '存档', '印刷'],
       summary: 'TIFF（标记图像文件格式）自上世纪80年代以来一直是专业成像领域的黄金标准。与为网页传输设计的消费级格式不同，TIFF的构建初衷是最大化保真度和编辑灵活性。其主要用户包括：',
       content: `<h2>什么是TIFF，谁在用？</h2>
@@ -2011,7 +2011,7 @@ export const articles = [
     {
       slug: 'instagram-image-size-guide-2026',
       title: 'Instagram图片尺寸指南2026：所有帖子类型的完整尺寸规范',
-      date: '2026-05-29',
+      date: '2026-06-10',
       tags: ['instagram', '社交媒体', '尺寸'],
       summary: 'Instagram仍然是视觉要求最高的社交平台之一，图片尺寸出错可能毁掉你的内容第一印象。一张在相册里看起来很完美的照片，如果以错误的尺寸发布，可能会变得模糊、被尴尬地裁切，甚至——最糟糕的情况——在关键信息处被截断。到2026年，Instagram支持从小巧的Stories到铺满屏幕的轮播帖...',
       content: `
@@ -2070,7 +2070,7 @@ export const articles = [
     {
       slug: 'tiktok-cover-size-guide-2026',
       title: 'TikTok封面尺寸指南2026：完整尺寸规范与最佳实践',
-      date: '2026-05-30',
+      date: '2026-06-10',
       tags: ['tiktok', '社交媒体', '尺寸'],
       summary: 'TikTok早已超越对口型应用的定位。月活超过15亿用户，它现在是一个发现引擎，你的个人主页和视频封面就像迷你广告牌。一张精心设计的封面往往是用户点击你的视频和在零点几秒内划走之间的分水岭。然而大多数创作者上传的是TikTok自动生成的缩略图——这是一种很少能赌赢的赌博。',
       content: `
@@ -2193,7 +2193,7 @@ export const articles = [
     {
       slug: 'xiaohongshu-image-size-guide-2026',
       title: '小红书图片尺寸指南2026：笔记、封面与广告完整尺寸规范',
-      date: '2026-06-02',
+      date: '2026-06-11',
       tags: ['小红书', '社交媒体', '尺寸', 'RED'],
       summary: '小红书已从购物推荐应用发展为中国最具影响力的生活方式平台，月活用户超过3亿。与西方社交平台以随手拍为主的风格不同，小红书用户对每条帖子的视觉品质有着杂志级的期待。一张尺寸不对、模糊不清或裁切不当的图片，不仅仅是表现不佳——在这个崇尚精致和策展感的社区里，它直接暴露了你的不专业。',
       content: `
@@ -2318,7 +2318,7 @@ export const articles = [
     {
       slug: 'webp-vs-avif-benchmark',
       title: 'WebP vs AVIF 完整对比评测：2026年哪个图片格式更胜一筹？',
-      date: '2026-06-04',
+      date: '2026-06-12',
       tags: ['格式', 'webp', 'avif', '网页优化'],
       summary: '2020 年以来，图片格式的格局发生了翻天覆地的变化。过去几十年，JPEG 一直是网页图片的霸主——轻量、通用、堪称"够用"。2010 年，Google 推出了 WebP，承诺在同等画质下比 JPEG 减小 25-35% 的文件体积。到了 2019 年，开放媒体联盟（Alliance for ...',
       content: `
