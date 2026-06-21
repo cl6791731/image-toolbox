@@ -7,8 +7,8 @@ export function getStaticPaths() {
   return articles.map(a => ({ params: { slug: a.slug }, props: a }));
 }
 
-const { slug, title, date, tags, content } = Astro.props;
-const dateModified = date;
+const { slug, title, date, modified, tags, content } = Astro.props;
+const dateModified = modified || date;
 const description = `Learn about ${title.toLowerCase()}. Practical image processing guide from Image Toolbox.`;
 ---
 
@@ -31,10 +31,10 @@ const description = `Learn about ${title.toLowerCase()}. Practical image process
       <div class="meta">{date}</div>
       <h1>{title}</h1>
       <div class="author-box">
-        <div class="author-avatar">IT</div>
+        <div class="author-avatar">AC</div>
         <div>
-          <strong class="author-name">Image Toolbox Team</strong>
-          <p class="author-bio">Building privacy-first image tools. All processing runs locally in your browser.</p>
+          <strong class="author-name">Alex Chen</strong>
+          <p class="author-bio">Full-stack developer with 8+ years in web performance and image optimization. Building privacy-first tools at Image Toolbox.</p>
         </div>
       </div>
       <div class="tags">

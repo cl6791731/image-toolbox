@@ -1,84 +1,9 @@
 export const articles = [
-    {
-      slug: 'webp-vs-jpg',
-      title: 'WebP vs JPG: Which is Better for Websites?',
-      date: '2026-04-29',
-      tags: ['format', 'webp', 'optimization'],
-      summary: 'WebP and JPG (JPEG) are two of the most widely used image formats on the web today. JPG has been the de facto standard for photographs since the ea...',
-      content: `
-<h2>What Are WebP and JPG?</h2>
-<p>WebP and JPG (JPEG) are two of the most widely used image formats on the web today. JPG has been the de facto standard for photographs since the early 1990s, while WebP was introduced by Google in 2010 as a modern alternative designed specifically for web performance. Understanding the differences between these formats is crucial for anyone building websites, running online stores, or managing digital content.</p>
-<p>JPG uses lossy compression, discarding some image data to achieve smaller file sizes. WebP supports both lossy and lossless compression, and even transparency — making it a more versatile choice in many scenarios.</p>
-
-<h2>File Size Comparison: WebP vs JPG</h2>
-<p>The most compelling reason to choose WebP over JPG is file size. According to Google's own studies and numerous independent benchmarks, WebP achieves <strong>25–35% smaller file sizes</strong> than JPG at equivalent visual quality. For lossless compression, WebP files are about 26% smaller than PNG equivalents.</p>
-<p>What does this mean in practice? If your website currently serves 1MB of JPG images, switching to WebP could reduce that to roughly 650–750KB — a significant improvement for page load times, especially on mobile networks. Faster loading directly impacts user experience, bounce rates, and search engine rankings.</p>
-
-<h2>Quality: Can You Tell the Difference?</h2>
-<p>At moderate compression levels (quality 70–85), most people cannot distinguish between WebP and JPG in blind tests. Both formats produce visually similar results for photographs. However, at very high compression levels (quality below 50), WebP tends to show fewer blocking artifacts than JPG, producing smoother gradients and better detail preservation.</p>
-<p>For graphics with sharp edges, text overlays, or large areas of solid color, WebP's lossless mode outperforms JPG significantly, since JPG was never designed for such content.</p>
-
-<h2>Browser Support for WebP</h2>
-<p>As of 2026, WebP is supported by over <strong>97% of browsers worldwide</strong>, including Chrome, Firefox, Safari (since version 14), Edge, and Opera. The only notable exception is some older versions of Internet Explorer, which has negligible market share. In practical terms, WebP is safe to use on production websites.</p>
-<p>For the remaining 3% of users, a simple JPG fallback ensures no one sees a broken image. This can be implemented with the <code>&lt;picture&gt;</code> element:</p>
-<pre><code>&lt;picture&gt;
-  &lt;source srcset="image.webp" type="image/webp"&gt;
-  &lt;img src="image.jpg" alt="Description"&gt;
-&lt;/picture&gt;</code></pre>
-
-<h2>When to Use Each Format</h2>
-<h3>Use WebP When:</h3>
-<ul>
-<li>You want the smallest possible file size for web delivery</li>
-<li>You need both lossy and lossless compression in one format</li>
-<li>Your images require transparency (replacing PNG)</li>
-<li>You're optimizing for Core Web Vitals and page speed</li>
-</ul>
-<h3>Use JPG When:</h3>
-<ul>
-<li>You need maximum compatibility with very old systems</li>
-<li>Your workflow tools don't yet support WebP export</li>
-<li>You're working with print media that requires standard formats</li>
-</ul>
-
-<h2>How to Convert JPG to WebP</h2>
-<p>Converting your existing JPG images to WebP is straightforward. You can use online tools like <a href="/">Image Toolbox</a> for quick, browser-based conversion — no software installation needed. Simply upload your JPG, select WebP as the target format, adjust the quality slider, and download the result. All processing happens locally in your browser, so your images never leave your device.</p>
-<p>For batch conversion, tools like <code>cwebp</code> (Google's command-line encoder), Squoosh, or ImageMagick can process hundreds of files at once.</p>
-
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Is WebP better than JPG?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">For web use, WebP is generally better than JPG. It produces 25–35% smaller files at the same visual quality, supports both lossy and lossless compression, and can include transparency. JPG remains useful for maximum compatibility and print workflows.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does Safari support WebP?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes. Safari has supported WebP since version 14 (released September 2020). All modern versions of Safari on macOS, iOS, and iPadOS can display WebP images natively.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I convert JPG to WebP for free?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Absolutely. Use any free online converter or desktop software. Most modern image editors support WebP export natively.</p>
-    </div>
-  </div>
-<h2>Our Testing Experience</h2>
-<p>When we benchmarked 50 photographs in Image Toolbox, WebP at quality 85 averaged <strong>32% smaller files</strong> than JPG at the same quality. The gains were most dramatic in images with smooth gradients.</p>
-<h2>References</h2>
-<ul>
-<li><a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google WebP Documentation</a></li>
-<li><a href="https://caniuse.com/webp" target="_blank" rel="noopener">Can I Use: WebP</a></li>
-</ul>
-</div>
-`
-    },
-    {
+   {
       slug: 'compress-under-200kb',
       title: 'How to Compress Images Under 200KB',
       date: '2026-04-30',
+      modified: '2026-05-21',
       tags: ['compression', 'tutorial'],
       summary: 'The 200KB threshold is one of the most common file size limits you\'ll encounter online. Many websites, job application portals, email clients, and ...',
       content: `
@@ -141,84 +66,11 @@ export const articles = [
 </ul>
 `
     },
-    {
-      slug: 'png-vs-jpg-guide',
-      title: 'PNG vs JPG: The Complete Guide',
-      date: '2026-05-06',
-      tags: ['format', 'beginner'],
-      summary: 'PNG and JPG take fundamentally different approaches to image compression. PNG (Portable Network Graphics) uses lossless compression — every pixel i...',
-      content: `
-<h2>The Fundamental Difference: Lossless vs Lossy</h2>
-<p>PNG and JPG take fundamentally different approaches to image compression. <strong>PNG (Portable Network Graphics)</strong> uses lossless compression — every pixel is preserved exactly as it was in the original image. <strong>JPG (Joint Photographic Experts Group)</strong> uses lossy compression — some pixel data is deliberately discarded to achieve smaller file sizes.</p>
-<p>This single difference explains almost everything about when to use each format. If you need pixel-perfect reproduction, PNG is the answer. If you need small file sizes for photos, JPG wins. But there's more nuance to explore.</p>
-
-<h2>When PNG Wins</h2>
-<h3>Screenshots and UI Captures</h3>
-<p>Screenshots of applications, websites, and desktop environments contain sharp text, clean lines, and areas of solid color — exactly the content where JPG's lossy compression struggles. A screenshot saved as JPG often shows fuzzy text and color banding, while the same screenshot as PNG remains crisp and readable. File size differences are also small for this type of content, since PNG compresses solid-color areas extremely efficiently.</p>
-
-<h3>Logos and Graphics with Transparency</h3>
-<p>PNG supports alpha transparency, allowing images to have transparent backgrounds — essential for logos, icons, and overlay graphics. JPG has no transparency support at all; every JPG pixel is fully opaque. If you need a logo that works on any background color, PNG is your only option between these two formats.</p>
-
-<h3>Images with Text</h3>
-<p>Any image that contains readable text — infographics, diagrams, annotated screenshots — should use PNG. JPG compression introduces artifacts around text edges that make letters appear fuzzy and unprofessional.</p>
-
-<h2>When JPG Wins</h2>
-<h3>Photographs</h3>
-<p>For photographs, JPG is almost always the better choice. The natural variation in photos means JPG's lossy compression is nearly invisible to the human eye, while the file size savings are enormous. A typical 12-megapixel photo might be 15–25MB as an uncompressed PNG but only 2–4MB as a high-quality JPG — a 5–10x reduction.</p>
-
-<h3>Web Images Where Speed Matters</h3>
-<p>Page load speed is a critical factor for user experience and SEO. If you're serving dozens of images on a webpage, the size difference between PNG and JPG adds up quickly. For photographic content, JPG delivers acceptable quality at a fraction of the bandwidth.</p>
-
-<h3>Email Attachments and Messaging</h3>
-<p>Most email providers limit attachments to 20–25MB. Sending photos as PNG can quickly exceed these limits, while the same photos as JPG fit comfortably. Messaging apps also benefit from smaller file sizes for faster sharing.</p>
-
-<h2>File Size Comparison</h2>
-<p>Here's a real-world comparison for a typical 4000×3000 pixel photograph:</p>
-<ul>
-<li><strong>PNG:</strong> 15–25MB (lossless, every detail preserved)</li>
-<li><strong>JPG quality 90:</strong> 4–6MB (virtually indistinguishable from original)</li>
-<li><strong>JPG quality 75:</strong> 1.5–3MB (slight quality loss, fine for web)</li>
-<li><strong>JPG quality 50:</strong> 800KB–1.5MB (noticeable artifacts, use with caution)</li>
-</ul>
-<p>For graphics and screenshots, the gap narrows significantly, and PNG may even be smaller than JPG for images with lots of solid color.</p>
-
-<h2>Can You Convert Between Them?</h2>
-<p>Yes, you can convert between PNG and JPG using tools like <a href="/">Image Toolbox</a>. However, be aware of the one-way quality rule: converting from PNG to JPG is lossy (you lose data permanently), while converting from JPG to PNG doesn't improve quality — it just makes the file larger. Always keep your originals in the highest quality format and create compressed copies as needed.</p>
-
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">When should I use PNG?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Use PNG for screenshots, logos, graphics with transparency, images with text, and any content where pixel-perfect accuracy matters. PNG's lossless compression preserves every detail without artifacts.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">When should I use JPG?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Use JPG for photographs, web images where file size matters, email attachments, and any scenario where small file size is more important than pixel-perfect accuracy. Quality 75–85 provides an excellent balance for most uses.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I convert PNG to JPG and back?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">You can convert in either direction, but quality loss is one-way: PNG→JPG discards data permanently, and converting that JPG back to PNG won't restore it. Always keep your original files and work from copies when converting.</p>
-    </div>
-  </div>
-</div>
-<h2>Our Comparison Results</h2>
-<p>We created a standardized test: the same 4000×3000 photograph exported as PNG and JPG at quality 80, 85, and 90. PNG weighed 18.2MB, while JPG at quality 90 was 3.8MB — a <strong>79% reduction</strong> with virtually no visible difference. For graphics with text overlays, JPG introduced artifacts around text at quality 70 and below, while PNG maintained perfect clarity. This confirmed: <strong>use PNG for graphics, JPG for photographs</strong>.</p>
-<h2>References</h2>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/JPEG" target="_blank" rel="noopener">Wikipedia: JPEG</a> — Technical background on JPEG compression</li>
-<li><a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics" target="_blank" rel="noopener">Wikipedia: PNG</a> — PNG format specification</li>
-</ul>
-`
-    },
-    {
+   {
       slug: 'webp-vs-jpg-2026',
       title: 'WebP vs JPG: Which Image Format Should You Use in 2026?',
       date: '2026-05-02',
+      modified: '2026-05-21',
       tags: ['format', 'webp', 'optimization'],
       summary: 'When it comes to web performance, every kilobyte counts. WebP, developed by Google in 2010, consistently delivers 25–35% smaller file sizes than JP...',
       content: `<h2>File Size Comparison: Same Quality, Smaller Files</h2>
@@ -274,6 +126,7 @@ export const articles = [
       slug: 'png-vs-jpg-beginners',
       title: 'PNG vs JPG: The Complete Guide for Beginners',
       date: '2026-05-03',
+      modified: '2026-05-16',
       tags: ['format', 'beginner', 'comparison'],
       summary: 'At the core of every PNG vs JPG debate is a single technical distinction: lossless versus lossy compression. PNG preserves every single pixel exact...',
       content: `<h2>The Fundamental Difference: Lossless vs Lossy</h2>
@@ -323,6 +176,7 @@ export const articles = [
       slug: 'heic-to-jpg',
       title: 'How to Convert HEIC to JPG Online (iPhone & Android)',
       date: '2026-05-04',
+      modified: '2026-06-02',
       tags: ['heic', 'iphone', 'tutorial'],
       summary: 'HEIC (High Efficiency Image Container) is the default photo format on modern iPhones and many Android devices. Apple adopted it in 2017 with iOS 11...',
       content: `<h2>What Is HEIC and Why Is It So Annoying?</h2>
@@ -377,6 +231,7 @@ export const articles = [
       slug: 'avif-format-explained',
       title: "AVIF Format Explained: Is It Ready to Replace WebP?",
       date: '2026-05-05',
+      modified: '2026-05-17',
       tags: ['avif', 'format', 'advanced'],
       content: `<h2>What Makes AVIF Different from Other Formats?</h2>
 <p>AVIF (AV1 Image File Format) is the newest contender in the image format wars. Derived from AV1 video encoding technology developed by the Alliance for Open Media, AVIF brings features that were previously impossible in static image formats: HDR (High Dynamic Range) support, 12-bit color depth, and film grain synthesis. While WebP was a significant leap forward from JPG, AVIF represents another generational improvement — often achieving <strong>20% smaller files than WebP</strong> at the same visual quality.</p>
@@ -431,6 +286,7 @@ export const articles = [
       slug: 'png-to-ico-favicon',
       title: "How to Convert PNG to ICO for Favicons and App Icons",
       date: '2026-05-06',
+      modified: '2026-05-20',
       tags: ['ico', 'favicon', 'developer'],
       content: `<h2>Why Do You Need ICO Files?</h2>
 <p>ICO is the standard Windows icon format, but its most common use on the web is the humble favicon — that tiny image that appears in browser tabs, bookmarks, and search results. Despite its small size (often just 16×16 pixels), the favicon is a critical branding element. It helps users identify your site at a glance among dozens of open tabs and reinforces brand recognition every time someone bookmarks your page.</p>
@@ -490,6 +346,7 @@ export const articles = [
       slug: 'bmp-vs-png-2026',
       title: "BMP vs PNG: Why You Should Stop Using BMP in 2026",
       date: '2026-05-07',
+      modified: '2026-05-21',
       tags: ['bmp', 'png', 'format'],
       content: `<h2>What Is BMP? A Blast from the Past</h2>
 <p>BMP (Bitmap) is one of the oldest image formats still in circulation, introduced by Microsoft in 1987. It stores image data as an uncompressed grid of pixels, with minimal metadata and no compression algorithm to speak of. In an era when 1MB hard drives were considered spacious, BMP was adequate. In 2026, it's an anachronism — a format that wastes storage space and bandwidth without offering any meaningful advantage over modern alternatives.</p>
@@ -547,6 +404,7 @@ export const articles = [
       slug: 'gif-vs-webp-animated',
       title: "GIF vs WebP Animated: Which Is Better for Web?",
       date: '2026-05-08',
+      modified: '2026-05-19',
       tags: ['gif', 'webp', 'animation'],
       content: `<h2>The Problem with GIF in 2026</h2>
 <p>GIF has been the lingua franca of web animation since 1987, but its technical limitations have become increasingly painful as display technology advances. The format supports only 256 colors, uses lossless LZW compression from the 1980s, and handles transparency with a crude 1-bit matte — either fully opaque or fully transparent, with no smooth edges. The result? Animated GIFs of any complexity are massive files with jagged edges, banded colors, and visible dithering artifacts.</p>
@@ -599,6 +457,7 @@ export const articles = [
       slug: 'lossy-vs-lossless-compression',
       title: 'Lossy vs Lossless Compression: When to Use Which',
       date: '2026-05-07',
+      modified: '2026-05-16',
       tags: ['compression', 'format', 'optimization'],
       summary: 'Lossy compression is the technology behind some of the most common image formats you use every day: JPG, WebP, and AVIF. The core idea is simple — ...',
       content: `<h2>What Is Lossy Compression?</h2>
@@ -658,6 +517,7 @@ export const articles = [
       slug: 'compress-images-faster-website',
       title: 'How to Compress Images for Faster Website Loading',
       date: '2026-05-08',
+      modified: '2026-05-23',
       tags: ['compression', 'web performance', 'seo'],
       summary: 'Images are the single heaviest component of most web pages. According to HTTP Archive, images account for 50–80% of total page weight on the averag...',
       content: `<h2>Why Image Size Kills Your Page Speed</h2>
@@ -720,6 +580,7 @@ export const articles = [
       slug: 'make-photo-smaller-phone',
       title: 'How to Make a Photo Smaller on iPhone and Android',
       date: '2026-05-09',
+      modified: '2026-06-11',
       tags: ['mobile', 'compression', 'tutorial'],
       summary: 'By default, modern iPhones capture photos in HEIC format, which produces smaller files than JPG but is not universally compatible. If you frequentl...',
       content: `<h2>iPhone: Change Camera Capture Format</h2>
@@ -748,27 +609,6 @@ export const articles = [
 <h2>Better Way: Compress on Desktop with Online Tool</h2>
 <p>For the best results, transfer photos to your computer and use <a href="/compress">Image Toolbox</a> to compress them. You get precise control over quality, can see a live preview of the result, and avoid the automatic compression that most messaging apps apply. The workflow is simple: phone → computer → online compression → share the optimized file.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Why are my iPhone photos so large?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Modern iPhones capture high-resolution images (12–48 megapixels) with rich color data. A single photo can be 3–8MB. Using HEIC format reduces this by roughly half, but files are still large compared to compressed JPGs.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does WhatsApp compress photos?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes. WhatsApp automatically compresses images to around 100–300KB when sent as standard messages. To send the original file, use the "Document" attachment option instead of the photo picker.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I compress photos directly on my phone?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes, but options are limited. Most phone gallery apps offer basic compression. For precise control over quality and file size, use a desktop browser-based tool like Image Toolbox.</p>
-    </div>
-  </div>
-</div>
 <h2>Mobile Compression Results</h2>
 <p>We tested iPhone 15 Pro photos (48MP, ~5-8MB each) through our mobile-optimized compressor. At quality 80, files dropped to <strong>800KB-1.5MB</strong> — a 75-85% reduction — with no visible quality difference on phone screens. The entire process takes under 5 seconds per photo, entirely on-device with no upload required.</p>
 <h2>References</h2>
@@ -780,6 +620,7 @@ export const articles = [
       slug: 'bulk-image-compression',
       title: 'Bulk Image Compression: Process 50 Photos at Once',
       date: '2026-05-10',
+      modified: '2026-06-01',
       tags: ['batch', 'compression', 'workflow'],
       summary: 'If you\'ve ever tried to optimize images one by one, you know how tedious it is. Now imagine doing it for an entire product catalog, a vacation phot...',
       content: `<h2>Why Batch Compression Saves Hours</h2>
@@ -849,6 +690,7 @@ export const articles = [
       slug: 'social-media-image-sizes-2026',
       title: 'Social Media Image Sizes 2026: The Complete Cheat Sheet',
       date: '2026-06-12',
+      modified: '2026-07-07',
       tags: ['social media', 'resize', 'dimensions'],
       summary: 'Instagram uses multiple aspect ratios depending on the content type. Using the wrong dimensions means your image gets cropped unpredictably:',
       content: `<h2>Instagram Image Sizes</h2>
@@ -893,32 +735,13 @@ export const articles = [
 <h2>Resize All Your Social Images in One Click</h2>
 <p>Rather than memorizing dozens of dimensions, use <a href="/resize">Image Toolbox</a> to resize images for any platform. Simply enter your target dimensions or select a preset, and the tool handles the rest — maintaining aspect ratio, cropping intelligently, and exporting in your preferred format.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the best image size for Instagram in 2026?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">For maximum visibility, use 1080 × 1350 pixels (4:5 portrait ratio) for feed posts. This takes up the most screen space in the scroll and gets the most engagement.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does Instagram compress uploaded images?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes. Instagram compresses all uploads to reduce bandwidth. Uploading at the recommended dimensions (not larger) gives you the best balance of quality and file size.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What happens if my image is the wrong size?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Most platforms will crop or letterbox your image automatically. This often cuts off important elements like faces or text. It's always better to resize and crop yourself before uploading.</p>
-    </div>
-  </div>
-</div>`
+`
     },
     {
       slug: 'crop-photo-passport-size',
       title: 'How to Crop a Photo to Passport Size (1×1, 2×2, 35×45mm)',
       date: '2026-05-15',
+      modified: '2026-06-15',
       tags: ['crop', 'passport', 'resize'],
       summary: 'Passport photo requirements vary significantly between countries. Using the wrong dimensions is one of the most common reasons applications get rej...',
       content: `<h2>Official Passport Photo Dimensions by Country</h2>
@@ -1000,6 +823,7 @@ export const articles = [
       slug: 'crop-images-instagram',
       title: 'How to Crop Images for Instagram Without Losing Quality',
       date: '2026-05-15',
+      modified: '2026-06-16',
       tags: ['crop', 'instagram', 'social media'],
       summary: 'Instagram doesn\'t display images at their uploaded resolution. Instead, it crops and compresses them based on the aspect ratio. Here\'s what most us...',
       content: `<h2>Instagram's Secret Crop Behavior</h2>
@@ -1029,32 +853,13 @@ export const articles = [
 <h2>Free Instagram Crop Tool</h2>
 <p>Rather than guessing ratios in your phone's default gallery, use <a href="/crop">Image Toolbox</a> to crop precisely for Instagram. Select the 1:1, 4:5, or 9:16 preset, adjust the crop frame visually, and download the perfectly sized image — no app installation needed.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the best crop ratio for Instagram engagement?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">4:5 portrait ratio (1080 × 1350 pixels) is optimal for feed posts because it occupies the most vertical screen space, making your content more visible as users scroll.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does cropping reduce image quality on Instagram?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Cropping itself doesn't reduce quality if you start with a high-resolution image. However, Instagram applies additional compression to all uploads. Start with the recommended pixel dimensions and a sharp original to minimize quality loss.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I post horizontal photos on Instagram?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes, but horizontal images (16:9 or wider) are displayed much smaller in the feed. For landscapes and group shots, consider using the carousel feature or cropping to 4:5 portrait with negative space above and below the subject.</p>
-    </div>
-  </div>
-</div>`
+`
     },
     {
       slug: 'resize-images-ecommerce',
       title: 'How to Resize Images for E-Commerce (Amazon, eBay, Shopify)',
       date: '2026-05-27',
+      modified: '2026-06-23',
       tags: ['resize', 'ecommerce', 'amazon'],
       summary: 'Amazon has some of the strictest image requirements in e-commerce. Non-compliant images can suppress listings or prevent products from appearing in...',
       content: `<h2>Amazon Product Image Requirements</h2>
@@ -1135,6 +940,7 @@ export const articles = [
       slug: 'maintain-aspect-ratio',
       title: 'How to Maintain Aspect Ratio When Resizing Images',
       date: '2026-06-11',
+      modified: '2026-06-20',
       tags: ['resize', 'aspect ratio', 'tutorial'],
       summary: 'Aspect ratio describes the proportional relationship between an image\'s width and height, expressed as two numbers separated by a colon. Common rat...',
       content: `<h2>What Is Aspect Ratio and Why Does It Matter?</h2>
@@ -1177,26 +983,6 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
 <h2>Online Tool with Aspect Ratio Lock</h2>
 <p>Don't want to do the math? <a href="/resize">Image Toolbox</a> automatically maintains aspect ratio by default. Simply enter your target width or height, and the other dimension calculates instantly. You can also choose from preset ratios (1:1, 4:3, 16:9, 9:16) for common use cases.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What happens if I resize without maintaining aspect ratio?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">The image becomes distorted. Circles turn into ovals, faces look stretched or squashed, and text becomes difficult to read. Always lock the aspect ratio unless you're deliberately creating a stylistic effect.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">How do I resize an image to fit a specific container?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Calculate the scaling factor by dividing the target dimension by the original dimension, then apply that factor to both width and height. Use an online resize tool with aspect ratio lock to automate this.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I change the aspect ratio without stretching?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes, but it requires cropping, not resizing. Use a crop tool to select a different ratio from the original image. The content within the crop frame will maintain its proportions, but you'll lose parts of the image outside the frame.</p>
-    </div>
-  </div>
 <h2>Aspect Ratio Pitfalls</h2>
 <p>Most common mistake: resizing width-only. <strong>Proportional resize preserves 98% visual quality</strong> at any target size.</p>
 <h2>References</h2>
@@ -1209,6 +995,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       slug: 'crop-screenshot-remove-ui',
       title: 'How to Crop a Screenshot to Remove Unwanted UI Elements',
       date: '2026-05-18',
+      modified: '2026-06-16',
       tags: ['crop', 'screenshot', 'tutorial'],
       summary: 'Screenshots capture everything on your screen — and "everything" often includes elements you don\'t want to share:',
       content: `<h2>Why Screenshots Need Cropping</h2>
@@ -1287,6 +1074,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       slug: 'create-youtube-thumbnails',
       title: 'How to Create Perfect YouTube Thumbnails (1280×720)',
       date: '2026-05-19',
+      modified: '2026-06-13',
       tags: ['youtube', 'thumbnail', 'crop', 'resize'],
       summary: 'YouTube thumbnails display at 1280 × 720 pixels — a 16:9 widescreen ratio that matches the video player. This isn\'t arbitrary. The 16:9 ratio ensur...',
       content: `<h2>Why 1280×720 Is the YouTube Standard</h2>
@@ -1319,26 +1107,6 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
 <li><strong>Dimensions:</strong> Exactly 1280 × 720 pixels</li>
 </ul>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the best size for YouTube thumbnails?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">1280 × 720 pixels (16:9 ratio) is the YouTube standard. This ensures your thumbnail displays correctly on all devices without cropping or distortion. Keep file size under 2MB.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Do I need Photoshop to make YouTube thumbnails?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">No. Free browser-based tools like Image Toolbox can crop, resize, and add text overlays. For more advanced designs, Canva and Photopea offer free templates specifically for YouTube thumbnails.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Why do my YouTube thumbnails look blurry?</h3>
-    <div itemscope itemprop="acceptedAnswer" type="https://schema.org/Answer">
-      <p itemprop="text">Blurry thumbnails usually result from uploading low-resolution source images or excessive compression. Start with a high-resolution image, crop to 16:9, resize to 1280 × 720, and export at 80% quality.</p>
-    </div>
-  </div>
 <h2>YouTube Thumbnail Results</h2>
 <p><strong>Human face thumbnails received 30% more clicks</strong>. Optimal text: 4-6 words bold. 1280×720 recommended.</p>
 <h2>References</h2>
@@ -1351,6 +1119,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       slug: 'add-watermark-photos',
       title: 'How to Add a Watermark to Photos: Best Practices for 2026',
       date: '2026-05-20',
+      modified: '2026-06-05',
       tags: ['watermark', 'copyright', 'branding'],
       summary: 'In an age of AI image generation and instant screenshot sharing, you might wonder if watermarks are still relevant. The answer is yes — but for dif...',
       content: `<h2>Why Watermarks Still Matter</h2>
@@ -1424,6 +1193,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       slug: 'watermark-stop-image-theft',
       title: 'Does Adding a Watermark Really Stop Image Theft?',
       date: '2026-05-25',
+      modified: '2026-06-17',
       tags: ['watermark', 'copyright', 'protection'],
       summary: 'Let\'s be direct: a watermark will not stop a determined thief. In 2026, anyone with basic editing skills can remove a corner watermark in under 30 ...',
       content: `<h2>The Honest Answer: Partial Protection Only</h2>
@@ -1458,26 +1228,6 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
 <h2>Free Watermark Tool (No Photoshop Needed)</h2>
 <p>You don't need expensive software to protect your images. <a href="/watermark">Image Toolbox</a> offers free browser-based watermarking with adjustable opacity, positioning, and batch processing — no subscription, no installation, and your images never leave your device.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can watermarks be completely removed?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes. Modern AI-powered editing tools can remove simple corner watermarks in seconds. Complex integrated watermarks over image content take more effort but are still removable by skilled editors. Watermarks deter casual theft, not determined professionals.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Are watermarks legally binding for copyright?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Watermarks are not a legal requirement for copyright protection — copyright exists automatically when you create an image. However, watermarks serve as evidence of ownership in disputes and may entitle you to additional damages under some jurisdictions' copyright laws.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What's better than a watermark for protection?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">No single method is foolproof. The best protection is a layered approach: visible watermarks, EXIF metadata, clear terms of use, low-resolution web previews, and proactive monitoring through reverse image searches.</p>
-    </div>
-  </div>
 <h2>Watermark Position Analysis</h2>
 
 <img src="/images/watermark-comparison.webp" alt="Watermark position comparison showing corner vs center vs tiled placement" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
@@ -1496,6 +1246,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       slug: 'remove-exif-data',
       title: 'How to Remove EXIF Data from Photos Before Sharing',
       date: '2026-05-22',
+      modified: '2026-06-24',
       tags: ['privacy', 'exif', 'metadata'],
       summary: 'Every time you take a photo with a smartphone or digital camera, the device embeds hidden metadata called EXIF (Exchangeable Image File Format). Th...',
       content: `<h2>What Is EXIF Data and Why Is It Dangerous?</h2>
@@ -1563,6 +1314,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       slug: 'create-transparent-png-logo',
       title: 'How to Create a Transparent PNG Logo from a JPG',
       date: '2026-05-23',
+      modified: '2026-06-21',
       tags: ['png', 'logo', 'transparency', 'format'],
       summary: 'A logo without a transparent background is like a painting permanently glued to a white canvas. It limits where and how you can use it. A transpare...',
       content: `<h2>Why Logos Need Transparent Backgrounds</h2>
@@ -1594,27 +1346,6 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
 <p>Once you've removed the background, export the file as <strong>PNG-24</strong> (not PNG-8). PNG-24 supports full alpha transparency — meaning smooth edges and semi-transparent shadows. PNG-8 only supports binary transparency (fully opaque or fully transparent), which creates jagged edges around curved logo elements.</p>
 <p>Verify your export by opening the PNG on a dark background. If you see white fringes around the logo edges, the background wasn't fully removed or the export settings need adjustment.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I make a JPG transparent?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">No. JPG does not support transparency. You must convert the image to PNG first, then remove the background to create transparency. The resulting file must be saved as PNG (not JPG) to preserve the transparent areas.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the difference between PNG-8 and PNG-24?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">PNG-8 supports up to 256 colors and binary transparency (fully on or off). PNG-24 supports millions of colors and full alpha transparency with smooth gradients. For logos with soft edges or drop shadows, always use PNG-24.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Why does my transparent PNG still show a white background?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">This usually means the background wasn't fully removed before exporting. Some image viewers also display transparent areas as white by default. Open the file in a browser or image editor with a dark background to verify true transparency.</p>
-    </div>
-  </div>
-</div>
 <h2>Transparency Format Comparison</h2>
 <p>We tested transparent backgrounds across formats: PNG supports full alpha transparency and is supported by <strong>99% of tools and browsers</strong>. WebP supports transparency with smaller files but has limited editor support. SVG is ideal for logos (vector, infinitely scalable) but not for photographs. For most logo use cases, we recommend <strong>PNG with transparency</strong> as the universal format.</p>
 <h2>References</h2>
@@ -1626,6 +1357,7 @@ Result: 1200 × 900 pixels (maintains 4:3 ratio)</code></pre>
       slug: 'image-seo-optimize-google',
       title: 'Image SEO: How to Optimize Images for Google Search Rankings',
       date: '2026-06-11',
+      modified: '2026-07-08',
       tags: ['seo', 'optimization', 'google'],
       summary: 'Google\'s search ecosystem has shifted dramatically toward visual content. Google Images now drives over 20% of all web searches, and the rise of vi...',
       content: `<h2>Why Image SEO Matters More Than Ever</h2>
@@ -1694,6 +1426,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'fix-image-upload-failed',
       title: 'How to Fix "Image Upload Failed: File Too Large" Errors',
       date: '2026-05-25',
+      modified: '2026-06-10',
       tags: ['upload', 'error', 'compression', 'resize'],
       summary: 'Every platform that accepts image uploads imposes size limits. Exceeding these limits triggers the dreaded "File too large" error. Here are the lim...',
       content: `<h2>Common Platform Size Limits</h2>
@@ -1734,26 +1467,6 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <h2>One-Tool Fix for All Upload Errors</h2>
 <p>Rather than memorizing dozens of platform limits, use <a href="/compress">Image Toolbox</a> for compression and <a href="/resize">our resize tool</a> for dimension control. The typical workflow: resize to target width (1200px for most platforms), compress to 65% quality, convert to WebP if supported. This combination handles 95% of upload size issues.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">How do I reduce a photo to under 2MB?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Resize the image to fit the display dimensions (usually 1200–1920px wide), then compress to 60–70% quality. For photographs, this typically produces files between 200KB and 1MB without noticeable quality loss.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Why does my small image still fail to upload?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Some platforms check pixel dimensions in addition to file size. An uncompressed PNG might be under the file size limit but exceed maximum dimensions. Check both the platform's file size limit and its maximum resolution limit.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does resizing reduce image quality?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Resizing to smaller dimensions does not degrade quality — it simply removes pixels that wouldn't be displayed anyway. Quality loss occurs during compression (lowering quality percentage) or when upscaling (making an image larger than its original size).</p>
-    </div>
-  </div>
 <h2>Common Issues</h2>
 <p>Top failures: (1) <strong>file >50MB</strong>, (2) <strong>unsupported format</strong>, (3) <strong>corrupted headers</strong>. Our tool handles all three.</p>
 <h2>References</h2>
@@ -1766,6 +1479,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'tiff-vs-png-archiving',
       title: 'TIFF vs PNG: Which Is Better for Archiving and Printing?',
       date: '2026-06-03',
+      modified: '2026-06-21',
       tags: ['tiff', 'png', 'archive', 'printing'],
       summary: 'TIFF (Tagged Image File Format) has been the gold standard in professional imaging since the 1980s. Unlike consumer formats designed for web delive...',
       content: `<h2>What Is TIFF and Who Uses It?</h2>
@@ -1844,6 +1558,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'combine-images-collage',
       title: 'How to Combine Multiple Images into One Collage (Grid Layout)',
       date: '2026-05-27',
+      modified: '2026-06-18',
       tags: ['collage', 'grid', 'crop', 'resize'],
       summary: 'Collages come in endless variations, but certain layouts dominate because they balance visual interest with structural simplicity:',
       content: `<h2>Popular Collage Layouts</h2>
@@ -1886,26 +1601,6 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <h2>Resize and Crop Tools for Collage Prep</h2>
 <p>Before you open a collage editor, prepare your images with <a href="/crop">Image Toolbox's crop tool</a> and <a href="/resize">resize tool</a>. Crop to standard ratios, resize to consistent dimensions, and download the optimized set. This preprocessing step transforms collage creation from a frustrating guessing game into a precise, repeatable workflow.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the best app for making photo collages?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">For quick social media collages, Canva offers the best template library. For professional results with full control, prepare images with Image Toolbox (crop and resize) then assemble in Photopea or GIMP.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">How do I make a collage with different sized photos?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">First, crop all photos to the same aspect ratio. Then resize them to the same height (widths will vary naturally). Finally, arrange them in your grid editor. This creates visual consistency while preserving each photo's original proportions.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What size should I make a photo collage?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">For Instagram posts, aim for 1080 × 1350 pixels (4:5). For website headers, match your content width (typically 1200–1400 pixels). For print, calculate based on your desired physical size at 300 DPI.</p>
-    </div>
-  </div>
 <h2>Collage Results</h2>
 <p>Equal-cell grids received <strong>18% more engagement</strong> than mixed layouts. 2×2 grid with consistent padding looks most professional.</p>
 <h2>References</h2>
@@ -1918,6 +1613,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'image-processing-checklist-2026',
       title: 'The Ultimate Image Processing Checklist for 2026',
       date: '2026-05-28',
+      modified: '2026-06-28',
       tags: ['checklist', 'workflow', 'best practices'],
       summary: 'The format you choose determines file size, quality, and compatibility. Use this decision tree:',
       content: `<h2>Step 1: Choose the Right Format</h2>
@@ -2005,6 +1701,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'instagram-image-size-guide-2026',
       title: 'Instagram Image Size Guide 2026: Complete Dimensions for All Post Types',
       date: '2026-06-11',
+      modified: '2026-06-24',
       tags: ['instagram', 'social-media', 'sizes'],
       summary: 'Instagram remains one of the most visually demanding social platforms, and getting your image dimensions wrong can ruin your content\'s first impres...',
       content: `
@@ -2038,32 +1735,13 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <p>If you regularly post to multiple platforms, manually resizing for each one is time-consuming. You can use <a href="/social">Image Toolbox's Social Media Compliance Checker</a> to batch-generate correctly sized versions for Instagram, Facebook, TikTok, and more — all from a single upload. It validates every image against each platform's latest specs so you never post a mis-sized image again.</p>
 <p>For quick adjustments before posting, <a href="/resize">Image Toolbox's resize tool</a> handles exact pixel dimensions with aspect ratio lock, and the <a href="/compress">compression tool</a> helps you hit file size targets without visible quality loss. All processing happens locally in your browser, so your photos never touch a server.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the best image size for Instagram posts in 2026?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">The best all-around size is 1080 × 1350 pixels (4:5 portrait ratio). This format takes up the most screen space in the feed without being cropped, maximizing engagement. For Stories and Reels, use 1080 × 1920 pixels (9:16). For profile pictures, 320 × 320 pixels is optimal.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Why do my Instagram photos look blurry after uploading?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Instagram compresses all uploaded images, which can cause blurriness if your source file is already small or low quality. To prevent this: always upload at exactly 1080px wide, use high-quality JPG (85-90%) or PNG for text-heavy images, and avoid uploading images that have already been compressed by another platform. Starting with proper dimensions also prevents Instagram's resizing algorithm from introducing additional softness.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I use the same image size for Instagram, Facebook, and TikTok?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">No, each platform has different optimal dimensions. Instagram feed posts are best at 1080 × 1350px (4:5), Facebook feed images at 1200 × 630px (1.91:1), and TikTok covers at 1080 × 1920px (9:16). Using the wrong dimensions leads to unwanted cropping or low-quality display. For a less tedious workflow, use Image Toolbox's Social Media Compliance Checker to batch-generate correctly sized versions for every platform from a single source image.</p>
-    </div>
-  </div>
-</div>`
+`
     },
     {
       slug: 'tiktok-cover-size-guide-2026',
       title: 'TikTok Cover Photo Size Guide 2026: Complete Dimensions & Best Practices',
       date: '2026-06-07',
+      modified: '2026-06-18',
       tags: ['tiktok', 'social-media', 'sizes'],
       summary: 'TikTok has evolved far beyond a lip-syncing app. With over 1.5 billion monthly active users, it is now a discovery engine where your profile and vi...',
       content: `
@@ -2120,6 +1798,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'youtube-thumbnail-size-guide-2026',
       title: 'YouTube Thumbnail Size Guide 2026: Perfect Dimensions for Every Device',
       date: '2026-06-01',
+      modified: '2026-06-22',
       tags: ['youtube', 'thumbnail', 'social-media', 'sizes'],
       summary: 'YouTube processes over 3.7 million new videos every single day. In a content ocean that vast, your thumbnail is the lifeboat that pulls viewers abo...',
       content: `
@@ -2159,26 +1838,6 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 
 <img src="/images/youtube-thumbnail-comparison.webp" alt="YouTube thumbnail comparison" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0" />
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the best resolution for YouTube thumbnails?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">The optimal YouTube thumbnail resolution is 1280 × 720 pixels with a 16:9 aspect ratio. This is YouTube's officially recommended size and ensures sharp rendering on everything from mobile phones to 4K smart TVs. The minimum accepted size is 640 × 360 pixels, but using that low resolution will result in blurry thumbnails on larger screens. Always upload at 1280 × 720 and keep the file size under 2MB.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What file format should I use for YouTube thumbnails?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">JPG is the recommended format for YouTube thumbnails because it produces the smallest file sizes at high visual quality. Use JPG at 85-90% quality for the best balance between sharpness and file size. PNG is also supported and may be preferable for thumbnails with text overlays or sharp graphics, as PNG preserves edge clarity better under YouTube's compression. Avoid GIF and WebP — YouTube does not accept these formats for custom thumbnails. Your thumbnail must be under 2MB regardless of format.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Why does my YouTube thumbnail look different on mobile vs desktop?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">YouTube displays thumbnails at different sizes depending on the device and context. On desktop search results, thumbnails appear at roughly 246 × 138 pixels. On mobile, they shrink to approximately 168 × 94 pixels — nearly half the size. TV screens can show thumbnails at the full 1280 × 720 resolution. Fine details and small text that look great on desktop may become unreadable on mobile. Always test your thumbnails at multiple sizes: view them at 20% zoom to simulate mobile, and check for clarity at full 1280 × 720 to ensure TV-quality sharpness.</p>
-    </div>
-  </div>
 <h2>Thumbnail A/B Results</h2>
 <p><strong>Human faces: 30% more clicks</strong>. 1280×720 optimal. Auto-generated thumbs perform 40% worse.</p>
 <h2>References</h2>
@@ -2191,6 +1850,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'xiaohongshu-image-size-guide-2026',
       title: 'Xiaohongshu Image Size Guide 2026: Complete Dimensions for Notes, Covers & Ads',
       date: '2026-06-09',
+      modified: '2026-07-09',
       tags: ['xiaohongshu', 'social-media', 'sizes', 'red'],
       summary: 'Xiaohongshu (also known as RED) has evolved from a shopping recommendation app into China\'s most influential lifestyle platform, boasting over 300 ...',
       content: `
@@ -2256,6 +1916,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'douyin-cover-size-guide-2026',
       title: 'Douyin Cover Photo Size Guide 2026: Complete Dimensions & Design Tips',
       date: '2026-06-03',
+      modified: '2026-06-15',
       tags: ['douyin', 'social-media', 'sizes', 'cover'],
       summary: 'Douyin (the Chinese counterpart of TikTok owned by ByteDance) has grown into one of the world\'s largest short-video platforms with over 700 million...',
       content: `
@@ -2290,32 +1951,13 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <p>Managing cover images across multiple short-video platforms — Douyin, TikTok, Kuaishou, Instagram Reels, YouTube Shorts — is a formatting nightmare. Each platform demands a different aspect ratio, and copying the same image everywhere guarantees bad crops. You can use <a href="/social">Image Toolbox's Social Media Compliance Checker</a> to batch-generate perfectly sized covers for Douyin, TikTok, Xiaohongshu, and more from a single source image. It validates dimensions against each platform's latest specifications, previews the safe-zone cropping, and exports everything in one click.</p>
 <p>For fine-tuning individual covers, the <a href="/resize">resize tool</a> locks dimensions to exact pixel targets with aspect ratio preservation, and <a href="/compress">the compression tool</a> reduces file size below Douyin's 5MB limit without visible quality loss. Both tools process images entirely in your browser — your cover artwork never touches a remote server.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the best image size for Douyin video covers?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">The optimal Douyin cover size is 1080 × 1920 pixels with a 9:16 aspect ratio. This is the native vertical video format that fills the entire smartphone screen without cropping or letterboxing. The minimum accepted resolution is 720 × 1280 pixels. Always upload a custom-designed cover rather than relying on auto-generated video frames, and keep all critical visual elements (faces, text, logos) within the center 60% of the frame to avoid being obscured by Douyin's UI overlays.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I use the same cover image for Douyin, TikTok, and Instagram Reels?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">No, each platform requires different dimensions for optimal display. Douyin covers work best at 1080 × 1920 pixels (9:16), TikTok covers also at 1080 × 1920 (9:16) but with different safe zones due to varying UI element positions, and Instagram Reels display at 1080 × 1920 (9:16) but with profile-grid cropping to 1080 × 1080 (1:1). Even between Douyin and TikTok — which share the same parent company — UI overlay positions differ enough to require separate safe-zone planning. Use a batch-processing tool to generate platform-specific versions from one source image.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Why do my Douyin covers look blurry or pixelated after uploading?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Blurry covers are almost always caused by one of three issues: (1) uploading at a resolution lower than 1080 × 1920, forcing Douyin to upscale the image with visible artifacts; (2) uploading a massively oversized image (e.g., 4000+ pixels wide) that Douyin aggressively compresses, introducing JPEG artifacts and color banding; or (3) saving the cover in a format with insufficient quality — use JPG at 90-95% quality or PNG, and avoid re-compressing already-compressed images downloaded from other platforms. Always export at exactly 1080 × 1920 in sRGB color space and keep file size under 5MB.</p>
-    </div>
-  </div>
-</div>`
+`
     },
     {
       slug: 'webp-vs-avif-benchmark',
       title: 'WebP vs AVIF: Complete Benchmark & Which Format Wins in 2026',
       date: '2026-06-10',
+      modified: '2026-07-07',
       tags: ['format', 'webp', 'avif', 'web-optimization'],
       summary: 'The image format landscape has changed dramatically since 2020. For decades, JPEG ruled the web — it was lightweight, universally supported, and "g...',
       content: `
@@ -2408,6 +2050,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'why-instagram-photos-blurry',
       title: 'Why Instagram Photos Are Blurry? 7 Real Fixes That Work (2026)',
       date: '2026-06-05',
+      modified: '2026-06-22',
       tags: ['social-media', 'instagram', 'image-quality', 'troubleshooting'],
       summary: 'You spend 20 minutes editing a photo in Lightroom until every shadow and highlight is perfect. You export it at full resolution, upload it to Insta...',
       content: `
@@ -2452,26 +2095,6 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 </ol>
 <p>For everyday image preparation — resizing, compressing, format conversion — <a href="/">Image Toolbox's main suite</a> handles JPEG, PNG, WebP, and AVIF with local browser processing. No uploads, no privacy risk, no watermark. Just clean exports exactly how you need them.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Why do my Instagram photos look blurry even though they are sharp on my phone?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">This is almost always caused by Instagram's downscaling algorithm. If your photo exceeds 1080 pixels on any side, Instagram aggressively resizes it using a fast, lossy algorithm that softens edges and introduces artifacts. Export your photos at exactly 1080px wide (square), 1080 × 1350px (portrait), or 1080 × 608px (landscape) in sRGB color space at JPEG quality 85–92. This ensures Instagram's downscaler is never triggered, passing your image through with only the JPEG transcode step — which produces far better results.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Should I upload PNG or JPEG to Instagram for better quality?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Upload JPEG, not PNG. Although PNG is lossless, Instagram transcodes everything to JPEG anyway, and its PNG-to-JPEG converter produces measurably worse results than a direct JPEG upload — often with muted colors, lost transparency replaced by an unpredictable background color, and more aggressive compression. Export your images as sRGB JPEG at quality 85–92, sized exactly to Instagram's native dimensions, and ensure file sizes stay under 8MB. This gives Instagram's encoder the cleanest possible input.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does Instagram compress Stories more than Feed posts?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes. Instagram applies noticeably more aggressive compression to Stories than to Feed posts because Stories are ephemeral and viewed in rapid succession — the platform optimizes for fast loading over quality. The same photo posted to both surfaces will appear sharper in the Feed. To compensate for Stories compression, apply an extra 15–20% sharpening pass, avoid dark gradients that reveal banding artifacts, and export at exactly 1080 × 1920 pixels (9:16 ratio) in sRGB. Also ensure "Upload at Highest Quality" is enabled under Settings → Account → Data Usage.</p>
-    </div>
-  </div>
 <h2>Compression Analysis</h2>
 <p><strong>1080px+: 95%+ quality retained</strong>. 640px → re-encoded to 480px (25% loss). Upload as JPEG to avoid double compression.</p>
 <h2>References</h2>
@@ -2484,6 +2107,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'amazon-image-requirements-2026',
       title: 'Amazon Product Image Requirements 2026: Complete Seller Guide',
       date: '2026-06-06',
+      modified: '2026-06-15',
       tags: ['ecommerce', 'amazon', 'product-images', 'optimization'],
       summary: 'Amazon processes over 400 million products and 3.5 billion customer searches per month. The first thing a shopper sees when scrolling through searc...',
       content: `
@@ -2579,6 +2203,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'taobao-image-requirements-2026',
       title: 'Taobao Main Image Requirements 2026: Complete Seller\'s Guide',
       date: '2026-06-08',
+      modified: '2026-07-09',
       tags: ['ecommerce', 'taobao', 'image-requirements'],
       content: `
 <h2>Why Taobao Main Images Matter More Than You Think</h2>
@@ -2633,26 +2258,6 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 
 <p>The difference in background rules is the most impactful for cross-platform sellers. An Amazon-ready white-background shot works for Tmall but performs <strong>below average on Taobao</strong>, where buyers expect more visual context. Conversely, a Taobao-optimized lifestyle image will be rejected on Amazon and suppressed on Tmall. <a href="/ecommerce">Image Toolbox's Ecommerce Processor</a> solves this by letting you generate platform-specific variants from a single source image — white background for Amazon, lifestyle crop for Taobao, and brand-aligned template for Tmall — in one batch operation. Pair it with <a href="/resize">Image Toolbox's Resize tool</a> to dial in the exact pixel dimensions each platform requires, and you have a complete multi-platform image workflow without ever leaving your browser.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does Taobao require a pure white background for product images?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">No. Unlike Amazon, Taobao does not require a pure white background. Lifestyle and contextual backgrounds are not only allowed on Taobao main images — they often perform better in click-through rate. The key restriction is that the background must not contain text, logos, watermarks, promotional slogans, or competing platform branding. If you choose a white background, aim for a slightly warm off-white (#F5F5F5 to #FAFAFA) rather than clinical RGB 255,255,255, which tends to look harsh on Taobao's warm-toned interface. The only exception is Tmall (Taobao's B2C sister platform), where white backgrounds are strongly preferred and lifestyle main images are typically restricted to alternate image slots.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What image size and format works best for Taobao in 2026?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">The optimal Taobao main image specification as of 2026 is: JPEG format, quality 85–95, 1200 × 1200 to 1600 × 1600 pixels, square 1:1 aspect ratio, sRGB color space, and under 1.5MB file size for fastest mobile loading. JPEG at these settings balances crisp detail for the pinch-to-zoom feature with fast loading on China's mobile networks, where the majority of Taobao traffic originates. PNG is acceptable but file sizes will be 2–4× larger at equivalent visual quality, which hurts mobile page speed. Avoid uploading images larger than 2000px — Taobao's server compresses oversize images and the compression algorithm is not quality-optimized. Always resize and compress before uploading using a tool like <a href="/compress">Image Toolbox</a>.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I use the same product images across Taobao, Tmall, and Amazon?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Not optimally. While you can technically upload the same image to all three platforms, each platform has different optimization criteria that affect search ranking and conversion. Amazon requires pure white background and 2000px resolution; Tmall prefers white background at 1200–1600px; Taobao supports lifestyle backgrounds and benefits from more visual context. Using an Amazon-optimized image on Taobao results in a sterile, clinical look that underperforms against competitors using rich lifestyle photography. The practical solution is to generate platform-specific variants from your source photography — <a href="/ecommerce">Image Toolbox's Ecommerce Processor</a> automates this, producing Amazon-ready white background crops, Tmall-branded clean shots, and Taobao lifestyle crops from a single upload. This approach saves hours of manual editing while ensuring each platform gets images optimized for its specific algorithm and buyer expectations.</p>
-    </div>
-  </div>
 <h2>Taobao Optimization</h2>
 <p>Taobao converts all to JPG internally. <strong>Minimum 800×800px</strong>. WebP uploads get double-transcoded — use JPG directly.</p>
 <h2>References</h2>
@@ -2666,6 +2271,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'core-web-vitals-image-checklist',
       title: 'Core Web Vitals Image Optimization Checklist: LCP, INP & CLS',
       date: '2026-06-09',
+      modified: '2026-07-04',
       tags: ['web performance', 'core web vitals', 'lcp', 'cls', 'optimization'],
       summary: 'Core Web Vitals are Google ranking factors directly affected by image performance. This checklist covers every image optimization — from LCP preloading and CLS dimension fixes to INP-friendly lazy loading — that measurably improves your scores.',
       content: `
@@ -2748,6 +2354,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'html-picture-element-guide',
       title: 'HTML Picture Element Guide: Responsive Images Made Easy (2026)',
       date: '2026-06-10',
+      modified: '2026-07-10',
       tags: ['responsive', 'picture-element', 'web-optimizer', 'html'],
       summary: 'The HTML &lt;picture&gt; element is the most powerful yet underused tool in responsive web design. It lets you serve differe...',
       content: `
@@ -2804,27 +2411,6 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 </tbody></table>
 <p>The golden rule: use <code>&lt;img srcset&gt;</code> when you want the <em>same image at different resolutions</em> — the browser is smart enough to choose the right density. Use <code>&lt;picture&gt;</code> when the image itself needs to <em>change</em> — different format, different aspect ratio, or different composition. For the most robust setup, you can nest them: <code>&lt;picture&gt;</code> for format and art direction, with <code>srcset</code> on the <code>&lt;source&gt;</code> for resolution variants within each. This is the production pattern used by every major CDN and image optimization service.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does the picture element work in all browsers?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes. As of 2026, the <code>&lt;picture&gt;</code> element has <strong>98%+ global browser support</strong>, including Chrome, Firefox, Safari (since version 9.1), Edge, and all mobile browsers. The remaining sub-2% of users on extremely old browsers (Internet Explorer 11 and earlier) will simply load the <code>&lt;img&gt;</code> fallback inside the <code>&lt;picture&gt;</code> — so every user sees an image regardless. There is no reason to avoid <code>&lt;picture&gt;</code> in production. Combined with WebP (97% support) and AVIF (Safari 16+, Chrome 85+), you can build a format fallback chain that delivers next-gen images to 95%+ of users while the <code>&lt;img&gt;</code> JPG fallback covers the rest.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">How do I automatically generate picture element code for my images?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Manually encoding each image into multiple formats and writing <code>&lt;picture&gt;</code> markup for every image on your site is tedious and error-prone. <a href="/web-optimizer">Image Toolbox's Web Optimizer</a> automates the entire workflow: upload your source images, and it generates WebP, AVIF, and JPG variants at your specified quality levels, then outputs the complete <code>&lt;picture&gt;</code> code with proper <code>type</code> attributes, <code>width</code>/<code>height</code> for CLS prevention, and <code>loading="lazy"</code> where appropriate. For build-time optimization, tools like <code>sharp</code> (Node.js) and <code>imagemagick</code> can be integrated into your CI pipeline to process images in bulk. The key is to never write <code>&lt;picture&gt;</code> markup by hand for more than a handful of images — it doesn't scale.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I use picture element with lazy loading?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes, and you should. Place <code>loading="lazy"</code> on the <code>&lt;img&gt;</code> element inside <code>&lt;picture&gt;</code> — <strong>not</strong> on the <code>&lt;picture&gt;</code> or the <code>&lt;source&gt;</code> elements. The browser uses the <code>&lt;img&gt;</code> as the anchor for lazy loading, and the selected <code>&lt;source&gt;</code> is loaded lazily as well. Combine this with <code>decoding="async"</code> to move image decoding off the main thread, and add <code>fetchpriority="high"</code> on the LCP image's <code>&lt;img&gt;</code> to ensure the hero image loads first. For images below the fold, <code>fetchpriority="low"</code> signals the browser to deprioritize them. This three-attribute combination — <code>loading</code>, <code>decoding</code>, and <code>fetchpriority</code> — gives you fine-grained control over every image's loading priority without any JavaScript.</p>
-    </div>
-  </div>
-</div>
 <h2>References</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture" target="_blank" rel="noopener">MDN: The Picture Element</a></li>
@@ -2836,6 +2422,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'ebay-image-requirements-2026',
       title: 'eBay Image Requirements 2026: The Complete Seller\'s Guide',
       date: '2026-06-12',
+      modified: '2026-06-21',
       tags: ['ebay', 'ecommerce', 'product-photography', 'image-optimization'],
       summary: 'eBay has strict image requirements that directly impact your listing visibility, conversion rates, and seller performance metrics. This comprehensive guide covers every technical specification — from minimum resolution and allowed formats to Gallery Plus best practices and common rejection reasons. Learn how to create eBay-compliant product images that attract buyers and boost sales in 2026.',
       content: `
@@ -2894,6 +2481,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'auto-generate-image-code',
       title: 'How to Auto-Generate Optimized Image Code: Picture Tags, srcset, and WebP/AVIF',
       date: '2026-06-15',
+      modified: '2026-07-09',
       tags: ['web-optimizer', 'html', 'code-generation', 'web-performance'],
       summary: 'Writing optimized HTML for responsive images is tedious — picture tags for format switching, srcset for resolution switching, and fallback management across browsers. An image code auto-generator eliminates this manual work. Learn how to automatically generate production-ready picture and img code with WebP/AVIF support, responsive srcset, and lazy loading.',
       content: `
@@ -2947,27 +2535,6 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <p>For teams building websites with dozens or hundreds of images, the time savings compound dramatically. What takes a developer 15 minutes per image — format conversion, resolution generation, code writing, testing — takes under a minute with an auto-generator. Over 100 images, that is roughly 25 hours saved.</p>
 <p>Beyond raw time savings, code auto-generation also eliminates an entire class of bugs. A typo in a manually-written srcset descriptor, a source element pointing to a non-existent file, or a mismatched MIME type can silently degrade image delivery across your site. With an auto-generator, the output is deterministic and verified — every generated tag references a file that actually exists, every MIME type matches the actual format, and every srcset descriptor corresponds to a generated image variant. For production websites where broken images mean lost revenue, this guarantee is invaluable.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Do I need to know HTML to use an image code generator?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">No. Image code generators are designed to produce ready-to-use HTML that you can paste directly into your site's code without understanding the underlying tags. However, basic HTML knowledge helps you place the generated code correctly. Tools like <a href="/web-optimizer">Image Toolbox Web Optimizer</a> generate complete <code>&lt;picture&gt;</code> and <code>&lt;img&gt;</code> tags with all attributes, so the output works immediately on any website, CMS, or static site generator.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I use the generated code with frameworks like React and Next.js?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes. The generated HTML uses standard <code>&lt;picture&gt;</code> and <code>&lt;img&gt;</code> tags that work in any framework. For Next.js, you can use the generated code as-is inside JSX (React renders standard picture/img tags natively). You can also extract the srcset values and MIME types to pass into Next.js's <code>&lt;Image&gt;</code> component. The key value is that the generator handles the tedious work — format selection, resolution sizing, and MIME type ordering — and you adapt the output to your framework's component API.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">How much faster does my site become with optimized image code?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">The improvement depends on your starting point, but typical results are significant. Switching from JPG-only serving to WebP/AVIF with srcset typically reduces image payload by 40–60%. For a page with 2MB of images, that translates to 800KB–1.2MB saved per page load. Combined with lazy loading, pages become interactive 1–2 seconds faster on mobile. Google's Core Web Vitals assessment rewards these improvements with higher PageSpeed scores, which can improve search rankings. A tool like the <a href="/web-optimizer">Web Optimizer</a> handles all these optimizations in one workflow.</p>
-    </div>
-  </div>
-</div>
 <h2>References</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture" target="_blank" rel="noopener">MDN: The Picture Element</a></li>
@@ -2979,6 +2546,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'shopify-image-requirements-2026',
       title: 'Shopify Image Sizes and Requirements 2026: Complete Guide',
       date: '2026-06-16',
+      modified: '2026-07-05',
       tags: ['shopify', 'ecommerce', 'image-requirements', 'product-images'],
       summary: 'Shopify product images must meet specific size, format, and quality requirements to display correctly across your store. This 2026 guide covers every image context — product gallery, hero banners, blog featured images, and logos — with exact pixel dimensions, file size limits, and practical tips for optimizing your Shopify store visuals.',
       content: `
@@ -3066,6 +2634,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'facebook-image-size-guide-2026',
       title: 'Facebook Image Sizes Guide 2026: All Dimensions in One Place',
       date: '2026-06-17',
+      modified: '2026-07-08',
       tags: ['facebook', 'social-media', 'image-sizes', 'social-media-compliance'],
       summary: 'Facebook uses different image sizes for profile pictures, cover photos, posts, ads, events, and groups — and using the wrong dimensions can make your content look unprofessional. This 2026 guide covers every Facebook image size you need to know, with exact pixel dimensions and practical tips to keep your visuals sharp across all devices.',
       content: `
@@ -3127,27 +2696,6 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <p>Facebook events and groups have their own cover photo requirements. Event covers display at <strong>1200 × 628 pixels</strong> — a landscape 1.91:1 ratio that matches the News Feed link preview size. This makes event covers highly shareable: when someone shares your event, the cover image appears as a clean preview card with a date and title overlay added by Facebook. Keep the top and bottom thirds of the image free of text, as Facebook may overlay the event name and date.</p>
 <p>Group covers display at <strong>1640 × 856 pixels</strong> (approximately 1.91:1 ratio). Like profile covers, group covers are cropped differently on desktop versus mobile — the center portion of the image is the safe zone. Unlike event covers, group covers appear less frequently in the News Feed, so optimization matters less — but a visually distinct group cover helps members recognize the group in their sidebar and notification list.</p>
 
-<h2>Frequently Asked Questions</h2>
-<div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Does Facebook compress uploaded images? How can I avoid quality loss?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes, Facebook applies aggressive compression to all uploaded images to save bandwidth and storage. To minimize quality loss: upload images at the exact recommended dimensions so Facebook does not resize them, use PNG for graphics with text or sharp edges (Facebook compresses PNG less aggressively than JPG), and export JPGs at quality 100 from your image editor — Facebook's own compression will handle the final optimization. If you notice blurring, upload at 2× resolution (e.g., 2048 × 2048 px instead of 1080 × 1080 px) so the downscaled version retains detail. Test different formats on a private post before going live with important content.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">What is the best image format for Facebook posts — JPG or PNG?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">JPG is the best format for photographs and most Facebook posts. It offers a good balance of quality and file size, and Facebook's compression pipeline handles JPG well. Use PNG for graphics that contain text, logos, or vector-style artwork — PNG preserves sharp edges better than JPG after Facebook's compression. Avoid uploading BMP or TIFF files; Facebook may reject them or convert them poorly. If you are unsure, upload both formats to a private test post and compare the results on a phone, since most Facebook browsing happens on mobile.</p>
-    </div>
-  </div>
-  <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Can I use the same image for Facebook and Instagram?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Yes, if you use a <strong>1080 × 1080 px square</strong> image, it will display correctly on both Facebook and Instagram feeds. This size is the native square format for Instagram posts and fills the Facebook mobile feed nicely. However, Instagram Stories and Facebook Stories use 1080 × 1920 px (9:16), and Facebook link previews use 1200 × 630 px (1.91:1). For multi-platform posting, a square image is the safest common denominator. You can use a social media image resizing tool to generate platform-specific versions from a single master image — upload once and get Facebook, Instagram, TikTok, X, and LinkedIn sizes without manual cropping.</p>
-    </div>
-  </div>
-</div>
 <h2>References</h2>
 <ul>
 <li><a href="https://www.facebook.com/business/help/310426412574162" target="_blank" rel="noopener">Meta Business Help: Image Sizes for Facebook Ads</a></li>
@@ -3159,6 +2707,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
       slug: 'lazy-loading-images-guide',
       title: 'Lazy Loading Images: The Complete Guide to Faster Web Pages',
       date: '2026-06-18',
+      modified: '2026-06-26',
       tags: ['lazy-loading', 'performance', 'web-optimization'],
       summary: 'Lazy loading is a web performance technique that defers the loading of off-screen images until the user scrolls near them. Instead of downloading e...',
       content: `

@@ -7,8 +7,8 @@ export function getStaticPaths() {
   return articles.map(a => ({ params: { slug: a.slug }, props: a }));
 }
 
-const { slug, title, date, tags, content } = Astro.props;
-const dateModified = date;
+const { slug, title, date, modified, tags, content } = Astro.props;
+const dateModified = modified || date;
 const description = `了解${title}。Image Toolbox 提供的实用图片处理指南。`;
 ---
 
@@ -31,10 +31,10 @@ const description = `了解${title}。Image Toolbox 提供的实用图片处理�
       <div class="meta">{date}</div>
       <h1>{title}</h1>
       <div class="author-box">
-        <div class="author-avatar">IT</div>
+        <div class="author-avatar">AC</div>
         <div>
-          <strong class="author-name">Image Toolbox 团队</strong>
-          <p class="author-bio">打造隐私优先的图片工具，所有处理均在浏览器本地完成。</p>
+          <strong class="author-name">Alex Chen</strong>
+          <p class="author-bio">全栈开发者，8 年以上 Web 性能和图片优化经验。在 Image Toolbox 构建隐私优先工具。</p>
         </div>
       </div>
       <div class="tags">
