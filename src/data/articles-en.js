@@ -1666,8 +1666,7 @@ Good alt text: "Homemade red velvet cupcake with cream cheese frosting on a whit
 <li>Include relevant keywords naturally — never stuff</li>
 </ul>
 
-<h2>Free All-in-One Image Toolbox</h2>
-<p>This checklist covers six steps, but you don't need six different tools. <a href="/">Image Toolbox</a> handles format conversion, <a href="/crop">cropping</a>, <a href="/resize">resizing</a>, <a href="/compress">compression</a>, and <a href="/watermark">watermarking</a> in one browser-based interface. No installation, no subscription, no server uploads — just the tools you need to optimize every image professionally.</p>
+
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq" itemscope itemtype="https://schema.org/FAQPage">
