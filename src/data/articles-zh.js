@@ -3061,6 +3061,80 @@ document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
 <li><a href="https://help.twitter.com/en/using-twitter/twitter-image-recommendations" target="_blank" rel="noopener">X 帮助中心：图片建议</a> — 平台官方图片规范指南</li>
 </ul>
 `
+    },
+   {
+      slug: 'prevent-image-cls-guide',
+      title: '如何消除图片导致的布局偏移（CLS）并提升搜索排名',
+      date: '2026-07-11',
+      modified: '2026-07-22',
+      tags: ['CLS', 'Core Web Vitals', '性能优化'],
+      summary: '累积布局偏移（CLS）仍是 Core Web Vitals 中失败率最高的指标，而图片是头号元凶。本文解析图片导致 CLS 的三种场景，提供 width/height 属性、CSS aspect-ratio 和 padding-bottom 三种修复方案，并附上线前检查清单。',
+      content: `<h2>百度与 Google 同时加码：CLS 仍是最大失分项</h2>
+<p>2026 年第一季度，Google Chrome UX Report 发布的最新数据显示，移动端仍有约 22% 的页面未通过 CLS（累积布局偏移）阈值。与此同时，百度搜索在 2025 年底的「百度搜索落地页体验标准」更新中，也将页面稳定性纳入排名因素考量——虽然百度没有直接采用 CLS 这个指标名称，但"页面加载时内容不应发生跳动"这条规则本质上就是对 CLS 的要求。对中文网站来说，同时面向百度和 Google 优化时，CLS 是一个必须解决的共同项。</p>
+<p>国内 CDN 厂商阿里云在 2025 年的技术报告中指出，图片加载导致的布局偏移占所有 CLS 问题的 65% 以上。其中最典型的场景是淘宝商品详情页——早期的详情页大量使用未声明尺寸的图片，导致用户在 4G 网络下浏览时页面频繁跳动，严重影响了转化率。淘宝前端团队在 2024 年的改造中，为所有详情页图片添加了显式的宽高属性和 CSS <code>aspect-ratio</code>，改造后移动端 CLS 从平均 0.18 降到了 0.03。</p>
+<p>另一个典型案例是微信公众号文章内嵌的图片。很多运营者在编辑器中直接粘贴图片，生成的 HTML 往往缺少 width 和 height 属性。当用户在弱网环境下打开文章时，图片加载完成前的内容会被大幅推挤，严重影响阅读体验。微信公众号团队在 2025 年的编辑器更新中已开始自动为内嵌图片补充宽高属性，但历史文章仍需运营者手动修正。</p>
+
+<h2>图片为什么是 CLS 的头号元凶</h2>
+<p>浏览器渲染引擎在绘制页面时，需要为每个元素预留空间。如果 <code>&lt;img&gt;</code> 标签没有声明 width 和 height，浏览器会默认给它零高度。当图片数据加载完成后，浏览器才知道实际尺寸，于是将下方所有内容向下推——这就是一次布局偏移。</p>
+<p>三种最常见的触发场景：</p>
+<p><strong>场景一：img 标签缺少 width 和 height 属性。</strong> 这是最普遍的问题。一个 <code>&lt;img src="banner.jpg"&gt;</code> 在图片加载完成前不占空间，加载完成后突然撑开 300px 高度，下方的标题和按钮全部被推下去。如果页面上有多张这样的图片，累积偏移量可以轻松超过 0.5。</p>
+<p><strong>场景二：仅使用 CSS aspect-ratio 而未提供 HTML 属性。</strong> <code>aspect-ratio</code> 是现代 CSS 的利器，但部分旧版浏览器不支持。如果只依赖 CSS 而不在 HTML 标签上写 width 和 height，那些旧浏览器仍然看到零高度，依然会发生偏移。正确做法是两者都用——HTML 属性做兜底，CSS 做精确控制。</p>
+<p><strong>场景三：响应式图片的 srcset 缺少原始尺寸。</strong> 使用 <code>srcset</code> 或 <code>&lt;picture&gt;</code> 时，浏览器仍需要知道默认源的原始像素尺寸来计算宽高比。如果 <code>&lt;img&gt;</code> 元素上没有 width 和 height，浏览器无法在每个断点处预留正确的高度，每次切换源都会引发重排。</p>
+<p>核心原则只有一个：在图片字节到达之前，让浏览器知道该留多少空间。</p>
+
+<h2>代码示例：三种修复方案</h2>
+
+<h3>方案一：给每个 img 标签加上 width 和 height</h3>
+<pre><code>&lt;img src="banner.jpg" width="1600" height="900" alt="首页横幅" /&gt;</code></pre>
+<p>最简单、收益最高的修复。浏览器根据 1600:900 计算出 16:9 的宽高比，在图片加载前就预留好空间。即使后续 CSS 设置了 <code>width: 100%</code> 改变显示宽度，现代浏览器也会根据这个比例自动计算高度。关键点：HTML 属性设定的是宽高比，不是显示尺寸——显示尺寸交给 CSS 控制。</p>
+
+<h3>方案二：用 CSS aspect-ratio 控制流式容器</h3>
+<pre><code>.banner {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}</code></pre>
+<p>适用于宽度动态变化的容器。<code>aspect-ratio</code> 让高度随宽度按比例变化，配合 <code>object-fit: cover</code> 防止图片变形。适合横幅、卡片缩略图和网格布局。</p>
+
+<h3>方案三：padding-bottom 占位法（兼容旧浏览器）</h3>
+<pre><code>.img-box {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  overflow: hidden;
+}
+.img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}</code></pre>
+<p><code>padding-bottom</code> 的百分比基于容器宽度计算，形成一个固定宽高比的占位区域。这种方法虽然写法冗长，但兼容所有浏览器，适合需要支持 2021 年以前旧版本浏览器的项目。</p>
+
+<h2>上线前 CLS 检查清单</h2>
+<p>每次发布含图片的页面前，逐项核对：</p>
+<ol>
+<li><strong>每个 img 标签都有 width 和 height 属性。</strong> 无一例外，装饰性图片也需要。值设为源图片的实际像素尺寸。</li>
+<li><strong>首屏图片在 CSS 中使用 aspect-ratio。</strong> 作为 HTML 属性之外的第二层保险，确保容器高度在解析器到达 img 标签之前就已确定。</li>
+<li><strong>响应式图片的 img 元素上有 width 和 height。</strong> 属性值应与 srcset 中最大源一致，浏览器会按比例缩放。</li>
+<li><strong>懒加载图片同样需要显式尺寸。</strong> <code>loading="lazy"</code> 只延迟加载，不防止偏移——图片最终加载时仍会推动布局。</li>
+<li><strong>CSS 背景图设置 min-height。</strong> 没有内容的容器加上背景图，加载前高度为零，加载后撑开会偏移。</li>
+<li><strong>用 Chrome DevTools 的 Lighthouse 跑一遍。</strong> DevTools 中运行 Performance 审计，CLS 分数会列出每次偏移的来源。</li>
+<li><strong>在 PageSpeed Insights 查看真实用户数据。</strong> 实验室数据模拟单设备，真实用户数据（CrUX）反映千万级用户的实际体验，两者对排名都有影响。</li>
+<li><strong>检查第三方嵌入内容。</strong> 微博、抖音等平台的嵌入卡片经常缺少尺寸声明，用 <code>aspect-ratio</code> 容器包裹它们。</li>
+</ol>
+<p>对管理大量页面的团队来说，逐个检查 img 标签耗时且容易遗漏。<a href="/zh/web-optimizer">Image Toolbox 网页优化器</a>可以批量扫描 HTML，自动标记每个缺少尺寸的图片标签，并生成带正确 width/height 和 aspect-ratio 的修正代码——把数小时的审查工作压缩到几分钟。</p>
+
+<h2>参考来源</h2>
+<ul>
+<li><a href="https://web.dev/articles/cls" target="_blank" rel="noopener">web.dev: 累积布局偏移</a> — Google 官方 CLS 文档</li>
+<li><a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源平台</a> — 百度对页面稳定性的要求</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/aspect-ratio" target="_blank" rel="noopener">MDN: aspect-ratio</a> — CSS 属性参考与浏览器兼容性</li>
+</ul>
+`
     }
+
 
   ];
